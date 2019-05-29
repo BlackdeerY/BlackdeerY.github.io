@@ -1,2 +1,3 @@
 # BlackdeerY.github.io
-Static Web Hosting
+
+https://ydeer.tistory.com/
