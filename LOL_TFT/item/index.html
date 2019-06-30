@@ -350,7 +350,35 @@
 					}
 				});
 			}
-			if (!$('#check-01').prop('checked')&&!$('#check-02').prop('checked')&&!$('#check-03').prop('checked')&&!$('#check-04').prop('checked')&&!$('#check-05').prop('checked')&&!$('#check-06').prop('checked')&&!$('#check-07').prop('checked')&&!$('#check-08').prop('checked')&&!$('#check-09').prop('checked')&&!$('#check-10').prop('checked')&&!$('#check-11').prop('checked')&&!$('#check-12').prop('checked')&&!$('#check-13').prop('checked')&&!$('#check-14').prop('checked')&&!$('#check-15').prop('checked')&&!$('#check-16').prop('checked')&&!$('#check-17').prop('checked')&&!$('#check-18').prop('checked')) {
+			if ($('#check-19').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-19')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if ($('#check-20').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-20')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if ($('#check-21').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-21')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if ($('#check-22').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-22')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if (!$('#check-01').prop('checked')&&!$('#check-02').prop('checked')&&!$('#check-03').prop('checked')&&!$('#check-04').prop('checked')&&!$('#check-05').prop('checked')&&!$('#check-06').prop('checked')&&!$('#check-07').prop('checked')&&!$('#check-08').prop('checked')&&!$('#check-09').prop('checked')&&!$('#check-10').prop('checked')&&!$('#check-11').prop('checked')&&!$('#check-12').prop('checked')&&!$('#check-13').prop('checked')&&!$('#check-14').prop('checked')&&!$('#check-15').prop('checked')&&!$('#check-16').prop('checked')&&!$('#check-17').prop('checked')&&!$('#check-18').prop('checked')&&!$('#check-19').prop('checked')&&!$('#check-20').prop('checked')&&!$('#check-21').prop('checked')&&!$('#check-22').prop('checked')) {
 				$('.btn').removeClass('btn-success');
 			}
 		};
@@ -374,6 +402,7 @@
 			$('.item-011').addClass('category-17');
 			$('.item-012').addClass('category-01');
 			$('.item-012').addClass('category-05');
+			$('.item-012').addClass('category-19');
 			$('.item-013').addClass('category-02');
 			$('.item-013').addClass('category-03');
 			$('.item-014').addClass('category-01');
@@ -381,6 +410,7 @@
 			$('.item-014').addClass('category-13');
 			$('.item-015').addClass('category-01');
 			$('.item-015').addClass('category-12');
+			$('.item-015').addClass('category-20');
 			$('.item-016').addClass('category-03');
 			$('.item-016').addClass('category-06');
 			$('.item-016').addClass('category-12');
@@ -396,11 +426,16 @@
 			$('.item-019').addClass('category-15');
 			$('.item-020').addClass('category-02');
 			$('.item-020').addClass('category-05');
+			$('.item-020').addClass('category-20');
+			$('.item-020').addClass('category-21');
 			$('.item-021').addClass('category-03');
 			$('.item-022').addClass('category-02');
+			$('.item-022').addClass('category-21');
+			$('.item-022').addClass('category-22');
 			$('.item-023').addClass('category-04');
 			$('.item-023').addClass('category-07');
 			$('.item-023').addClass('category-16');
+			$('.item-023').addClass('category-19');
 			$('.item-024').addClass('category-04');
 			$('.item-024').addClass('category-14');
 			$('.item-025').addClass('category-01');
@@ -414,18 +449,20 @@
 			$('.item-027').addClass('category-18');
 			$('.item-028').addClass('category-01');
 			$('.item-028').addClass('category-02');
+			$('.item-028').addClass('category-20');
 			$('.item-029').addClass('category-05');
 			$('.item-029').addClass('category-12');
 			$('.item-030').addClass('category-02');
 			$('.item-030').addClass('category-07');
 			$('.item-030').addClass('category-12');
 			$('.item-031').addClass('category-07');
+			$('.item-031').addClass('category-19');
 			$('.item-032').addClass('category-04');
 			$('.item-032').addClass('category-06');
 			$('.item-032').addClass('category-18');
 			$('.item-033').addClass('category-01');
+			$('.item-033').addClass('category-02');
 			$('.item-033').addClass('category-07');
-			$('.item-033').addClass('category-15');
 			$('.item-033').addClass('category-16');
 			$('.item-034').addClass('category-06');
 			$('.item-034').addClass('category-07');
@@ -433,6 +470,7 @@
 			$('.item-035').addClass('category-05');
 			$('.item-035').addClass('category-07');
 			$('.item-035').addClass('category-12');
+			$('.item-035').addClass('category-15');
 			$('.item-036').addClass('category-06');
 			$('.item-037').addClass('category-08');
 			$('.item-037').addClass('category-06');
@@ -1878,7 +1916,7 @@
 						<p>방어력 +20,</p>
 						<p>체력 +200</p>
 					</td>
-					<td class="tbody-bord">최대 체력의 2.5%의 화상 피해</td>
+					<td class="tbody-bord">최대 체력의 2.5%의 화염 피해</td>
 					<td class="text-center">
 						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
 							<img class="icon" src="../resources/img/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
@@ -2201,12 +2239,22 @@
   						<label for="check-13" style="margin-right: 2rem !important;">생명력 흡수</label>
 						<input class="form-check-input" type="checkbox" value="" id="check-14">
   						<label for="check-14" style="margin-right: 2rem !important;">마나 회복</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-19">
+  						<label for="check-19" style="margin-right: 2rem !important;">회복/부활</label>
 					</p>
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-12">
   						<label for="check-12" style="margin-right: 2rem !important;">추가 피해</label>
 						<input class="form-check-input" type="checkbox" value="" id="check-15">
   						<label for="check-15" style="margin-right: 2rem !important;">화염 피해(고통스러운 상처=회복 봉인)</label>
+					</p>
+					<p>
+						<input class="form-check-input" type="checkbox" value="" id="check-20">
+  						<label for="check-20" style="margin-right: 2rem !important;">치명타</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-21">
+  						<label for="check-21" style="margin-right: 2rem !important;">회피</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-22">
+  						<label for="check-22" style="margin-right: 2rem !important;">사거리</label>
 					</p>
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-16">
@@ -2521,7 +2569,7 @@
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-035 hh-07 hv-05 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화상 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-035 hh-07 hv-05 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화염 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
 										<img class="icon" src="../resources/img/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 									</button>
 								</td>
@@ -2605,7 +2653,7 @@
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-035 hh-05 hv-07 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화상 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-035 hh-05 hv-07 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화염 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
 										<img class="icon" src="../resources/img/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 									</button>
 								</td>
@@ -2755,7 +2803,7 @@
 					<button class="btn btn-icon item-034 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p><img class='icon' src='../resources/img/음전자_망토.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
 						<img class="icon" src="../resources/img/%EC%84%9C%ED%92%8D.png">
 					</button>
-					<button class="btn btn-icon item-035 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화상 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-035 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대 체력 2.5% 화염 피해</p><p><img class='icon' src='../resources/img/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/거인의_허리띠.png'></p>">
 						<img class="icon" src="../resources/img/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 					</button>
 					<button class="btn btn-icon item-036 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[용의 발톱]</p><p>마법저항력40</p><p>: 마법저항력 83% 증가</p><p><img class='icon' src='../resources/img/음전자_망토.png'>+<img class='icon' src='../resources/img/음전자_망토.png'></p>">
