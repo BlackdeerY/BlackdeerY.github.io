@@ -15,6 +15,9 @@
 	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="../resources/js/jquery-3.4.1.min.js"></script>
@@ -22,12 +25,8 @@
 	<script src="../resources/js/bootstrap-v.4.3.1.min.js"></script>
 	
     <style>
-		@font-face {
-			font-family: NanumBarunGothic;
-			src: url("../resources/font/NanumBarunGothic.ttf");
-		}
-		.font-nbg {
-			font-family: NanumBarunGothic !important;
+		.font-ng {
+			font-family: 'Nanum Gothic' !important;
 		}
 		.color-white {
 			color: white;
@@ -610,9 +609,6 @@
 				$('.item-008').removeClass('hilight-hover');
 				$('.sub-008').removeClass('hilight-hover');
 			});
-			
-			
-			
 		};
 		function category() {
 			resetBtnsClass();
@@ -1166,9 +1162,9 @@
 	</script>
 </head>
 <body>
-	<div class="container-fluid font-nbg">
+	<div class="container-fluid font-ng">
 		<div class="jumbotron" style="margin-bottom: 10px;">
-			<h1>
+			<h1 style="margin-top: -2rem; font-weight: bold;">
 				LOL Team Fight Tactics - Item
 			</h1>
 			<p style="height: 1rem;">
@@ -1179,8 +1175,8 @@
 			<p>
 				아이템에 마우스를 올려두면 간략하게 정보를 볼 수 있습니다.
 			</p>
-			<p>
-				조건을 선택하면 해당하는 아이템이 녹색으로 표시됩니다.
+			<p style="margin-bottom: -2rem;">
+				조건을 선택하면 해당하는 아이템이 강조됩니다.
 			</p>
 		</div>
 		
