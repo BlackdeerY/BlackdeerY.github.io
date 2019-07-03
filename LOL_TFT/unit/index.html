@@ -1,0 +1,3115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>LOL TFT - Unit</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../resources/icon/favicon.ico">
+	<link rel="icon" href="../resources/icon/favicon.ico">
+	<meta property="og:title" content="LOL TFT - Unit">
+	<meta property="og:description" content="롤 TFT - 유닛">
+	<meta property="og:image" content="https://blackdeery.github.io/LOL_TFT/resources/icon/thumbnail.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/LOL_TFT/resources/icon/144con.png">
+	<link rel="apple-touch-icon-precomposed" href="../resources/icon/512con.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../resources/js/popper.min.js"></script>
+	<script src="../resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		.font-ng {
+			font-family: 'Nanum Gothic' !important;
+		}
+		.color-white {
+			color: white;
+		}
+		.color-hilight {
+			text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+			color: white !important;
+		}
+		.color-yellow {
+			color: yellow;
+		}
+		.color-cyan {
+			color: cyan;
+		}
+		.color-magenta {
+			color: magenta;
+		}
+		.icon {
+			width: 90px !important;
+			height: 90px !important;
+			color: white;
+			font-weight: bold;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			background-size: cover;
+			font-size: 0.8rem;
+		}
+		.type-title {
+			color: white;
+			font-weight: bold;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		}
+		.unit-Aatrox {
+			background-image: url(../resources/img/unit/Aatrox.png);
+		}
+		.unit-Ahri {
+			background-image: url(../resources/img/unit/Ahri.png);
+		}
+		.unit-Akali {
+			background-image: url(../resources/img/unit/Akali.png);
+		}
+		.unit-Anivia {
+			background-image: url(../resources/img/unit/Anivia.png);
+		}
+		.unit-Ashe {
+			background-image: url(../resources/img/unit/Ashe.png);
+		}
+		.unit-Aurelionsol {
+			background-image: url(../resources/img/unit/Aurelionsol.png);
+		}
+		.unit-Blitzcrank {
+			background-image: url(../resources/img/unit/Blitzcrank.png);
+		}
+		.unit-Brand {
+			background-image: url(../resources/img/unit/Brand.png);
+		}
+		.unit-Braum {
+			background-image: url(../resources/img/unit/Braum.png);
+		}
+		.unit-Chogath {
+			background-image: url(../resources/img/unit/Chogath.png);
+		}
+		.unit-Darius {
+			background-image: url(../resources/img/unit/Darius.png);
+		}
+		.unit-Draven {
+			background-image: url(../resources/img/unit/Draven.png);
+		}
+		.unit-Elise {
+			background-image: url(../resources/img/unit/Elise.png);
+		}
+		.unit-Evelynn {
+			background-image: url(../resources/img/unit/Evelynn.png);
+		}
+		.unit-Fiora {
+			background-image: url(../resources/img/unit/Fiora.png);
+		}
+		.unit-Gangplank {
+			background-image: url(../resources/img/unit/Gangplank.png);
+		}
+		.unit-Garen {
+			background-image: url(../resources/img/unit/Garen.png);
+		}
+		.unit-Gnar {
+			background-image: url(../resources/img/unit/Gnar.png);
+		}
+		.unit-Graves {
+			background-image: url(../resources/img/unit/Graves.png);
+		}
+		.unit-Karthus {
+			background-image: url(../resources/img/unit/Karthus.png);
+		}
+		.unit-Kassadin {
+			background-image: url(../resources/img/unit/Kassadin.png);
+		}
+		.unit-Katarina {
+			background-image: url(../resources/img/unit/Katarina.png);
+		}
+		.unit-Kayle {
+			background-image: url(../resources/img/unit/Kayle.png);
+		}
+		.unit-Kennen {
+			background-image: url(../resources/img/unit/Kennen.png);
+		}
+		.unit-Khazix {
+			background-image: url(../resources/img/unit/Khazix.png);
+		}
+		.unit-Kindred {
+			background-image: url(../resources/img/unit/Kindred.png);
+		}
+		.unit-Leona {
+			background-image: url(../resources/img/unit/Leona.png);
+		}
+		.unit-Lissandra {
+			background-image: url(../resources/img/unit/Lissandra.png);
+		}
+		.unit-Lucian {
+			background-image: url(../resources/img/unit/Lucian.png);
+		}
+		.unit-Lulu {
+			background-image: url(../resources/img/unit/Lulu.png);
+		}
+		.unit-Missfortune {
+			background-image: url(../resources/img/unit/Missfortune.png);
+		}
+		.unit-Mordekaiser {
+			background-image: url(../resources/img/unit/Mordekaiser.png);
+		}
+		.unit-Morgana {
+			background-image: url(../resources/img/unit/Morgana.png);
+		}
+		.unit-Nidalee {
+			background-image: url(../resources/img/unit/Nidalee.png);
+		}
+		.unit-Poppy {
+			background-image: url(../resources/img/unit/Poppy.png);
+		}
+		.unit-Pyke {
+			background-image: url(../resources/img/unit/Pyke.png);
+		}
+		.unit-Reksai {
+			background-image: url(../resources/img/unit/Reksai.png);
+		}
+		.unit-Rengar {
+			background-image: url(../resources/img/unit/Rengar.png);
+		}
+		.unit-Sejuani {
+			background-image: url(../resources/img/unit/Sejuani.png);
+		}
+		.unit-Shen {
+			background-image: url(../resources/img/unit/Shen.png);
+		}
+		.unit-Shyvana {
+			background-image: url(../resources/img/unit/Shyvana.png);
+		}
+		.unit-Swain {
+			background-image: url(../resources/img/unit/Swain.png);
+		}
+		.unit-Tristana {
+			background-image: url(../resources/img/unit/Tristana.png);
+		}
+		.unit-Varus {
+			background-image: url(../resources/img/unit/Varus.png);
+		}
+		.unit-Vayne {
+			background-image: url(../resources/img/unit/Vayne.png);
+		}
+		.unit-Veigar {
+			background-image: url(../resources/img/unit/Veigar.png);
+		}
+		.unit-Volibear {
+			background-image: url(../resources/img/unit/Volibear.png);
+		}
+		.unit-Warwick {
+			background-image: url(../resources/img/unit/Warwick.png);
+		}
+		.unit-Yasuo {
+			background-image: url(../resources/img/unit/Yasuo.png);
+		}
+		.unit-Zed {
+			background-image: url(../resources/img/unit/Zed.png);
+		}
+		.unit-Youmu {
+			background-image: url(../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png);
+		}
+		.unit-Molak {
+			background-image: url(../resources/img/item/%EB%AA%B0%EB%9D%BD%ED%95%9C_%EC%99%95%EC%9D%98_%EA%B2%80.png);
+		}
+		.unit-Yumi {
+			background-image: url(../resources/img/item/%EC%9C%A0%EB%AF%B8.jpg);
+		}
+		.unit-Darkin {
+			background-image: url(../resources/img/item/%EB%8B%A4%EB%A5%B4%ED%82%A8.png);
+		}
+		.unit-Knight {
+			background-image: url(../resources/img/item/%EA%B8%B0%EC%82%AC%EC%9D%98_%EB%A7%B9%EC%84%B8.png);
+		}
+		.unit-Hammer {
+			background-image: url(../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png);
+		}
+		.class-Devil {
+			background-image: url(../resources/img/unit/Devil.png);
+		}
+		.class-Ice {
+			background-image: url(../resources/img/unit/Ice.png);
+		}
+		.class-Royal {
+			background-image: url(../resources/img/unit/Royal.png);
+		}
+		.class-Yodel {
+			background-image: url(../resources/img/unit/Yodel.png);
+		}
+		.class-Wild {
+			background-image: url(../resources/img/unit/Wild.png);
+		}
+		.class-Void {
+			background-image: url(../resources/img/unit/Void.png);
+		}
+		.class-Ninja {
+			background-image: url(../resources/img/unit/Ninja.png);
+		}
+		.class-Kingdom {
+			background-image: url(../resources/img/unit/Kingdom.png);
+		}
+		.class-Pirate {
+			background-image: url(../resources/img/unit/Pirate.png);
+		}
+		.class-Ghost {
+			background-image: url(../resources/img/unit/Ghost.png);
+		}
+		.class-Dragon {
+			background-image: url(../resources/img/unit/Dragon.png);
+		}
+		.class-Robot {
+			background-image: url(../resources/img/unit/Robot.png);
+		}
+		.class-Banned {
+			background-image: url(../resources/img/unit/Banned.png);
+		}
+		.job-Assassin {
+			background-image: url(../resources/img/unit/Assassin.png);
+		}
+		.job-Swordman {
+			background-image: url(../resources/img/unit/Swordman.png);
+		}
+		.job-Fighter {
+			background-image: url(../resources/img/unit/Fighter.png);
+		}
+		.job-Elementalist {
+			background-image: url(../resources/img/unit/Elementalist.png);
+		}
+		.job-Guardian {
+			background-image: url(../resources/img/unit/Guardian.png);
+		}
+		.job-Gunner {
+			background-image: url(../resources/img/unit/Gunner.png);
+		}
+		.job-Knight {
+			background-image: url(../resources/img/unit/Knight.png);
+		}
+		.job-Ranger {
+			background-image: url(../resources/img/unit/Ranger.png);
+		}
+		.job-Transformer {
+			background-image: url(../resources/img/unit/Transformer.png);
+		}
+		.job-Magician {
+			background-image: url(../resources/img/unit/Magician.png);
+		}
+		.dim {
+			opacity: 0.4;
+		}
+		.icon-class {
+			border-top: 1px dashed #c9c901;
+			border-left: 1px dashed #c9c901;
+			border-bottom: 1px dashed #c9c901;
+		}
+		.icon-job {
+			border-top: 1px dashed #b3b3b3;
+			border-left: 1px dashed #b3b3b3;
+			border-bottom: 1px dashed #b3b3b3;
+		}
+		.tier-1 {
+			border: 3px solid lightgray;
+		}
+		.tier-1 > .unit-bottom {
+			color: lightgray;
+		}
+		.tier-2 {
+			border: 3px solid lawngreen;
+		}
+		.tier-2 > .unit-bottom {
+			color: lawngreen;
+		}
+		.tier-3 {
+			border: 3px solid cyan;
+		}
+		.tier-3 > .unit-bottom {
+			color: cyan;
+		}
+		.tier-4 {
+			border: 3px solid magenta;
+		}
+		.tier-4 > .unit-bottom {
+			color: magenta;
+		}
+		.tier-5 {
+			border: 3px solid orange;
+		}
+		.tier-5 > .unit-bottom {
+			color: orange;
+		}
+		.unit-item {
+			border: 3px solid black;
+		}
+		.unit-top {
+			text-align: right;
+			margin-right: 2px;
+		}
+		.unit-bottom {
+			position: relative;
+			margin-top: 56%;
+		}
+		.item-arrow {
+			font-size: 2rem;
+		}
+		.item-up {
+			margin-top: -1rem;
+			margin-bottom: -1rem;
+		}
+		.item-down {
+			margin-top: -1.2rem;
+			margin-bottom: -0.8rem;
+		}
+		.type-bottom {
+			position: relative;
+			margin-top: 35%;
+			font-size: 1.5rem;
+		}
+		.type-bottom > span {
+			margin: 0px;
+			margin-left: -0.25rem;
+			margin-right: -0.25rem;
+			color: gray;
+		}
+		.desc {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+		.view {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+		.view-class {
+			color: #c9c901;
+		}
+		.view-job {
+			color: #b3b3b3;
+		}
+		html, body {
+            position: relative;
+            height: 100%;
+        }
+		p {
+			margin: 0px;
+		}
+		.tooltip {
+			font-weight: bold;
+		}
+		.no-drag { -ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none; }
+    </style>
+	<script>
+		var Aatrox = 0;
+		var Ahri = 0;
+		var Akali = 0;
+		var Anivia = 0;
+		var Ashe = 0;
+		var Aurelionsol = 0;
+		var Blitzcrank = 0;
+		var Brand = 0;
+		var Braum = 0;
+		var Chogath = 0;
+		var Darius = 0;
+		var Draven = 0;
+		var Elise = 0;
+		var Evelynn = 0;
+		var Fiora = 0;
+		var Gangplank = 0;
+		var Garen = 0;
+		var Gnar = 0;
+		var Graves = 0;
+		var Karthus = 0;
+		var Kassadin = 0;
+		var Katarina = 0;
+		var Kayle = 0;
+		var Kennen = 0;
+		var Khazix = 0;
+		var Kindred = 0;
+		var Leona = 0;
+		var Lissandra = 0;
+		var Lucian = 0;
+		var Lulu = 0;
+		var Missfortune = 0;
+		var Mordekaiser = 0;
+		var Morgana = 0;
+		var Nidalee = 0;
+		var Poppy = 0;
+		var Pyke = 0;
+		var Reksai = 0;
+		var Rengar = 0;
+		var Sejuani = 0;
+		var Shen = 0;
+		var Shyvana = 0;
+		var Swain = 0;
+		var Tristana = 0;
+		var Varus = 0;
+		var Vayne = 0;
+		var Veigar = 0;
+		var Volibear = 0;
+		var Warwick = 0;
+		var Yasuo = 0;
+		var Zed = 0;
+		var Darkin = 0;
+		var Hammer = 0;
+		var Youmu = 0;
+		var Molak = 0;
+		var Yumi = 0;
+		var Knight = 0;
+		var cDevil = 0;
+		var cIce = 0;
+		var cRoyal = 0;
+		var cYodel = 0;
+		var cWild = 0;
+		var cNinja = 0;
+		var cKingdom = 0;
+		var cVoid = 0;
+		var cPirate = 0;
+		var cGhost = 0;
+		var cDragon = 0;
+		var cRobot = 0;
+		var cBanned = 0;
+		var jMagician = 0;
+		var jAssassin = 0;
+		var jKnight = 0;
+		var jSwordman = 0;
+		var jFighter = 0;
+		var jGunner = 0;
+		var jTransformer = 0;
+		var jRanger = 0;
+		var jElementalist = 0;
+		var jGuardian = 0;
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+		$(document).ready(function() {
+			patchSlide();
+			setName();
+			setTier();
+			setTagLv1();
+			setFirst();
+		});
+		function setFirst() {
+			$('.unit').addClass('dim');
+			setClick();
+			hideDescs();
+		};
+		function setClick() {
+			$('#btn-lv1').on('click',function(){
+				setTagLv1();
+				$('#view-lv').text('레벨: 1');
+			});
+			$('#btn-lv2').on('click',function(){
+				setTagLv2();
+				$('#view-lv').text('레벨: 2');
+			});
+			$('#btn-lv3').on('click',function(){
+				setTagLv3();
+				$('#view-lv').text('레벨: 3');
+			});
+			$('#btn-lv4').on('click',function(){
+				setTagLv4();
+				$('#view-lv').text('레벨: 4');
+			});
+			$('#btn-lv5').on('click',function(){
+				setTagLv5();
+				$('#view-lv').text('레벨: 5');
+			});
+			$('#btn-lv6').on('click',function(){
+				setTagLv6();
+				$('#view-lv').text('레벨: 6');
+			});
+			$('#btn-lv7').on('click',function(){
+				setTagLv7();
+				$('#view-lv').text('레벨: 7');
+			});
+			$('#btn-lv8').on('click',function(){
+				setTagLv8();
+				$('#view-lv').text('레벨: 8');
+			});
+			$('#btn-lv9').on('click',function(){
+				setTagLv9();
+				$('#view-lv').text('레벨: 9');
+			});
+			$('.unit-Aatrox').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Aatrox;
+					$('.unit-Aatrox').removeClass('dim');
+				} else {
+					--Aatrox;
+					if(Aatrox == 0) {
+						$('.unit-Aatrox').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Ahri').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Ahri;
+					$('.unit-Ahri').removeClass('dim');
+				} else {
+					--Ahri;
+					if(Ahri == 0) {
+						$('.unit-Ahri').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Akali').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Akali;
+					$('.unit-Akali').removeClass('dim');
+				} else {
+					--Akali;
+					if(Akali == 0) {
+						$('.unit-Akali').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Anivia').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Anivia;
+					$('.unit-Anivia').removeClass('dim');
+				} else {
+					--Anivia;
+					if(Anivia == 0) {
+						$('.unit-Anivia').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Ashe').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Ashe;
+					$('.unit-Ashe').removeClass('dim');
+				} else {
+					--Ashe;
+					if(Ashe == 0) {
+						$('.unit-Ashe').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Aurelionsol').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Aurelionsol;
+					$('.unit-Aurelionsol').removeClass('dim');
+				} else {
+					--Aurelionsol;
+					if(Aurelionsol == 0) {
+						$('.unit-Aurelionsol').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Blitzcrank').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Blitzcrank;
+					$('.unit-Blitzcrank').removeClass('dim');
+				} else {
+					--Blitzcrank;
+					if(Blitzcrank == 0) {
+						$('.unit-Blitzcrank').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Brand').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Brand;
+					$('.unit-Brand').removeClass('dim');
+				} else {
+					--Brand;
+					if(Brand == 0) {
+						$('.unit-Brand').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Braum').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Braum;
+					$('.unit-Braum').removeClass('dim');
+				} else {
+					--Braum;
+					if(Braum == 0) {
+						$('.unit-Braum').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Chogath').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Chogath;
+					$('.unit-Chogath').removeClass('dim');
+				} else {
+					--Chogath;
+					if(Chogath == 0) {
+						$('.unit-Chogath').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Darius').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Darius;
+					$('.unit-Darius').removeClass('dim');
+				} else {
+					--Darius;
+					if(Darius == 0) {
+						$('.unit-Darius').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Draven').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Draven;
+					$('.unit-Draven').removeClass('dim');
+				} else {
+					--Draven;
+					if(Draven == 0) {
+						$('.unit-Draven').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Elise').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Elise;
+					$('.unit-Elise').removeClass('dim');
+				} else {
+					--Elise;
+					if(Elise == 0) {
+						$('.unit-Elise').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Evelynn').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Evelynn;
+					$('.unit-Evelynn').removeClass('dim');
+				} else {
+					--Evelynn;
+					if(Evelynn == 0) {
+						$('.unit-Evelynn').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Fiora').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Fiora;
+					$('.unit-Fiora').removeClass('dim');
+				} else {
+					--Fiora;
+					if(Fiora == 0) {
+						$('.unit-Fiora').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Gangplank').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Gangplank;
+					$('.unit-Gangplank').removeClass('dim');
+				} else {
+					--Gangplank;
+					if(Gangplank == 0) {
+						$('.unit-Gangplank').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Garen').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Garen;
+					$('.unit-Garen').removeClass('dim');
+				} else {
+					--Garen;
+					if(Garen == 0) {
+						$('.unit-Garen').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Gnar').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Gnar;
+					$('.unit-Gnar').removeClass('dim');
+				} else {
+					--Gnar;
+					if(Gnar == 0) {
+						$('.unit-Gnar').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Graves').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Graves;
+					$('.unit-Graves').removeClass('dim');
+				} else {
+					--Graves;
+					if(Graves == 0) {
+						$('.unit-Graves').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Karthus').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Karthus;
+					$('.unit-Karthus').removeClass('dim');
+				} else {
+					--Karthus;
+					if(Karthus == 0) {
+						$('.unit-Karthus').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Kassadin').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Kassadin;
+					$('.unit-Kassadin').removeClass('dim');
+				} else {
+					--Kassadin;
+					if(Kassadin == 0) {
+						$('.unit-Kassadin').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Katarina').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Katarina;
+					$('.unit-Katarina').removeClass('dim');
+				} else {
+					--Katarina;
+					if(Katarina == 0) {
+						$('.unit-Katarina').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Kayle').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Kayle;
+					$('.unit-Kayle').removeClass('dim');
+				} else {
+					--Kayle;
+					if(Kayle == 0) {
+						$('.unit-Kayle').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Kennen').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Kennen;
+					$('.unit-Kennen').removeClass('dim');
+				} else {
+					--Kennen;
+					if(Kennen == 0) {
+						$('.unit-Kennen').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Khazix').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Khazix;
+					$('.unit-Khazix').removeClass('dim');
+				} else {
+					--Khazix;
+					if(Khazix == 0) {
+						$('.unit-Khazix').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Kindred').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Kindred;
+					$('.unit-Kindred').removeClass('dim');
+				} else {
+					--Kindred;
+					if(Kindred == 0) {
+						$('.unit-Kindred').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Leona').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Leona;
+					$('.unit-Leona').removeClass('dim');
+				} else {
+					--Leona;
+					if(Leona == 0) {
+						$('.unit-Leona').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Lissandra').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Lissandra;
+					$('.unit-Lissandra').removeClass('dim');
+				} else {
+					--Lissandra;
+					if(Lissandra == 0) {
+						$('.unit-Lissandra').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Lucian').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Lucian;
+					$('.unit-Lucian').removeClass('dim');
+				} else {
+					--Lucian;
+					if(Lucian == 0) {
+						$('.unit-Lucian').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Lulu').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Lulu;
+					$('.unit-Lulu').removeClass('dim');
+				} else {
+					--Lulu;
+					if(Lulu == 0) {
+						$('.unit-Lulu').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Missfortune').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Missfortune;
+					$('.unit-Missfortune').removeClass('dim');
+				} else {
+					--Missfortune;
+					if(Missfortune == 0) {
+						$('.unit-Missfortune').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Mordekaiser').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Mordekaiser;
+					$('.unit-Mordekaiser').removeClass('dim');
+				} else {
+					--Mordekaiser;
+					if(Mordekaiser == 0) {
+						$('.unit-Mordekaiser').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Morgana').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Morgana;
+					$('.unit-Morgana').removeClass('dim');
+				} else {
+					--Morgana;
+					if(Morgana == 0) {
+						$('.unit-Morgana').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Nidalee').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Nidalee;
+					$('.unit-Nidalee').removeClass('dim');
+				} else {
+					--Nidalee;
+					if(Nidalee == 0) {
+						$('.unit-Nidalee').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Poppy').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Poppy;
+					$('.unit-Poppy').removeClass('dim');
+				} else {
+					--Poppy;
+					if(Poppy == 0) {
+						$('.unit-Poppy').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Pyke').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Pyke;
+					$('.unit-Pyke').removeClass('dim');
+				} else {
+					--Pyke;
+					if(Pyke == 0) {
+						$('.unit-Pyke').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Reksai').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Reksai;
+					$('.unit-Reksai').removeClass('dim');
+				} else {
+					--Reksai;
+					if(Reksai == 0) {
+						$('.unit-Reksai').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Rengar').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Rengar;
+					$('.unit-Rengar').removeClass('dim');
+				} else {
+					--Rengar;
+					if(Rengar == 0) {
+						$('.unit-Rengar').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Sejuani').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Sejuani;
+					$('.unit-Sejuani').removeClass('dim');
+				} else {
+					--Sejuani;
+					if(Sejuani == 0) {
+						$('.unit-Sejuani').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Shen').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Shen;
+					$('.unit-Shen').removeClass('dim');
+				} else {
+					--Shen;
+					if(Shen == 0) {
+						$('.unit-Shen').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Shyvana').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Shyvana;
+					$('.unit-Shyvana').removeClass('dim');
+				} else {
+					--Shyvana;
+					if(Shyvana == 0) {
+						$('.unit-Shyvana').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Swain').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Swain;
+					$('.unit-Swain').removeClass('dim');
+				} else {
+					--Swain;
+					if(Swain == 0) {
+						$('.unit-Swain').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Tristana').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Tristana;
+					$('.unit-Tristana').removeClass('dim');
+				} else {
+					--Tristana;
+					if(Tristana == 0) {
+						$('.unit-Tristana').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Varus').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Varus;
+					$('.unit-Varus').removeClass('dim');
+				} else {
+					--Varus;
+					if(Varus == 0) {
+						$('.unit-Varus').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Vayne').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Vayne;
+					$('.unit-Vayne').removeClass('dim');
+				} else {
+					--Vayne;
+					if(Vayne == 0) {
+						$('.unit-Vayne').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Veigar').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Veigar;
+					$('.unit-Veigar').removeClass('dim');
+				} else {
+					--Veigar;
+					if(Veigar == 0) {
+						$('.unit-Veigar').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Volibear').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Volibear;
+					$('.unit-Volibear').removeClass('dim');
+				} else {
+					--Volibear;
+					if(Volibear == 0) {
+						$('.unit-Volibear').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Warwick').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Warwick;
+					$('.unit-Warwick').removeClass('dim');
+				} else {
+					--Warwick;
+					if(Warwick == 0) {
+						$('.unit-Warwick').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Yasuo').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Yasuo;
+					$('.unit-Yasuo').removeClass('dim');
+				} else {
+					--Yasuo;
+					if(Yasuo == 0) {
+						$('.unit-Yasuo').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Zed').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Zed;
+					$('.unit-Zed').removeClass('dim');
+				} else {
+					--Zed;
+					if(Zed == 0) {
+						$('.unit-Zed').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('#darkin-up').on('click',function(){
+				++Darkin;
+				$('#darkin-num').text(Darkin);
+				$('.unit-Darkin').removeClass('dim');
+				calSum();
+			});
+			$('#darkin-down').on('click',function(){
+				if (Darkin > 0) {
+					--Darkin;
+					$('#darkin-num').text(Darkin);
+					if (Darkin == 0) {
+						$('.unit-Darkin').addClass('dim');
+					}
+					calSum();
+				}
+			});
+			$('#hammer-up').on('click',function(){
+				++Hammer;
+				$('#hammer-num').text(Hammer);
+				$('.unit-Hammer').removeClass('dim');
+				calSum();
+			});
+			$('#hammer-down').on('click',function(){
+				if (Hammer > 0) {
+					--Hammer;
+					$('#hammer-num').text(Hammer);
+					if (Hammer == 0) {
+						$('.unit-Hammer').addClass('dim');
+					}
+					calSum();
+				}
+			});
+			$('#youmu-up').on('click',function(){
+				++Youmu;
+				$('#youmu-num').text(Youmu);
+				$('.unit-Youmu').removeClass('dim');
+				calSum();
+			});
+			$('#youmu-down').on('click',function(){
+				if (Youmu > 0) {
+					--Youmu;
+					$('#youmu-num').text(Youmu);
+					if (Youmu == 0) {
+						$('.unit-Youmu').addClass('dim');
+					}
+					calSum();
+				}
+			});
+			$('#yumi-up').on('click',function(){
+				++Yumi;
+				$('#yumi-num').text(Yumi);
+				$('.unit-Yumi').removeClass('dim');
+				calSum();
+			});
+			$('#yumi-down').on('click',function(){
+				if (Yumi > 0) {
+					--Yumi;
+					$('#yumi-num').text(Yumi);
+					if (Yumi == 0) {
+						$('.unit-Yumi').addClass('dim');
+					}
+					calSum();
+				}
+			});
+			$('#knight-up').on('click',function(){
+				++Knight;
+				$('#knight-num').text(Knight);
+				$('.unit-Knight').removeClass('dim');
+				calSum();
+			});
+			$('#knight-down').on('click',function(){
+				if (Knight > 0) {
+					--Knight;
+					$('#knight-num').text(Knight);
+					if (Knight == 0) {
+						$('.unit-Knight').addClass('dim');
+					}
+					calSum();
+				}
+			});
+			$('#molak-up').on('click',function(){
+				++Molak;
+				$('#molak-num').text(Molak);
+				$('.unit-Molak').removeClass('dim');
+				calSum();
+			});
+			$('#molak-down').on('click',function(){
+				if (Molak > 0) {
+					--Molak;
+					$('#molak-num').text(Molak);
+					if (Molak == 0) {
+						$('.unit-Molak').addClass('dim');
+					}
+					calSum();
+				}
+			});
+		};
+		function hideDescs() {
+			$('.desc').hide();
+		};
+		function calSum() {
+			cDevil = 0;
+			cIce = 0;
+			cRoyal = 0;
+			cYodel = 0;
+			cWild = 0;
+			cNinja = 0;
+			cKingdom = 0;
+			cVoid = 0;
+			cPirate = 0;
+			cGhost = 0;
+			cDragon = 0;
+			cRobot = 0;
+			cBanned = 0;
+			jMagician = 0;
+			jAssassin = 0;
+			jKnight = 0;
+			jSwordman = 0;
+			jFighter = 0;
+			jGunner = 0;
+			jTransformer = 0;
+			jRanger = 0;
+			jElementalist = 0;
+			jGuardian = 0;
+			hideDescs();
+			if (Varus > 0) ++cDevil;
+			if (Elise > 0) ++cDevil;
+			if (Aatrox > 0) ++cDevil;
+			if (Morgana > 0) ++cDevil;
+			if (Evelynn > 0) ++cDevil;
+			if (Brand > 0) ++cDevil;
+			if (Swain > 0) ++cDevil;
+			if (Darkin > 0) cDevil += Darkin;
+			$('.sum-devil').removeClass('color-hilight');
+			if (cDevil > 5) {
+				$('#devil-6').addClass('color-hilight');
+				$('#desc-devil-6').show();
+			} else if (cDevil > 3) {
+				$('#devil-4').addClass('color-hilight');
+				$('#desc-devil-4').show();
+			} else if (cDevil > 1) {
+				$('#devil-2').addClass('color-hilight');
+				$('#desc-devil-2').show();
+			}
+			if (cDevil > 0) {
+				$('#view-devil').text('악마x'+cDevil);
+				$('#title-devil').text('악마('+cDevil+')');
+			} else {
+				$('#view-devil').text('');
+				$('#title-devil').text('악마');
+			}
+			if (Lissandra > 0) ++cIce;
+			if (Braum > 0) ++cIce;
+			if (Volibear > 0) ++cIce;
+			if (Ashe > 0) ++cIce;
+			if (Sejuani > 0) ++cIce;
+			if (Anivia > 0) ++cIce;
+			if (Hammer > 0) cIce += Hammer;
+			$('.sum-ice').removeClass('color-hilight');
+			if (cIce > 5) {
+				$('#ice-6').addClass('color-hilight');
+				$('#desc-ice-6').show();
+			} else if (cIce > 3) {
+				$('#ice-4').addClass('color-hilight');
+				$('#desc-ice-4').show();
+			} else if (cIce > 1) {
+				$('#ice-2').addClass('color-hilight');
+				$('#desc-ice-2').show();
+			}
+			if (cIce > 0) {
+				$('#view-ice').text('빙하x'+cIce);
+				$('#title-ice').text('빙하('+cIce+')');
+			} else {
+				$('#view-ice').text('');
+				$('#title-ice').text('빙하');
+			}
+			if (Garen > 0) ++cRoyal;
+			if (Vayne > 0) ++cRoyal;
+			if (Fiora > 0) ++cRoyal;
+			if (Lucian > 0) ++cRoyal;
+			if (Leona > 0) ++cRoyal;
+			if (Kayle > 0) ++cRoyal;
+			$('.sum-royal').removeClass('color-hilight');
+			if (cRoyal > 5) {
+				$('#royal-6').addClass('color-hilight');
+				$('#desc-royal-6').show();
+			} else if (cRoyal > 2) {
+				$('#royal-3').addClass('color-hilight');
+				$('#desc-royal-3').show();
+			}
+			if (cRoyal > 0) {
+				$('#view-royal').text('귀족x'+cRoyal);
+				$('#title-royal').text('귀족('+cRoyal+')');
+			} else {
+				$('#view-royal').text('');
+				$('#title-royal').text('귀족');
+			}
+			if (Tristana > 0) ++cYodel;
+			if (Lulu > 0) ++cYodel;
+			if (Veigar > 0) ++cYodel;
+			if (Poppy > 0) ++cYodel;
+			if (Kennen > 0) ++cYodel;
+			if (Gnar > 0) ++cYodel;
+			$('.sum-yodel').removeClass('color-hilight');
+			if (cYodel > 5) {
+				$('#yodel-6').addClass('color-hilight');
+				$('#desc-yodel-6').show();
+			} else if (cYodel > 2) {
+				$('#yodel-3').addClass('color-hilight');
+				$('#desc-yodel-3').show();
+			}
+			if (cYodel > 0) {
+				$('#view-yodel').text('요들x'+cYodel);
+				$('#title-yodel').text('요들('+cYodel+')');
+			} else {
+				$('#view-yodel').text('');
+				$('#title-yodel').text('요들');
+			}
+			if (Nidalee > 0) ++cWild;
+			if (Warwick > 0) ++cWild;
+			if (Ahri > 0) ++cWild;
+			if (Rengar > 0) ++cWild;
+			if (Gnar > 0) ++cWild;
+			$('.sum-wild').removeClass('color-hilight');
+			if (cWild > 3) {
+				$('#wild-4').addClass('color-hilight');
+				$('#desc-wild-4').show();
+			} else if (cWild > 1) {
+				$('#wild-2').addClass('color-hilight');
+				$('#desc-wild-2').show();
+			}
+			if (cWild > 0) {
+				$('#view-wild').text('야생x'+cWild);
+				$('#title-wild').text('야생('+cWild+')');
+			} else {
+				$('#view-wild').text('');
+				$('#title-wild').text('야생');
+			}
+			if (Shen > 0) ++cNinja;
+			if (Zed > 0) ++cNinja;
+			if (Kennen > 0) ++cNinja;
+			if (Akali > 0) ++cNinja;
+			$('.sum-ninja').removeClass('color-hilight');
+			if (cNinja > 3) {
+				$('#ninja-4').addClass('color-hilight');
+				$('#desc-ninja-4').show();
+			} else if (cNinja > 1) {
+				$('#ninja-x').addClass('color-hilight');
+			} else if (cNinja > 0) {
+				$('#ninja-1').addClass('color-hilight');
+				$('#desc-ninja-1').show();
+			}
+			if (cNinja > 0) {
+				$('#view-ninja').text('닌자x'+cNinja);
+				$('#title-ninja').text('닌자('+cNinja+')');
+			} else {
+				$('#view-ninja').text('');
+				$('#title-ninja').text('닌자');
+			}
+			if (Darius > 0) ++cKingdom;
+			if (Katarina > 0) ++cKingdom;
+			if (Draven > 0) ++cKingdom;
+			if (Swain > 0) ++cKingdom;
+			$('.sum-kingdom').removeClass('color-hilight');
+			if (cKingdom > 3) {
+				$('#kingdom-4').addClass('color-hilight');
+				$('#desc-kingdom-4').show();
+			} else if (cKingdom > 1) {
+				$('#kingdom-2').addClass('color-hilight');
+				$('#desc-kingdom-2').show();
+			}
+			if (cKingdom > 0) {
+				$('#view-kingdom').text('제국x'+cKingdom);
+				$('#title-kingdom').text('제국('+cKingdom+')');
+			} else {
+				$('#view-kingdom').text('');
+				$('#title-kingdom').text('제국');
+			}
+			if (Kassadin > 0) ++cVoid;
+			if (Khazix > 0) ++cVoid;
+			if (Reksai > 0) ++cVoid;
+			if (Chogath > 0) ++cVoid;
+			$('.sum-void').removeClass('color-hilight');
+			if (cVoid > 2) {
+				$('#void-3').addClass('color-hilight');
+				$('#desc-void-3').show();
+			}
+			if (cVoid > 0) {
+				$('#view-void').text('공허x'+cVoid);
+				$('#title-void').text('공허('+cVoid+')');
+			} else {
+				$('#view-void').text('');
+				$('#title-void').text('공허');
+			}
+			if (Graves > 0) ++cPirate;
+			if (Pyke > 0) ++cPirate;
+			if (Gangplank > 0) ++cPirate;
+			if (Missfortune > 0) ++cPirate;
+			$('.sum-pirate').removeClass('color-hilight');
+			if (cPirate > 2) {
+				$('#pirate-3').addClass('color-hilight');
+				$('#desc-pirate-3').show();
+			}
+			if (cPirate > 0) {
+				$('#view-pirate').text('해적x'+cPirate);
+				$('#title-pirate').text('해적('+cPirate+')');
+			} else {
+				$('#view-pirate').text('');
+				$('#title-pirate').text('해적');
+			}
+			if (Mordekaiser > 0) ++cGhost;
+			if (Kindred > 0) ++cGhost;
+			if (Karthus > 0) ++cGhost;
+			$('.sum-ghost').removeClass('color-hilight');
+			if (cGhost > 1) {
+				$('#ghost-2').addClass('color-hilight');
+				$('#desc-ghost-2').show();
+			}
+			if (cGhost > 0) {
+				$('#view-ghost').text('유령x'+cGhost);
+				$('#title-ghost').text('유령('+cGhost+')');
+			} else {
+				$('#view-ghost').text('');
+				$('#title-ghost').text('유령');
+			}
+			if (Shyvana > 0) ++cDragon;
+			if (Aurelionsol > 0) ++cDragon;
+			$('.sum-dragon').removeClass('color-hilight');
+			if (cDragon > 1) {
+				$('#dragon-2').addClass('color-hilight');
+				$('#desc-dragon-2').show();
+			}
+			if (cDragon > 0) {
+				$('#view-dragon').text('용x'+cDragon);
+				$('#title-dragon').text('용('+cDragon+')');
+			} else {
+				$('#view-dragon').text('');
+				$('#title-dragon').text('용');
+			}
+			if (Blitzcrank > 0) ++cRobot;
+			$('.sum-robot').removeClass('color-hilight');
+			if (cRobot > 0) {
+				$('#robot-1').addClass('color-hilight');
+				$('#desc-robot-1').show();
+			}
+			if (cRobot > 0) {
+				$('#view-robot').text('로봇x'+cRobot);
+				$('#title-robot').text('로봇('+cRobot+')');
+			} else {
+				$('#view-robot').text('');
+				$('#title-robot').text('로봇');
+			}
+			if (Yasuo > 0) ++cBanned;
+			$('.sum-banned').removeClass('color-hilight');
+			if (cBanned > 0) {
+				$('#banned-1').addClass('color-hilight');
+				$('#desc-banned-1').show();
+			}
+			if (cBanned > 0) {
+				$('#view-banned').text('추방자x'+cBanned);
+				$('#title-banned').text('추방자('+cBanned+')');
+			} else {
+				$('#view-banned').text('');
+				$('#title-banned').text('추방자');
+			}
+			if (Kassadin > 0) ++jMagician;
+			if (Ahri > 0) ++jMagician;
+			if (Lulu > 0) ++jMagician;
+			if (Morgana > 0) ++jMagician;
+			if (Veigar > 0) ++jMagician;
+			if (Aurelionsol > 0) ++jMagician;
+			if (Karthus > 0) ++jMagician;
+			if (Yumi > 0) jMagician += Yumi;
+			$('.sum-magician').removeClass('color-hilight');
+			if (jMagician > 5) {
+				$('#magician-6').addClass('color-hilight');
+				$('#desc-magician-6').show();
+			} else if (jMagician > 2) {
+				$('#magician-3').addClass('color-hilight');
+				$('#desc-magician-3').show();
+			}
+			if (jMagician > 0) {
+				$('#view-magician').text('마법사x'+jMagician);
+				$('#title-magician').text('마법사('+jMagician+')');
+			} else {
+				$('#view-magician').text('');
+				$('#title-magician').text('마법사');
+			}
+			if (Khazix > 0) ++jAssassin;
+			if (Zed > 0) ++jAssassin;
+			if (Pyke > 0) ++jAssassin;
+			if (Rengar > 0) ++jAssassin;
+			if (Evelynn > 0) ++jAssassin;
+			if (Katarina > 0) ++jAssassin;
+			if (Akali > 0) ++jAssassin;
+			if (Youmu > 0) jAssassin += Youmu;
+			$('.sum-assassin').removeClass('color-hilight');
+			if (jAssassin > 5) {
+				$('#assassin-6').addClass('color-hilight');
+				$('#desc-assassin-6').show();
+			} else if (jAssassin > 2) {
+				$('#assassin-3').addClass('color-hilight');
+				$('#desc-assassin-3').show();
+			}
+			if (jAssassin > 0) {
+				$('#view-assassin').text('암살자x'+jAssassin);
+				$('#title-assassin').text('암살자('+jAssassin+')');
+			} else {
+				$('#view-assassin').text('');
+				$('#title-assassin').text('암살자');
+			}
+			if (Garen > 0) ++jKnight;
+			if (Darius > 0) ++jKnight;
+			if (Mordekaiser > 0) ++jKnight;
+			if (Poppy > 0) ++jKnight;
+			if (Sejuani > 0) ++jKnight;
+			if (Kayle > 0) ++jKnight;
+			if (Knight > 0) jKnight += Knight;
+			$('.sum-knight').removeClass('color-hilight');
+			if (jKnight > 5) {
+				$('#knight-6').addClass('color-hilight');
+				$('#desc-knight-6').show();
+			} else if (jKnight > 3) {
+				$('#knight-4').addClass('color-hilight');
+				$('#desc-knight-4').show();
+			} else if (jKnight > 1) {
+				$('#knight-2').addClass('color-hilight');
+				$('#desc-knight-2').show();
+			}
+			if (jKnight > 0) {
+				$('#view-knight').text('기사x'+jKnight);
+				$('#title-knight').text('기사('+jKnight+')');
+			} else {
+				$('#view-knight').text('');
+				$('#title-knight').text('기사');
+			}
+			if (Fiora > 0) ++jSwordman;
+			if (Shen > 0) ++jSwordman;
+			if (Aatrox > 0) ++jSwordman;
+			if (Gangplank > 0) ++jSwordman;
+			if (Draven > 0) ++jSwordman;
+			if (Yasuo > 0) ++jSwordman;
+			if (Molak > 0) jSwordman += Molak;
+			$('.sum-swordman').removeClass('color-hilight');
+			if (jSwordman > 5) {
+				$('#swordman-6').addClass('color-hilight');
+				$('#desc-swordman-6').show();
+			} else if (jSwordman > 2) {
+				$('#swordman-3').addClass('color-hilight');
+				$('#desc-swordman-3').show();
+			}
+			if (jSwordman > 0) {
+				$('#view-swordman').text('검사x'+jSwordman);
+				$('#title-swordman').text('검사('+jSwordman+')');
+			} else {
+				$('#view-swordman').text('');
+				$('#title-swordman').text('검사');
+			}
+			if (Warwick > 0) ++jFighter;
+			if (Reksai > 0) ++jFighter;
+			if (Blitzcrank > 0) ++jFighter;
+			if (Volibear > 0) ++jFighter;
+			if (Chogath > 0) ++jFighter;
+			$('.sum-fighter').removeClass('color-hilight');
+			if (jFighter > 3) {
+				$('#fighter-4').addClass('color-hilight');
+				$('#desc-fighter-4').show();
+			} else if (jFighter > 1) {
+				$('#fighter-2').addClass('color-hilight');
+				$('#desc-fighter-2').show();
+			}
+			if (jFighter > 0) {
+				$('#view-fighter').text('싸움꾼x'+jFighter);
+				$('#title-fighter').text('싸움꾼('+jFighter+')');
+			} else {
+				$('#view-fighter').text('');
+				$('#title-fighter').text('싸움꾼');
+			}
+			if (Graves > 0) ++jGunner;
+			if (Tristana > 0) ++jGunner;
+			if (Lucian > 0) ++jGunner;
+			if (Gangplank > 0) ++jGunner;
+			if (Missfortune > 0) ++jGunner;
+			$('.sum-gunner').removeClass('color-hilight');
+			if (jGunner > 3) {
+				$('#gunner-4').addClass('color-hilight');
+				$('#desc-gunner-4').show();
+			} else if (jGunner > 1) {
+				$('#gunner-2').addClass('color-hilight');
+				$('#desc-gunner-2').show();
+			}
+			if (jGunner > 0) {
+				$('#view-gunner').text('총잡이x'+jGunner);
+				$('#title-gunner').text('총잡이('+jGunner+')');
+			} else {
+				$('#view-gunner').text('');
+				$('#title-gunner').text('총잡이');
+			}
+			if (Nidalee > 0) ++jTransformer;
+			if (Elise > 0) ++jTransformer;
+			if (Shyvana > 0) ++jTransformer;
+			if (Gnar > 0) ++jTransformer;
+			if (Swain > 0) ++jTransformer;
+			$('.sum-transformer').removeClass('color-hilight');
+			if (jTransformer > 2) {
+				$('#transformer-3').addClass('color-hilight');
+				$('#desc-transformer-3').show();
+			}
+			if (jTransformer > 0) {
+				$('#view-transformer').text('형상변환자x'+jTransformer);
+				$('#title-transformer').text('형상변환자('+jTransformer+')');
+			} else {
+				$('#view-transformer').text('');
+				$('#title-transformer').text('형상변환자');
+			}
+			if (Vayne > 0) ++jRanger;
+			if (Varus > 0) ++jRanger;
+			if (Ashe > 0) ++jRanger;
+			if (Kindred > 0) ++jRanger;
+			$('.sum-ranger').removeClass('color-hilight');
+			if (jRanger > 3) {
+				$('#ranger-4').addClass('color-hilight');
+				$('#desc-ranger-4').show();
+			} else if (jRanger > 1) {
+				$('#ranger-2').addClass('color-hilight');
+				$('#desc-ranger-2').show();
+			}
+			if (jRanger > 0) {
+				$('#view-ranger').text('정찰대x'+jRanger);
+				$('#title-ranger').text('정찰대('+jRanger+')');
+			} else {
+				$('#view-ranger').text('');
+				$('#title-ranger').text('형상변환자');
+			}
+			if (Lissandra > 0) ++jElementalist;
+			if (Kennen > 0) ++jElementalist;
+			if (Brand > 0) ++jElementalist;
+			if (Anivia > 0) ++jElementalist;
+			$('.sum-elementalist').removeClass('color-hilight');
+			if (jElementalist > 2) {
+				$('#elementalist-3').addClass('color-hilight');
+				$('#desc-elementalist-3').show();
+			}
+			if (jElementalist > 0) {
+				$('#view-elementalist').text('원소술사x'+jElementalist);
+				$('#title-elementalist').text('원소술사('+jElementalist+')');
+			} else {
+				$('#view-elementalist').text('');
+				$('#title-elementalist').text('원소술사');
+			}
+			if (Braum > 0) ++jGuardian;
+			if (Leona > 0) ++jGuardian;
+			$('.sum-guardian').removeClass('color-hilight');
+			if (jGuardian > 1) {
+				$('#guardian-2').addClass('color-hilight');
+				$('#desc-guardian-2').show();
+			}
+			if (jGuardian > 0) {
+				$('#view-guardian').text('수호자x'+jGuardian);
+				$('#title-guardian').text('수호자('+jGuardian+')');
+			} else {
+				$('#view-guardian').text('');
+				$('#title-guardian').text('수호자');
+			}
+		};
+		function patchSlide() {
+			$('.patch-body').slideUp();
+			$('.patch-header').on('click',function(){
+				$('.patch-body').slideToggle();
+			});
+		};
+		function setTier() {
+			$('.unit-Garen').addClass('tier-1');
+			$('.unit-Graves').addClass('tier-1');
+			$('.unit-Nidalee').addClass('tier-1');
+			$('.unit-Darius').addClass('tier-1');
+			$('.unit-Mordekaiser').addClass('tier-1');
+			$('.unit-Vayne').addClass('tier-1');
+			$('.unit-Warwick').addClass('tier-1');
+			$('.unit-Kassadin').addClass('tier-1');
+			$('.unit-Khazix').addClass('tier-1');
+			$('.unit-Tristana').addClass('tier-1');
+			$('.unit-Fiora').addClass('tier-1');
+			$('.unit-Reksai').addClass('tier-2');
+			$('.unit-Lucian').addClass('tier-2');
+			$('.unit-Lulu').addClass('tier-2');
+			$('.unit-Lissandra').addClass('tier-2');
+			$('.unit-Varus').addClass('tier-2');
+			$('.unit-Braum').addClass('tier-2');
+			$('.unit-Blitzcrank').addClass('tier-2');
+			$('.unit-Shen').addClass('tier-2');
+			$('.unit-Ahri').addClass('tier-2');
+			$('.unit-Elise').addClass('tier-2');
+			$('.unit-Zed').addClass('tier-2');
+			$('.unit-Pyke').addClass('tier-2');
+			$('.unit-Gangplank').addClass('tier-3');
+			$('.unit-Rengar').addClass('tier-3');
+			$('.unit-Morgana').addClass('tier-3');
+			$('.unit-Veigar').addClass('tier-3');
+			$('.unit-Volibear').addClass('tier-3');
+			$('.unit-Poppy').addClass('tier-3');
+			$('.unit-Shyvana').addClass('tier-3');
+			$('.unit-Aatrox').addClass('tier-3');
+			$('.unit-Ashe').addClass('tier-3');
+			$('.unit-Evelynn').addClass('tier-3');
+			$('.unit-Katarina').addClass('tier-3');
+			$('.unit-Kennen').addClass('tier-3');
+			$('.unit-Gnar').addClass('tier-4');
+			$('.unit-Draven').addClass('tier-4');
+			$('.unit-Leona').addClass('tier-4');
+			$('.unit-Brand').addClass('tier-4');
+			$('.unit-Sejuani').addClass('tier-4');
+			$('.unit-Aurelionsol').addClass('tier-4');
+			$('.unit-Akali').addClass('tier-4');
+			$('.unit-Chogath').addClass('tier-4');
+			$('.unit-Kindred').addClass('tier-4');
+			$('.unit-Missfortune').addClass('tier-5');
+			$('.unit-Swain').addClass('tier-5');
+			$('.unit-Yasuo').addClass('tier-5');
+			$('.unit-Anivia').addClass('tier-5');
+			$('.unit-Karthus').addClass('tier-5');
+			$('.unit-Kayle').addClass('tier-5');
+		};
+		function setName() {
+			$('.unit-Aatrox').find('.unit-top').text('아트록스');
+			$('.unit-Ahri').find('.unit-top').text('아리');
+			$('.unit-Akali').find('.unit-top').text('아칼리');
+			$('.unit-Anivia').find('.unit-top').text('애니비아');
+			$('.unit-Ashe').find('.unit-top').text('애쉬');
+			$('.unit-Aurelionsol').find('.unit-top').text('아우렐리온 솔');
+			$('.unit-Blitzcrank').find('.unit-top').text('블리츠크랭크');
+			$('.unit-Brand').find('.unit-top').text('브랜드');
+			$('.unit-Braum').find('.unit-top').text('브라움');
+			$('.unit-Chogath').find('.unit-top').text('초가스');
+			$('.unit-Darius').find('.unit-top').text('다리우스');
+			$('.unit-Draven').find('.unit-top').text('드레이븐');
+			$('.unit-Elise').find('.unit-top').text('앨리스');
+			$('.unit-Evelynn').find('.unit-top').text('이블린');
+			$('.unit-Fiora').find('.unit-top').text('피오라');
+			$('.unit-Gangplank').find('.unit-top').text('갱플랭크');
+			$('.unit-Garen').find('.unit-top').text('가렌');
+			$('.unit-Gnar').find('.unit-top').text('나르');
+			$('.unit-Graves').find('.unit-top').text('그레이브즈');
+			$('.unit-Karthus').find('.unit-top').text('카서스');
+			$('.unit-Kassadin').find('.unit-top').text('카사딘');
+			$('.unit-Katarina').find('.unit-top').text('카타리나');
+			$('.unit-Kayle').find('.unit-top').text('케일');
+			$('.unit-Kennen').find('.unit-top').text('케넨');
+			$('.unit-Khazix').find('.unit-top').text('카직스');
+			$('.unit-Kindred').find('.unit-top').text('킨드레드');
+			$('.unit-Leona').find('.unit-top').text('레오나');
+			$('.unit-Lissandra').find('.unit-top').text('리산드라');
+			$('.unit-Lucian').find('.unit-top').text('루시안');
+			$('.unit-Lulu').find('.unit-top').text('룰루');
+			$('.unit-Missfortune').find('.unit-top').text('미스 포츈');
+			$('.unit-Mordekaiser').find('.unit-top').text('모데카이저');
+			$('.unit-Morgana').find('.unit-top').text('모르가나');
+			$('.unit-Nidalee').find('.unit-top').text('니달리');
+			$('.unit-Poppy').find('.unit-top').text('뽀삐');
+			$('.unit-Pyke').find('.unit-top').text('파이크');
+			$('.unit-Reksai').find('.unit-top').text('렉사이');
+			$('.unit-Rengar').find('.unit-top').text('렝가');
+			$('.unit-Sejuani').find('.unit-top').text('세주아니');
+			$('.unit-Shen').find('.unit-top').text('쉔');
+			$('.unit-Shyvana').find('.unit-top').text('쉬바나');
+			$('.unit-Swain').find('.unit-top').text('스웨인');
+			$('.unit-Tristana').find('.unit-top').text('트리스타나');
+			$('.unit-Varus').find('.unit-top').text('바루스');
+			$('.unit-Vayne').find('.unit-top').text('베인');
+			$('.unit-Veigar').find('.unit-top').text('베이가');
+			$('.unit-Volibear').find('.unit-top').text('볼리베어');
+			$('.unit-Warwick').find('.unit-top').text('워윅');
+			$('.unit-Yasuo').find('.unit-top').text('야스오');
+			$('.unit-Zed').find('.unit-top').text('제드');
+		};
+		function setTagLv1() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 100%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 0%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 0%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 0%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0%');
+		};
+		function setTagLv2() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 100%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 0%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 0%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 0%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0%');
+		};
+		function setTagLv3() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 65%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 30%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 5%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 0%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0%');
+		};
+		function setTagLv4() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 50%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 35%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 15%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 0%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0%');
+		};
+		function setTagLv5() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 37%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 35%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 25%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 3%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0%');
+		};
+		function setTagLv6() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 24.5%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 35%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 30%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 10%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 0.5%');
+		};
+		function setTagLv7() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 20%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 30%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 33%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 15%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 2%');
+		};
+		function setTagLv8() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 15%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 25%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 35%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 20%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 5%');
+		};
+		function setTagLv9() {
+			$('.tier-1').find('.unit-bottom').text('1티어: 10%');
+			$('.tier-2').find('.unit-bottom').text('2티어: 15%');
+			$('.tier-3').find('.unit-bottom').text('3티어: 35%');
+			$('.tier-4').find('.unit-bottom').text('4티어: 30%');
+			$('.tier-5').find('.unit-bottom').text('5티어: 10%');
+		};
+	</script>
+</head>
+<body>
+	<div class="container-fluid font-ng">
+		<div class="jumbotron" style="margin-bottom: 10px;">
+			<h1 style="margin-top: -2rem; font-weight: bold;">
+				LOL Team Fight Tactics - Unit / <a href="../item/" target="_blank">Item</a>
+			</h1>
+			<p style="height: 1rem;">
+			</p>
+			<p>
+				유닛에 마우스를 올려두면 간략하게 정보를 볼 수 있습니다.
+			</p>
+			<p>
+				유닛을 클릭하면 필드에 소환한 것으로 계산됩니다.
+			</p>
+			<p>
+				뒤집개 아이템의 장착 수를 조절하여 시너지 효과를 확인할 수 있습니다.
+			</p>
+			<p>
+				(Ctrl+마우스휠로 확대/축소가 가능합니다.)
+			</p>
+			<p style="margin-bottom: -2rem;">
+				(Shift+마우스휠로 가로 이동이 가능합니다.)
+			</p>
+		</div>
+		
+		<div class="card card-patch border-primary mb-3" style="margin-bottom: 2rem !important;">
+			<div class="card-header patch-header">
+				<h5 style="margin-bottom: 0px;">
+					패치 내역
+				</h5>
+			</div>
+			<div class="card-body patch-body">
+				<p style="margin-top: -1rem; margin-bottom: 1rem; font-size: 0.8rem;">
+					(맨 아래 링크에서 댓글로 추가기능 건의나 잘못 표기된 사항을 알려주시면 더 빠르게 반영됩니다.)
+				</p>
+				<h5 style="margin-bottom: 0px;">
+					2019.07.04
+				</h5>
+				<p>
+					베타버전에 첫 출시된 유닛들
+				</p>
+			</div>
+		</div>
+		
+		<div style="margin-bottom: 1rem;">
+			<p style="font-size: 1.2rem; font-weight: bold;">
+				레벨 설정(유닛 티어 상점 출현율 계산)
+			</p>
+			<p class="color-white" style="font-size: 1.2rem; font-weight: bold;" id="view-lv">레벨: 1</p>
+			<p>
+				<button class="btn btn-sm btn-secondary" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv1">Lv1</button>
+				<button class="btn btn-sm btn-secondary" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv2">Lv2</button>
+				<button class="btn btn-sm btn-info" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv3">Lv3</button>
+				<button class="btn btn-sm btn-info" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv4">Lv4</button>
+				<button class="btn btn-sm btn-danger" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv5">Lv5</button>
+				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv6">Lv6</button>
+				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv7">Lv7</button>
+				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv8">Lv8</button>
+				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv9">Lv9</button>
+			</p>
+			
+		</div>
+		
+		<table class="no-drag" style="margin-bottom: 1rem;">
+			<thead>
+				<tr>
+					<th>
+						<div class="card-header type-title text-center" style="background-color: #c9c901;">
+							계열
+						</div>
+					</th>
+					<th>
+						<div class="card-header type-title text-center" style="background-color: #b3b3b3;">
+							직업
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Devil">
+											<p class="text-center" style="font-size: 1rem;" id="title-devil">악마</p>
+											<p class="type-bottom text-center">
+												<span class="sum-devil" id="devil-2">(2)</span>
+												<span class="sum-devil" id="devil-4">(4)</span>
+												<span class="sum-devil" id="devil-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Varus" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true"
+											 title="
+													<p>
+														<악마>[정찰대]
+													</p>
+													<p class='text-left'>
+														생명력: 500/900/1800
+													</p>
+													<p class='text-left'>
+														마나: 100
+													</p>
+													<p class='text-left'>
+														초기 마나: 0
+													</p>
+													<p class='text-left'>
+														공격력: 50
+													</p>
+													<p class='text-left'>
+														공격 속도: 0.7
+													</p>
+													<p class='text-left'>
+														사거리: 4
+													</p>
+													<p class='text-left'>
+														DPS: 35
+													</p>
+													<p class='text-left'>
+														방어력: 25
+													</p>
+													<p class='text-left'>
+														마법저항력: 20
+													</p>
+													<p class='text-left'>
+														스킬: 꿰뚫는 화살
+													</p>
+													<p class='text-left'>
+														피해량(400/600/800), 충전시간 1.5초
+													</p>
+													">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Elise">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aatrox">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Morgana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Evelynn">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Brand">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Swain">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Darkin">
+											<p class="unit-top">다르킨</p>
+											<p class="text-center item-arrow item-up" id="darkin-up">▲</p>
+											<p class="text-center item-arrow item-down" id="darkin-down">▼</p>
+											<p>장착: <span id="darkin-num">0</span></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Ice">
+											<p class="text-center" style="font-size: 1rem;" id="title-ice">빙하</p>
+											<p class="type-bottom text-center">
+												<span class="sum-ice" id="ice-2">(2)</span>
+												<span class="sum-ice" id="ice-4">(4)</span>
+												<span class="sum-ice" id="ice-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lissandra">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Braum">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Volibear">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Ashe">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Sejuani">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Anivia">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Hammer">
+											<p class="unit-top">얼어붙은 망치</p>
+											<p class="text-center item-arrow item-up" id="hammer-up">▲</p>
+											<p class="text-center item-arrow item-down" id="hammer-down">▼</p>
+											<p>장착: <span id="hammer-num">0</span></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Royal">
+											<p class="text-center" style="font-size: 1rem;" id="title-royal">귀족</p>
+											<p class="type-bottom text-center">
+												<span class="sum-royal" id="royal-3">(3)</span>
+												<span class="sum-royal" id="royal-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Garen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Vayne">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Fiora">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lucian">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Leona">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kayle">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Yodel">
+											<p class="text-center" style="font-size: 1rem;" id="title-yodel">요들</p>
+											<p class="type-bottom text-center">
+												<span class="sum-yodel" id="yodel-3">(3)</span>
+												<span class="sum-yodel" id="yodel-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Tristana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lulu">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Veigar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Poppy">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kennen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gnar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Banned">
+											<p class="text-center" style="font-size: 1rem;" id="title-banned">추방자</p>
+											<p class="type-bottom text-center">
+												<span class="sum-banned" id="banned-1">(1)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Yasuo">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Wild">
+											<p class="text-center" style="font-size: 1rem;" id="title-wild">야생</p>
+											<p class="type-bottom text-center">
+												<span class="sum-wild" id="wild-2">(2)</span>
+												<span class="sum-wild" id="wild-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Nidalee">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Warwick">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Ahri">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Rengar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gnar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Robot">
+											<p class="text-center" style="font-size: 1rem;" id="title-robot">로봇</p>
+											<p class="type-bottom text-center">
+												<span class="sum-robot" id="robot-1">(1)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Blitzcrank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Ninja">
+											<p class="text-center" style="font-size: 1rem;" id="title-ninja">닌자</p>
+											<p class="type-bottom text-center">
+												<span class="sum-ninja" id="ninja-1">(1)</span>
+												<span class="sum-ninja" id="ninja-x">(X)</span>
+												<span class="sum-ninja" id="ninja-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Zed">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kennen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Akali">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Dragon">
+											<p class="text-center" style="font-size: 1rem;" id="title-dragon">용</p>
+											<p class="type-bottom text-center">
+												<span class="sum-dragon" id="dragon-2">(2)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shyvana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aurelionsol">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Kingdom">
+											<p class="text-center" style="font-size: 1rem;" id="title-kingdom">제국</p>
+											<p class="type-bottom text-center">
+												<span class="sum-kingdom" id="kingdom-2">(2)</span>
+												<span class="sum-kingdom" id="kingdom-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Darius">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Katarina">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Draven">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Swain">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Ghost">
+											<p class="text-center" style="font-size: 1rem;" id="title-ghost">유령</p>
+											<p class="type-bottom text-center">
+												<span class="sum-ghost" id="ghost-2">(2)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Mordekaiser">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kindred">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Karthus">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-class class-Void">
+											<p class="text-center" style="font-size: 1rem;" id="title-void">공허</p>
+											<p class="type-bottom text-center">
+												<span class="sum-void" id="void-3">(3)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kassadin">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Khazix">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Reksai">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Chogath">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Pirate">
+											<p class="text-center" style="font-size: 1rem;" id="title-pirate">해적</p>
+											<p class="type-bottom text-center">
+												<span class="sum-pirate" id="pirate-3">(3)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Graves">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Pyke">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gangplank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Missfortune">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Assassin">
+											<p class="text-center" style="font-size: 1rem;" id="title-assassin">암살자</p>
+											<p class="type-bottom text-center">
+												<span class="sum-assassin" id="assassin-3">(3)</span>
+												<span class="sum-assassin" id="assassin-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Khazix">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Zed">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Pyke">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Rengar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Evelynn">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Katarina">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Akali">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Youmu">
+											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">요우무의 유령검</p>
+											<p class="text-center item-arrow item-up" id="youmu-up">▲</p>
+											<p class="text-center item-arrow item-down" id="youmu-down">▼</p>
+											<p>장착: <span id="youmu-num">0</span></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Magician">
+											<p class="text-center" style="font-size: 1rem;" id="title-magincian">마법사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-magician" id="magician-3">(3)</span>
+												<span class="sum-magician" id="magician-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kassadin">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Ahri">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lulu">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Morgana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Veigar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aurelionsol">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Karthus">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Yumi">
+											<p class="unit-top">유미</p>
+											<p class="text-center item-arrow item-up" id="yumi-up">▲</p>
+											<p class="text-center item-arrow item-down" id="yumi-down">▼</p>
+											<p>장착: <span id="yumi-num">0</span></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Knight">
+											<p class="text-center" style="font-size: 1rem;" id="title-knight">기사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-knight" id="knight-2">(2)</span>
+												<span class="sum-knight" id="knight-4">(4)</span>
+												<span class="sum-knight" id="knight-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Garen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Darius">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Mordekaiser">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Poppy">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Sejuani">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kayle">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Knight">
+											<p class="unit-top">기사의 맹세</p>
+											<p class="text-center item-arrow item-up" id="knight-up">▲</p>
+											<p class="text-center item-arrow item-down" id="knight-down">▼</p>
+											<p>장착: <span id="knight-num">0</span></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Swordman">
+											<p class="text-center" style="font-size: 1rem;" id="title-swordman">검사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-swordman" id="swordman-3">(3)</span>
+												<span class="sum-swordman" id="swordman-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Fiora">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aatrox">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gangplank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Draven">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Yasuo">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Molak">
+											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">몰락한 왕의 검</p>
+											<p class="text-center item-arrow item-up" id="molak-up">▲</p>
+											<p class="text-center item-arrow item-down" id="molak-down">▼</p>
+											<p>장착: <span id="molak-num">0</span></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Fighter">
+											<p class="text-center" style="font-size: 1rem;" id="title-fighter">싸움꾼</p>
+											<p class="type-bottom text-center">
+												<span class="sum-fighter" id="fighter-2">(2)</span>
+												<span class="sum-fighter" id="fighter-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Warwick">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Reksai">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Blitzcrank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Volibear">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Chogath">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Gunner">
+											<p class="text-center" style="font-size: 1rem;" id="title-gunner">총잡이</p>
+											<p class="type-bottom text-center">
+												<span class="sum-gunner" id="gunner-2">(2)</span>
+												<span class="sum-gunner" id="gunner-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Graves">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Tristana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lucian">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gangplank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Missfortune">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Transformer">
+											<p class="text-center" style="font-size: 1rem;" id="title-transformer">형상변환자</p>
+											<p class="type-bottom text-center">
+												<span class="sum-transformer" id="transformer-3">(3)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Nidalee">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Elise">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shyvana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gnar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Swain">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-job job-Guardian">
+											<p class="text-center" style="font-size: 1rem;" id="title-guardian">수호자</p>
+											<p class="type-bottom text-center">
+												<span class="sum-guardian" id="guardian-2">(2)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Braum">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Leona">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									
+								</tr>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Ranger">
+											<p class="text-center" style="font-size: 1rem;" id="title-ranger">정찰대</p>
+											<p class="type-bottom text-center">
+												<span class="sum-ranger" id="ranger-2">(2)</span>
+												<span class="sum-ranger" id="ranger-4">(4)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Vayne">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Varus">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Ashe">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kindred">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-job job-Elementalist">
+											<p class="text-center" style="font-size: 1rem;" id="title-elementalist">원소술사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-elementalist" id="elementalist-3">(3)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lissandra">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kennen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Brand">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Anivia">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div style="margin-bottom: 1rem;">
+			<span class="view view-class" id="view-devil"></span>
+			<span class="view view-class" id="view-ice"></span>
+			<span class="view view-class" id="view-royal"></span>
+			<span class="view view-class" id="view-yodel"></span>
+			<span class="view view-class" id="view-wild"></span>
+			<span class="view view-class" id="view-ninja"></span>
+			<span class="view view-class" id="view-kingdom"></span>
+			<span class="view view-class" id="view-void"></span>
+			<span class="view view-class" id="view-pirate"></span>
+			<span class="view view-class" id="view-ghost"></span>
+			<span class="view view-class" id="view-ghost"></span>
+			<span class="view view-class" id="view-robot"></span>
+			<span class="view view-class" id="view-banned"></span>
+			<span class="view view-job" id="view-assassin"></span>
+			<span class="view view-job" id="view-magician"></span>
+			<span class="view view-job" id="view-knight"></span>
+			<span class="view view-job" id="view-swordman"></span>
+			<span class="view view-job" id="view-fighter"></span>
+			<span class="view view-job" id="view-gunner"></span>
+			<span class="view view-job" id="view-transformer"></span>
+			<span class="view view-job" id="view-ranger"></span>
+			<span class="view view-job" id="view-elementalist"></span>
+			<span class="view view-job" id="view-guardian"></span>
+			<span>&nbsp;</span>
+		</div>
+		
+		<div>
+			<p class="desc" id="desc-devil-2">
+				악마(<span class="color-yellow">2</span>/4/6): 악마 유닛이 공격 시 확률적(<span class="color-yellow">40%</span>/60%/80%)으로 적의 마나를 전부 불태워 없애고 그만큼 고정 피해를 입힙니다.
+			</p>
+			<p class="desc" id="desc-devil-4">
+				악마(2/<span class="color-yellow">4</span>/6): 악마 유닛이 공격 시 확률적(40%/<span class="color-yellow">60%</span>/80%)으로 적의 마나를 전부 불태워 없애고 그만큼 고정 피해를 입힙니다.
+			</p>
+			<p class="desc" id="desc-devil-6">
+				악마(2/4/<span class="color-yellow">6</span>): 악마 유닛이 공격 시 확률적(40%/60%/<span class="color-yellow">80%</span>)으로 적의 마나를 전부 불태워 없애고 그만큼 고정 피해를 입힙니다.
+			</p>
+			<p class="desc" id="desc-ice-2">
+				빙하(<span class="color-yellow">2</span>/4/6): 빙하 유닛이 공격 시 확률적(<span class="color-yellow">25%</span>/35%/45%)으로 적을 2초 동안 기절시킵니다.
+			</p>
+			<p class="desc" id="desc-ice-4">
+				빙하(2/<span class="color-yellow">4</span>/6): 빙하 유닛이 공격 시 확률적(25%/<span class="color-yellow">35%</span>/45%)으로 적을 2초 동안 기절시킵니다.
+			</p>
+			<p class="desc" id="desc-ice-6">
+				빙하(2/4/<span class="color-yellow">6</span>): 빙하 유닛이 공격 시 확률적(25%/35%/<span class="color-yellow">45%</span>)으로 적을 2초 동안 기절시킵니다.
+			</p>
+			<p class="desc" id="desc-royal-3">
+				귀족(<span class="color-yellow">3</span>/6): (<span class="color-yellow">무작위 귀족 아군 하나</span>/모든 아군(귀족이든 아니든))의 방어력이 100 증가하고, 공격할 때마다 35의 체력을 회복합니다.
+			</p>
+			<p class="desc" id="desc-royal-6">
+				귀족(3/<span class="color-yellow">6</span>): (무작위 귀족 아군 하나/<span class="color-yellow">모든 아군(귀족이든 아니든)</span>)의 방어력이 100 증가하고, 공격할 때마다 35의 체력을 회복합니다.
+			</p>
+			<p class="desc" id="desc-yodel-3">
+				요들(<span class="color-yellow">3</span>/6): 아군 요들 유닛들이 평타 공격에 대해 회피율(<span class="color-yellow">20%</span>/50%)을 얻습니다.
+			</p>
+			<p class="desc" id="desc-yodel-6">
+				요들(3/<span class="color-yellow">6</span>): 아군 요들 유닛들이 평타 공격에 대해 회피율(20%/<span class="color-yellow">50%</span>)을 얻습니다.
+			</p>
+			<p class="desc" id="desc-wild-2">
+				야생(<span class="color-yellow">2</span>/4): (<span class="color-yellow">아군 야생 유닛들</span>/모든 아군(야생이든 아니든))은 공격할 때마다 분노 중첩(최대 5번)이 쌓이며, 중첩된 분노당 공격 속도가 7% 상승합니다.
+			</p>
+			<p class="desc" id="desc-wild-4">
+				야생(2/<span class="color-yellow">4</span>): (아군 야생 유닛들/<span class="color-yellow">모든 아군(야생이든 아니든)</span>)은 공격할 때마다 분노 중첩(최대 5번)이 쌓이며, 중첩된 분노당 공격 속도가 7% 상승합니다.
+			</p>
+			<p class="desc" id="desc-ninja-1">
+				닌자(<span class="color-yellow">1</span>/4): 아군 닌자 유닛들 공격력 +40% (2-3명은 시너지 효과 무효)
+			</p>
+			<p class="desc" id="desc-ninja-4">
+				닌자(1/<span class="color-yellow">4</span>): 아군 닌자 유닛들 공격력 +40% (2-3명은 시너지 효과 무효)
+			</p>
+			<p class="desc" id="desc-kingdom-2">
+				제국(<span class="color-yellow">2</span>/4): (<span class="color-yellow">무작위 제국 아군 하나</span>/아군 제국 유닛들)이 가하는 피해량이 2배로 증가합니다.
+			</p>
+			
+			<p class="desc" id="desc-kingdom-4">
+				제국(2/<span class="color-yellow">4</span>): (무작위 제국 아군 하나/<span class="color-yellow">아군 제국 유닛들</span>)이 가하는 피해량이 2배로 증가합니다.
+			</p>
+			<p class="desc" id="desc-void-3">
+				공허(3): 모든 아군의 기본 공격이 적 방어력의 50%를 무시합니다.
+			</p>
+			<p class="desc" id="desc-pirate-3">
+				해적(3): 전투 후에 자신의 필드에 0-4의 추가 골드 상자가 생성됩니다. (전설이를 움직여 직접 획득해야 합니다.)
+			</p>
+			<p class="desc" id="desc-ghost-2">
+				유령(2): 전투 시작 시 무작위 적군 하나에게 저주를 걸어 체력을 100으로 감소시킵니다.
+			</p>
+			<p class="desc" id="desc-dragon-2">
+				용(2): 아군 용 유닛들은 마법 피해에 면역이 됩니다.
+			</p>
+			<p class="desc" id="desc-robot-1">
+				로봇(1): 아군 로봇 유닛들은 마나가 가득 찬 상태로 전투를 시작합니다.
+			</p>
+			<p class="desc" id="desc-banned-1">
+				추방자(1): 아군 추방자 유닛들은 전투 시작 시 인접한 아군 유닛이 없다면 최대 체력과 동일한 양의 방어막을 얻습니다.
+			</p>
+			<p class="desc" id="desc-assassin-3">
+				암살자(<span class="color-white">3</span>/6): 아군 암살자 유닛들의 치명타 피해량이 (<span class="color-white">150%</span>/350%) 증가합니다.
+			</p>
+			<p class="desc" id="desc-assassin-6">
+				암살자(3/<span class="color-white">6</span>): 아군 암살자 유닛들의 치명타 피해량이 (150%/<span class="color-white">350%</span>) 증가합니다.
+			</p>
+			<p class="desc" id="desc-magician-3">
+				마법사(<span class="color-white">3</span>/6): 모든 아군(마법사든 아니든)의 스킬 피해량이 (<span class="color-white">35%</span>/100%) 증가합니다.
+			</p>
+			<p class="desc" id="desc-magician-6">
+				마법사(3/<span class="color-white">6</span>): 모든 아군(마법사든 아니든)의 스킬 피해량이 (35%/<span class="color-white">100%</span>) 증가합니다.
+			</p>
+			<p class="desc" id="desc-knight-2">
+				기사(<span class="color-white">2</span>/4/6): 아군 기사 유닛들은 평타 피격마다 (<span class="color-white">20</span>/40/80)만큼의 피해를 방어합니다.
+			</p>
+			<p class="desc" id="desc-knight-4">
+				기사(2/<span class="color-white">4</span>/6): 아군 기사 유닛들은 평타 피격마다 (20/<span class="color-white">40</span>/80)만큼의 피해를 방어합니다.
+			</p>
+			<p class="desc" id="desc-knight-6">
+				기사(2/4/<span class="color-white">6</span>): 아군 기사 유닛들은 평타 피격마다 (20/40/<span class="color-white">80</span>)만큼의 피해를 방어합니다.
+			</p>
+			<p class="desc" id="desc-swordman-3">
+				검사(<span class="color-white">3</span>/6): 아군 검사 유닛들은 45% 확률로 추가 공격(<span class="color-white">1번</span>/2번)을 가합니다.
+			</p>
+			<p class="desc" id="desc-swordman-6">
+				검사(3/<span class="color-white">6</span>): 아군 검사 유닛들은 45% 확률로 추가 공격(1번/<span class="color-white">2번</span>)을 가합니다.
+			</p>
+			<p class="desc" id="desc-fighter-2">
+				싸움꾼(<span class="color-white">2</span>/4): 아군 싸움꾼 유닛들은 최대 체력이 (<span class="color-white">300</span>/700) 증가합니다.
+			</p>
+			<p class="desc" id="desc-fighter-4">
+				싸움꾼(2/<span class="color-white">4</span>): 아군 싸움꾼 유닛들은 최대 체력이 (300/<span class="color-white">700</span>) 증가합니다.
+			</p>
+			<p class="desc" id="desc-gunner-2">
+				총잡이(<span class="color-white">2</span>/4): 아군 총잡이 유닛들은 공격 후 50% 확률로 (<span class="color-white">무작위 적 하나</span>/사거리 내의 모든 적 유닛)을 추가로 공격합니다.
+			</p>
+			<p class="desc" id="desc-gunner-4">
+				총잡이(2/<span class="color-white">4</span>): 아군 총잡이 유닛들은 공격 후 50% 확률로 (무작위 적 하나/<span class="color-white">사거리 내의 모든 적 유닛</span>)을 추가로 공격합니다.
+			</p>
+			<p class="desc" id="desc-transformer-3">
+				형상변환자(3): 아군 형상변환자 유닛들이 변신 시 추가 최대 체력(100%)을 얻습니다.
+			</p>
+			<p class="desc" id="desc-ranger-2">
+				정찰대(<span class="color-white">2</span>/4): 아군 정찰대 유닛들은 3초마다 확률적(<span class="color-white">25%</span>/65%)으로 다음 3초 동안 공격 속도가 2배로 증가합니다.
+			</p>
+			<p class="desc" id="desc-ranger-4">
+				정찰대(2/<span class="color-white">4</span>): 아군 정찰대 유닛들은 3초마다 확률적(25%/<span class="color-white">65%</span>)으로 다음 3초 동안 공격 속도가 2배로 증가합니다.
+			</p>
+			<p class="desc" id="desc-elementalist-3">
+				원소술사(3): 전투 시작 시 골렘 하나를 필드에 소환합니다.
+			</p>
+			<p class="desc" id="desc-guardian-2">
+				수호자(2): 전투 중 아군 수호자 유닛들과 그 주변 인접한 아군 유닛들이 방어력 30을 얻습니다.
+			</p>
+		</div>
+		
+		<div class="row" style="height: 10rem;">
+		</div>
+		<blockquote class="">
+			<p>
+				Powered by. 玄鹿 (<a href="https://ydeer.tistory.com/126" target="_blank">https://ydeer.tistory.com</a>)
+			</p>
+		</blockquote>
+		
+	</div>
+</body>
+</html>
