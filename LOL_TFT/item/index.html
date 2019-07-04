@@ -142,10 +142,6 @@
 		}
     </style>
 	<script>
-		$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-			$('[data-toggle="tooltip"]').tooltip()
-		})
 		$(document).ready(function() {
 			addClass();
 			eventToButtons();
@@ -153,6 +149,7 @@
 			setHover();
 			allHide();
 			patchSlide();
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 		function patchSlide() {
 			$('.patch-body').slideUp();

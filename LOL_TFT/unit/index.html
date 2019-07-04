@@ -400,7 +400,8 @@
 			font-weight: bold;
 		}
 		.tooltip-inner {
-    		max-width: 1000px;
+			min-width: 250px;
+    		max-width: 2000px;
 		}
 		.no-drag { -ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none; }
     </style>
@@ -484,10 +485,7 @@
 		var jRanger = 0;
 		var jElementalist = 0;
 		var jGuardian = 0;
-		$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-			$('[data-toggle="tooltip"]').tooltip()
-		})
+
 		$(document).ready(function() {
 			patchSlide();
 			setTooltip();
@@ -497,8 +495,73 @@
 			setFirst();
 		});
 		function setTooltip() {
-			$('.unit-Varus').attr('data-original-title',"<p><악마>[정찰대]</p><p class='text-left'>생명력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.7</p><p class='text-left'>사거리: 4</p><p class='text-left'>DPS: 35</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 꿰뚫는 화살</p><p class='text-left'>피해량(400/600/800), 충전시간 1.5초</p>");
+			$('.icon').attr('data-toggle','tooltip');
+			$('.icon').attr('data-trigger','hover');
+			$('.icon').attr('data-placement','bottom');
+			$('.icon').attr('data-html','true');
+			$('.class-Devil').attr('data-original-title','악마(2/4/6): 악마 유닛이 공격 시 확률적(40%/60%/80%)으로 적의 마나를 전부 불태워 없애고 그만큼 고정 피해를 입힙니다.');
+			$('.class-Ice').attr('data-original-title','빙하(2/4/6): 빙하 유닛이 공격 시 확률적(25%/35%/45%)으로 적을 2초 동안 기절시킵니다.');
+			$('.class-Royal').attr('data-original-title','귀족(3/6): (무작위 귀족 아군 하나/모든 아군(귀족이든 아니든))의 방어력이 100 증가하고, 공격할 때마다 35의 체력을 회복합니다.');
+			$('.class-Yodel').attr('data-original-title','요들(3/6): 아군 요들 유닛들이 평타 공격에 대해 회피율(20%/50%)을 얻습니다.');
+			$('.class-Wild').attr('data-original-title','야생(2/4): (아군 야생 유닛들/모든 아군(야생이든 아니든))은 공격할 때마다 분노 중첩(최대 5번)이 쌓이며, 중첩된 분노당 공격 속도가 7% 상승합니다.');
+			$('.class-Ninja').attr('data-original-title','닌자(1/4): 아군 닌자 유닛들 공격력 +40% (2-3명은 시너지 효과 무효)');
+			$('.class-Kingdom').attr('data-original-title','제국(2/4): (무작위 제국 아군 하나/아군 제국 유닛들)이 가하는 피해량이 2배로 증가합니다.');
+			$('.class-Void').attr('data-original-title','공허(3): 모든 아군의 기본 공격이 적 방어력의 50%를 무시합니다.');
+			$('.class-Pirate').attr('data-original-title','해적(3): 전투 후에 자신의 필드에 0-4의 추가 골드 상자가 생성됩니다. (전설이를 움직여 직접 획득해야 합니다.)');
+			$('.class-Ghost').attr('data-original-title','유령(2): 전투 시작 시 무작위 적군 하나에게 저주를 걸어 체력을 100으로 감소시킵니다.');
+			$('.class-Dragon').attr('data-original-title','용(2): 아군 용 유닛들은 마법 피해에 면역이 됩니다.');
+			$('.class-Robot').attr('data-original-title','로봇(1): 아군 로봇 유닛들은 마나가 가득 찬 상태로 전투를 시작합니다.');
+			$('.class-Banned').attr('data-original-title','추방자(1): 아군 추방자 유닛들은 전투 시작 시 인접한 아군 유닛이 없다면 최대 체력과 동일한 양의 방어막을 얻습니다.');
+			$('.job-Assassin').attr('data-original-title','암살자(3/6): 아군 암살자 유닛들의 치명타 피해량이 (150%/350%) 증가합니다.');
+			$('.job-Magician').attr('data-original-title','마법사(3/6): 모든 아군(마법사든 아니든)의 스킬 피해량이 (35%/100%) 증가합니다.');
+			$('.job-Knight').attr('data-original-title','기사(2/4/6): 아군 기사 유닛들은 평타 피격마다 (20/40/80)만큼의 피해를 방어합니다.');
+			$('.job-Swordman').attr('data-original-title','검사(3/6): 아군 검사 유닛들은 45% 확률로 추가 공격(1번/2번)을 가합니다.');
+			$('.job-Fighter').attr('data-original-title','싸움꾼(2/4): 아군 싸움꾼 유닛들은 최대 체력이 (300/700) 증가합니다.');
+			$('.job-Gunner').attr('data-original-title','총잡이(2/4): 아군 총잡이 유닛들은 공격 후 50% 확률로 (무작위 적 하나/사거리 내의 모든 적 유닛)을 추가로 공격합니다.');
+			$('.job-Transformer').attr('data-original-title','형상변환자(3): 아군 형상변환자 유닛들이 변신 시 추가 최대 체력(100%)을 얻습니다.');
+			$('.job-Ranger').attr('data-original-title','정찰대(2/4): 아군 정찰대 유닛들은 3초마다 확률적(25%/65%)으로 다음 3초 동안 공격 속도가 2배로 증가합니다.');
+			$('.job-Elementalist').attr('data-original-title','원소술사(3): 전투 시작 시 골렘 하나를 필드에 소환합니다.');
+			$('.job-Guardian').attr('data-original-title','수호자(2): 전투 중 아군 수호자 유닛들과 그 주변 인접한 아군 유닛들이 방어력 30을 얻습니다.');
+			$('.unit-Garen').attr('data-original-title',"<p><귀족>[기사] (1Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 35</p><p class='text-left'>마법저항력: 20</p><p>스킬: 심판</p><p class='text-left'>피해량(50/65/80)x9,</p><p class='text-left'>지속시간 4초.</p><p class='text-left'>: 4초간 휘두르며 인접 적 9번 타격</p>");
+			$('.unit-Graves').attr('data-original-title',"<p><해적>[총잡이] (1Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: X</p><p class='text-left'>초기 마나: X</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 28</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>기본 공격: 산탄 사격</p><p class='text-left'>추가 피해량(5%/10%/15%).</p><p class='text-left'>: 스플래시 평타 공격</p>");
+			$('.unit-Nidalee').attr('data-original-title',"<p><야생>[형상변환자] (1Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 33</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>변신: 태고의 생명력 (60초)</p><p class='text-left'>회복량(150/375/600),</p><p class='text-left'>변신 후 추가 공격력(20/70/120),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 아군 유닛 하나 회복 후, 변신</p>");
+			$('.unit-Darius').attr('data-original-title',"<p><제국>[기사] (1Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 학살</p><p class='text-left'>피해량(150/225/300),</p><p class='text-left'>치유량(100,150,200).</p><p class='text-left'>: 인접 적에게 휘둘러서 타격 및 피흡</p>");
+			$('.unit-Mordekaiser').attr('data-original-title',"<p><유령>[기사] (1Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 35</p><p class='text-left'>마법저항력: 20</p><p>스킬: 말살</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 전방 2칸 타격</p>");
+			$('.unit-Vayne').attr('data-original-title',"<p><귀족>[정찰대] (1Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: X</p><p class='text-left'>초기 마나: X</p><p class='text-left'>공격력: 45</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 27</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>패시브: 은화살</p><p class='text-left'>적 최대 체력 비례 피해량(8%/10%/12%).</p><p class='text-left'>: 동일 적 연속 3타 마다 은화살 피해 발동</p>");
+			$('.unit-Warwick').attr('data-original-title',"<p><야생>[싸움꾼] (1Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 30</p><p class='text-left'>마법저항력: 20</p><p>스킬: 무한의 구속</p><p class='text-left'>피해량과 회복량(150/225/300).</p><p class='text-left'>: 가장 체력이 적은 상대 하나 1.5초간 제압</p>");
+			$('.unit-Kassadin').attr('data-original-title',"<p><공허>[마법사] (1Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: X</p><p class='text-left'>초기 마나: X</p><p class='text-left'>공격력: 45</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 29</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 45</p><p>기본 공격: 황천의 검</p><p class='text-left'>마나 버닝(20/40/60),</p><p class='text-left'>보호막 지속시간 4초.</p><p class='text-left'>: 대상의 마나를 소모시키고, 그만큼의 보호막 획득</p>");
+			$('.unit-Khazix').attr('data-original-title',"<p><공허>[암살자] (1Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 50</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 공포 감지</p><p class='text-left'>기본 피해량(150/250/350),</p><p class='text-left'>고립 대상 피해량(400/600/800).</p><p class='text-left'>: 고립된(인접 칸에 다른 적군이 없는) 적군에게 더 큰 피해</p>");
+			$('.unit-Tristana').attr('data-original-title',"<p><요들>[총잡이] (1Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 50</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.7</p><p class='text-left'>사거리: 4</p><p class='text-left'>DPS: 35</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 폭발 화약</p><p class='text-left'>피해량(150/225/300).</p><p class='text-left'>: 폭발 화약을 붙인 상대에게 평타를 3번 넣어야 폭발</p>");
+			$('.unit-Fiora').attr('data-original-title',"<p><귀족>[검사] (1Tier)</p><p class='text-left'>체력: 400/720/1440</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.7</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 28</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 응수</p><p class='text-left'>피해량(150/175/250),</p><p class='text-left'>CC카운터시 면역 지속시간 1.5초,</p><p class='text-left'>상대 기절시간 1.5초.</p><p class='text-left'>: 가장 가까운 대상에게 사용,</p><p class='text-left'>&nbsp;&nbsp;군중제어기를 받아쳐야만 상대 기절 발동</p>");
+			$('.unit-Reksai').attr('data-original-title',"<p><공허>[싸움꾼] (2Tier)</p><p class='text-left'>체력: 650/1170/2340</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 26</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 40</p><p>스킬: 매복</p><p class='text-left'>치유량(300/400/500),</p><p class='text-left'>피해량(150/200/250),</p><p class='text-left'>적 기절 지속시간 1초.</p><p class='text-left'>: 2초간 매복하며 자가 치유,</p><p class='text-left'>&nbsp;&nbsp;가장 가까운 단일 대상에게 피해를 주며 에어본(1초)</p>");
+			$('.unit-Lucian').attr('data-original-title',"<p><귀족>[총잡이] (2Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 35</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 65</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 42</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 끈질긴 추격</p><p class='text-left'>: 안전한 곳으로 돌진 후,</p><p class='text-left'>&nbsp;&nbsp;공격력의 (25%/45%/65%)로 한 번,</p><p class='text-left'>&nbsp;&nbsp;(20/25/30)의 피해량으로 한 번 공격</p>");
+			$('.unit-Lulu').attr('data-original-title',"<p><요들>[마법사] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 2</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 급성장</p><p class='text-left'>아군(1명/2명/3명) 대상 추가 체력 (300/475/650),</p><p class='text-left'>지속시간 6초,</p><p class='text-left'>적 기절 지속시간 1.25초.</p><p class='text-left'>: 발동시 대상 인접 적군 에어본(1.25초)</p>");
+			$('.unit-Lissandra').attr('data-original-title',"<p><빙하>[원소술사] (2Tier)</p><p class='text-left'>체력: 450/810/1620</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 2</p><p class='text-left'>DPS: 24</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 얼음 무덤</p><p class='text-left'>단일 적 대상 사용시 피해량 (225/300/375),</p><p class='text-left'>단일 적 대상 사용시 지속시간 1.5초,</p><p class='text-left'>(자신의 체력이 50% 이하면 자신에게 사용)</p><p class='text-left'>자신에게 사용시 2초간 무적 및 타겟 불가,</p><p class='text-left'>자신에게 사용시 피해량 및 치유량 없음,</p><p class='text-left'>대상 주변 얼음 장판(3초) 위 적 이동속도 2 감소.</p>");
+			$('.unit-Varus').attr('data-original-title',"<p><악마>[정찰대] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.7</p><p class='text-left'>사거리: 4</p><p class='text-left'>DPS: 35</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 꿰뚫는 화살</p><p class='text-left'>피해량(400/600/800),</p><p class='text-left'>충전시간 1.5초.</p><p class='text-left'>: 적들을 관통하는 화살을 일직선으로 발사</p>");
+			$('.unit-Braum').attr('data-original-title',"<p><빙하>[수호자] (2Tier)</p><p class='text-left'>체력: 750/1350/2700</p><p class='text-left'>마나: 175</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 24</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 불굴</p><p class='text-left'>피해량 감소(60%/75%/90%),</p><p class='text-left'>지속 시간 4초.</p>");
+			$('.unit-Blitzcrank').attr('data-original-title',"<p><로봇>[싸움꾼] (2Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 150</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 35</p><p class='text-left'>마법저항력: 20</p><p>스킬: 로켓 손</p><p class='text-left'>피해량(100/450/800),</p><p class='text-left'>대상 2.5초 기절.</p><p class='text-left'>: 적군 제일 후방의 유닛을 하나 끌어오며(유닛 통과판정) 피해와 기절효과</p>");
+			$('.unit-Shen').attr('data-original-title',"<p><닌자>[검사] (2Tier)</p><p class='text-left'>체력: 650/1170/2340</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 65</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 42</p><p class='text-left'>방어력: 30</p><p class='text-left'>마법저항력: 20</p><p>스킬: 의지의 결계</p><p class='text-left'>지속 시간(3초/4초/5초).</p><p class='text-left'>: 범위 내 모든 아군이 적의 평타를 회피,</p><p class='text-left'>&nbsp;&nbsp;쉔의 인접 영역에 형성되며, 쉔과 함께 이동됨</p>");
+			$('.unit-Ahri').attr('data-original-title',"<p><야생>[마법사] (2Tier)</p><p class='text-left'>체력: 450/810/1620</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 28</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 현혹의 구슬</p><p class='text-left'>피해량(100/175/250)x2.</p><p class='text-left'>: 던지고 받으며 관통하는 모든 적군에게 2번(왕복)의 피해</p>");
+			$('.unit-Elise').attr('data-original-title',"<p><악마>[형상변환자] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 24</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>변신: 거미 형태 (60초)</p><p class='text-left'>생명력 흡수(60%/90%/120%),</p><p class='text-left'>새끼거미 체력: 500,</p><p class='text-left'>새끼거미 개체 수(2/3/4),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신과 함께 새끼거미를 소환하며, 자신의 평타에 피흡효과,</p><p class='text-left'>&nbsp;&nbsp;전투종료시 새끼거미가 필드에 있다면 적 전설이에게 피해 계산 반영</p>");
+			$('.unit-Zed').attr('data-original-title',"<p><닌자>[암살자] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 60</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 39</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 예리한 표창</p><p class='text-left'>피해량(200/300/400).</p><p class='text-left'>: 표창을 던져 관통하는 모든 적군에게 피해</p>");
+			$('.unit-Pyke').attr('data-original-title',"<p><해적>[암살자] (2Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 60</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 36</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 망자의 물살</p><p class='text-left'>피해량(150/200/250),</p><p class='text-left'>기절 지속시간(2.5초/3초/3.5초).</p><p class='text-left'>: 가장 먼 적 유닛에게 빠르게 접근하며, 통과하는 모든 적 유닛 기절</p>");
+			$('.unit-Gangplank').attr('data-original-title',"<p><해적>[검사] (3Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 33</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 화약통</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 마나 25,50,75에 화약통을 깔고,</p><p class='text-left'>&nbsp;&nbsp;100이 되면 3개를 동시에 터뜨린다</p>");
+			$('.unit-Rengar').attr('data-original-title',"<p><야생>[암살자] (3Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 포악함</p><p class='text-left'>공격력 증가(210%/320%/430%),</p><p class='text-left'>공격속도 증가(50%/65%/80%),</p><p class='text-left'>치명타율 25% 증가,</p><p class='text-left'>지속시간 6초.</p>");
+			$('.unit-Morgana').attr('data-original-title',"<p><악마>[마법사] (3Tier)</p><p class='text-left'>체력: 650/1170/2340</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 2</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 영혼의 족쇄</p><p class='text-left'>피해량(250/350/450)x2,</p><p class='text-left'>지속시간 3초간 2번 피해,</p><p class='text-left'>지속시간 3초간 적 이동속도 감소 20%,</p><p class='text-left'>3초 후 적 기절시간(2초/4초/6초).</p></p><p class='text-left'>: 인접 적군에게 광역으로 3초간 슬로우를 걸며 2번의 피해 후 기절효과</p>");
+			$('.unit-Veigar').attr('data-original-title',"<p><요들>[마법사] (3Tier)</p><p class='text-left'>체력: 450/810/1620</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 45</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 태초의 폭발</p><p class='text-left'>단일 적 유닛 피해량(300/450/600),</p><p class='text-left'>대상이 자신보다 별 갯수가 낮으면 즉사(피해량∞).</p>");
+			$('.unit-Volibear').attr('data-original-title',"<p><빙하>[싸움꾼] (3Tier)</p><p class='text-left'>체력: 650/1170/2340</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 75</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 38</p><p class='text-left'>방어력: 35</p><p class='text-left'>마법저항력: 20</p><p>스킬: 천둥 발톱</p><p class='text-left'>번개 피해량(80%/90%/100%),</p><p class='text-left'>번개 타겟 수(3/4/5),</p><p class='text-left'>지속시간 20초.</p><p class='text-left'>: 스킬 지속시간 동안 평타가 추가 대상을 공격한다(평타 효과 적용)</p>");
+			$('.unit-Poppy').attr('data-original-title',"<p><요들>[기사] (3Tier)</p><p class='text-left'>체력: 750/1350/2700</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.5</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 30</p><p class='text-left'>마법저항력: 20</p><p>스킬: 수호자의 심판</p><p class='text-left'>피해량(300/400/500),</p><p class='text-left'>적 기절 지속시간 1초.</p><p class='text-left'>: 단일 적 유닛에 피해를 주며 에어본(1초)</p>");
+			$('.unit-Shyvana').attr('data-original-title',"<p><용>[형상변환자] (3Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 33</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>변신: 용의 강림 (60초)</p><p class='text-left'>브레스 피해량(200/300/400),</p><p class='text-left'>변신 후 추가 공격력(50/90/130),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신 시 브레스를 발사한다</p>");
+			$('.unit-Aatrox').attr('data-original-title',"<p><악마>[검사] (3Tier)</p><p class='text-left'>체력: 750/1350/2700</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 65</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 42</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 다르킨의 검</p><p class='text-left'>피해량(350/600/850).</p><p class='text-left'>: 단일 적 유닛에게 한 번 피해</p>");
+			$('.unit-Ashe').attr('data-original-title',"<p><빙하>[정찰대] (3Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 60</p><p class='text-left'>공격 속도: 0.7</p><p class='text-left'>사거리: 4</p><p class='text-left'>DPS: 42</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 마법의 수정 화살</p><p class='text-left'>피해량(200/400/600)+α,</p><p class='text-left'>적 기절 지속시간(1초/1.5초/2초)+α.</p><p class='text-left'>: 가장 멀리 있는 단일 적 유닛에게(유닛 통과판정) 피해를 준 후 기절효과,</p><p class='text-left'>&nbsp;&nbsp;멀리 날아갈 수록 피해량과 기절시간 증가</p>");
+			
+			
+			
+			
+			
+			
 			$('.unit-Darkin').attr('data-original-title',"<p>[다르킨]</p><p>+마나20</p><p class='color-cyan'>: 계열을 악마로</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('[data-toggle="tooltip"]').tooltip();
 		};
 		function setFirst() {
 			$('.unit').addClass('dim');
@@ -1977,7 +2040,7 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Varus" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<div class="icon unit unit-Varus">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -2019,7 +2082,7 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-item unit-Darkin" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<div class="icon unit unit-item unit-Darkin">
 											<p class="unit-top">다르킨</p>
 											<p class="text-center item-arrow item-up" id="darkin-up">▲</p>
 											<p class="text-center item-arrow item-down" id="darkin-down">▼</p>
@@ -2868,7 +2931,7 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Varus" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<div class="icon unit unit-Varus">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
