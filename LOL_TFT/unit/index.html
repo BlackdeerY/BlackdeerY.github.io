@@ -31,12 +31,20 @@
 		.color-white {
 			color: white;
 		}
+		.color-white-must {
+			color: white !important;
+			text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
+		}
 		.color-hilight {
 			text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 			color: white !important;
 		}
 		.color-yellow {
 			color: yellow;
+		}
+		.color-yellow-must {
+			color: yellow !important;
+			text-shadow: -1px 0 #c9c901, 0 1px #c9c901, 1px 0 #c9c901, 0 -1px #c9c901;
 		}
 		.color-t1 {
 			color: lightgray;
@@ -61,6 +69,9 @@
 			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 			background-size: cover;
 			font-size: 0.8rem;
+		}
+		.view-selected {
+			display: inline-block;
 		}
 		.itemicon {
 			width: 32px !important;
@@ -407,6 +418,7 @@
 		}
 		.tooltip {
 			font-weight: bold;
+			font-size: 1rem;
 		}
 		.tooltip-inner {
 			min-width: 250px;
@@ -568,7 +580,7 @@
 			$('.unit-Elise').attr('data-original-title',"<p><악마>[형상변환자] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 40</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 24</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>변신: 거미 형태 (60초)</p><p class='text-left'>생명력 흡수(60%/90%/120%),</p><p class='text-left'>새끼거미 체력: 500,</p><p class='text-left'>새끼거미 개체 수(2/3/4),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신과 함께 새끼거미를 소환하며, 자신의 평타에 피흡효과,</p><p class='text-left'>&nbsp;&nbsp;전투종료시 새끼거미가 필드에 있다면 적 전설이에게 피해 계산 반영</p>");
 			$('.unit-Zed').attr('data-original-title',"<p><닌자>[암살자] (2Tier)</p><p class='text-left'>체력: 500/900/1800</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 60</p><p class='text-left'>공격 속도: 0.65</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 39</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 예리한 표창</p><p class='text-left'>피해량(200/300/400).</p><p class='text-left'>: 표창을 던져 관통하는 모든 적군에게 피해</p>");
 			$('.unit-Pyke').attr('data-original-title',"<p><해적>[암살자] (2Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 60</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 36</p><p class='text-left'>방어력: 25</p><p class='text-left'>마법저항력: 20</p><p>스킬: 망자의 물살</p><p class='text-left'>피해량(150/200/250),</p><p class='text-left'>기절 지속시간(2.5초/3초/3.5초).</p><p class='text-left'>: 가장 먼 적 유닛에게 빠르게 접근하며, 통과하는 모든 적 유닛 기절</p>");
-			$('.unit-Gangplank').attr('data-original-title',"<p><해적>[검사] (3Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 33</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 화약통</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 마나 25,50,75에 화약통을 깔고,</p><p class='text-left'>&nbsp;&nbsp;100이 되면 3개를 동시에 터뜨린다</p>");
+			$('.unit-Gangplank').attr('data-original-title',"<p><해적>[검사][총잡이] (3Tier)</p><p class='text-left'>체력: 600/1080/2160</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 33</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 화약통</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 마나 25,50,75에 화약통을 깔고,</p><p class='text-left'>&nbsp;&nbsp;100이 되면 3개를 동시에 터뜨린다</p>");
 			$('.unit-Rengar').attr('data-original-title',"<p><야생>[암살자] (3Tier)</p><p class='text-left'>체력: 550/990/1980</p><p class='text-left'>마나: 75</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 55</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 1</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 포악함</p><p class='text-left'>공격력 증가(210%/320%/430%),</p><p class='text-left'>공격속도 증가(50%/65%/80%),</p><p class='text-left'>치명타율 25% 증가,</p><p class='text-left'>지속시간 6초.</p>");
 			$('.unit-Morgana').attr('data-original-title',"<p><악마>[마법사] (3Tier)</p><p class='text-left'>체력: 650/1170/2340</p><p class='text-left'>마나: 150</p><p class='text-left'>초기 마나: 50</p><p class='text-left'>공격력: 50</p><p class='text-left'>공격 속도: 0.6</p><p class='text-left'>사거리: 2</p><p class='text-left'>DPS: 30</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 영혼의 족쇄</p><p class='text-left'>피해량(250/350/450)x2,</p><p class='text-left'>지속시간 3초간 2번 피해,</p><p class='text-left'>지속시간 3초간 적 이동속도 감소 20%,</p><p class='text-left'>3초 후 적 기절시간(2초/4초/6초).</p></p><p class='text-left'>: 인접 적군에게 광역으로 3초간 슬로우를 걸며 2번의 피해 후 기절효과</p>");
 			$('.unit-Veigar').attr('data-original-title',"<p><요들>[마법사] (3Tier)</p><p class='text-left'>체력: 450/810/1620</p><p class='text-left'>마나: 100</p><p class='text-left'>초기 마나: 0</p><p class='text-left'>공격력: 45</p><p class='text-left'>공격 속도: 0.55</p><p class='text-left'>사거리: 3</p><p class='text-left'>DPS: 25</p><p class='text-left'>방어력: 20</p><p class='text-left'>마법저항력: 20</p><p>스킬: 태초의 폭발</p><p class='text-left'>단일 적 유닛 피해량(300/450/600),</p><p class='text-left'>대상이 자신보다 별 갯수가 낮으면 즉사(피해량∞).</p>");
@@ -605,6 +617,8 @@
 		};
 		function setFirst() {
 			$('.unit').addClass('dim');
+			$('.view-selected').removeClass('dim');
+			$('.view-selected').hide();
 			setClick();
 			hideDescs();
 		};
@@ -1245,96 +1259,96 @@
 				}
 				calSum();
 			});
-			$('#darkin-up').on('click',function(){
+			$('.darkin-up').on('click',function(){
 				++Darkin;
-				$('#darkin-num').text(Darkin);
+				$('.darkin-num').text(Darkin);
 				$('.unit-Darkin').removeClass('dim');
 				calSum();
 			});
-			$('#darkin-down').on('click',function(){
+			$('.darkin-down').on('click',function(){
 				if (Darkin > 0) {
 					--Darkin;
-					$('#darkin-num').text(Darkin);
+					$('.darkin-num').text(Darkin);
 					if (Darkin == 0) {
 						$('.unit-Darkin').addClass('dim');
 					}
 					calSum();
 				}
 			});
-			$('#hammer-up').on('click',function(){
+			$('.hammer-up').on('click',function(){
 				++Hammer;
-				$('#hammer-num').text(Hammer);
+				$('.hammer-num').text(Hammer);
 				$('.unit-Hammer').removeClass('dim');
 				calSum();
 			});
-			$('#hammer-down').on('click',function(){
+			$('.hammer-down').on('click',function(){
 				if (Hammer > 0) {
 					--Hammer;
-					$('#hammer-num').text(Hammer);
+					$('.hammer-num').text(Hammer);
 					if (Hammer == 0) {
 						$('.unit-Hammer').addClass('dim');
 					}
 					calSum();
 				}
 			});
-			$('#youmu-up').on('click',function(){
+			$('.youmu-up').on('click',function(){
 				++Youmu;
-				$('#youmu-num').text(Youmu);
+				$('.youmu-num').text(Youmu);
 				$('.unit-Youmu').removeClass('dim');
 				calSum();
 			});
-			$('#youmu-down').on('click',function(){
+			$('.youmu-down').on('click',function(){
 				if (Youmu > 0) {
 					--Youmu;
-					$('#youmu-num').text(Youmu);
+					$('.youmu-num').text(Youmu);
 					if (Youmu == 0) {
 						$('.unit-Youmu').addClass('dim');
 					}
 					calSum();
 				}
 			});
-			$('#yumi-up').on('click',function(){
+			$('.yumi-up').on('click',function(){
 				++Yumi;
-				$('#yumi-num').text(Yumi);
+				$('.yumi-num').text(Yumi);
 				$('.unit-Yumi').removeClass('dim');
 				calSum();
 			});
-			$('#yumi-down').on('click',function(){
+			$('.yumi-down').on('click',function(){
 				if (Yumi > 0) {
 					--Yumi;
-					$('#yumi-num').text(Yumi);
+					$('.yumi-num').text(Yumi);
 					if (Yumi == 0) {
 						$('.unit-Yumi').addClass('dim');
 					}
 					calSum();
 				}
 			});
-			$('#knight-up').on('click',function(){
+			$('.knight-up').on('click',function(){
 				++Knight;
-				$('#knight-num').text(Knight);
+				$('.knight-num').text(Knight);
 				$('.unit-Knight').removeClass('dim');
 				calSum();
 			});
-			$('#knight-down').on('click',function(){
+			$('.knight-down').on('click',function(){
 				if (Knight > 0) {
 					--Knight;
-					$('#knight-num').text(Knight);
+					$('.knight-num').text(Knight);
 					if (Knight == 0) {
 						$('.unit-Knight').addClass('dim');
 					}
 					calSum();
 				}
 			});
-			$('#molak-up').on('click',function(){
+			$('.molak-up').on('click',function(){
 				++Molak;
-				$('#molak-num').text(Molak);
+				$('.molak-num').text(Molak);
 				$('.unit-Molak').removeClass('dim');
 				calSum();
 			});
-			$('#molak-down').on('click',function(){
+			$('.molak-down').on('click',function(){
 				if (Molak > 0) {
 					--Molak;
-					$('#molak-num').text(Molak);
+					$('.molak-num').text(Molak);
 					if (Molak == 0) {
 						$('.unit-Molak').addClass('dim');
 					}
@@ -1346,6 +1360,8 @@
 			$('.desc').hide();
 		};
 		function calSum() {
+			$('.view-selected').removeClass('dim');
+			$('.view-selected').hide();
 			cDevil = 0;
 			cIce = 0;
 			cRoyal = 0;
@@ -1370,24 +1386,298 @@
 			jElementalist = 0;
 			jGuardian = 0;
 			hideDescs();
-			if (Varus > 0) ++cDevil;
-			if (Elise > 0) ++cDevil;
-			if (Aatrox > 0) ++cDevil;
-			if (Morgana > 0) ++cDevil;
-			if (Evelynn > 0) ++cDevil;
-			if (Brand > 0) ++cDevil;
-			if (Swain > 0) ++cDevil;
-			if (Darkin > 0) cDevil += Darkin;
+			if (Varus > 0) {
+				++cDevil;
+				++jRanger;
+				$('#view-Varus').show();
+			}
+			if (Elise > 0) {
+				++cDevil;
+				++jTransformer;
+				$('#view-Elise').show();
+			}
+			if (Aatrox > 0) {
+				++cDevil;
+				++jSwordman;
+				$('#view-Aatrox').show();
+			}
+			if (Morgana > 0) {
+				++cDevil;
+				++jMagician;
+				$('#view-Morgana').show();
+			}
+			if (Evelynn > 0) {
+				++cDevil;
+				++jAssassin;
+				$('#view-Evelynn').show();
+			}
+			if (Brand > 0) {
+				++cDevil;
+				++jElementalist;
+				$('#view-Brand').show();
+			}
+			if (Swain > 0) {
+				++cDevil;
+				++cKingdom;
+				++jTransformer;
+				$('#view-Swain').show();
+			}
+			if (Lissandra > 0) {
+				++cIce;
+				++jElementalist;
+				$('#view-Lissandra').show();
+			}
+			if (Braum > 0) {
+				++cIce;
+				++jGuardian;
+				$('#view-Braum').show();
+			}
+			if (Volibear > 0) {
+				++cIce;
+				++jFighter;
+				$('#view-Volibear').show();
+			}
+			if (Ashe > 0) {
+				++cIce;
+				++jRanger;
+				$('#view-Ashe').show();
+			}
+			if (Sejuani > 0) {
+				++cIce;
+				++jKnight;
+				$('#view-Sejuani').show();
+			}
+			if (Anivia > 0) {
+				++cIce;
+				++jElementalist;
+				$('#view-Anivia').show();
+			}
+			if (Garen > 0) {
+				++cRoyal;
+				++jKnight;
+				$('#view-Garen').show();
+			}
+			if (Vayne > 0) {
+				++cRoyal;
+				++jRanger;
+				$('#view-Vayne').show();
+			}
+			if (Fiora > 0) {
+				++cRoyal;
+				++jSwordman;
+				$('#view-Fiora').show();
+			}
+			if (Lucian > 0) {
+				++cRoyal;
+				++jGuardian;
+				$('#view-Lucian').show();
+			}
+			if (Leona > 0) {
+				++cRoyal;
+				++jGuardian;
+				$('#view-Leona').show();
+			}
+			if (Kayle > 0) {
+				++cRoyal;
+				++jKnight;
+				$('#view-Kayle').show();
+			}
+			if (Tristana > 0) {
+				++cYodel;
+				++jGunner;
+				$('#view-Tristana').show();
+			}
+			if (Lulu > 0) {
+				++cYodel;
+				++jMagician;
+				$('#view-Lulu').show();
+			}
+			if (Veigar > 0) {
+				++cYodel;
+				++jMagician;
+				$('#view-Veigar').show();
+			}
+			if (Poppy > 0) {
+				++cYodel;
+				++jKnight;
+				$('#view-Poppy').show();
+			}
+			if (Kennen > 0) {
+				++cYodel;
+				++cNinja;
+				++jElementalist;
+				$('#view-Kennen').show();
+			}
+			if (Gnar > 0) {
+				++cYodel;
+				++cWild;
+				++jTransformer;
+				$('#view-Gnar').show();
+			}
+			if (Nidalee > 0) {
+				++cWild;
+				++jTransformer;
+				$('#view-Nidalee').show();
+			}
+			if (Warwick > 0) {
+				++cWild;
+				++jFighter;
+				$('#view-Warwick').show();
+			}
+			if (Ahri > 0) {
+				++cWild;
+				++jMagician;
+				$('#view-Ahri').show();
+			}
+			if (Rengar > 0) {
+				++cWild;
+				++jAssassin;
+				$('#view-Rengar').show();
+			}
+			if (Shen > 0) {
+				++cNinja;
+				++jSwordman;
+				$('#view-Shen').show();
+			}
+			if (Zed > 0) {
+				++cNinja;
+				++jAssassin;
+				$('#view-Zed').show();
+			}
+			if (Akali > 0) {
+				++cNinja;
+				++jAssassin;
+				$('#view-Akali').show();
+			}
+			if (Darius > 0) {
+				++cKingdom;
+				++jKnight;
+				$('#view-Darius').show();
+			}
+			if (Katarina > 0) {
+				++cKingdom;
+				++jAssassin;
+				$('#view-Katarina').show();
+			}
+			if (Draven > 0) {
+				++cKingdom;
+				++jSwordman;
+				$('#view-Draven').show();
+			}
+			if (Kassadin > 0) {
+				++cVoid;
+				++jMagician;
+				$('#view-Kassadin').show();
+			}
+			if (Khazix > 0) {
+				++cVoid;
+				++jAssassin;
+				$('#view-Khazix').show();
+			}
+			if (Reksai > 0) {
+				++cVoid;
+				++jFighter;
+				$('#view-Reksai').show();
+			}
+			if (Chogath > 0) {
+				++cVoid;
+				++jFighter;
+				$('#view-Chogath').show();
+			}
+			if (Graves > 0) {
+				++cPirate;
+				++jGunner;
+				$('#view-Graves').show();
+			}
+			if (Pyke > 0) {
+				++cPirate;
+				++jAssassin;
+				$('#view-Pyke').show();
+			}
+			if (Gangplank > 0) {
+				++cPirate;
+				++jSwordman;
+				++jGunner;
+				$('#view-Gangplank').show();
+			}
+			if (Missfortune > 0) {
+				++cPirate;
+				++jGunner;
+				$('#view-Missfortune').show();
+			}
+			if (Mordekaiser > 0) {
+				++cGhost;
+				++jKnight;
+				$('#view-Mordekaiser').show();
+			}
+			if (Kindred > 0) {
+				++cGhost;
+				++jRanger;
+				$('#view-Kindred').show();
+			}
+			if (Karthus > 0) {
+				++cGhost;
+				++jMagician;
+				$('#view-Karthus').show();
+			}
+			if (Shyvana > 0) {
+				++cDragon;
+				++jTransformer;
+				$('#view-Shyvana').show();
+			}
+			if (Aurelionsol > 0) {
+				++cDragon;
+				++jMagician;
+				$('#view-Aurelionsol').show();
+			}
+			if (Blitzcrank > 0) {
+				++cRobot;
+				++jFighter;
+				$('#view-Blitzcrank').show();
+			}
+			if (Yasuo > 0) {
+				++cBanned;
+				++jSwordman;
+				$('#view-Yasuo').show();
+			}
+			if (Darkin > 0) {
+				cDevil += Darkin;
+				$('#view-Darkin').show();
+			}
+			if (Hammer > 0) {
+				cIce += Hammer;
+				$('#view-Hammer').show();
+			}
+			if (Yumi > 0) {
+				jMagician += Yumi;
+				$('#view-Yumi').show();
+			}
+			if (Youmu > 0) {
+				jAssassin += Youmu;
+				$('#view-Youmu').show();
+			}
+			if (Knight > 0) {
+				jKnight += Knight;
+				$('#view-iKnight').show();
+			}
+			if (Molak > 0) {
+				jSwordman += Molak;
+				$('#view-Molak').show();
+			}
 			$('.sum-devil').removeClass('color-hilight');
+			$('#view-devil').removeClass('color-yellow-must');
 			if (cDevil > 5) {
 				$('#devil-6').addClass('color-hilight');
 				$('#desc-devil-6').show();
+				$('#view-devil').addClass('color-yellow-must');
 			} else if (cDevil > 3) {
 				$('#devil-4').addClass('color-hilight');
 				$('#desc-devil-4').show();
+				$('#view-devil').addClass('color-yellow-must');
 			} else if (cDevil > 1) {
 				$('#devil-2').addClass('color-hilight');
 				$('#desc-devil-2').show();
+				$('#view-devil').addClass('color-yellow-must');
 			}
 			if (cDevil > 0) {
 				$('#view-devil').text('악마x'+cDevil);
@@ -1396,23 +1686,20 @@
 				$('#view-devil').text('');
 				$('#title-devil').text('악마');
 			}
-			if (Lissandra > 0) ++cIce;
-			if (Braum > 0) ++cIce;
-			if (Volibear > 0) ++cIce;
-			if (Ashe > 0) ++cIce;
-			if (Sejuani > 0) ++cIce;
-			if (Anivia > 0) ++cIce;
-			if (Hammer > 0) cIce += Hammer;
 			$('.sum-ice').removeClass('color-hilight');
+			$('#view-ice').removeClass('color-yellow-must');
 			if (cIce > 5) {
 				$('#ice-6').addClass('color-hilight');
 				$('#desc-ice-6').show();
+				$('#view-ice').addClass('color-yellow-must');
 			} else if (cIce > 3) {
 				$('#ice-4').addClass('color-hilight');
 				$('#desc-ice-4').show();
+				$('#view-ice').addClass('color-yellow-must');
 			} else if (cIce > 1) {
 				$('#ice-2').addClass('color-hilight');
 				$('#desc-ice-2').show();
+				$('#view-ice').addClass('color-yellow-must');
 			}
 			if (cIce > 0) {
 				$('#view-ice').text('빙하x'+cIce);
@@ -1421,19 +1708,16 @@
 				$('#view-ice').text('');
 				$('#title-ice').text('빙하');
 			}
-			if (Garen > 0) ++cRoyal;
-			if (Vayne > 0) ++cRoyal;
-			if (Fiora > 0) ++cRoyal;
-			if (Lucian > 0) ++cRoyal;
-			if (Leona > 0) ++cRoyal;
-			if (Kayle > 0) ++cRoyal;
 			$('.sum-royal').removeClass('color-hilight');
+			$('#view-royal').removeClass('color-yellow-must');
 			if (cRoyal > 5) {
 				$('#royal-6').addClass('color-hilight');
 				$('#desc-royal-6').show();
+				$('#view-royal').addClass('color-yellow-must');
 			} else if (cRoyal > 2) {
 				$('#royal-3').addClass('color-hilight');
 				$('#desc-royal-3').show();
+				$('#view-royal').addClass('color-yellow-must');
 			}
 			if (cRoyal > 0) {
 				$('#view-royal').text('귀족x'+cRoyal);
@@ -1442,19 +1726,16 @@
 				$('#view-royal').text('');
 				$('#title-royal').text('귀족');
 			}
-			if (Tristana > 0) ++cYodel;
-			if (Lulu > 0) ++cYodel;
-			if (Veigar > 0) ++cYodel;
-			if (Poppy > 0) ++cYodel;
-			if (Kennen > 0) ++cYodel;
-			if (Gnar > 0) ++cYodel;
 			$('.sum-yodel').removeClass('color-hilight');
+			$('#view-yodel').removeClass('color-yellow-must');
 			if (cYodel > 5) {
 				$('#yodel-6').addClass('color-hilight');
 				$('#desc-yodel-6').show();
+				$('#view-yodel').addClass('color-yellow-must');
 			} else if (cYodel > 2) {
 				$('#yodel-3').addClass('color-hilight');
 				$('#desc-yodel-3').show();
+				$('#view-yodel').addClass('color-yellow-must');
 			}
 			if (cYodel > 0) {
 				$('#view-yodel').text('요들x'+cYodel);
@@ -1463,18 +1744,16 @@
 				$('#view-yodel').text('');
 				$('#title-yodel').text('요들');
 			}
-			if (Nidalee > 0) ++cWild;
-			if (Warwick > 0) ++cWild;
-			if (Ahri > 0) ++cWild;
-			if (Rengar > 0) ++cWild;
-			if (Gnar > 0) ++cWild;
 			$('.sum-wild').removeClass('color-hilight');
+			$('#view-wild').removeClass('color-yellow-must');
 			if (cWild > 3) {
 				$('#wild-4').addClass('color-hilight');
 				$('#desc-wild-4').show();
+				$('#view-wild').addClass('color-yellow-must');
 			} else if (cWild > 1) {
 				$('#wild-2').addClass('color-hilight');
 				$('#desc-wild-2').show();
+				$('#view-wild').addClass('color-yellow-must');
 			}
 			if (cWild > 0) {
 				$('#view-wild').text('야생x'+cWild);
@@ -1483,19 +1762,18 @@
 				$('#view-wild').text('');
 				$('#title-wild').text('야생');
 			}
-			if (Shen > 0) ++cNinja;
-			if (Zed > 0) ++cNinja;
-			if (Kennen > 0) ++cNinja;
-			if (Akali > 0) ++cNinja;
 			$('.sum-ninja').removeClass('color-hilight');
+			$('#view-ninja').removeClass('color-yellow-must');
 			if (cNinja > 3) {
 				$('#ninja-4').addClass('color-hilight');
 				$('#desc-ninja-4').show();
+				$('#view-ninja').addClass('color-yellow-must');
 			} else if (cNinja > 1) {
 				$('#ninja-x').addClass('color-hilight');
 			} else if (cNinja > 0) {
 				$('#ninja-1').addClass('color-hilight');
 				$('#desc-ninja-1').show();
+				$('#view-ninja').addClass('color-yellow-must');
 			}
 			if (cNinja > 0) {
 				$('#view-ninja').text('닌자x'+cNinja);
@@ -1504,17 +1782,16 @@
 				$('#view-ninja').text('');
 				$('#title-ninja').text('닌자');
 			}
-			if (Darius > 0) ++cKingdom;
-			if (Katarina > 0) ++cKingdom;
-			if (Draven > 0) ++cKingdom;
-			if (Swain > 0) ++cKingdom;
 			$('.sum-kingdom').removeClass('color-hilight');
+			$('#view-kingdom').removeClass('color-yellow-must');
 			if (cKingdom > 3) {
 				$('#kingdom-4').addClass('color-hilight');
 				$('#desc-kingdom-4').show();
+				$('#view-kingdom').addClass('color-yellow-must');
 			} else if (cKingdom > 1) {
 				$('#kingdom-2').addClass('color-hilight');
 				$('#desc-kingdom-2').show();
+				$('#view-kingdom').addClass('color-yellow-must');
 			}
 			if (cKingdom > 0) {
 				$('#view-kingdom').text('제국x'+cKingdom);
@@ -1523,14 +1800,12 @@
 				$('#view-kingdom').text('');
 				$('#title-kingdom').text('제국');
 			}
-			if (Kassadin > 0) ++cVoid;
-			if (Khazix > 0) ++cVoid;
-			if (Reksai > 0) ++cVoid;
-			if (Chogath > 0) ++cVoid;
 			$('.sum-void').removeClass('color-hilight');
+			$('#view-void').removeClass('color-yellow-must');
 			if (cVoid > 2) {
 				$('#void-3').addClass('color-hilight');
 				$('#desc-void-3').show();
+				$('#view-void').addClass('color-yellow-must');
 			}
 			if (cVoid > 0) {
 				$('#view-void').text('공허x'+cVoid);
@@ -1539,14 +1814,12 @@
 				$('#view-void').text('');
 				$('#title-void').text('공허');
 			}
-			if (Graves > 0) ++cPirate;
-			if (Pyke > 0) ++cPirate;
-			if (Gangplank > 0) ++cPirate;
-			if (Missfortune > 0) ++cPirate;
 			$('.sum-pirate').removeClass('color-hilight');
+			$('#view-pirate').removeClass('color-yellow-must');
 			if (cPirate > 2) {
 				$('#pirate-3').addClass('color-hilight');
 				$('#desc-pirate-3').show();
+				$('#view-pirate').addClass('color-yellow-must');
 			}
 			if (cPirate > 0) {
 				$('#view-pirate').text('해적x'+cPirate);
@@ -1555,13 +1828,12 @@
 				$('#view-pirate').text('');
 				$('#title-pirate').text('해적');
 			}
-			if (Mordekaiser > 0) ++cGhost;
-			if (Kindred > 0) ++cGhost;
-			if (Karthus > 0) ++cGhost;
 			$('.sum-ghost').removeClass('color-hilight');
+			$('#view-ghost').removeClass('color-yellow-must');
 			if (cGhost > 1) {
 				$('#ghost-2').addClass('color-hilight');
 				$('#desc-ghost-2').show();
+				$('#view-ghost').addClass('color-yellow-must');
 			}
 			if (cGhost > 0) {
 				$('#view-ghost').text('유령x'+cGhost);
@@ -1570,12 +1842,12 @@
 				$('#view-ghost').text('');
 				$('#title-ghost').text('유령');
 			}
-			if (Shyvana > 0) ++cDragon;
-			if (Aurelionsol > 0) ++cDragon;
 			$('.sum-dragon').removeClass('color-hilight');
+			$('#view-dragon').removeClass('color-yellow-must');
 			if (cDragon > 1) {
 				$('#dragon-2').addClass('color-hilight');
 				$('#desc-dragon-2').show();
+				$('#view-dragon').addClass('color-yellow-must');
 			}
 			if (cDragon > 0) {
 				$('#view-dragon').text('용x'+cDragon);
@@ -1584,11 +1856,12 @@
 				$('#view-dragon').text('');
 				$('#title-dragon').text('용');
 			}
-			if (Blitzcrank > 0) ++cRobot;
 			$('.sum-robot').removeClass('color-hilight');
+			$('#view-robot').removeClass('color-yellow-must');
 			if (cRobot > 0) {
 				$('#robot-1').addClass('color-hilight');
 				$('#desc-robot-1').show();
+				$('#view-robot').addClass('color-yellow-must');
 			}
 			if (cRobot > 0) {
 				$('#view-robot').text('로봇x'+cRobot);
@@ -1597,11 +1870,12 @@
 				$('#view-robot').text('');
 				$('#title-robot').text('로봇');
 			}
-			if (Yasuo > 0) ++cBanned;
 			$('.sum-banned').removeClass('color-hilight');
+			$('#view-banned').removeClass('color-yellow-must');
 			if (cBanned > 0) {
 				$('#banned-1').addClass('color-hilight');
 				$('#desc-banned-1').show();
+				$('#view-banned').addClass('color-yellow-must');
 			}
 			if (cBanned > 0) {
 				$('#view-banned').text('추방자x'+cBanned);
@@ -1610,21 +1884,16 @@
 				$('#view-banned').text('');
 				$('#title-banned').text('추방자');
 			}
-			if (Kassadin > 0) ++jMagician;
-			if (Ahri > 0) ++jMagician;
-			if (Lulu > 0) ++jMagician;
-			if (Morgana > 0) ++jMagician;
-			if (Veigar > 0) ++jMagician;
-			if (Aurelionsol > 0) ++jMagician;
-			if (Karthus > 0) ++jMagician;
-			if (Yumi > 0) jMagician += Yumi;
 			$('.sum-magician').removeClass('color-hilight');
+			$('#view-magician').removeClass('color-white-must');
 			if (jMagician > 5) {
 				$('#magician-6').addClass('color-hilight');
 				$('#desc-magician-6').show();
+				$('#view-magician').addClass('color-white-must');
 			} else if (jMagician > 2) {
 				$('#magician-3').addClass('color-hilight');
 				$('#desc-magician-3').show();
+				$('#view-magician').addClass('color-white-must');
 			}
 			if (jMagician > 0) {
 				$('#view-magician').text('마법사x'+jMagician);
@@ -1633,21 +1902,16 @@
 				$('#view-magician').text('');
 				$('#title-magician').text('마법사');
 			}
-			if (Khazix > 0) ++jAssassin;
-			if (Zed > 0) ++jAssassin;
-			if (Pyke > 0) ++jAssassin;
-			if (Rengar > 0) ++jAssassin;
-			if (Evelynn > 0) ++jAssassin;
-			if (Katarina > 0) ++jAssassin;
-			if (Akali > 0) ++jAssassin;
-			if (Youmu > 0) jAssassin += Youmu;
 			$('.sum-assassin').removeClass('color-hilight');
+			$('#view-assassin').removeClass('color-white-must');
 			if (jAssassin > 5) {
 				$('#assassin-6').addClass('color-hilight');
 				$('#desc-assassin-6').show();
+				$('#view-assassin').addClass('color-white-must');
 			} else if (jAssassin > 2) {
 				$('#assassin-3').addClass('color-hilight');
 				$('#desc-assassin-3').show();
+				$('#view-assassin').addClass('color-white-must');
 			}
 			if (jAssassin > 0) {
 				$('#view-assassin').text('암살자x'+jAssassin);
@@ -1656,23 +1920,20 @@
 				$('#view-assassin').text('');
 				$('#title-assassin').text('암살자');
 			}
-			if (Garen > 0) ++jKnight;
-			if (Darius > 0) ++jKnight;
-			if (Mordekaiser > 0) ++jKnight;
-			if (Poppy > 0) ++jKnight;
-			if (Sejuani > 0) ++jKnight;
-			if (Kayle > 0) ++jKnight;
-			if (Knight > 0) jKnight += Knight;
 			$('.sum-knight').removeClass('color-hilight');
+			$('#view-knight').removeClass('color-white-must');
 			if (jKnight > 5) {
 				$('#knight-6').addClass('color-hilight');
 				$('#desc-knight-6').show();
+				$('#view-knight').addClass('color-white-must');
 			} else if (jKnight > 3) {
 				$('#knight-4').addClass('color-hilight');
 				$('#desc-knight-4').show();
+				$('#view-knight').addClass('color-white-must');
 			} else if (jKnight > 1) {
 				$('#knight-2').addClass('color-hilight');
 				$('#desc-knight-2').show();
+				$('#view-knight').addClass('color-white-must');
 			}
 			if (jKnight > 0) {
 				$('#view-knight').text('기사x'+jKnight);
@@ -1681,20 +1942,16 @@
 				$('#view-knight').text('');
 				$('#title-knight').text('기사');
 			}
-			if (Fiora > 0) ++jSwordman;
-			if (Shen > 0) ++jSwordman;
-			if (Aatrox > 0) ++jSwordman;
-			if (Gangplank > 0) ++jSwordman;
-			if (Draven > 0) ++jSwordman;
-			if (Yasuo > 0) ++jSwordman;
-			if (Molak > 0) jSwordman += Molak;
 			$('.sum-swordman').removeClass('color-hilight');
+			$('#view-swordman').removeClass('color-white-must');
 			if (jSwordman > 5) {
 				$('#swordman-6').addClass('color-hilight');
 				$('#desc-swordman-6').show();
+				$('#view-swordman').addClass('color-white-must');
 			} else if (jSwordman > 2) {
 				$('#swordman-3').addClass('color-hilight');
 				$('#desc-swordman-3').show();
+				$('#view-swordman').addClass('color-white-must');
 			}
 			if (jSwordman > 0) {
 				$('#view-swordman').text('검사x'+jSwordman);
@@ -1703,18 +1960,16 @@
 				$('#view-swordman').text('');
 				$('#title-swordman').text('검사');
 			}
-			if (Warwick > 0) ++jFighter;
-			if (Reksai > 0) ++jFighter;
-			if (Blitzcrank > 0) ++jFighter;
-			if (Volibear > 0) ++jFighter;
-			if (Chogath > 0) ++jFighter;
 			$('.sum-fighter').removeClass('color-hilight');
+			$('#view-fighter').removeClass('color-white-must');
 			if (jFighter > 3) {
 				$('#fighter-4').addClass('color-hilight');
 				$('#desc-fighter-4').show();
+				$('#view-fighter').addClass('color-white-must');
 			} else if (jFighter > 1) {
 				$('#fighter-2').addClass('color-hilight');
 				$('#desc-fighter-2').show();
+				$('#view-fighter').addClass('color-white-must');
 			}
 			if (jFighter > 0) {
 				$('#view-fighter').text('싸움꾼x'+jFighter);
@@ -1723,18 +1978,16 @@
 				$('#view-fighter').text('');
 				$('#title-fighter').text('싸움꾼');
 			}
-			if (Graves > 0) ++jGunner;
-			if (Tristana > 0) ++jGunner;
-			if (Lucian > 0) ++jGunner;
-			if (Gangplank > 0) ++jGunner;
-			if (Missfortune > 0) ++jGunner;
 			$('.sum-gunner').removeClass('color-hilight');
+			$('#view-gunner').removeClass('color-white-must');
 			if (jGunner > 3) {
 				$('#gunner-4').addClass('color-hilight');
 				$('#desc-gunner-4').show();
+				$('#view-gunner').addClass('color-white-must');
 			} else if (jGunner > 1) {
 				$('#gunner-2').addClass('color-hilight');
 				$('#desc-gunner-2').show();
+				$('#view-gunner').addClass('color-white-must');
 			}
 			if (jGunner > 0) {
 				$('#view-gunner').text('총잡이x'+jGunner);
@@ -1743,15 +1996,12 @@
 				$('#view-gunner').text('');
 				$('#title-gunner').text('총잡이');
 			}
-			if (Nidalee > 0) ++jTransformer;
-			if (Elise > 0) ++jTransformer;
-			if (Shyvana > 0) ++jTransformer;
-			if (Gnar > 0) ++jTransformer;
-			if (Swain > 0) ++jTransformer;
 			$('.sum-transformer').removeClass('color-hilight');
+			$('#view-transformer').removeClass('color-white-must');
 			if (jTransformer > 2) {
 				$('#transformer-3').addClass('color-hilight');
 				$('#desc-transformer-3').show();
+				$('#view-transformer').addClass('color-white-must');
 			}
 			if (jTransformer > 0) {
 				$('#view-transformer').text('형상변환자x'+jTransformer);
@@ -1760,17 +2010,16 @@
 				$('#view-transformer').text('');
 				$('#title-transformer').text('형상변환자');
 			}
-			if (Vayne > 0) ++jRanger;
-			if (Varus > 0) ++jRanger;
-			if (Ashe > 0) ++jRanger;
-			if (Kindred > 0) ++jRanger;
 			$('.sum-ranger').removeClass('color-hilight');
+			$('#view-ranger').removeClass('color-white-must');
 			if (jRanger > 3) {
 				$('#ranger-4').addClass('color-hilight');
 				$('#desc-ranger-4').show();
+				$('#view-ranger').addClass('color-white-must');
 			} else if (jRanger > 1) {
 				$('#ranger-2').addClass('color-hilight');
 				$('#desc-ranger-2').show();
+				$('#view-ranger').addClass('color-white-must');
 			}
 			if (jRanger > 0) {
 				$('#view-ranger').text('정찰대x'+jRanger);
@@ -1779,14 +2028,12 @@
 				$('#view-ranger').text('');
 				$('#title-ranger').text('정찰대');
 			}
-			if (Lissandra > 0) ++jElementalist;
-			if (Kennen > 0) ++jElementalist;
-			if (Brand > 0) ++jElementalist;
-			if (Anivia > 0) ++jElementalist;
 			$('.sum-elementalist').removeClass('color-hilight');
+			$('#view-elementalist').removeClass('color-white-must');
 			if (jElementalist > 2) {
 				$('#elementalist-3').addClass('color-hilight');
 				$('#desc-elementalist-3').show();
+				$('#view-elementalist').addClass('color-white-must');
 			}
 			if (jElementalist > 0) {
 				$('#view-elementalist').text('원소술사x'+jElementalist);
@@ -1795,12 +2042,12 @@
 				$('#view-elementalist').text('');
 				$('#title-elementalist').text('원소술사');
 			}
-			if (Braum > 0) ++jGuardian;
-			if (Leona > 0) ++jGuardian;
 			$('.sum-guardian').removeClass('color-hilight');
+			$('#view-guardian').removeClass('color-white-must');
 			if (jGuardian > 1) {
 				$('#guardian-2').addClass('color-hilight');
 				$('#desc-guardian-2').show();
+				$('#view-guardian').addClass('color-white-must');
 			}
 			if (jGuardian > 0) {
 				$('#view-guardian').text('수호자x'+jGuardian);
@@ -2124,9 +2371,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Darkin">
 											<p class="unit-top">다르킨</p>
-											<p class="text-center item-arrow item-up" id="darkin-up">▲</p>
-											<p class="text-center item-arrow item-down" id="darkin-down">▼</p>
-											<p>장착: <span id="darkin-num">0</span></p>
+											<p class="text-center item-arrow item-up darkin-up">▲</p>
+											<p class="text-center item-arrow item-down darkin-down">▼</p>
+											<p>장착: <span class="darkin-num">0</span></p>
 										</div>
 									</td>
 									<td>
@@ -2184,9 +2431,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Hammer">
 											<p class="unit-top">얼어붙은 망치</p>
-											<p class="text-center item-arrow item-up" id="hammer-up">▲</p>
-											<p class="text-center item-arrow item-down" id="hammer-down">▼</p>
-											<p>장착: <span id="hammer-num">0</span></p>
+											<p class="text-center item-arrow item-up hammer-up">▲</p>
+											<p class="text-center item-arrow item-down hammer-down">▼</p>
+											<p>장착: <span class="hammer-num">0</span></p>
 										</div>
 									</td>
 									<td>
@@ -2625,9 +2872,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Youmu">
 											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">요우무의 유령검</p>
-											<p class="text-center item-arrow item-up" id="youmu-up">▲</p>
-											<p class="text-center item-arrow item-down" id="youmu-down">▼</p>
-											<p>장착: <span id="youmu-num">0</span></p>
+											<p class="text-center item-arrow item-up youmu-up">▲</p>
+											<p class="text-center item-arrow item-down youmu-down">▼</p>
+											<p>장착: <span class="youmu-num">0</span></p>
 										</div>
 									</td>
 									<td>
@@ -2690,9 +2937,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Yumi">
 											<p class="unit-top">유미</p>
-											<p class="text-center item-arrow item-up" id="yumi-up">▲</p>
-											<p class="text-center item-arrow item-down" id="yumi-down">▼</p>
-											<p>장착: <span id="yumi-num">0</span></p>
+											<p class="text-center item-arrow item-up yumi-up">▲</p>
+											<p class="text-center item-arrow item-down yumi-down">▼</p>
+											<p>장착: <span class="yumi-num">0</span></p>
 										</div>
 									</td>
 								</tr>
@@ -2746,9 +2993,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Knight">
 											<p class="unit-top">기사의 맹세</p>
-											<p class="text-center item-arrow item-up" id="knight-up">▲</p>
-											<p class="text-center item-arrow item-down" id="knight-down">▼</p>
-											<p>장착: <span id="knight-num">0</span></p>
+											<p class="text-center item-arrow item-up knight-up">▲</p>
+											<p class="text-center item-arrow item-down knight-down">▼</p>
+											<p>장착: <span class="knight-num">0</span></p>
 										</div>
 									</td>
 								</tr>
@@ -2801,9 +3048,9 @@
 									<td>
 										<div class="icon unit unit-item unit-Molak">
 											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">몰락한 왕의 검</p>
-											<p class="text-center item-arrow item-up" id="molak-up">▲</p>
-											<p class="text-center item-arrow item-down" id="molak-down">▼</p>
-											<p>장착: <span id="molak-num">0</span></p>
+											<p class="text-center item-arrow item-up molak-up">▲</p>
+											<p class="text-center item-arrow item-down molak-down">▼</p>
+											<p>장착: <span class="molak-num">0</span></p>
 										</div>
 									</td>
 								</tr>
@@ -3027,7 +3274,244 @@
 				</tr>
 			</tbody>
 		</table>
-		
+		<div style="margin-bottom: 1rem;">
+			<span class="icon unit unit-Garen view-selected" id="view-Garen">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Graves view-selected" id="view-Graves">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Nidalee view-selected" id="view-Nidalee">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Darius view-selected" id="view-Darius">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Mordekaiser view-selected" id="view-Mordekaiser">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Vayne view-selected" id="view-Vayne">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Warwick view-selected" id="view-Warwick">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Kassadin view-selected" id="view-Kassadin">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Khazix view-selected" id="view-Khazix">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Tristana view-selected" id="view-Tristana">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Fiora view-selected" id="view-Fiora">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Reksai view-selected" id="view-Reksai">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Lucian view-selected" id="view-Lucian">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Lulu view-selected" id="view-Lulu">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Lissandra view-selected" id="view-Lissandra">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Varus view-selected" id="view-Varus">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Braum view-selected" id="view-Braum">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Blitzcrank view-selected" id="view-Blitzcrank">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Shen view-selected" id="view-Shen">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Ahri view-selected" id="view-Ahri">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Elise view-selected" id="view-Elise">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Zed view-selected" id="view-Zed">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Pyke view-selected" id="view-Pyke">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Gangplank view-selected" id="view-Gangplank">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Rengar view-selected" id="view-Rengar">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Morgana view-selected" id="view-Morgana">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Veigar view-selected" id="view-Veigar">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Volibear view-selected" id="view-Volibear">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Poppy view-selected" id="view-Poppy">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Shyvana view-selected" id="view-Shyvana">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Aatrox view-selected" id="view-Aatrox">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Ashe view-selected" id="view-Ashe">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Evelynn view-selected" id="view-Evelynn">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Katarina view-selected" id="view-Katarina">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Kennen view-selected" id="view-Kennen">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Gnar view-selected" id="view-Gnar">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Draven view-selected" id="view-Draven">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Leona view-selected" id="view-Leona">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Brand view-selected" id="view-Brand">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Sejuani view-selected" id="view-Sejuani">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Aurelionsol view-selected" id="view-Aurelionsol">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Akali view-selected" id="view-Akali">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Chogath view-selected" id="view-Chogath">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Kindred view-selected" id="view-Kindred">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Missfortune view-selected" id="view-Missfortune">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Swain view-selected" id="view-Swain">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Yasuo view-selected" id="view-Yasuo">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Anivia view-selected" id="view-Anivia">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Karthus view-selected" id="view-Karthus">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Kayle view-selected" id="view-Kayle">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-item unit-Darkin view-selected" id="view-Darkin">
+				<p class="unit-top">다르킨</p>
+				<p class="text-center item-arrow item-up darkin-up">▲</p>
+				<p class="text-center item-arrow item-down darkin-down">▼</p>
+				<p>장착: <span class="darkin-num">0</span></p>
+			</span>
+			<span class="icon unit unit-item unit-Hammer view-selected" id="view-Hammer">
+				<p class="unit-top">얼어붙은 망치</p>
+				<p class="text-center item-arrow item-up hammer-up">▲</p>
+				<p class="text-center item-arrow item-down hammer-down">▼</p>
+				<p>장착: <span class="hammer-num">0</span></p>
+			</span>
+			<span class="icon unit unit-item unit-Youmu view-selected" id="view-Youmu">
+				<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">요우무의 유령검</p>
+				<p class="text-center item-arrow item-up youmu-up">▲</p>
+				<p class="text-center item-arrow item-down youmu-down">▼</p>
+				<p>장착: <span class="youmu-num">0</span></p>
+			</span>
+			<span class="icon unit unit-item unit-Yumi view-selected" id="view-Yumi">
+				<p class="unit-top">유미</p>
+				<p class="text-center item-arrow item-up yumi-up">▲</p>
+				<p class="text-center item-arrow item-down yumi-down">▼</p>
+				<p>장착: <span class="yumi-num">0</span></p>
+			</span>
+			<span class="icon unit unit-item unit-Knight view-selected" id="view-iKnight">
+				<p class="unit-top">기사의 맹세</p>
+				<p class="text-center item-arrow item-up knight-up">▲</p>
+				<p class="text-center item-arrow item-down knight-down">▼</p>
+				<p>장착: <span class="knight-num">0</span></p>
+			</span>
+			<span class="icon unit unit-item unit-Molak view-selected" id="view-Molak">
+				<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">몰락한 왕의 검</p>
+				<p class="text-center item-arrow item-up molak-up">▲</p>
+				<p class="text-center item-arrow item-down molak-down">▼</p>
+				<p>장착: <span class="molak-num">0</span></p>
+			</span>
+		</div>
 		<div style="margin-bottom: 1rem;">
 			<p>
 				<span class="view view-class" id="view-devil"></span>
