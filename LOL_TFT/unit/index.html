@@ -426,6 +426,12 @@
 			min-width: 92px;
 			min-height: 92px;
 		}
+		.jumbotron {
+			max-width: 1000%;
+		}
+		.card {
+			max-width: 1000%;
+		}
 		.tooltip {
 			font-weight: bold;
 			font-size: 1rem;
@@ -525,7 +531,16 @@
 			setTagLv1();
 			setFirst();
 			setCheckbox();
+			setAutoSize();
 		});
+		function setAutoSize() {
+			$('.jumbotron').css('width',$('#table-main').width());
+			$('.card').css('width',$('#table-main').width());
+			window.addEventListener('resize', function() {
+				$('.jumbotron').css('width',$('#table-main').width());
+				$('.card').css('width',$('#table-main').width());
+			});
+		};
 		function setCheckbox() {
 			$('.check-tier').on('change',function(){
 				calCheck();
@@ -2549,8 +2564,8 @@
 		};
 	</script>
 </head>
-<body class="no-drag">
-	<div class="container-fluid font-ng">
+<body class="no-drag font-ng">
+	<div class="container-fluid">
 		<div class="jumbotron" style="margin-bottom: 10px;">
 			<h1 style="margin-top: -2rem; font-weight: bold;">
 				LOL Team Fight Tactics - Unit / <a href="../item/" target="_blank">Item <img src="../resources/img/minicon/link.png" style="width: 32px;"></a>
@@ -2625,7 +2640,7 @@
 			</p>
 		</div>
 		
-		<table style="margin-bottom: 1rem;">
+		<table style="margin-bottom: 1rem;" id="table-main">
 			<thead>
 				<tr>
 					<th>
