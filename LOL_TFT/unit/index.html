@@ -238,6 +238,9 @@
 		.unit-Zed {
 			background-image: url(../resources/img/unit/Zed.png);
 		}
+		.unit-Twistedfate {
+			background-image: url(../resources/img/unit/Twistedfate.png);
+		}
 		.unit-Youmu {
 			background-image: url(../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png);
 		}
@@ -493,6 +496,7 @@
 		var Warwick = 0;
 		var Yasuo = 0;
 		var Zed = 0;
+		var Twistedfate = 0;
 		var Darkin = 0;
 		var Hammer = 0;
 		var Youmu = 0;
@@ -930,6 +934,10 @@
 			$('.unit-Anivia').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cIce.png'>빙하>[<img src='../resources/img/minicon/type/jElementalist.png'>원소술사] <span class='color-t5'>(5티어)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 650/1170/2340</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 24</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Anivia.png'>얼음 폭풍</p><p class='text-left'>타겟 당 총 피해량(700/950/1200),</p><p class='text-left'>적 공격속도 감소(50%/70%/90%),</p><p class='text-left'>지속시간 8초.</p><p class='text-left'>: 광역 범위(원형)에 8초간 지속되는 얼음 폭풍을 만들어</p><p class='text-left'>&nbsp;&nbsp;피해와 함께 적 공격속도 감소</p>");
 			$('.unit-Karthus').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cGhost.png'>유령>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t5'>(5티어)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 850/1530/3060</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 42</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Karthus.png'>진혼곡</p><p class='text-left'>피해량(350/550/850),</p><p class='text-left'>타겟 수 적군(4명/7명/11명).</p><p class='text-left'>: 3초의 채널링 후 거리에 상관없이 적 유닛들에 피해</p>");
 			$('.unit-Kayle').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRoyal.png'>귀족>[<img src='../resources/img/minicon/type/jKnight.png'>기사] <span class='color-t5'>(5티어)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 800/1440/2880</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 60</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 1.1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 66</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 35</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Kayle.png'>신성한 심판</p><p class='text-left'>타겟 수 아군(1명/2명/3명),</p><p class='text-left'>지속시간(2초/3초/4초).</p><p class='text-left'>: 대상 아군이 지속시간동안 무적이 됨</p>");
+			$('.unit-Twistedfate').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t2'>(2티어)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Twistedfate.png'>카드 뽑기</p><p class='text-left'>피해량(200/300/400),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_red.png'>레드카드 - 대상 주변 광역 피해,</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_gold.png'>골드카드 - 기절 지속시간(2초/3초/4초),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_blue.png'>블루카드 - 자신과 아군 유닛 하나 마나 회복(20/35/50).</p><p class='text-left'>: 임의의 카드를 뽑아 단일 적 유닛에게 피해를 주면서 해당 색깔 효과 발동</p>");
+			
+			
+			
 			$('.unit-Darkin').attr('data-original-title',"<p>[다르킨]</p><p>+마나20</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/여신의_눈물.png'></p>");
 			$('.unit-Hammer').attr('data-original-title',"<p>[얼어붙은 망치]</p><p>+체력200</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/거인의_허리띠.png'></p>");
 			$('.unit-Youmu').attr('data-original-title',"<p>[요우무의 유령검]</p><p>+공격속도15%</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/곡궁.png'></p>");
@@ -1582,6 +1590,18 @@
 				}
 				calSum();
 			});
+			$('.unit-Twistedfate').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Twistedfate;
+					$('.unit-Twistedfate').removeClass('dim');
+				} else {
+					--Twistedfate;
+					if(Twistedfate == 0) {
+						$('.unit-Twistedfate').addClass('dim');
+					}
+				}
+				calSum();
+			});
 			$('.darkin-up').on('click',function(){
 				if (Darkin < 8) {
 					++Darkin;
@@ -1923,6 +1943,11 @@
 				++cPirate;
 				++jGunner;
 				$('#view-Graves').show();
+			}
+			if (Twistedfate > 0) {
+				++cPirate;
+				++jMagician;
+				$('#view-Twistedfate').show();
 			}
 			if (Pyke > 0) {
 				++cPirate;
@@ -2421,6 +2446,7 @@
 			$('.unit-Ahri').addClass('tier-2');
 			$('.unit-Elise').addClass('tier-2');
 			$('.unit-Zed').addClass('tier-2');
+			$('.unit-Twistedfate').addClass('tier-2');
 			$('.unit-Pyke').addClass('tier-2');
 			$('.unit-Gangplank').addClass('tier-3');
 			$('.unit-Rengar').addClass('tier-3');
@@ -2501,6 +2527,7 @@
 			$('.unit-Warwick').find('.unit-top').text('워윅');
 			$('.unit-Yasuo').find('.unit-top').text('야스오');
 			$('.unit-Zed').find('.unit-top').text('제드');
+			$('.unit-Twistedfate').find('.unit-top').text('트위스티드 페이트');
 		};
 		function setTagLv1() {
 			$('.tier-1').find('.unit-bottom').text('1티어: 100%');
@@ -2966,6 +2993,70 @@
 								</tr>
 								<tr>
 									<td>
+										<div class="icon icon-class class-Pirate">
+											<p class="text-center" style="font-size: 1rem;" id="title-pirate">해적</p>
+											<p class="type-bottom text-center">
+												<span class="sum-pirate" id="pirate-3">(3)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Graves">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Twistedfate">
+											<p class="unit-top" style="font-size: 0.6rem; margin-bottom: 3.2rem;"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Pyke">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gangplank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Missfortune">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Dragon">
+											<p class="text-center" style="font-size: 1rem;" id="title-dragon">용</p>
+											<p class="type-bottom text-center">
+												<span class="sum-dragon" id="dragon-2">(2)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shyvana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aurelionsol">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
 										<div class="icon icon-class class-Ninja">
 											<p class="text-center" style="font-size: 1rem;" id="title-ninja">닌자</p>
 											<p class="type-bottom text-center">
@@ -3004,25 +3095,27 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon">
-										</div>
-									</td>
-									<td>
-										<div class="icon icon-class class-Dragon">
-											<p class="text-center" style="font-size: 1rem;" id="title-dragon">용</p>
+										<div class="icon icon-class class-Ghost">
+											<p class="text-center" style="font-size: 1rem;" id="title-ghost">유령</p>
 											<p class="type-bottom text-center">
-												<span class="sum-dragon" id="dragon-2">(2)</span>
+												<span class="sum-ghost" id="ghost-2">(2)</span>
 											</p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Shyvana">
+										<div class="icon unit unit-Mordekaiser">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Aurelionsol">
+										<div class="icon unit unit-Kindred">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Karthus">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3063,38 +3156,6 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon">
-										</div>
-									</td>
-									<td>
-										<div class="icon icon-class class-Ghost">
-											<p class="text-center" style="font-size: 1rem;" id="title-ghost">유령</p>
-											<p class="type-bottom text-center">
-												<span class="sum-ghost" id="ghost-2">(2)</span>
-											</p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Mordekaiser">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Kindred">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Karthus">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
 										<div class="icon icon-class class-Void">
 											<p class="text-center" style="font-size: 1rem;" id="title-void">공허</p>
 											<p class="type-bottom text-center">
@@ -3126,38 +3187,6 @@
 											<p class="unit-bottom"></p>
 										</div>
 									</td>
-									<td>
-										<div class="icon icon-class class-Pirate">
-											<p class="text-center" style="font-size: 1rem;" id="title-pirate">해적</p>
-											<p class="type-bottom text-center">
-												<span class="sum-pirate" id="pirate-3">(3)</span>
-											</p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Graves">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Pyke">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Gangplank">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Missfortune">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3165,6 +3194,73 @@
 					<td>
 						<table>
 							<tbody>
+								<tr>
+									<td>
+										<div class="icon icon-job job-Magician">
+											<p class="text-center" style="font-size: 1rem;" id="title-magician">마법사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-magician" id="magician-3">(3)</span>
+												<span class="sum-magician" id="magician-6">(6)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kassadin">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Ahri">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Twistedfate">
+											<p class="unit-top" style="font-size: 0.6rem; margin-bottom: 3.2rem;"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Lulu">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Morgana">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Veigar">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aurelionsol">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Karthus">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Yumi">
+											<p class="unit-top">유미</p>
+											<p class="text-center item-arrow item-up yumi-up">▲</p>
+											<p class="text-center item-arrow item-down yumi-down">▼</p>
+											<p>장착: <span class="yumi-num">0</span></p>
+										</div>
+									</td>
+								</tr>
 								<tr>
 									<td>
 										<div class="icon icon-job job-Assassin">
@@ -3223,71 +3319,6 @@
 											<p class="text-center item-arrow item-up youmu-up">▲</p>
 											<p class="text-center item-arrow item-down youmu-down">▼</p>
 											<p>장착: <span class="youmu-num">0</span></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon">
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="icon icon-job job-Magician">
-											<p class="text-center" style="font-size: 1rem;" id="title-magincian">마법사</p>
-											<p class="type-bottom text-center">
-												<span class="sum-magician" id="magician-3">(3)</span>
-												<span class="sum-magician" id="magician-6">(6)</span>
-											</p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Kassadin">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Ahri">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Lulu">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Morgana">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Veigar">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Aurelionsol">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Karthus">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-item unit-Yumi">
-											<p class="unit-top">유미</p>
-											<p class="text-center item-arrow item-up yumi-up">▲</p>
-											<p class="text-center item-arrow item-down yumi-down">▼</p>
-											<p>장착: <span class="yumi-num">0</span></p>
 										</div>
 									</td>
 								</tr>
@@ -3709,6 +3740,10 @@
 			</span>
 			<span class="icon unit unit-Zed view-selected" id="view-Zed">
 				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Twistedfate view-selected" id="view-Twistedfate">
+				<p class="unit-top" style="font-size: 0.6rem; margin-bottom: 3.2rem;"></p>
 				<p class="unit-bottom"></p>
 			</span>
 			<span class="icon unit unit-Pyke view-selected" id="view-Pyke">
