@@ -534,12 +534,15 @@
 			setAutoSize();
 		});
 		function setAutoSize() {
+			$('body').css('width',$('#table-main').width()+30);
 			$('.jumbotron').css('width',$('#table-main').width());
 			$('.card').css('width',$('#table-main').width());
+			/*
 			window.addEventListener('resize', function() {
 				$('.jumbotron').css('width',$('#table-main').width());
 				$('.card').css('width',$('#table-main').width());
 			});
+			*/
 		};
 		function setCheckbox() {
 			$('.check-tier').on('change',function(){
