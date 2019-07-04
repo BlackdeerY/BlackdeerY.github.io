@@ -422,6 +422,10 @@
 		p {
 			margin: 0px;
 		}
+		td {
+			min-width: 92px;
+			min-height: 92px;
+		}
 		.tooltip {
 			font-weight: bold;
 			font-size: 1rem;
@@ -520,7 +524,302 @@
 			setTier();
 			setTagLv1();
 			setFirst();
+			setCheckbox();
 		});
+		function setCheckbox() {
+			$('.check-tier').on('change',function(){
+				calCheck();
+			});
+			$('#btn-tier-nowlv').on('click',function(){
+				console.log($('#view-lv').text());
+				if ($('#view-lv').text()=='레벨: 1') {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',false);
+					$('#check-tier3').prop('checked',false);
+					$('#check-tier4').prop('checked',false);
+					$('#check-tier5').prop('checked',false);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+				} else if ($('#view-lv').text()=='레벨: 2') {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',false);
+					$('#check-tier3').prop('checked',false);
+					$('#check-tier4').prop('checked',false);
+					$('#check-tier5').prop('checked',false);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+				} else if ($('#view-lv').text()=='레벨: 3') {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',true);
+					$('#check-tier3').prop('checked',true);
+					$('#check-tier4').prop('checked',false);
+					$('#check-tier5').prop('checked',false);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+				} else if ($('#view-lv').text()=='레벨: 4') {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',true);
+					$('#check-tier3').prop('checked',true);
+					$('#check-tier4').prop('checked',false);
+					$('#check-tier5').prop('checked',false);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+				} else if ($('#view-lv').text()=='레벨: 5') {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',true);
+					$('#check-tier3').prop('checked',true);
+					$('#check-tier4').prop('checked',true);
+					$('#check-tier5').prop('checked',false);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).hide();
+						}
+					});
+				} else {
+					$('#check-tier1').prop('checked',true);
+					$('#check-tier2').prop('checked',true);
+					$('#check-tier3').prop('checked',true);
+					$('#check-tier4').prop('checked',true);
+					$('#check-tier5').prop('checked',true);
+					$('.tier-1').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-2').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-3').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-4').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+					$('.tier-5').each(function(i,element){
+						if(!$(element).hasClass('view-selected')) {
+							$(element).show();
+						}
+					});
+				}
+			});
+			$('#btn-tier-all').on('click',function(){
+				$('#check-tier1').prop('checked',true);
+				$('#check-tier2').prop('checked',true);
+				$('#check-tier3').prop('checked',true);
+				$('#check-tier4').prop('checked',true);
+				$('#check-tier5').prop('checked',true);
+				$('.tier-1').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+				$('.tier-2').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+				$('.tier-3').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+				$('.tier-4').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+				$('.tier-5').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			});
+		};
+		function calCheck() {
+			if ($('#check-tier1').prop('checked')) {
+				$('.tier-1').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			} else {
+				$('.tier-1').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).hide();
+					}
+				});
+			}
+			if ($('#check-tier2').prop('checked')) {
+				$('.tier-2').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			} else {
+				$('.tier-2').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).hide();
+					}
+				});
+			}
+			if ($('#check-tier3').prop('checked')) {
+				$('.tier-3').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			} else {
+				$('.tier-3').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).hide();
+					}
+				});
+			}
+			if ($('#check-tier4').prop('checked')) {
+				$('.tier-4').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			} else {
+				$('.tier-4').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).hide();
+					}
+				});
+			}
+			if ($('#check-tier5').prop('checked')) {
+				$('.tier-5').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).show();
+					}
+				});
+			} else {
+				$('.tier-5').each(function(i,element){
+					if(!$(element).hasClass('view-selected')) {
+						$(element).hide();
+					}
+				});
+			}
+		};
 		function setTooltip() {
 			$('.btn-sm').attr('data-toggle','tooltip');
 			$('.btn-sm').attr('data-trigger','hover');
@@ -1266,10 +1565,12 @@
 				calSum();
 			});
 			$('.darkin-up').on('click',function(){
-				++Darkin;
-				$('.darkin-num').text(Darkin);
-				$('.unit-Darkin').removeClass('dim');
-				calSum();
+				if (Darkin < 8) {
+					++Darkin;
+					$('.darkin-num').text(Darkin);
+					$('.unit-Darkin').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.darkin-down').on('click',function(){
 				if (Darkin > 0) {
@@ -1282,10 +1583,12 @@
 				}
 			});
 			$('.hammer-up').on('click',function(){
-				++Hammer;
-				$('.hammer-num').text(Hammer);
-				$('.unit-Hammer').removeClass('dim');
-				calSum();
+				if (Hammer < 8) {
+					++Hammer;
+					$('.hammer-num').text(Hammer);
+					$('.unit-Hammer').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.hammer-down').on('click',function(){
 				if (Hammer > 0) {
@@ -1298,10 +1601,12 @@
 				}
 			});
 			$('.youmu-up').on('click',function(){
-				++Youmu;
-				$('.youmu-num').text(Youmu);
-				$('.unit-Youmu').removeClass('dim');
-				calSum();
+				if (Youmu < 8) {
+					++Youmu;
+					$('.youmu-num').text(Youmu);
+					$('.unit-Youmu').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.youmu-down').on('click',function(){
 				if (Youmu > 0) {
@@ -1314,10 +1619,12 @@
 				}
 			});
 			$('.yumi-up').on('click',function(){
-				++Yumi;
-				$('.yumi-num').text(Yumi);
-				$('.unit-Yumi').removeClass('dim');
-				calSum();
+				if (Yumi < 8) {
+					++Yumi;
+					$('.yumi-num').text(Yumi);
+					$('.unit-Yumi').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.yumi-down').on('click',function(){
 				if (Yumi > 0) {
@@ -1330,10 +1637,12 @@
 				}
 			});
 			$('.knight-up').on('click',function(){
-				++Knight;
-				$('.knight-num').text(Knight);
-				$('.unit-Knight').removeClass('dim');
-				calSum();
+				if (Knight < 8) {
+					++Knight;
+					$('.knight-num').text(Knight);
+					$('.unit-Knight').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.knight-down').on('click',function(){
 				if (Knight > 0) {
@@ -1346,10 +1655,12 @@
 				}
 			});
 			$('.molak-up').on('click',function(){
-				++Molak;
-				$('.molak-num').text(Molak);
-				$('.unit-Molak').removeClass('dim');
-				calSum();
+				if (Molak < 8) {
+					++Molak;
+					$('.molak-num').text(Molak);
+					$('.unit-Molak').removeClass('dim');
+					calSum();
+				}
 			});
 			$('.molak-down').on('click',function(){
 				if (Molak > 0) {
@@ -2298,7 +2609,20 @@
 				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv8">Lv8</button>
 				<button class="btn btn-sm btn-warning" style="font-size: 1.2rem; font-weight: bold;" id="btn-lv9">Lv9</button>
 			</p>
-			
+		</div>
+		<div style="margin-bottom: 1rem;">
+			<p style="font-size: 1.2rem; font-weight: bold;">
+				티어별 유닛 보이기/숨기기
+			</p>
+			<p>
+				<span class="color-white" style="font-size: 1.2rem; font-weight: bold; margin-right: 1rem;"><input class="check-tier" type="checkbox" id="check-tier1" checked="true"><label for="check-tier1">1티어</label></span>
+				<span class="color-white" style="font-size: 1.2rem; font-weight: bold; margin-right: 1rem;"><input class="check-tier" type="checkbox" id="check-tier2" checked="true"><label for="check-tier2">2티어</label></span>
+				<span class="color-white" style="font-size: 1.2rem; font-weight: bold; margin-right: 1rem;"><input class="check-tier" type="checkbox" id="check-tier3" checked="true"><label for="check-tier3">3티어</label></span>
+				<span class="color-white" style="font-size: 1.2rem; font-weight: bold; margin-right: 1rem;"><input class="check-tier" type="checkbox" id="check-tier4" checked="true"><label for="check-tier4">4티어</label></span>
+				<span class="color-white" style="font-size: 1.2rem; font-weight: bold; margin-right: 1rem;"><input class="check-tier" type="checkbox" id="check-tier5" checked="true"><label for="check-tier5">5티어</label></span>
+				<button class="btn btn-sm btn-secondary" style="font-size: 1rem; font-weight: bold; margin-right: 1rem;" id="btn-tier-nowlv">현재 레벨에서 출현하는 티어만</button>
+				<button class="btn btn-sm btn-secondary" style="font-size: 1rem; font-weight: bold;" id="btn-tier-all">모두 보이기</button>
+			</p>
 		</div>
 		
 		<table class="no-drag" style="margin-bottom: 1rem;">
