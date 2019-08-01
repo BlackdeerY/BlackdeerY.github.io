@@ -241,6 +241,18 @@
 		.unit-Twistedfate {
 			background-image: url(../resources/img/unit/Twistedfate.png);
 		}
+		.unit-Camille {
+			background-image: url(../resources/img/unit/Camille.png);
+		}
+		.unit-Jayce {
+			background-image: url(../resources/img/unit/Jayce.png);
+		}
+		.unit-Vi {
+			background-image: url(../resources/img/unit/Vi.png);
+		}
+		.unit-Jinx {
+			background-image: url(../resources/img/unit/Jinx.png);
+		}
 		.unit-Youmu {
 			background-image: url(../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png);
 		}
@@ -297,6 +309,9 @@
 		}
 		.class-Banned {
 			background-image: url(../resources/img/unit/Banned.png);
+		}
+		.class-Piltover {
+			background-image: url(../resources/img/unit/Piltover.png);
 		}
 		.job-Assassin {
 			background-image: url(../resources/img/unit/Assassin.png);
@@ -505,6 +520,10 @@
 		var Yasuo = 0;
 		var Zed = 0;
 		var Twistedfate = 0;
+		var Camille = 0;
+		var Jayce = 0;
+		var Vi = 0;
+		var Jinx = 0;
 		var Darkin = 0;
 		var Hammer = 0;
 		var Youmu = 0;
@@ -524,6 +543,7 @@
 		var cDragon = 0;
 		var cRobot = 0;
 		var cBanned = 0;
+		var cPiltover = 0;
 		var jMagician = 0;
 		var jAssassin = 0;
 		var jKnight = 0;
@@ -882,6 +902,7 @@
 			$('.class-Dragon').attr('data-original-title','용(2): 아군 용 유닛들은 마법 피해에 83% 면역이 됩니다. (17%의 피해만 받습니다.)');
 			$('.class-Robot').attr('data-original-title','로봇(1): 아군 로봇 유닛들은 마나가 가득 찬 상태로 전투를 시작합니다.');
 			$('.class-Banned').attr('data-original-title','추방자(1): 아군 추방자 유닛들은 전투 시작 시 인접한 아군 유닛이 없다면 최대 체력과 동일한 양의 방어막을 얻습니다.');
+			$('.class-Piltover').attr('data-original-title','필트오버(?): 아군 필트오버 유닛들은 기본 공격시 일정 확률로 대상의 아이템 효과를 ?초간 해제합니다.');
 			$('.job-Assassin').attr('data-original-title','암살자(3/6): 아군 암살자 유닛들의 치명타 피해량이 (125%/350%) 증가합니다.');
 			$('.job-Magician').attr('data-original-title',"<p class='text-left'>마법사와 원소술사 유닛은 기본 공격시 2배의 마나를 회복합니다.(중첩X)</p><p class='text-left'>마법사(3/6): 모든 아군(마법사든 아니든)의 스킬 피해량이 (45%/100%) 증가합니다.</p>");
 			$('.job-Knight').attr('data-original-title','기사(2/4/6): 모든 아군(기사든 아니든)은 모든 피해로부터 (15/30/55)만큼의 피해를 방어합니다.');
@@ -894,7 +915,7 @@
 			$('.job-Guardian').attr('data-original-title','수호자(2): 전투 시작 시 아군 수호자 유닛의 좌우 아군 유닛들만 방어력 50을 얻습니다.(중첩 가능)');
 			$('.unit-Garen').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRoyal.png'>귀족>[<img src='../resources/img/minicon/type/jKnight.png'>기사] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 600/1080/2160</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Garen.png'>심판</p><p class='text-left'>피해량(40/65/90)x9,</p><p class='text-left'>지속시간 4초.</p><p class='text-left'>: 4초간 휘두르며 인접 적 9번 타격</p>");
 			$('.unit-Graves').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jGunner.png'>총잡이] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: X</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: X</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 55</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.55</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 30.25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>기본 공격: <img class='skillcon' src='../resources/img/skill/Graves.png'>산탄 사격</p><p class='text-left'>추가 피해량(5%/10%/15%).</p><p class='text-left'>: 스플래시 평타 공격</p>");
-			$('.unit-Nidalee').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cWild.png'>야생>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 500/900/1800</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 33</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Nidalee.png'>태고의 생명력 (60초)</p><p class='text-left'>회복량(150/375/600),</p><p class='text-left'>변신 후 추가 공격력(20/70/120),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 가장 체력이 낮은 아군 유닛 하나 회복 후, 변신</p>");
+			$('.unit-Nidalee').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cWild.png'>야생>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 500/900/1800</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3 (변신시 1)</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 33</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Nidalee.png'>태고의 생명력 (60초)</p><p class='text-left'>회복량(150/375/600),</p><p class='text-left'>변신 후 추가 공격력(20/70/120),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 가장 체력이 낮은 아군 유닛 하나 회복 후, 변신</p>");
 			$('.unit-Darius').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cKingdom.png'>제국>[<img src='../resources/img/minicon/type/jKnight.png'>기사] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 600/1080/2160</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.5</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Darius.png'>학살</p><p class='text-left'>피해량(150/225/300),</p><p class='text-left'>치유량(100,150,200).</p><p class='text-left'>: 인접 적에게 휘둘러서 타격 및 피흡</p>");
 			$('.unit-Mordekaiser').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cGhost.png'>유령>[<img src='../resources/img/minicon/type/jKnight.png'>기사] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 550/990/1980</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.5</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Mordekaiser.png'>말살</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 전방 2칸 타격</p>");
 			$('.unit-Vayne').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRoyal.png'>귀족>[<img src='../resources/img/minicon/type/jRanger.png'>정찰대] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 550/990/1980</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: X</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: X</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>패시브: <img class='skillcon' src='../resources/img/skill/Vayne.png'>은화살</p><p class='text-left'>적 최대 체력 비례 피해량(8%/10%/12%).</p><p class='text-left'>: 동일 적 연속 3타 마다 은화살 피해 발동</p>");
@@ -912,7 +933,7 @@
 			$('.unit-Blitzcrank').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRobot.png'>로봇>[<img src='../resources/img/minicon/type/jFighter.png'>싸움꾼] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 600/1080/2160</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.5</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 35</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Blitzcrank.png'>로켓 손</p><p class='text-left'>피해량(100/450/800),</p><p class='text-left'>대상 2.5초 기절.</p><p class='text-left'>: 적군 제일 후방의 유닛을 하나 끌어오며(유닛 통과판정) 피해와 기절효과(2.5초)</p>");
 			$('.unit-Shen').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cNinja.png'>닌자>[<img src='../resources/img/minicon/type/jSwordman.png'>검사] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 650/1170/2340</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 150</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.7</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 45.5</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Shen.png'>의지의 결계</p><p class='text-left'>지속 시간(3초/4초/5초).</p><p class='text-left'>: 범위 내 모든 아군이 적의 평타를 회피,</p><p class='text-left'>&nbsp;&nbsp;쉔의 인접 영역에 형성되며, 쉔과 함께 이동됨</p>");
 			$('.unit-Ahri').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cWild.png'>야생>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.55</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 28</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Ahri.png'>현혹의 구슬</p><p class='text-left'>피해량(100/200/300)x2.</p><p class='text-left'>: 던지고 받으며 관통하는 모든 적군에게 2번(왕복)의 피해</p>");
-			$('.unit-Elise').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cDevil.png'>악마>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 24</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Elise.png'>거미 형태 (60초)</p><p class='text-left'>생명력 흡수(60%/90%/120%),</p><p class='text-left'>새끼거미 체력: 500,</p><p class='text-left'>새끼거미 개체 수(1/2/4),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신과 함께 새끼거미를 소환하며, 자신의 평타에 피흡효과,</p><p class='text-left'>&nbsp;&nbsp;전투종료시 새끼거미가 필드에 있다면 적 전설이에게 피해 계산 반영</p>");
+			$('.unit-Elise').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cDevil.png'>악마>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3 (변신시 1)</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 24</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Elise.png'>거미 형태 (60초)</p><p class='text-left'>생명력 흡수(60%/90%/120%),</p><p class='text-left'>새끼거미 체력: 500,</p><p class='text-left'>새끼거미 개체 수(1/2/4),</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신과 함께 새끼거미를 소환하며, 자신의 평타에 피흡효과,</p><p class='text-left'>&nbsp;&nbsp;전투종료시 새끼거미가 필드에 있다면 적 전설이에게 피해 계산 반영</p>");
 			$('.unit-Zed').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cNinja.png'>닌자>[<img src='../resources/img/minicon/type/jAssassin.png'>암살자] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 500/900/1800</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 42.25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Zed.png'>예리한 표창</p><p class='text-left'>피해량(200/300/400).</p><p class='text-left'>: 표창을 던져 관통하는 모든 적군에게 피해</p>");
 			$('.unit-Pyke').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jAssassin.png'>암살자] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 600/1080/2160</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 60</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 36</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Pyke.png'>망자의 물살</p><p class='text-left'>피해량(150/200/250),</p><p class='text-left'>기절 지속시간(2초/2.5초/3초).</p><p class='text-left'>: 가장 먼 적 유닛에게 빠르게 접근하며, 통과하는 모든 적 유닛 기절</p>");
 			$('.unit-Gangplank').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jSwordman.png'>검사][<img src='../resources/img/minicon/type/jGunner.png'>총잡이] <span class='color-t3'>(3단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 700/1260/2520</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 55</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 35.75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Gangplank.png'>화약통</p><p class='text-left'>피해량(200/325/450).</p><p class='text-left'>: 마나 25,50,75에 화약통을 깔고,</p><p class='text-left'>&nbsp;&nbsp;100이 되면 3개를 동시에 터뜨린다</p>");
@@ -927,7 +948,7 @@
 			$('.unit-Evelynn').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cDevil.png'>악마>[<img src='../resources/img/minicon/type/jAssassin.png'>암살자] <span class='color-t3'>(3단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 550/990/1980</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 70</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 42</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Evelynn.png'>최후의 포옹</p><p class='text-left'>피해량(200/300/400),</p><p class='text-left'>체력 65% 이하인 적에게 피해량 증폭(3배/5배/7배).</p><p class='text-left'>: 전방 반월형으로 적 유닛 최대 3명에게 피해(0.35초 속박),</p><p class='text-left'>&nbsp;&nbsp;동시에 자신은 3칸 뒤로 순간이동</p>");
 			$('.unit-Katarina').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cKingdom.png'>제국>[<img src='../resources/img/minicon/type/jAssassin.png'>암살자] <span class='color-t3'>(3단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Katarina.png'>죽음의 연꽃</p><p class='text-left'>타겟 당 피해량(40/60/80),</p><p class='text-left'>타겟 수 적군(4명/6명/8명),</p><p class='text-left'>대상 회복효과 감소,</p><p class='text-left'>지속시간 2.5초.</p><p class='text-left'>: 인접 범위의 타겟에 2.5초간 피해, 회복효과 감소</p>");
 			$('.unit-Kennen').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cYodel.png'>요들><<img src='../resources/img/minicon/type/cNinja.png'>닌자>[<img src='../resources/img/minicon/type/jElementalist.png'>원소술사] <span class='color-t3'>(3단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 550/990/1980</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 150</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 2</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 42.25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Kennen.png'>날카로운 소용돌이</p><p class='text-left'>피해량(37.5/75/112.5)x6,</p><p class='text-left'>지속시간 3초,</p><p class='text-left'>피해 주기 0.5초,</p><p class='text-left'>적 기절 지속시간 1.5초.</p><p class='text-left'>: 인접 범위(반지름 2칸)에 원형으로</p><p class='text-left'>&nbsp;&nbsp;3초간 0.5초마다 타겟당 6번의 광역 피해,</p><p class='text-left'>&nbsp;&nbsp;피해를 받은 적들은 1.5초간 기절효과</p>");
-			$('.unit-Gnar').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cWild.png'>야생><<img src='../resources/img/minicon/type/cYodel.png'>요들>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 750/1350/2700</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.7</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 2</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 35</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Gnar.png'>나르! (60초)</p><p class='text-left'>밀쳐내기 피해량(200/300/400),</p><p class='text-left'>변신 후 추가 공격력(30/60/90),</p><p class='text-left'>변신 후 추가 체력(300/600/900),</p><p class='text-left'>넉백 지속시간 2초,</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신 시 가장 후방의 적 위치로 도약하여 적들을 아군 방향으로 밀쳐내며 피해와 기절효과(2초)</p>");
+			$('.unit-Gnar').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cWild.png'>야생><<img src='../resources/img/minicon/type/cYodel.png'>요들>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 750/1350/2700</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.7</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 2 (변신시 1)</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 35</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 30</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>변신: <img class='skillcon' src='../resources/img/skill/Gnar.png'>나르! (60초)</p><p class='text-left'>밀쳐내기 피해량(200/300/400),</p><p class='text-left'>변신 후 추가 공격력(30/60/90),</p><p class='text-left'>변신 후 추가 체력(300/600/900),</p><p class='text-left'>넉백 지속시간 2초,</p><p class='text-left'>변신 지속시간 60초.</p><p class='text-left'>: 변신 시 가장 후방의 적 위치로 도약하여 적들을 아군 방향으로 밀쳐내며 피해와 기절효과(2초)</p>");
 			$('.unit-Draven').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cKingdom.png'>제국>[<img src='../resources/img/minicon/type/jSwordman.png'>검사] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 700/1260/2520</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 56.25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Draven.png'>회전 도끼</p><p class='text-left'>피해량 증가(150%/200%/250%),</p><p class='text-left'>공격속도 증가(30%/45%/60%),</p><p class='text-left'>지속시간 8초.</p>");
 			$('.unit-Leona').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRoyal.png'>귀족>[<img src='../resources/img/minicon/type/jGuardian.png'>수호자] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 750/1350/2700</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 45</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.55</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Leona.png'>흑점 폭발</p><p class='text-left'>피해량(175/250/325),</p><p class='text-left'>중심 적 기절 지속시간(5초/8초/11초).</p><p class='text-left'>: 원형 피해 및 폭발 중심 적 유닛에는 기절효과</p>");
 			$('.unit-Brand').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cDevil.png'>악마>[<img src='../resources/img/minicon/type/jElementalist.png'>원소술사] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 700/1260/2520</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 125</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 60</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 36</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Brand.png'>파멸의 불덩이</p><p class='text-left'>바운스 당 피해량(200/375/550),</p><p class='text-left'>튕기는 횟수(4번/6번/20번).</p><p class='text-left'>: 인접한 적 유닛끼리 튕겨다니는 불꽃을 발사하여 연쇄 공격</p>");
@@ -942,10 +963,11 @@
 			$('.unit-Anivia').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cIce.png'>빙하>[<img src='../resources/img/minicon/type/jElementalist.png'>원소술사] <span class='color-t5'>(5단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 650/1170/2340</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.6</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 24</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Anivia.png'>얼음 폭풍</p><p class='text-left'>타겟 당 총 피해량(700/950/1200),</p><p class='text-left'>적 공격속도 감소(50%/70%/90%),</p><p class='text-left'>지속시간 8초.</p><p class='text-left'>: 광역 범위(원형)에 8초간 지속되는 얼음 폭풍을 만들어</p><p class='text-left'>&nbsp;&nbsp;피해와 함께 적 공격속도 감소</p>");
 			$('.unit-Karthus').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cGhost.png'>유령>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t5'>(5단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 850/1530/3060</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 85</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.65</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 42</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 25</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Karthus.png'>진혼곡</p><p class='text-left'>피해량(400/700/1000),</p><p class='text-left'>타겟 수 적군(5명/9명/13명).</p><p class='text-left'>: 3초의 채널링 후 거리에 상관없이 적 유닛들에 피해</p>");
 			$('.unit-Kayle').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cRoyal.png'>귀족>[<img src='../resources/img/minicon/type/jKnight.png'>기사] <span class='color-t5'>(5단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 750/1350/2700</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 100</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 60</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 1.1</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 3</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 66</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 40</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Kayle.png'>신성한 심판</p><p class='text-left'>타겟 수 아군(1명/2명/3명),</p><p class='text-left'>지속시간(2초/3초/4초).</p><p class='text-left'>: 대상 아군이 지속시간동안 무적이 됨</p>");
-			$('.unit-Twistedfate').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40/72/144</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.75</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 2</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 30/54/108</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Twistedfate.png'>카드 뽑기</p><p class='text-left'>피해량(150/250/350),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_red.png'>붉은색 카드 - 대상 주변 광역 피해,</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_gold.png'>황금색 카드 - 기절 지속시간(2초/3초/4초),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_blue.png'>푸른색 카드 - 자신과 아군 유닛 하나 마나 회복(20/35/50).</p><p class='text-left'>: 임의의 카드를 뽑아 단일 적 유닛에게 피해를 주면서 해당 색깔 효과 발동</p>");
-			
-			
-			
+			$('.unit-Twistedfate').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPirate.png'>해적>[<img src='../resources/img/minicon/type/jMagician.png'>마법사] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: 450/810/1620</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: 40/72/144</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: 0.7</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 2</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: 28/50/101</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: 20</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: 20</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Twistedfate.png'>카드 뽑기</p><p class='text-left'>피해량(150/250/350),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_red.png'>붉은색 카드 - 대상 주변 광역 피해,</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_gold.png'>황금색 카드 - 기절 지속시간(2초/3초/4초),</p><p class='text-left'><img class='skillcon' src='../resources/img/skill/Twistedfate_blue.png'>푸른색 카드 - 자신과 아군 유닛 하나 마나 회복(20/35/50).</p><p class='text-left'>: 임의의 카드를 뽑아 단일 적 유닛에게 피해를 주면서 해당 색깔 효과 발동</p>");
+			$('.unit-Camille').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPiltover.png'>필트오버>[<img src='../resources/img/minicon/type/jSwordman.png'>검사] <span class='color-t1'>(1단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: ???/???/???</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: ?</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: ??</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Camille.png'>최후통첩</p><p class='text-left'>피해량(???/???/???),</p><p class='text-left'>: 공격 대상을 속박 후,</p><p class='text-left'>&nbsp;&nbsp;주변 아군 유닛이 대상을 집중 공격하도록 함.</p>");
+			$('.unit-Jayce').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPiltover.png'>필트오버>[<img src='../resources/img/minicon/type/jTransformer.png'>형상변환자] <span class='color-t2'>(2단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: ???/???/???</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: 50</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: 0</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: 1 (변신시 ?)</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: ??</p><p>변신: <img class='skillcon' src='../resources/img/skill/Jayce.png'>머큐리 캐논 (60초)</p><p class='text-left'>밀쳐내기 피해량(???/???/???),</p><p class='text-left'>공격속도 증가(??%/??%/??%),</p><p class='text-left'>변신 지속시간 60초,</p><p class='text-left'>: 해머로 상대방을 밀쳐낸 후,</p><p class='text-left'>캐논 폼으로 변신(공격속도 및 사거리 증가)</p>");
+			$('.unit-Vi').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPiltover.png'>필트오버>[<img src='../resources/img/minicon/type/jFighter.png'>싸움꾼] <span class='color-t3'>(3단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: ???/???/???</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: ?</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: ??</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Vi.png'>기동타격</p><p class='text-left'>피해량(???/???/???),</p><p class='text-left'>: 가장 먼 적을 대상으로 하여 돌진하며,</p><p class='text-left'>&nbsp;&nbsp;부딪히는 모든 적들을 튕겨냄.</p><p class='text-left'>&nbsp;&nbsp;대상은 들어올려 내리찍음.</p>");
+			$('.unit-Jinx').attr('data-original-title',"<p><<img src='../resources/img/minicon/type/cPiltover.png'>필트오버>[<img src='../resources/img/minicon/type/jGunner.png'>총잡이] <span class='color-t4'>(4단계)</span></p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/HP.png'>체력: ???/???/???</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AP.png'>마나 소모량: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MP.png'>초기 마나: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AD.png'>공격력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackSpeed.png'>공격 속도: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/AttackRange.png'>사거리: ?</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/DPS.png'>DPS: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/Defence.png'>방어력: ??</p><p class='text-left'><img class='minicon' src='../resources/img/minicon/status/MagicResist.png'>마법저항력: ??</p><p>스킬: <img class='skillcon' src='../resources/img/skill/Jinx.png'>신난다!</p><p class='text-left'>: 적을 마지막으로 해치우는데 성공하면 공격속도 증가(중첩),</p><p class='text-left'>&nbsp;&nbsp;두번째 킬 당성시 기본공격이 생선 대가리 로켓 런처로 변경</p><p class='text-left'>&nbsp;&nbsp;(광역 피해)<p>");
 			$('.unit-Darkin').attr('data-original-title',"<p>[다르킨]</p><p>+마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/여신의_눈물.png'></p>");
 			$('.unit-Hammer').attr('data-original-title',"<p>[얼어붙은 망치]</p><p>+체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/거인의_허리띠.png'></p>");
 			$('.unit-Youmu').attr('data-original-title',"<p>[요우무의 유령검]</p><p>+공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='itemicon' src='../resources/img/item/뒤집개.png'>+<img class='itemicon' src='../resources/img/item/BF_대검.png'></p>");
@@ -1610,6 +1632,54 @@
 				}
 				calSum();
 			});
+			$('.unit-Camille').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Camille;
+					$('.unit-Camille').removeClass('dim');
+				} else {
+					--Camille;
+					if(Camille == 0) {
+						$('.unit-Camille').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Jayce').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Jayce;
+					$('.unit-Jayce').removeClass('dim');
+				} else {
+					--Jayce;
+					if(Jayce == 0) {
+						$('.unit-Jayce').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Vi').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Vi;
+					$('.unit-Vi').removeClass('dim');
+				} else {
+					--Vi;
+					if(Vi == 0) {
+						$('.unit-Vi').addClass('dim');
+					}
+				}
+				calSum();
+			});
+			$('.unit-Jinx').on('click',function(){
+				if ($(this).hasClass('dim')) {
+					++Jinx;
+					$('.unit-Jinx').removeClass('dim');
+				} else {
+					--Jinx;
+					if(Jinx == 0) {
+						$('.unit-Jinx').addClass('dim');
+					}
+				}
+				calSum();
+			});
 			$('.darkin-up').on('click',function(){
 				if (Darkin < 8) {
 					++Darkin;
@@ -1738,6 +1808,7 @@
 			cDragon = 0;
 			cRobot = 0;
 			cBanned = 0;
+			cPiltover = 0;
 			jMagician = 0;
 			jAssassin = 0;
 			jKnight = 0;
@@ -2008,6 +2079,26 @@
 				++jSwordman;
 				$('#view-Yasuo').show();
 			}
+			if (Camille > 0) {
+				++cPiltover;
+				++jSwordman;
+				$('#view-Camille').show();
+			}
+			if (Jayce > 0) {
+				++cPiltover;
+				++jTransformer;
+				$('#view-Jayce').show();
+			}
+			if (Vi > 0) {
+				++cPiltover;
+				++jFighter;
+				$('#view-Vi').show();
+			}
+			if (Jinx > 0) {
+				++cPiltover;
+				++jGunner;
+				$('#view-Jinx').show();
+			}
 			if (Darkin > 0) {
 				cDevil += Darkin;
 				$('#view-Darkin').show();
@@ -2251,6 +2342,20 @@
 			} else {
 				$('#view-banned').text('');
 				$('#title-banned').text('추방자');
+			}
+			$('.sum-piltover').removeClass('color-hilight');
+			$('#view-piltover').removeClass('color-yellow-must');
+			if (cPiltover > 0) {
+				$('#piltover-a').addClass('color-hilight');
+				$('#desc-piltover-a').show();
+				$('#view-piltover').addClass('color-yellow-must');
+			}
+			if (cPiltover > 0) {
+				$('#view-piltover').text('필트오버x'+cPiltover);
+				$('#title-piltover').text('필트오버('+cPiltover+')');
+			} else {
+				$('#view-piltover').text('');
+				$('#title-piltover').text('필트오버');
 			}
 			$('.sum-magician').removeClass('color-hilight');
 			$('#view-magician').removeClass('color-white-must');
@@ -2502,6 +2607,10 @@
 			$('.unit-Anivia').addClass('tier-5');
 			$('.unit-Karthus').addClass('tier-5');
 			$('.unit-Kayle').addClass('tier-5');
+			$('.unit-Camille').addClass('tier-1');
+			$('.unit-Jayce').addClass('tier-2');
+			$('.unit-Vi').addClass('tier-3');
+			$('.unit-Jinx').addClass('tier-4');
 		};
 		function setName() {
 			$('.unit-Aatrox').find('.unit-top').text('아트록스');
@@ -2555,6 +2664,10 @@
 			$('.unit-Yasuo').find('.unit-top').text('야스오');
 			$('.unit-Zed').find('.unit-top').text('제드');
 			$('.unit-Twistedfate').find('.unit-top').text('트위스티드 페이트');
+			$('.unit-Camille').find('.unit-top').text('카밀');
+			$('.unit-Jayce').find('.unit-top').text('제이스');
+			$('.unit-Vi').find('.unit-top').text('바이');
+			$('.unit-Jinx').find('.unit-top').text('징크스');
 		};
 		function setTagLv1() {
 			$('.tier-1').find('.unit-bottom').text('1단계: 100%');
@@ -2652,6 +2765,12 @@
 			<div class="card-body patch-body">
 				<p style="margin-top: -1rem; margin-bottom: 1rem; font-size: 0.8rem;">
 					(맨 아래 링크에서 댓글로 추가기능 건의나 잘못 표기된 사항을 알려주시면 더 빠르게 반영됩니다.)
+				</p>
+				<h5 style="margin-bottom: 0px;">
+					2019.08.01
+				</h5>
+				<p style="margin-bottom: 1rem;">
+					필트오버 유닛 임시 추가
 				</p>
 				<h5 style="margin-bottom: 0px;">
 					2019.07.31
@@ -2957,24 +3076,6 @@
 											<p class="unit-bottom"></p>
 										</div>
 									</td>
-									<td>
-										<div class="icon">
-										</div>
-									</td>
-									<td>
-										<div class="icon icon-class class-Banned">
-											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-banned">추방자</p>
-											<p class="type-bottom text-center">
-												<span class="sum-banned" id="banned-1">(1)</span>
-											</p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Yasuo">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
 								</tr>
 								<tr>
 									<td>
@@ -3025,15 +3126,15 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon icon-class class-Robot">
-											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-robot">로봇</p>
+										<div class="icon icon-class class-Banned">
+											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-banned">추방자</p>
 											<p class="type-bottom text-center">
-												<span class="sum-robot" id="robot-1">(1)</span>
+												<span class="sum-banned" id="banned-1">(1)</span>
 											</p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Blitzcrank">
+										<div class="icon unit unit-Yasuo">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3083,21 +3184,19 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon icon-class class-Dragon">
-											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-dragon">용</p>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Robot">
+											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-robot">로봇</p>
 											<p class="type-bottom text-center">
-												<span class="sum-dragon" id="dragon-2">(2)</span>
+												<span class="sum-robot" id="robot-1">(1)</span>
 											</p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Shyvana">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Aurelionsol">
+										<div class="icon unit unit-Blitzcrank">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3143,27 +3242,25 @@
 										</div>
 									</td>
 									<td>
-										<div class="icon icon-class class-Ghost">
-											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-ghost">유령</p>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Dragon">
+											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-dragon">용</p>
 											<p class="type-bottom text-center">
-												<span class="sum-ghost" id="ghost-2">(2)</span>
+												<span class="sum-dragon" id="dragon-2">(2)</span>
 											</p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Mordekaiser">
+										<div class="icon unit unit-Shyvana">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
 									</td>
 									<td>
-										<div class="icon unit unit-Kindred">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Karthus">
+										<div class="icon unit unit-Aurelionsol">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3204,6 +3301,38 @@
 										</div>
 									</td>
 									<td>
+										<div class="icon">
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Ghost">
+											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-ghost">유령</p>
+											<p class="type-bottom text-center">
+												<span class="sum-ghost" id="ghost-2">(2)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Mordekaiser">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Kindred">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Karthus">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
 										<div class="icon icon-class class-Void">
 											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-void">공허</p>
 											<p class="type-bottom text-center">
@@ -3231,6 +3360,38 @@
 									</td>
 									<td>
 										<div class="icon unit unit-Chogath">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon icon-class class-Piltover">
+											<p class="text-center icon-title-class" style="font-size: 1rem;" id="title-piltover">필트오버</p>
+											<p class="type-bottom text-center">
+												<span class="sum-piltover" id="piltover-a">(?)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Camille">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Jayce">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Vi">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Jinx">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3372,6 +3533,68 @@
 								</tr>
 								<tr>
 									<td>
+										<div class="icon icon-job job-Swordman">
+											<p class="text-center icon-title-job" style="font-size: 1rem;" id="title-swordman">검사</p>
+											<p class="type-bottom text-center">
+												<span class="sum-swordman" id="swordman-3">(3)</span>
+												<span class="sum-swordman" id="swordman-6">(6)</span>
+												<span class="sum-swordman" id="swordman-9">(9)</span>
+											</p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Fiora">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Camille">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Shen">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Gangplank">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Aatrox">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Draven">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Yasuo">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-item unit-Molak">
+											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">몰락한 왕의 검</p>
+											<p class="text-center item-arrow item-up molak-up">▲</p>
+											<p class="text-center item-arrow item-down molak-down">▼</p>
+											<p>장착: <span class="molak-num">0</span></p>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
 										<div class="icon icon-job job-Knight">
 											<p class="text-center icon-title-job" style="font-size: 1rem;" id="title-knight">기사</p>
 											<p class="type-bottom text-center">
@@ -3428,62 +3651,6 @@
 								</tr>
 								<tr>
 									<td>
-										<div class="icon icon-job job-Swordman">
-											<p class="text-center icon-title-job" style="font-size: 1rem;" id="title-swordman">검사</p>
-											<p class="type-bottom text-center">
-												<span class="sum-swordman" id="swordman-3">(3)</span>
-												<span class="sum-swordman" id="swordman-6">(6)</span>
-												<span class="sum-swordman" id="swordman-9">(9)</span>
-											</p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Fiora">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Shen">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Gangplank">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Aatrox">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Draven">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-Yasuo">
-											<p class="unit-top"></p>
-											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon unit unit-item unit-Molak">
-											<p class="unit-top" style="font-size: 0.7rem; margin-bottom: 0.2rem;">몰락한 왕의 검</p>
-											<p class="text-center item-arrow item-up molak-up">▲</p>
-											<p class="text-center item-arrow item-down molak-down">▼</p>
-											<p>장착: <span class="molak-num">0</span></p>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
 										<div class="icon icon-job job-Fighter">
 											<p class="text-center icon-title-job" style="font-size: 1rem;" id="title-fighter">싸움꾼</p>
 											<p class="type-bottom text-center">
@@ -3513,6 +3680,12 @@
 									</td>
 									<td>
 										<div class="icon unit unit-Volibear">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
+										<div class="icon unit unit-Vi">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
 										</div>
@@ -3560,6 +3733,12 @@
 										</div>
 									</td>
 									<td>
+										<div class="icon unit unit-Jinx">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
 										<div class="icon unit unit-Missfortune">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
@@ -3589,6 +3768,12 @@
 										</div>
 									</td>
 									<td>
+										<div class="icon unit unit-Jayce">
+											<p class="unit-top"></p>
+											<p class="unit-bottom"></p>
+										</div>
+									</td>
+									<td>
 										<div class="icon unit unit-Shyvana">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
@@ -3604,10 +3789,6 @@
 										<div class="icon unit unit-Swain">
 											<p class="unit-top"></p>
 											<p class="unit-bottom"></p>
-										</div>
-									</td>
-									<td>
-										<div class="icon">
 										</div>
 									</td>
 									<td>
@@ -3699,6 +3880,8 @@
 										</div>
 									</td>
 								</tr>
+								<tr style="height: 90px;">
+								</tr>
 							</tbody>
 						</table>
 					</td>
@@ -3747,6 +3930,10 @@
 				<p class="unit-bottom"></p>
 			</span>
 			<span class="icon unit unit-Fiora view-selected" id="view-Fiora">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Camille view-selected" id="view-Camille">
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
 			</span>
@@ -3802,6 +3989,10 @@
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
 			</span>
+			<span class="icon unit unit-Jayce view-selected" id="view-Jayce">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
 			<span class="icon unit unit-Gangplank view-selected" id="view-Gangplank">
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
@@ -3850,6 +4041,10 @@
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
 			</span>
+			<span class="icon unit unit-Vi view-selected" id="view-Vi">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
 			<span class="icon unit unit-Gnar view-selected" id="view-Gnar">
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
@@ -3883,6 +4078,10 @@
 				<p class="unit-bottom"></p>
 			</span>
 			<span class="icon unit unit-Kindred view-selected" id="view-Kindred">
+				<p class="unit-top"></p>
+				<p class="unit-bottom"></p>
+			</span>
+			<span class="icon unit unit-Jinx view-selected" id="view-Jinx">
 				<p class="unit-top"></p>
 				<p class="unit-bottom"></p>
 			</span>
@@ -3962,6 +4161,7 @@
 				<span class="view view-class" id="view-dragon"></span>
 				<span class="view view-class" id="view-robot"></span>
 				<span class="view view-class" id="view-banned"></span>
+				<span class="view view-class" id="view-piltover"></span>
 			</p>
 			<p>
 				<span class="view view-job" id="view-assassin"></span>
@@ -4024,7 +4224,6 @@
 			<p class="desc" id="desc-kingdom-2">
 				제국(<span class="color-yellow">2</span>/4): (<span class="color-yellow">무작위 제국 아군 하나</span>/아군 제국 유닛들)이 가하는 피해량이 2배로 증가합니다.
 			</p>
-			
 			<p class="desc" id="desc-kingdom-4">
 				제국(2/<span class="color-yellow">4</span>): (무작위 제국 아군 하나/<span class="color-yellow">아군 제국 유닛들</span>)이 가하는 피해량이 2배로 증가합니다.
 			</p>
@@ -4045,6 +4244,9 @@
 			</p>
 			<p class="desc" id="desc-banned-1">
 				추방자(1): 아군 추방자 유닛들은 전투 시작 시 인접한 아군 유닛이 없다면 최대 체력과 동일한 양의 방어막을 얻습니다.
+			</p>
+			<p class="desc" id="desc-piltover-a">
+				필트오버(?): 아군 필트오버 유닛들은 기본 공격시 일정 확률로 대상의 아이템 효과를 ?초간 해제합니다.
 			</p>
 			<p class="desc" id="desc-assassin-3">
 				암살자(<span class="color-white">3</span>/6): 아군 암살자 유닛들의 치명타 피해량이 (<span class="color-white">125%</span>/350%) 증가합니다.
