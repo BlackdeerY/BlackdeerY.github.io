@@ -40,6 +40,9 @@
 		.color-magenta {
 			color: magenta;
 		}
+		.color-lime {
+			color: lime;
+		}
 		.icon {
 			width: 32px !important;
 			height: 32px !important;
@@ -74,7 +77,7 @@
 			border-right-width: thin !important;
 		}
 		.items {
-			max-width: 30rem;
+			max-width: 40rem;
 		}
 		#table-item {
 			border-top-style: hidden;
@@ -146,10 +149,10 @@
 			addClass();
 			eventToButtons();
 			setCategory();
+			setTooltip();
 			setHover();
 			allHide();
 			patchSlide();
-			$('[data-toggle="tooltip"]').tooltip();
 		});
 		function patchSlide() {
 			$('.patch-body').slideUp();
@@ -170,6 +173,85 @@
 			$('.form-check-input').on('change',function(){
 				category();
 			});
+		};
+		function setTooltip() {
+			$('.btn-sm').attr('data-toggle','tooltip');
+			$('.btn-sm').attr('data-trigger','hover');
+			$('.btn-sm').attr('data-placement','bottom');
+			$('.btn-sm').attr('data-html','true');
+			$('.icon').attr('data-toggle','tooltip');
+			$('.icon').attr('data-trigger','hover');
+			$('.icon').attr('data-placement','bottom');
+			$('.icon').attr('data-html','true');
+			$('.item-001').attr('data-original-title',"<p>[B.F. 대검]</p><p>공격력20</p>");
+			$('.sub-001').attr('data-original-title',"<p>[B.F. 대검]</p><p>공격력20</p>");
+			$('.item-002').attr('data-original-title',"<p>[쇠사슬 조끼]</p><p>방어력20</p>");
+			$('.sub-002').attr('data-original-title',"<p>[쇠사슬 조끼]</p><p>방어력20</p>");
+			$('.item-003').attr('data-original-title',"<p>[거인의 허리띠]</p><p>체력200</p>");
+			$('.sub-003').attr('data-original-title',"<p>[거인의 허리띠]</p><p>체력200</p>");
+			$('.item-004').attr('data-original-title',"<p>[쓸데없이 큰 지팡이]</p><p>스킬피해량20%</p>");
+			$('.sub-004').attr('data-original-title',"<p>[쓸데없이 큰 지팡이]</p><p>스킬피해량20%</p>");
+			$('.item-005').attr('data-original-title',"<p>[곡궁]</p><p>공격속도20%</p>");
+			$('.sub-005').attr('data-original-title',"<p>[곡궁]</p><p>공격속도20%</p>");
+			$('.item-006').attr('data-original-title',"<p>[여신의 눈물]</p><p>마나20</p>");
+			$('.sub-006').attr('data-original-title',"<p>[여신의 눈물]</p><p>마나20</p>");
+			$('.item-007').attr('data-original-title',"<p>[음전자 망토]</p><p>마법저항력20</p>");
+			$('.sub-007').attr('data-original-title',"<p>[음전자 망토]</p><p>마법저항력20</p>");
+			$('.item-008').attr('data-original-title',"<p>[뒤집개]</p>");
+			$('.sub-008').attr('data-original-title',"<p>[뒤집개]</p>");
+			$('.item-009').attr('data-original-title',"<p>[피바라기]</p><p>공격력20, 마법저항력20</p><p>: 평타 40% 피흡</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-010').attr('data-original-title',"<p>[저주받은 칼날]</p><p>공격속도20%, 마법저항력20</p><p>: 적 1성 강등(20%확률)</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-011').attr('data-original-title',"<p>[얼어붙은 심장]</p><p>방어력20, 마나20</p><p>: 인접 적 공속 25% 감소</p><p>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-012').attr('data-original-title',"<p>[수호 천사]</p><p>공격력20, 방어력20</p><p>: 부활(500체력)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-013').attr('data-original-title',"<p>[구인수의 격노검]</p><p>스킬피해량20%, 공격속도20%</p><p>: 공격마다 공속 5% 증가</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>");
+			$('.item-014').attr('data-original-title',"<p>[마법공학 총검]</p><p>공격력20, 스킬피해량20%</p><p>: 모든 피해 25% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>");
+			$('.item-015').attr('data-original-title',"<p>[군주의 대검]</p><p>공격력40</p><p>: 다른 아이템 착용불가, 킬 관여시마다 B.F 대검 추가 착용</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>");
+			$('.item-016').attr('data-original-title',"<p>[이온 충격기]</p><p>스킬피해량20%, 마법저항력20</p><p>: 스킬 사용하는 적 125 고정피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-017').attr('data-original-title',"<p>[강철의 솔라리 펜던트]</p><p>스킬피해량20%, 방어력20</p><p>: 전투시작 6초간 자신과 좌우 아군 250 보호막</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-018').attr('data-original-title',"<p>[루덴의 메아리]</p><p>스킬피해량20%, 마나20</p><p>: 스킬 적중시 180 광역 피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-019').attr('data-original-title',"<p>[모렐로노미콘]</p><p>스킬피해량20%, 체력200</p><p>: 스킬에 초당 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-020').attr('data-original-title',"<p>[유령 무희]</p><p>공격속도20%, 방어력20</p><p>: 모든 치명타 회피</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-021').attr('data-original-title',"<p>[라바돈의 죽음모자]</p><p>스킬피해량90%<p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>");
+			$('.item-022').attr('data-original-title',"<p>[고속 연사포]</p><p>공격속도40%</p><p>: 사거리 2배,</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>");
+			$('.item-023').attr('data-original-title',"<p>[구원]</p><p>마나20, 체력200</p><p>: 체력이 25%면 인접 아군 1200 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-024').attr('data-original-title',"<p>[대천사의 포옹]</p><p>마나40</p><p>: 스킬 사용시 마나 20 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-025').attr('data-original-title',"<p>[쇼진의 창]</p><p>공격력20, 마나20</p><p>: 스킬 사용후 공격마다 최대 마나 15% 마나 회복</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-026').attr('data-original-title',"<p>[스태틱의 단검]</p><p>공격속도20%, 마나20</p><p>: 3번째 공격마다 100 광역 마법 피해(적 3명)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-027').attr('data-original-title',"<p>[파쇄검]</p><p>방어력20, 마법저항력20</p><p>: 적 무장해제(5초 평타봉인, 25%확률)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-028').attr('data-original-title',"<p>[최후의 속삭임]</p><p>공격력20, 공격속도20%</p><p>: 적이 회피불가, 적 최대체력5%의 고정피해</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>");
+			$('.item-029').attr('data-original-title',"<p>[가시 갑옷]</p><p>방어력40</p><p>: 감소한 물리피해량만큼 마법피해로 반사</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-030').attr('data-original-title',"<p>[거대한 히드라]</p><p>공격속도20%, 체력200</p><p>: 장착자 최대 체력 10%만큼 전방 반월형 피해</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-031').attr('data-original-title',"<p>[워모그의 갑옷]</p><p>체력400</p><p>: 매 초 잃은 체력의 6% 회복(최대 400상한)</p><p><img class='icon' src='../resources/img/item/거인의_허리띠.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-032').attr('data-original-title',"<p>[침묵]</p><p>마나20, 마법저항력20</p><p>: 적 침묵(4초간 스킬봉인, 33%확률)</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-033').attr('data-original-title',"<p>[지크의 전령]</p><p>공격력20, 체력200</p><p>: 좌우 아군 공속 15% 증가</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-034').attr('data-original-title',"<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-035').attr('data-original-title',"<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-036').attr('data-original-title',"<p>[용의 발톱]</p><p>마법저항력40</p><p>: 마법저항력 83% 증가</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-037').attr('data-original-title',"<p>[루난의 허리케인]</p><p>마법저항력40</p><p>: 착용자의 공격을 따라하는 아군 영혼 소환(75% 피해)</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-038').attr('data-original-title',"<p>[요우무의 유령검]</p><p>공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>");
+			$('.item-039').attr('data-original-title',"<p>[몰락한 왕의 검]</p><p>공격속도40%</p><p class='color-yellow'>: 검사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>");
+			$('.item-040').attr('data-original-title',"<p>[유미]</p><p>스킬피해량40%</p><p class='color-yellow'>: 마법사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>");
+			$('.item-041').attr('data-original-title',"<p>[다르킨]</p><p>마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-042').attr('data-original-title',"<p>[기사의 맹세]</p><p>방어력40</p><p class='color-yellow'>: 기사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-043').attr('data-original-title',"<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-044').attr('data-original-title',"<p>[대자연의 힘]</p><p class='color-magenta'>: 인구수+1</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>");
+			
+			$('.item-046').attr('data-original-title',"<p>[연습용 장갑]</p><p>치명타율10%,회피율10%</p>");
+			$('.sub-046').attr('data-original-title',"<p>[연습용 장갑]</p><p>치명타율10%,회피율10%</p>");
+			$('.item-047').attr('data-original-title',"<p>[니코의 도움]</p><p class='color-lime'>해당 1성유닛 추가획득(소모품)</p>");
+			
+			$('.item-045').attr('data-original-title',"<p>[무한의 대검]</p><p>공격력20, 치명타율20%</p><p>: 치명타 공격 시 +100% 피해</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>");
+			$('.item-048').attr('data-original-title',"<p>[연발 석궁]</p><p>공격속도20%, 치명타율20%</p><p>: 사망시 다른 아군 유닛에 전이되면서 추가로(무한중첩) 공격속도+20%, 치명타율+20%</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>");
+			$('.item-049').attr('data-original-title',"<p>[신비로운 건틀릿]</p><p>스킬피해량20%, 치명타율20%</p><p>: 스킬에 치명타 적용</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>");
+			$('.item-050').attr('data-original-title',"<p>[정의의 손길]</p><p>마나20, 치명타율20%</p><p>: 피해량40%증가 or 공격시체력40회복 (라운드마다 랜덤)</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>");
+			$('.item-051').attr('data-original-title',"<p>[얼어붙은 건틀릿]</p><p>방어력20, 회피율20%</p><p>: 적 공격속도30%감소 역장생성(회피 성공시 크기증가)</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>");
+			$('.item-052').attr('data-original-title',"<p>[수은]</p><p>마법저항력20, 회피율20%</p><p>: CC방어(쿨타임 5초)</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>");
+			$('.item-053').attr('data-original-title',"<p>[역공의 장갑]</p><p>체력200, 회피율20%</p><p>: 주문 방어막 획득 (파괴한 적 오래 기절)</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>");
+			$('.item-054').attr('data-original-title',"<p>[도적의 장갑]</p><p>치명타율20%, 회피율20%</p><p>: 다른 아이템 착용불가, 라운드마다 임시 아이템 2개 착용하면서 시작</p><p><img class='icon' src='../resources/img/item/연습용_장갑.png'>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>");
+			$('.item-055').attr('data-original-title',"<p>[벙어리 장갑]</p><p>치명타율20%, 회피율20%</p><p class='color-cyan'>: 요들 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>");
+			
+			
+			$('[data-toggle="tooltip"]').tooltip();
 		};
 		function setHover() {
 			$('.hh-01').on('mouseenter',function(){
@@ -220,6 +302,12 @@
 			$('.hh-08').on('mouseleave',function(){
 				$('#hsub-08').removeClass('btn-danger');
 			});
+			$('.hh-46').on('mouseenter',function(){
+				$('#hsub-46').addClass('btn-danger');
+			});
+			$('.hh-46').on('mouseleave',function(){
+				$('#hsub-46').removeClass('btn-danger');
+			});
 			$('.hv-01').on('mouseenter',function(){
 				$('#vsub-01').addClass('btn-danger');
 			});
@@ -267,6 +355,12 @@
 			});
 			$('.hv-08').on('mouseleave',function(){
 				$('#vsub-08').removeClass('btn-danger');
+			});
+			$('.hv-46').on('mouseenter',function(){
+				$('#vsub-46').addClass('btn-danger');
+			});
+			$('.hv-46').on('mouseleave',function(){
+				$('#vsub-46').removeClass('btn-danger');
 			});
 			$('.item-001').on('mouseenter',function(){
 				$('.item-001').addClass('hilight-hover');
@@ -548,6 +642,74 @@
 			$('.item-044').on('mouseleave',function(){
 				$('.item-044').removeClass('hilight-hover');
 			});
+			$('.item-045').on('mouseenter',function(){
+				$('.item-045').addClass('hilight-hover');
+			});
+			$('.item-045').on('mouseleave',function(){
+				$('.item-045').removeClass('hilight-hover');
+			});
+			$('.item-046').on('mouseenter',function(){
+				$('.item-046').addClass('hilight-hover');
+				$('.sub-046').addClass('hilight-hover');
+			});
+			$('.item-046').on('mouseleave',function(){
+				$('.item-046').removeClass('hilight-hover');
+				$('.sub-046').removeClass('hilight-hover');
+			});
+			$('.item-047').on('mouseenter',function(){
+				$('.item-047').addClass('hilight-hover');
+			});
+			$('.item-047').on('mouseleave',function(){
+				$('.item-047').removeClass('hilight-hover');
+			});
+			$('.item-048').on('mouseenter',function(){
+				$('.item-048').addClass('hilight-hover');
+			});
+			$('.item-048').on('mouseleave',function(){
+				$('.item-048').removeClass('hilight-hover');
+			});
+			$('.item-049').on('mouseenter',function(){
+				$('.item-049').addClass('hilight-hover');
+			});
+			$('.item-049').on('mouseleave',function(){
+				$('.item-049').removeClass('hilight-hover');
+			});
+			$('.item-050').on('mouseenter',function(){
+				$('.item-050').addClass('hilight-hover');
+			});
+			$('.item-050').on('mouseleave',function(){
+				$('.item-050').removeClass('hilight-hover');
+			});
+			$('.item-051').on('mouseenter',function(){
+				$('.item-051').addClass('hilight-hover');
+			});
+			$('.item-051').on('mouseleave',function(){
+				$('.item-051').removeClass('hilight-hover');
+			});
+			$('.item-052').on('mouseenter',function(){
+				$('.item-052').addClass('hilight-hover');
+			});
+			$('.item-052').on('mouseleave',function(){
+				$('.item-052').removeClass('hilight-hover');
+			});
+			$('.item-053').on('mouseenter',function(){
+				$('.item-053').addClass('hilight-hover');
+			});
+			$('.item-053').on('mouseleave',function(){
+				$('.item-053').removeClass('hilight-hover');
+			});
+			$('.item-054').on('mouseenter',function(){
+				$('.item-054').addClass('hilight-hover');
+			});
+			$('.item-054').on('mouseleave',function(){
+				$('.item-054').removeClass('hilight-hover');
+			});
+			$('.item-055').on('mouseenter',function(){
+				$('.item-055').addClass('hilight-hover');
+			});
+			$('.item-055').on('mouseleave',function(){
+				$('.item-055').removeClass('hilight-hover');
+			});
 			$('.sub-001').on('mouseenter',function(){
 				$('.item-001').addClass('hilight-hover');
 				$('.sub-001').addClass('hilight-hover');
@@ -591,6 +753,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-045').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-001').on('mouseleave',function(){
 				$('.item-001').removeClass('hilight-hover');
@@ -603,6 +770,7 @@
 				$('.item-009').removeClass('hilight-hover');
 				$('.item-033').removeClass('hilight-hover');
 				$('.item-038').removeClass('hilight-hover');
+				$('.item-045').removeClass('hilight-hover');
 			});
 			$('.sub-002').on('mouseenter',function(){
 				$('.item-002').addClass('hilight-hover');
@@ -647,6 +815,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-051').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-002').on('mouseleave',function(){
 				$('.item-002').removeClass('hilight-hover');
@@ -659,6 +832,7 @@
 				$('.item-027').removeClass('hilight-hover');
 				$('.item-035').removeClass('hilight-hover');
 				$('.item-042').removeClass('hilight-hover');
+				$('.item-051').removeClass('hilight-hover');
 			});
 			$('.sub-003').on('mouseenter',function(){
 				$('.item-003').addClass('hilight-hover');
@@ -703,6 +877,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-053').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-003').on('mouseleave',function(){
 				$('.item-003').removeClass('hilight-hover');
@@ -715,6 +894,7 @@
 				$('.item-035').removeClass('hilight-hover');
 				$('.item-034').removeClass('hilight-hover');
 				$('.item-043').removeClass('hilight-hover');
+				$('.item-053').removeClass('hilight-hover');
 			});
 			$('.sub-004').on('mouseenter',function(){
 				$('.item-004').addClass('hilight-hover');
@@ -759,6 +939,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-049').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-004').on('mouseleave',function(){
 				$('.item-004').removeClass('hilight-hover');
@@ -771,6 +956,7 @@
 				$('.item-016').removeClass('hilight-hover');
 				$('.item-019').removeClass('hilight-hover');
 				$('.item-040').removeClass('hilight-hover');
+				$('.item-049').removeClass('hilight-hover');
 			});
 			$('.sub-005').on('mouseenter',function(){
 				$('.item-005').addClass('hilight-hover');
@@ -815,6 +1001,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-048').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-005').on('mouseleave',function(){
 				$('.item-005').removeClass('hilight-hover');
@@ -827,6 +1018,7 @@
 				$('.item-010').removeClass('hilight-hover');
 				$('.item-030').removeClass('hilight-hover');
 				$('.item-039').removeClass('hilight-hover');
+				$('.item-048').removeClass('hilight-hover');
 			});
 			$('.sub-006').on('mouseenter',function(){
 				$('.item-006').addClass('hilight-hover');
@@ -871,6 +1063,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-050').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-006').on('mouseleave',function(){
 				$('.item-006').removeClass('hilight-hover');
@@ -883,6 +1080,7 @@
 				$('.item-032').removeClass('hilight-hover');
 				$('.item-023').removeClass('hilight-hover');
 				$('.item-041').removeClass('hilight-hover');
+				$('.item-050').removeClass('hilight-hover');
 			});
 			$('.sub-007').on('mouseenter',function(){
 				$('.item-007').addClass('hilight-hover');
@@ -927,6 +1125,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-052').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-007').on('mouseleave',function(){
 				$('.item-007').removeClass('hilight-hover');
@@ -939,6 +1142,7 @@
 				$('.item-027').removeClass('hilight-hover');
 				$('.item-034').removeClass('hilight-hover');
 				$('.item-037').removeClass('hilight-hover');
+				$('.item-052').removeClass('hilight-hover');
 			});
 			$('.sub-008').on('mouseenter',function(){
 				$('.item-008').addClass('hilight-hover');
@@ -983,6 +1187,11 @@
 						$(element).addClass('hilight-hover');
 					}
 				});
+				$('.item-055').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
 			});
 			$('.sub-008').on('mouseleave',function(){
 				$('.item-008').removeClass('hilight-hover');
@@ -995,7 +1204,73 @@
 				$('.item-042').removeClass('hilight-hover');
 				$('.item-043').removeClass('hilight-hover');
 				$('.item-044').removeClass('hilight-hover');
+				$('.item-055').removeClass('hilight-hover');
 			});
+			
+			$('.sub-046').on('mouseenter',function(){
+				$('.item-046').addClass('hilight-hover');
+				$('.sub-046').addClass('hilight-hover');
+				$('.item-045').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-048').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-049').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-050').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-051').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-052').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-053').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-054').each(function(i,element){
+					if($(element).hasClass('btn-mside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+				$('.item-055').each(function(i,element){
+					if($(element).hasClass('btn-rside')) {
+						$(element).addClass('hilight-hover');
+					}
+				});
+			});
+			$('.sub-046').on('mouseleave',function(){
+				$('.item-046').removeClass('hilight-hover');
+				$('.sub-046').removeClass('hilight-hover');
+				$('.item-045').removeClass('hilight-hover');
+				$('.item-048').removeClass('hilight-hover');
+				$('.item-049').removeClass('hilight-hover');
+				$('.item-050').removeClass('hilight-hover');
+				$('.item-051').removeClass('hilight-hover');
+				$('.item-052').removeClass('hilight-hover');
+				$('.item-053').removeClass('hilight-hover');
+				$('.item-054').removeClass('hilight-hover');
+				$('.item-055').removeClass('hilight-hover');
+			});
+			
+			
 		};
 		function category() {
 			resetBtnsClass();
@@ -1160,7 +1435,29 @@
 					}
 				});
 			}
-			if (!$('#check-01').prop('checked')&&!$('#check-02').prop('checked')&&!$('#check-03').prop('checked')&&!$('#check-04').prop('checked')&&!$('#check-05').prop('checked')&&!$('#check-06').prop('checked')&&!$('#check-07').prop('checked')&&!$('#check-08').prop('checked')&&!$('#check-09').prop('checked')&&!$('#check-10').prop('checked')&&!$('#check-11').prop('checked')&&!$('#check-12').prop('checked')&&!$('#check-13').prop('checked')&&!$('#check-14').prop('checked')&&!$('#check-15').prop('checked')&&!$('#check-16').prop('checked')&&!$('#check-17').prop('checked')&&!$('#check-18').prop('checked')&&!$('#check-19').prop('checked')&&!$('#check-20').prop('checked')&&!$('#check-21').prop('checked')&&!$('#check-22').prop('checked')) {
+			if ($('#check-23').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-23')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if ($('#check-24').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-24')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			if ($('#check-25').prop('checked')) {
+				$('.btn').each(function(i,element){
+					if(!$(element).hasClass('category-25')) {
+						$(element).removeClass('btn-success');
+					}
+				});
+			}
+			
+			if (!$('#check-01').prop('checked')&&!$('#check-02').prop('checked')&&!$('#check-03').prop('checked')&&!$('#check-04').prop('checked')&&!$('#check-05').prop('checked')&&!$('#check-06').prop('checked')&&!$('#check-07').prop('checked')&&!$('#check-08').prop('checked')&&!$('#check-09').prop('checked')&&!$('#check-10').prop('checked')&&!$('#check-11').prop('checked')&&!$('#check-12').prop('checked')&&!$('#check-13').prop('checked')&&!$('#check-14').prop('checked')&&!$('#check-15').prop('checked')&&!$('#check-16').prop('checked')&&!$('#check-17').prop('checked')&&!$('#check-18').prop('checked')&&!$('#check-19').prop('checked')&&!$('#check-20').prop('checked')&&!$('#check-21').prop('checked')&&!$('#check-22').prop('checked')&&!$('#check-23').prop('checked')&&!$('#check-24').prop('checked')&&!$('#check-25').prop('checked')) {
 				$('.btn').removeClass('btn-success');
 			}
 		};
@@ -1191,8 +1488,7 @@
 			$('.item-014').addClass('category-03');
 			$('.item-014').addClass('category-13');
 			$('.item-015').addClass('category-01');
-			$('.item-015').addClass('category-12');
-			$('.item-015').addClass('category-20');
+			$('.item-015').addClass('category-24');
 			$('.item-016').addClass('category-03');
 			$('.item-016').addClass('category-06');
 			$('.item-016').addClass('category-12');
@@ -1212,7 +1508,6 @@
 			$('.item-020').addClass('category-21');
 			$('.item-021').addClass('category-03');
 			$('.item-022').addClass('category-02');
-			$('.item-022').addClass('category-21');
 			$('.item-022').addClass('category-22');
 			$('.item-023').addClass('category-04');
 			$('.item-023').addClass('category-07');
@@ -1232,6 +1527,7 @@
 			$('.item-028').addClass('category-01');
 			$('.item-028').addClass('category-02');
 			$('.item-028').addClass('category-20');
+			$('.item-028').addClass('category-21');
 			$('.item-029').addClass('category-05');
 			$('.item-029').addClass('category-12');
 			$('.item-030').addClass('category-02');
@@ -1277,6 +1573,37 @@
 			$('.item-043').addClass('category-09');
 			$('.item-044').addClass('category-08');
 			$('.item-044').addClass('category-11');
+			
+			$('.item-047').addClass('category-25');
+			
+			$('.item-046').addClass('category-20');
+			$('.item-046').addClass('category-21');
+			$('.item-045').addClass('category-01');
+			$('.item-045').addClass('category-12');
+			$('.item-045').addClass('category-20');
+			$('.item-048').addClass('category-02');
+			$('.item-048').addClass('category-20');
+			$('.item-049').addClass('category-03');
+			$('.item-049').addClass('category-20');
+			$('.item-050').addClass('category-04');
+			$('.item-050').addClass('category-12');
+			$('.item-050').addClass('category-13');
+			$('.item-050').addClass('category-20');
+			$('.item-051').addClass('category-05');
+			$('.item-051').addClass('category-17');
+			$('.item-051').addClass('category-21');
+			$('.item-052').addClass('category-06');
+			$('.item-052').addClass('category-21');
+			$('.item-052').addClass('category-23');
+			$('.item-053').addClass('category-07');
+			$('.item-053').addClass('category-21');
+			$('.item-053').addClass('category-23');
+			$('.item-054').addClass('category-20');
+			$('.item-054').addClass('category-21');
+			$('.item-054').addClass('category-24');
+			$('.item-055').addClass('category-09');
+			$('.item-055').addClass('category-20');
+			$('.item-055').addClass('category-21');
 		};
 		function resetBtnsClass() {
 			$('.btn').addClass('btn-secondary');
@@ -1324,6 +1651,11 @@
 			$('.sub-008').on('click',function(){
 				allHide();
 				$('#table-008').show();
+				setScroll();
+			});
+			$('.sub-046').on('click',function(){
+				allHide();
+				$('#table-046').show();
 				setScroll();
 			});
 			$('.item-001').on('click',function(){
@@ -1542,7 +1874,62 @@
 			});
 			$('.item-044').on('click',function(){
 				allHide();
-				$('#table-044').show();
+				$('#table-044').show()
+				setScroll();
+			});
+			$('.item-045').on('click',function(){
+				allHide();
+				$('#table-045').show();
+				setScroll();
+			});
+			$('.item-046').on('click',function(){
+				allHide();
+				$('#table-046').show();
+				setScroll();
+			});
+			$('.item-047').on('click',function(){
+				allHide();
+				$('#table-047').show();
+				setScroll();
+			});
+			$('.item-048').on('click',function(){
+				allHide();
+				$('#table-048').show();
+				setScroll();
+			});
+			$('.item-049').on('click',function(){
+				allHide();
+				$('#table-049').show();
+				setScroll();
+			});
+			$('.item-050').on('click',function(){
+				allHide();
+				$('#table-050').show();
+				setScroll();
+			});
+			$('.item-051').on('click',function(){
+				allHide();
+				$('#table-051').show();
+				setScroll();
+			});
+			$('.item-052').on('click',function(){
+				allHide();
+				$('#table-052').show();
+				setScroll();
+			});
+			$('.item-053').on('click',function(){
+				allHide();
+				$('#table-053').show();
+				setScroll();
+			});
+			$('.item-054').on('click',function(){
+				allHide();
+				$('#table-054').show();
+				setScroll();
+			});
+			$('.item-055').on('click',function(){
+				allHide();
+				$('#table-055').show();
 				setScroll();
 			});
 		};
@@ -1552,7 +1939,7 @@
 	<div class="container-fluid font-ng">
 		<div class="jumbotron" style="margin-bottom: 10px;">
 			<h1 style="margin-top: -2rem; font-weight: bold;">
-				LoL Team Fight Tactics - Item<a href="../item_pbe" target="_blank">(PBE 버전으로 이동)</a> / <a href="../unit/" target="_blank">Unit <img src="../resources/img/minicon/link.png" style="width: 32px;"></a>
+				LoL Team Fight Tactics - Item<a href="../item" target="_blank">(본섭 버전으로 이동)</a> / <a href="../unit/" target="_blank">Unit <img src="../resources/img/minicon/link.png" style="width: 32px;"></a>
 			</h1>
 			<p style="height: 1rem;">
 			</p>
@@ -1670,11 +2057,11 @@
 					<td class="tbody-bord">B.F. 대검</td>
 					<td class="tbody-bord">공격력 +20</td>
 					<td>
-						<button class="btn btn-icon item-015 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[무한의 대검]</p><p>공격력40</p><p>: 치명타 공격 시 +200% 피해</p><p>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
-							<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+						<button class="btn btn-icon item-015 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[군주의 대검]</p><p>공격력40</p><p>: 치명타 공격 시 +200% 피해</p><p>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+							<img class="icon" src="../resources/img/item/%EA%B5%B0%EC%A3%BC%EC%9D%98_%EB%8C%80%EA%B2%80.png">
 						</button>
-						<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신성의 검]</p><p>공격력20, 공격속도20%</p><p>: 매초마다 7% 확률로 치명타율 100% 버프 기회(지속시간 무제한)</p><p>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
-							<img class="icon" src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png">
+						<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[최후의 속삭임]</p><p>공격력20, 공격속도20%</p><p>: 적이 회피불가, 적 최대체력5%의 고정피해</p><p>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png">
 						</button>
 						<button class="btn btn-icon item-014 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[마법공학 총검]</p><p>공격력20, 스킬피해량20%</p><p>: 모든 피해 25% 피흡</p><p>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%A7%88%EB%B2%95%EA%B3%B5%ED%95%99_%EC%B4%9D%EA%B2%80.png">
@@ -1685,11 +2072,14 @@
 						<button class="btn btn-icon item-012 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수호 천사]</p><p>공격력20, 방어력20</p><p>: 부활(500체력)</p><p>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%88%98%ED%98%B8_%EC%B2%9C%EC%82%AC.png">
 						</button>
-						<button class="btn btn-icon item-009 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[피바라기]</p><p>공격력20, 마법저항력20</p><p>: 평타 40% 피흡</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+						<button class="btn btn-icon item-009 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%ED%94%BC%EB%B0%94%EB%9D%BC%EA%B8%B0.png">
 						</button>
 						<button class="btn btn-icon item-033 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[지크의 전령]</p><p>공격력20, 체력200</p><p>: 좌우 아군 공속 15% 증가</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%A7%80%ED%81%AC%EC%9D%98_%EC%A0%84%EB%A0%B9.png">
+						</button>
+						<button class="btn btn-icon item-045 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[무한의 대검]</p><p>공격력20, 치명타율20%</p><p>: 치명타 공격 시 +100% 피해</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
 						</button>
 						<button class="btn btn-icon item-038 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[요우무의 유령검]</p><p>공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png">
@@ -1734,6 +2124,9 @@
 						<button class="btn btn-icon item-035 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대체력2% 화염 피해(10초)</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 						</button>
+						<button class="btn btn-icon item-051 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 건틀릿]</p><p>방어력20, 회피율20%</p><p>: 적 공격속도30%감소 역장생성(회피 성공시 크기증가)</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+						</button>
 						<button class="btn btn-icon item-042 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[기사의 맹세]</p><p>방어력40</p><p class='color-yellow'>: 기사 직업 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EA%B8%B0%EC%82%AC%EC%9D%98_%EB%A7%B9%EC%84%B8.png">
 						</button>
@@ -1776,6 +2169,9 @@
 						</button>
 						<button class="btn btn-icon item-031 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[워모그의 갑옷]</p><p>체력400</p><p>: 매 초 잃은 체력의 6% 회복(최대 400상한)</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%9B%8C%EB%AA%A8%EA%B7%B8%EC%9D%98_%EA%B0%91%EC%98%B7.png">
+						</button>
+						<button class="btn btn-icon item-053 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[역공의 장갑]</p><p>체력200, 회피율20%</p><p>: 주문 방어막 획득 (파괴한 적 오래 기절)</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
 						</button>
 						<button class="btn btn-icon item-043 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png">
@@ -1820,6 +2216,9 @@
 						<button class="btn btn-icon item-019 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[모렐로노미콘]</p><p>스킬피해량20%, 체력200</p><p>: 스킬에 초당 적 최대체력2% 화염 피해(10초)</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%AA%A8%EB%A0%90%EB%A1%9C%EB%85%B8%EB%AF%B8%EC%BD%98.png">
 						</button>
+						<button class="btn btn-icon item-049 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신비로운 건틀릿]</p><p>스킬피해량20%, 치명타율20%</p><p>: 스킬에 치명타 적용</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+						</button>
 						<button class="btn btn-icon item-040 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유미]</p><p>스킬피해량40%</p><p class='color-yellow'>: 마법사 직업 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%AF%B8.jpg">
 						</button>
@@ -1842,10 +2241,10 @@
 					<td class="tbody-bord">곡궁</td>
 					<td class="tbody-bord">공격 속도 +20%</td>
 					<td>
-						<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신성의 검]</p><p>공격력20, 공격속도20%</p><p>: 매초마다 7% 확률로 치명타율 100% 버프 기회(지속시간 무제한)</p><p>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
-							<img class="icon" src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png">
+						<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[최후의 속삭임]</p><p>공격력20, 공격속도20%</p><p>: 적이 회피불가, 적 최대체력5%의 고정피해</p><p>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png">
 						</button>
-						<button class="btn btn-icon item-022 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[고속 연사포]</p><p>공격속도40%</p><p>: 사거리 2배, 적이 회피 불가</p><p>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+						<button class="btn btn-icon item-022 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[고속 연사포]</p><p>공격속도40%</p><p>: 사거리 2배,</p><p>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
 							<img class="icon" src="../resources/img/item/%EA%B3%A0%EC%86%8D_%EC%97%B0%EC%82%AC%ED%8F%AC.png">
 						</button>
 						<button class="btn btn-icon item-013 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구인수의 격노검]</p><p>스킬피해량20%, 공격속도20%</p><p>: 공격마다 공속 5% 증가</p><p>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
@@ -1857,11 +2256,14 @@
 						<button class="btn btn-icon item-020 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유령 무희]</p><p>공격속도20%, 방어력20</p><p>: 모든 치명타 회피</p><p>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%A0%B9_%EB%AC%B4%ED%9D%AC.png">
 						</button>
-						<button class="btn btn-icon item-010 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[저주받은 칼날]</p><p>공격속도20%, 마법저항력20</p><p>: 적 1성 강등(20%확률)</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+						<button class="btn btn-icon item-010 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%A0%80%EC%A3%BC%EB%B0%9B%EC%9D%80_%EC%B9%BC%EB%82%A0.png">
 						</button>
 						<button class="btn btn-icon item-030 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거대한 히드라]</p><p>공격속도20%, 체력200</p><p>: 장착자 최대 체력 10%만큼 전방 반월형 피해</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EB%8C%80%ED%95%9C_%ED%9E%88%EB%93%9C%EB%9D%BC.png">
+						</button>
+						<button class="btn btn-icon item-048 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[연발 석궁]</p><p>공격속도20%, 치명타율20%</p><p>: 사망시 다른 아군 유닛에 전이되면서 추가로(무한중첩) 공격속도+20%, 치명타율+20%</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png">
 						</button>
 						<button class="btn btn-icon item-039 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[몰락한 왕의 검]</p><p>공격속도40%</p><p class='color-yellow'>: 검사 직업 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%AA%B0%EB%9D%BD%ED%95%9C_%EC%99%95%EC%9D%98_%EA%B2%80.png">
@@ -1897,7 +2299,7 @@
 						<button class="btn btn-icon item-024 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대천사의 포옹]</p><p>마나40</p><p>: 스킬 사용시 마나 20 회복</p><p>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%8C%80%EC%B2%9C%EC%82%AC%EC%9D%98_%ED%8F%AC%EC%98%B9.png">
 						</button>
-						<button class="btn btn-icon item-011 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 심장]</p><p>방어력20, 마나20</p><p>: 인접 적 공속 25% 감소</p><p>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+						<button class="btn btn-icon item-011 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EC%8B%AC%EC%9E%A5.png">
 						</button>
 						<button class="btn btn-icon item-032 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[침묵]</p><p>마나20, 마법저항력20</p><p>: 적 침묵(4초간 스킬봉인, 33%확률)</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
@@ -1905,6 +2307,9 @@
 						</button>
 						<button class="btn btn-icon item-023 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구원]</p><p>마나20, 체력200</p><p>: 체력이 25%면 인접 아군 1200 회복</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EA%B5%AC%EC%9B%90.png">
+						</button>
+						<button class="btn btn-icon item-050 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[정의의 손길]</p><p>마나20, 치명타율20%</p><p>: 피해량40%증가 or 공격시체력40회복 (라운드마다 랜덤)</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png">
 						</button>
 						<button class="btn btn-icon item-041 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[다르킨]</p><p>마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%8B%A4%EB%A5%B4%ED%82%A8.png">
@@ -1949,6 +2354,9 @@
 						<button class="btn btn-icon item-034 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%84%9C%ED%92%8D.png">
 						</button>
+						<button class="btn btn-icon item-052 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수은]</p><p>마법저항력20, 회피율20%</p><p>: CC방어(쿨타임 5초)</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%88%98%EC%9D%80.png">
+						</button>
 						<button class="btn btn-icon item-037 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루난의 허리케인]</p><p>마법저항력40</p><p>: 착용자의 공격을 따라하는 아군 영혼 소환(75% 피해)</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%82%9C%EC%9D%98_%ED%97%88%EB%A6%AC%EC%BC%80%EC%9D%B8.png">
 						</button>
@@ -1992,6 +2400,9 @@
 						<button class="btn btn-icon item-043 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
 							<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png">
 						</button>
+						<button class="btn btn-icon item-055 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[벙어리 장갑]</p><p>치명타율20%, 회피율20%</p><p class='color-cyan'>: 요들 계열 추가</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png">
+						</button>
 						<button class="btn btn-icon item-044 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대자연의 힘]</p><p class='color-magenta'>: 인구수+1</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
 							<img class="icon" src="../resources/img/item/%EB%8C%80%EC%9E%90%EC%97%B0%EC%9D%98_%ED%9E%98.png">
 						</button>
@@ -2019,11 +2430,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 가한 피해량의 40%만큼 체력 회복</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2050,11 +2461,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 낮은 확률(20%)로 적을 강등 (1성 낮춤) (계속 중첩되어 0성까지도 가능)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2081,11 +2492,11 @@
 					</td>
 					<td class="tbody-bord">인접한 적들의 공격 속도 25% 감소</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -2112,11 +2523,11 @@
 					</td>
 					<td class="tbody-bord">장착 시 사망하면 2초 후 500의 체력을 지닌 채 부활</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 					</td>
@@ -2143,11 +2554,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 공격 속도 5% 증가 (무제한 중첩)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 					</td>
@@ -2174,11 +2585,11 @@
 					</td>
 					<td class="tbody-bord">가한 모든 피해량의 25%만큼 체력 회복 (아이템 피해량은 제외)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 					</td>
@@ -2197,18 +2608,18 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png"></td>
-					<td class="tbody-bord">무한의 대검</td>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EA%B5%B0%EC%A3%BC%EC%9D%98_%EB%8C%80%EA%B2%80.png"></td>
+					<td class="tbody-bord">군주의 대검</td>
 					<td class="tbody-bord">
 						<p>공격력 +40</p>
 					</td>
-					<td class="tbody-bord">치명타 공격 시 +200%의 피해</td>
+					<td class="tbody-bord">다른 아이템 착용불가, 킬 관여시마다 B.F 대검을 추가로 착용(해당 라운드까지만). (해당 유닛은 한 라운드에 최대 3개의 군주의 대검을 가질 수 있음)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 					</td>
@@ -2235,11 +2646,11 @@
 					</td>
 					<td class="tbody-bord">스킬을 사용하는 적에게 125의 고정 피해</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2266,11 +2677,11 @@
 					</td>
 					<td class="tbody-bord">전투 시작 시 6초간 자신과 좌우 아군에게 250의 피해를 흡수하는 보호막 부여</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 					</td>
@@ -2297,11 +2708,11 @@
 					</td>
 					<td class="tbody-bord">스킬 적중 시 180의 광역 피해</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -2328,11 +2739,11 @@
 					</td>
 					<td class="tbody-bord">스킬 사용 시 1초당 적 최대 체력의 2%에 해당하는 화염 피해(10초)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2359,11 +2770,11 @@
 					</td>
 					<td class="tbody-bord">장착 시 모든 치명타 공격 회피</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 						+
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 					</td>
@@ -2392,11 +2803,11 @@
 						<p>(스탯 합산 총 +90%)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 						+
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 					</td>
@@ -2420,13 +2831,13 @@
 					<td class="tbody-bord">
 						<p>공격 속도 +40%</p>
 					</td>
-					<td class="tbody-bord">장착 시 적이 공격을 회피할 수 없으며 사거리가 두 배가 된다</td>
+					<td class="tbody-bord">장착 시 사거리가 두 배가 된다.</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 						+
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 					</td>
@@ -2453,11 +2864,11 @@
 					</td>
 					<td class="tbody-bord">체력이 25%가 되면 인접(약 2칸) 아군들의 체력 1200 회복</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2483,11 +2894,11 @@
 					</td>
 					<td class="tbody-bord">스킬이 사용될 때 마다 마나 20 획득</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -2514,11 +2925,11 @@
 					</td>
 					<td class="tbody-bord">스킬 사용 후 공격할 때마다 최대 마나의 15%에 해당하는 마나 회복</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -2545,11 +2956,11 @@
 					</td>
 					<td class="tbody-bord">3번째 공격마다 100의 광역 마법 피해(적 3명)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -2576,11 +2987,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 일정 확률(25%)로 적을 무장 해제 (평타 봉인)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2591,7 +3002,7 @@
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col" style="width: 76px !important;">아이템</th>
-					<th scope="col" class="thead-bord" style="width: 6rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 8rem !important;"></th>
 					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
 					<th scope="col" class="thead-bord">추가효과</th>
 					<th scope="col" style="width: 160px !important;">조합식</th>
@@ -2599,19 +3010,19 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png"></td>
-					<td class="tbody-bord">신성의 검</td>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png"></td>
+					<td class="tbody-bord">최후의 속삭임</td>
 					<td class="tbody-bord">
 						<p>공격력 +20,</p>
 						<p>공격 속도 +20%</p>
 					</td>
-					<td class="tbody-bord">매초 마다 7% 확률로 치명타율 100% 버프의 기회를 얻음 (버프가 걸리기만 하면 이번 전투에서는 계속 지속)</td>
+					<td class="tbody-bord">장착시 적이 공격 회피 불가능, 공격시 적 최대 체력 5%의 고정 피해를 입힘.</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 					</td>
@@ -2637,11 +3048,11 @@
 					</td>
 					<td class="tbody-bord">감소시킨 물리피해량만큼 마법피해로 반사</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 					</td>
@@ -2668,11 +3079,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 장착한 유닛 최대 체력의 10% 만큼 광역 피해 (전방 반월형)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2698,11 +3109,11 @@
 					</td>
 					<td class="tbody-bord">매 초마다 잃은 체력의 6% 회복(최대 400 상한)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2729,11 +3140,11 @@
 					</td>
 					<td class="tbody-bord">공격 시 33% 확률로 적 침묵 (4초간 스킬 봉인)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2760,11 +3171,11 @@
 					</td>
 					<td class="tbody-bord">좌우 두 아군 유닛들의 공격 속도 15% 증가</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2791,11 +3202,11 @@
 					</td>
 					<td class="tbody-bord">전투 시작시, 필드에 대칭 위치(장착 유닛 기준)의 적 하나를 5초동안 추방한다.</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2822,11 +3233,11 @@
 					</td>
 					<td class="tbody-bord">초당 적 최대 체력의 2%의 화염 피해(10초)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -2852,11 +3263,11 @@
 					</td>
 					<td class="tbody-bord">마법 저항력 83% 증가</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2882,11 +3293,11 @@
 					</td>
 					<td class="tbody-bord">착용자의 공격을 따라하는 아군 영혼 소환(착용자의 75%의 피해량)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 						</button>
 					</td>
@@ -2915,11 +3326,11 @@
 						<p>(시너지 인구수와 효과(치명타 피해량 증가) 뿐만 아니라, 실제 전투시에도 멀리 있는 적에게 파고들어 전투)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 						</button>
 					</td>
@@ -2948,11 +3359,11 @@
 						<p>(시너지 인구수 적용 뿐만 아니라, 검사 유닛이 되므로 장착자 역시 추가 공격 기회(시너지 효과)를 얻음)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 						</button>
 					</td>
@@ -2981,11 +3392,11 @@
 						<p>(시너지 인구수와 효과(스킬 피해량 증가) 뿐만 아니라, 직업 특성인 공격시 2배의 마나 획득도 적용)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 						</button>
 					</td>
@@ -3014,11 +3425,11 @@
 						<p>(시너지 인구수 적용 뿐만 아니라, 악마 유닛이 되므로 장착자의 공격도 악마 유닛의 공격(확률성 마나 버닝)으로 판정)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 						</button>
 					</td>
@@ -3047,11 +3458,11 @@
 						<p>(시너지 인구수 적용 뿐만 아니라, 기사 유닛이 되므로 기본 공격 방어 효과(시너지 효과)를 얻음)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 						</button>
 					</td>
@@ -3080,11 +3491,11 @@
 						<p>(시너지 인구수 적용 뿐만 아니라, 빙하 유닛이 되므로 장착자의 공격도 기절 확률을 얻음)</p>
 					</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 						</button>
 					</td>
@@ -3108,12 +3519,361 @@
 					<td class="tbody-bord text-center">-</td>
 					<td class="tbody-bord color-magenta">장착한 유닛은 인구 계산에서 제외됨 (총 인구수 +1 효과)</td>
 					<td class="text-center">
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 						</button>
 						+
-						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-047">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col">성능</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EB%8B%88%EC%BD%94%EC%9D%98_%EB%8F%84%EC%9B%80.png"></td>
+					<td class="tbody-bord">니코의 도움</td>
+					<td class="color-lime">아이템을 소모하면서 지정 유닛과 동일한 1성 유닛을 대기열에 획득함.</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-046">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">특성</th>
+					<th scope="col">조합 가능 아이템</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png"></td>
+					<td class="tbody-bord">연습용 장갑</td>
+					<td class="tbody-bord">
+						<p>치명타율 +10%,</p>
+						<p>회피율 +10%</p>
+					</td>
+					<td class="tbody-bord">조합 완성품의 공격적/방어적 성격에 따라 치명타율20%/회피율20%의 한 쪽으로 성능이 전환됩니다.</td>
+					<td>
+						<button class="btn btn-icon item-045 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[무한의 대검]</p><p>공격력20, 치명타율20%</p><p>: 치명타 공격 시 +100% 피해</p><p>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+							<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+						</button>
+						<button class="btn btn-icon item-048 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[연발 석궁]</p><p>공격속도20%, 치명타율20%</p><p>: 사망시 다른 아군 유닛에 전이되면서 추가로(무한중첩) 공격속도+20%, 치명타율+20%</p><p>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png">
+						</button>
+						<button class="btn btn-icon item-049 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신비로운 건틀릿]</p><p>스킬피해량20%, 치명타율20%</p><p>: 스킬에 치명타 적용</p><p>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+						</button>
+						<button class="btn btn-icon item-050 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[정의의 손길]</p><p>마나20, 치명타율20%</p><p>: 피해량40%증가 or 공격시체력40회복 (라운드마다 랜덤)</p><p>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png">
+						</button>
+						<button class="btn btn-icon item-051 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 건틀릿]</p><p>방어력20, 회피율20%</p><p>: 적 공격속도30%감소 역장생성(회피 성공시 크기증가)</p><p>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+						</button>
+						<button class="btn btn-icon item-052 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수은]</p><p>마법저항력20, 회피율20%</p><p>: CC방어(쿨타임 5초)</p><p>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%88%98%EC%9D%80.png">
+						</button>
+						<button class="btn btn-icon item-053 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[역공의 장갑]</p><p>체력200, 회피율20%</p><p>: 주문 방어막 획득 (파괴한 적 오래 기절)</p><p>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+							<img class="icon" src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						<button class="btn btn-icon item-054 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[도적의 장갑]</p><p>치명타율20%, 회피율20%</p><p>: 다른 아이템 착용불가, 라운드마다 임시 아이템 2개 착용하면서 시작</p><p>+<img class='icon' src='../resources/img/item/연습용_장갑.png'></p>">
+							<img class="icon" src="../resources/img/item/%EB%8F%84%EC%A0%81%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						<button class="btn btn-icon item-055 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[벙어리 장갑]</p><p>치명타율20%, 회피율20%</p><p class='color-cyan'>: 요들 계열 추가</p><p>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
+							<img class="icon" src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-045">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png"></td>
+					<td class="tbody-bord">무한의 대검</td>
+					<td class="tbody-bord">
+						<p>공격력 +20,</p>
+						<p>치명타율 +20%</p>
+					</td>
+					<td class="tbody-bord">치명타 공격 시 +100%의 피해</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-048">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 6rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png"></td>
+					<td class="tbody-bord">연발 석궁</td>
+					<td class="tbody-bord">
+						<p>공격 속도 +20%,</p>
+						<p>치명타율 +20%</p>
+					</td>
+					<td class="tbody-bord">사망시 다른 아군 유닛에게 장착되면서 추가 공격 속도 +20%, 추가 치명타율 +20%의 효과를 부여. (전이될 수록 효과는 중첩됨)</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-049">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 8rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 10rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png"></td>
+					<td class="tbody-bord">신비로운 건틀릿</td>
+					<td class="tbody-bord">
+						<p>스킬 피해량 +20%,</p>
+						<p>치명타율 +20%</p>
+					</td>
+					<td class="tbody-bord">스킬에 치명타가 적용될 수 있음.</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-050">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png"></td>
+					<td class="tbody-bord">정의의 손길</td>
+					<td class="tbody-bord">
+						<p>마나 +20,</p>
+						<p>치명타율 +20%</p>
+					</td>
+					<td class="tbody-bord">라운드마다 무작위로 "피해량 40% 증가" 혹은 "공격시 체력 40 회복" 효과 적용.</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-051">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 8rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 8rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png"></td>
+					<td class="tbody-bord">얼어붙은 건틀릿</td>
+					<td class="tbody-bord">
+						<p>방어력 +20,</p>
+						<p>회피율 +20%</p>
+					</td>
+					<td class="tbody-bord">회피할 때마다 팽창하는 역장을 생성. 역장 내 적 유닛의 공격속도 30% 감소. (역장 자체는 라운드 종료까지 계속 유지)</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-052">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 4rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%88%98%EC%9D%80.png"></td>
+					<td class="tbody-bord">수은</td>
+					<td class="tbody-bord">
+						<p>마법 저항력 +20,</p>
+						<p>회피율 +20%</p>
+					</td>
+					<td class="tbody-bord">장착시 군중 제어 효과를 방어함. (재사용 대기시간 5초)</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-053">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 8rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png"></td>
+					<td class="tbody-bord">역공의 장갑</td>
+					<td class="tbody-bord">
+						<p>체력 +200,</p>
+						<p>회피율 +20%</p>
+					</td>
+					<td class="tbody-bord">전투 시작시 주문 방어막을 획득. 이 방어막을 파괴한 적은 오랫동안 기절함.</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-054">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EB%8F%84%EC%A0%81%EC%9D%98_%EC%9E%A5%EA%B0%91.png"></td>
+					<td class="tbody-bord">도적의 장갑</td>
+					<td class="tbody-bord">
+						<p>치명타율 +20%,</p>
+						<p>회피율 +20%</p>
+					</td>
+					<td class="tbody-bord">다른 아이템 착용불가, 해당 라운드에만 지속되는 임시 아이템 2개를 착용하면서 전투 시작. (아이템의 등급은 플레이어 레벨에 따라 달라짐)</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+						+
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-dark table-striped table-desc" id="table-055">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col" style="width: 76px !important;">아이템</th>
+					<th scope="col" class="thead-bord" style="width: 7rem !important;"></th>
+					<th scope="col" class="thead-bord" style="width: 9rem !important;">스탯</th>
+					<th scope="col" class="thead-bord">추가효과</th>
+					<th scope="col" style="width: 160px !important;">조합식</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding-right: 0px !important;"><img src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png"></td>
+					<td class="tbody-bord">벙어리 장갑</td>
+					<td class="tbody-bord">
+						<p>치명타율 +20%,</p>
+						<p>회피율 +20%</p>
+					</td>
+					<td class="tbody-bord">
+						<p class="color-cyan">장착시 요들 계열 특성이 추가됩니다.</p>
+						<p>(시너지 인구수 적용 뿐만 아니라, 요들 유닛이 되므로 장착자도 회피 확률을 얻음)</p>
+					</td>
+					<td class="text-center">
+						<button class="btn btn-icon item-008 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
+						</button>
+						+
+						<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+							<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
 						</button>
 					</td>
 				</tr>
@@ -3147,6 +3907,10 @@
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-08">
   						<label for="check-08" style="margin-right: 2rem !important;">뒤집개</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-25">
+  						<label for="check-25" style="margin-right: 2rem !important;">소모성</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-24">
+  						<label for="check-24" style="margin-right: 2rem !important;">단일 장착 제한</label>
 					</p>
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-09">
@@ -3168,7 +3932,7 @@
 						<input class="form-check-input" type="checkbox" value="" id="check-12">
   						<label for="check-12" style="margin-right: 2rem !important;">추가 피해</label>
 						<input class="form-check-input" type="checkbox" value="" id="check-15">
-  						<label for="check-15" style="margin-right: 2rem !important;">화염 피해(고통스러운 상처=회복 봉인)</label>
+  						<label for="check-15" style="margin-right: 2rem !important;">화염 피해(고통스러운 상처=회복 저하)</label>
 					</p>
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-20">
@@ -3177,6 +3941,8 @@
   						<label for="check-21" style="margin-right: 2rem !important;">회피</label>
 						<input class="form-check-input" type="checkbox" value="" id="check-22">
   						<label for="check-22" style="margin-right: 2rem !important;">사거리</label>
+						<input class="form-check-input" type="checkbox" value="" id="check-23">
+  						<label for="check-23" style="margin-right: 2rem !important;">군중 제어</label>
 					</p>
 					<p>
 						<input class="form-check-input" type="checkbox" value="" id="check-16">
@@ -3191,29 +3957,35 @@
 			<div class="card-body">
 				<p>기본 아이템</p>
 				<p class="items" style="margin-bottom: 1rem;">
-					<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+					<button class="btn btn-icon item-001 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+					<button class="btn btn-icon item-005 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 					</button>
-					<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+					<button class="btn btn-icon item-004 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 					</button>
-					<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+					<button class="btn btn-icon item-006 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 					</button>
-					<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+					<button class="btn btn-icon item-002 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 					</button>
-					<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+					<button class="btn btn-icon item-007 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 					</button>
-					<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+					<button class="btn btn-icon item-003 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 					</button>
-					<button class="btn btn-icon item-008 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+					<button class="btn btn-icon item-046 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+					</button>
+					<button class="btn btn-icon item-008 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
+					</button>
+					<button class="btn btn-icon item-047 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EB%8B%88%EC%BD%94%EC%9D%98_%EB%8F%84%EC%9B%80.png">
 					</button>
 				</p>
 				<p>조합 아이템(조합식)</p>
@@ -3224,42 +3996,47 @@
 								<th>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-001" id="hsub-01" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+									<button class="btn btn-icon sub sub-001" id="hsub-01" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-005" id="hsub-02" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+									<button class="btn btn-icon sub sub-005" id="hsub-02" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-004" id="hsub-03" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+									<button class="btn btn-icon sub sub-004" id="hsub-03" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-006" id="hsub-04" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+									<button class="btn btn-icon sub sub-006" id="hsub-04" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-002" id="hsub-05" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+									<button class="btn btn-icon sub sub-002" id="hsub-05" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-007" id="hsub-06" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+									<button class="btn btn-icon sub sub-007" id="hsub-06" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-003" id="hsub-07" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+									<button class="btn btn-icon sub sub-003" id="hsub-07" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 									</button>
 								</th>
 								<th>
-									<button class="btn btn-icon sub sub-008" id="hsub-08" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+									<button class="btn btn-icon sub sub-046" id="hsub-46" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</th>
+								<th>
+									<button class="btn btn-icon sub sub-008" id="hsub-08" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 									</button>
 								</th>
@@ -3268,376 +4045,468 @@
 						<tbody>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-001" id="vsub-01" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[B.F. 대검]</p><p>+공격력20</p>">
+									<button class="btn btn-icon sub sub-001" id="vsub-01" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/BF_%EB%8C%80%EA%B2%80.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-015 hh-01 hv-01 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[무한의 대검]</p><p>공격력40</p><p>: 치명타 공격 시 +200% 피해</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
-										<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+									<button class="btn btn-icon item-015 hh-01 hv-01 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EA%B5%B0%EC%A3%BC%EC%9D%98_%EB%8C%80%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-028 hh-02 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신성의 검]</p><p>공격력20, 공격속도20%</p><p>: 매초마다 7% 확률로 치명타율 100% 버프 기회(지속시간 무제한)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
-										<img class="icon" src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png">
+									<button class="btn btn-icon item-028 hh-02 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-014 hh-03 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[마법공학 총검]</p><p>공격력20, 스킬피해량20%</p><p>: 모든 피해 25% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+									<button class="btn btn-icon item-014 hh-03 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%A7%88%EB%B2%95%EA%B3%B5%ED%95%99_%EC%B4%9D%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-025 hh-04 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇼진의 창]</p><p>공격력20, 마나20</p><p>: 스킬 사용후 공격마다 최대 마나 15% 마나 회복</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-025 hh-04 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%87%BC%EC%A7%84%EC%9D%98_%EC%B0%BD.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-012 hh-05 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수호 천사]</p><p>공격력20, 방어력20</p><p>: 부활(500체력)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-012 hh-05 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%88%98%ED%98%B8_%EC%B2%9C%EC%82%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-009 hh-06 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[피바라기]</p><p>공격력20, 마법저항력20</p><p>: 평타 40% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-009 hh-06 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%ED%94%BC%EB%B0%94%EB%9D%BC%EA%B8%B0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-033 hh-07 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[지크의 전령]</p><p>공격력20, 체력200</p><p>: 좌우 아군 공속 15% 증가</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-033 hh-07 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%A7%80%ED%81%AC%EC%9D%98_%EC%A0%84%EB%A0%B9.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-038 hh-08 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[요우무의 유령검]</p><p>공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+									<button class="btn btn-icon item-045 hh-46 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-038 hh-08 hv-01 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-005" id="vsub-02" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[곡궁]</p><p>+공격속도20%</p>">
+									<button class="btn btn-icon sub sub-005" id="vsub-02" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B3%A1%EA%B6%81.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-028 hh-01 hv-02 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신성의 검]</p><p>공격력20, 공격속도20%</p><p>: 매초마다 7% 확률로 치명타율 100% 버프 기회(지속시간 무제한)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
-										<img class="icon dim" src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png">
+									<button class="btn btn-icon item-028 hh-01 hv-02 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-022 hh-02 hv-02 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[고속 연사포]</p><p>공격속도40%</p><p>: 사거리 2배, 적이 회피 불가</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+									<button class="btn btn-icon item-022 hh-02 hv-02 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B3%A0%EC%86%8D_%EC%97%B0%EC%82%AC%ED%8F%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-013 hh-03 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구인수의 격노검]</p><p>스킬피해량20%, 공격속도20%</p><p>: 공격마다 공속 5% 증가</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+									<button class="btn btn-icon item-013 hh-03 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B5%AC%EC%9D%B8%EC%88%98%EC%9D%98_%EA%B2%A9%EB%85%B8%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-026 hh-04 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[스태틱의 단검]</p><p>공격속도20%, 마나20</p><p>: 3번째 공격마다 100 광역 마법 피해(적 3명)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-026 hh-04 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%8A%A4%ED%83%9C%ED%8B%B1%EC%9D%98_%EB%8B%A8%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-020 hh-05 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유령 무희]</p><p>공격속도20%, 방어력20</p><p>: 모든 치명타 회피</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-020 hh-05 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%A0%B9_%EB%AC%B4%ED%9D%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-010 hh-06 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[저주받은 칼날]</p><p>공격속도20%, 마법저항력20</p><p>: 적 1성 강등(20%확률)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-010 hh-06 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%A0%80%EC%A3%BC%EB%B0%9B%EC%9D%80_%EC%B9%BC%EB%82%A0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-030 hh-07 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거대한 히드라]</p><p>공격속도20%, 체력200</p><p>: 장착자 최대 체력 10%만큼 전방 반월형 피해</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-030 hh-07 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B1%B0%EB%8C%80%ED%95%9C_%ED%9E%88%EB%93%9C%EB%9D%BC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-039 hh-08 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[몰락한 왕의 검]</p><p>공격속도40%</p><p class='color-yellow'>: 검사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+									<button class="btn btn-icon item-048 hh-46 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-039 hh-08 hv-02 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%AA%B0%EB%9D%BD%ED%95%9C_%EC%99%95%EC%9D%98_%EA%B2%80.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-004" id="vsub-03" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쓸데없이 큰 지팡이]</p><p>+스킬피해량20%</p>">
+									<button class="btn btn-icon sub sub-004" id="vsub-03" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%93%B8%EB%8D%B0%EC%97%86%EC%9D%B4_%ED%81%B0_%EC%A7%80%ED%8C%A1%EC%9D%B4.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-014 hh-01 hv-03 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[마법공학 총검]</p><p>공격력20, 스킬피해량20%</p><p>: 모든 피해 25% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+									<button class="btn btn-icon item-014 hh-01 hv-03 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%A7%88%EB%B2%95%EA%B3%B5%ED%95%99_%EC%B4%9D%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-013 hh-02 hv-03 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구인수의 격노검]</p><p>스킬피해량20%, 공격속도20%</p><p>: 공격마다 공속 5% 증가</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+									<button class="btn btn-icon item-013 hh-02 hv-03 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EA%B5%AC%EC%9D%B8%EC%88%98%EC%9D%98_%EA%B2%A9%EB%85%B8%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-021 hh-03 hv-03 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[라바돈의 죽음모자]</p><p>스킬피해량90%<p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+									<button class="btn btn-icon item-021 hh-03 hv-03 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%9D%BC%EB%B0%94%EB%8F%88%EC%9D%98_%EC%A3%BD%EC%9D%8C%EB%AA%A8%EC%9E%90.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-018 hh-04 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루덴의 메아리]</p><p>스킬피해량20%, 마나20</p><p>: 스킬 적중시 180 광역 피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-018 hh-04 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%8D%B4%EC%9D%98_%EB%A9%94%EC%95%84%EB%A6%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-017 hh-05 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[강철의 솔라리 펜던트]</p><p>스킬피해량20%, 방어력20</p><p>: 전투시작 6초간 자신과 좌우 아군 250 보호막</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-017 hh-05 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B0%95%EC%B2%A0%EC%9D%98_%EC%86%94%EB%9D%BC%EB%A6%AC_%ED%8E%9C%EB%8D%98%ED%8A%B8.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-016 hh-06 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[이온 충격기]</p><p>스킬피해량20%, 마법저항력20</p><p>: 스킬 사용하는 적 125 고정피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-016 hh-06 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9D%B4%EC%98%A8_%EC%B6%A9%EA%B2%A9%EA%B8%B0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-019 hh-07 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[모렐로노미콘]</p><p>스킬피해량20%, 체력200</p><p>: 스킬에 초당 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-019 hh-07 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%AA%A8%EB%A0%90%EB%A1%9C%EB%85%B8%EB%AF%B8%EC%BD%98.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-040 hh-08 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유미]</p><p>스킬피해량40%</p><p class='color-yellow'>: 마법사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+									<button class="btn btn-icon item-049 hh-46 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-040 hh-08 hv-03 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%AF%B8.jpg">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-006" id="vsub-04" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[여신의 눈물]</p><p>+마나20</p>">
+									<button class="btn btn-icon sub sub-006" id="vsub-04" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%97%AC%EC%8B%A0%EC%9D%98_%EB%88%88%EB%AC%BC.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-025 hh-01 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇼진의 창]</p><p>공격력20, 마나20</p><p>: 스킬 사용후 공격마다 최대 마나 15% 마나 회복</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-025 hh-01 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%87%BC%EC%A7%84%EC%9D%98_%EC%B0%BD.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-026 hh-02 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[스태틱의 단검]</p><p>공격속도20%, 마나20</p><p>: 3번째 공격마다 100 광역 마법 피해(적 3명)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-026 hh-02 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%8A%A4%ED%83%9C%ED%8B%B1%EC%9D%98_%EB%8B%A8%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-018 hh-03 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루덴의 메아리]</p><p>스킬피해량20%, 마나20</p><p>: 스킬 적중시 180 광역 피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-018 hh-03 hv-04 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%A3%A8%EB%8D%B4%EC%9D%98_%EB%A9%94%EC%95%84%EB%A6%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-024 hh-04 hv-04 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대천사의 포옹]</p><p>마나40</p><p>: 스킬 사용시 마나 20 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-024 hh-04 hv-04 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%8C%80%EC%B2%9C%EC%82%AC%EC%9D%98_%ED%8F%AC%EC%98%B9.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-011 hh-05 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 심장]</p><p>방어력20, 마나20</p><p>: 인접 적 공속 25% 감소</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-011 hh-05 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EC%8B%AC%EC%9E%A5.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-032 hh-06 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[침묵]</p><p>마나20, 마법저항력20</p><p>: 적 침묵(4초간 스킬봉인, 33%확률)</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-032 hh-06 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%B9%A8%EB%AC%B5.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-023 hh-07 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구원]</p><p>마나20, 체력200</p><p>: 체력이 25%면 인접 아군 1200 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-023 hh-07 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B5%AC%EC%9B%90.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-041 hh-08 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[다르킨]</p><p>마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-050 hh-46 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-041 hh-08 hv-04 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%8B%A4%EB%A5%B4%ED%82%A8.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-002" id="vsub-05" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇠사슬 조끼]</p><p>+방어력20</p>">
+									<button class="btn btn-icon sub sub-002" id="vsub-05" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%87%A0%EC%82%AC%EC%8A%AC_%EC%A1%B0%EB%81%BC.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-012 hh-01 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수호 천사]</p><p>공격력20, 방어력20</p><p>: 부활(500체력)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-012 hh-01 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%88%98%ED%98%B8_%EC%B2%9C%EC%82%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-020 hh-02 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유령 무희]</p><p>공격속도20%, 방어력20</p><p>: 모든 치명타 회피</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-020 hh-02 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%9C%A0%EB%A0%B9_%EB%AC%B4%ED%9D%AC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-017 hh-03 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[강철의 솔라리 펜던트]</p><p>스킬피해량20%, 방어력20</p><p>: 전투시작 6초간 자신과 좌우 아군 250 보호막</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-017 hh-03 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EA%B0%95%EC%B2%A0%EC%9D%98_%EC%86%94%EB%9D%BC%EB%A6%AC_%ED%8E%9C%EB%8D%98%ED%8A%B8.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-011 hh-04 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 심장]</p><p>방어력20, 마나20</p><p>: 인접 적 공속 25% 감소</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-011 hh-04 hv-05 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EC%8B%AC%EC%9E%A5.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-029 hh-05 hv-05 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[가시 갑옷]</p><p>방어력40</p><p>: 감소한 물리피해량만큼 마법피해로 반사</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-029 hh-05 hv-05 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B0%80%EC%8B%9C_%EA%B0%91%EC%98%B7.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-027 hh-06 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[파쇄검]</p><p>방어력20, 마법저항력20</p><p>: 적 무장해제(5초 평타봉인, 25%확률)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-027 hh-06 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%ED%8C%8C%EC%87%84%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-035 hh-07 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-035 hh-07 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-042 hh-08 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[기사의 맹세]</p><p>방어력40</p><p class='color-yellow'>: 기사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-051 hh-46 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-042 hh-08 hv-05 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B8%B0%EC%82%AC%EC%9D%98_%EB%A7%B9%EC%84%B8.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-007" id="vsub-06" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[음전자 망토]</p><p>+마법저항력20</p>">
+									<button class="btn btn-icon sub sub-007" id="vsub-06" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9D%8C%EC%A0%84%EC%9E%90_%EB%A7%9D%ED%86%A0.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-009 hh-01 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[피바라기]</p><p>공격력20, 마법저항력20</p><p>: 평타 40% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-009 hh-01 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%ED%94%BC%EB%B0%94%EB%9D%BC%EA%B8%B0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-010 hh-02 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[저주받은 칼날]</p><p>공격속도20%, 마법저항력20</p><p>: 적 1성 강등(20%확률)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-010 hh-02 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%A0%80%EC%A3%BC%EB%B0%9B%EC%9D%80_%EC%B9%BC%EB%82%A0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-016 hh-03 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[이온 충격기]</p><p>스킬피해량20%, 마법저항력20</p><p>: 스킬 사용하는 적 125 고정피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-016 hh-03 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%9D%B4%EC%98%A8_%EC%B6%A9%EA%B2%A9%EA%B8%B0.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-032 hh-04 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[침묵]</p><p>마나20, 마법저항력20</p><p>: 적 침묵(4초간 스킬봉인, 33%확률)</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-032 hh-04 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%B9%A8%EB%AC%B5.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-027 hh-05 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[파쇄검]</p><p>방어력20, 마법저항력20</p><p>: 적 무장해제(5초 평타봉인, 25%확률)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-027 hh-05 hv-06 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%ED%8C%8C%EC%87%84%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-036 hh-06 hv-06 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[용의 발톱]</p><p>마법저항력40</p><p>: 마법저항력 83% 증가</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-036 hh-06 hv-06 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9A%A9%EC%9D%98_%EB%B0%9C%ED%86%B1.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-034 hh-07 hv-06 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-034 hh-07 hv-06 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%84%9C%ED%92%8D.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-037 hh-08 hv-06 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루난의 허리케인]</p><p>마법저항력40</p><p>: 착용자의 공격을 따라하는 아군 영혼 소환(75% 피해)</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-052 hh-46 hv-06 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%88%98%EC%9D%80.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-037 hh-08 hv-06 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%82%9C%EC%9D%98_%ED%97%88%EB%A6%AC%EC%BC%80%EC%9D%B8.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-003" id="vsub-07" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거인의 허리띠]</p><p>+체력200</p>">
+									<button class="btn btn-icon sub sub-003" id="vsub-07" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EA%B1%B0%EC%9D%B8%EC%9D%98_%ED%97%88%EB%A6%AC%EB%9D%A0.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-033 hh-01 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[지크의 전령]</p><p>공격력20, 체력200</p><p>: 좌우 아군 공속 15% 증가</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-033 hh-01 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%A7%80%ED%81%AC%EC%9D%98_%EC%A0%84%EB%A0%B9.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-030 hh-02 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거대한 히드라]</p><p>공격속도20%, 체력200</p><p>: 장착자 최대 체력 10%만큼 전방 반월형 피해</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-030 hh-02 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EA%B1%B0%EB%8C%80%ED%95%9C_%ED%9E%88%EB%93%9C%EB%9D%BC.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-019 hh-03 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[모렐로노미콘]</p><p>스킬피해량20%, 체력200</p><p>: 스킬에 초당 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-019 hh-03 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%AA%A8%EB%A0%90%EB%A1%9C%EB%85%B8%EB%AF%B8%EC%BD%98.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-023 hh-04 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구원]</p><p>마나20, 체력200</p><p>: 체력이 25%면 인접 아군 1200 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-023 hh-04 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EA%B5%AC%EC%9B%90.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-035 hh-05 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-035 hh-05 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-034 hh-06 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-034 hh-06 hv-07 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%84%9C%ED%92%8D.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-031 hh-07 hv-07 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[워모그의 갑옷]</p><p>체력400</p><p>: 매 초 잃은 체력의 6% 회복(최대 400상한)</p><p><img class='icon' src='../resources/img/item/거인의_허리띠.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-031 hh-07 hv-07 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%9B%8C%EB%AA%A8%EA%B7%B8%EC%9D%98_%EA%B0%91%EC%98%B7.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-043 hh-08 hv-07 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-053 hh-46 hv-07 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-043 hh-08 hv-07 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png">
 									</button>
 								</td>
 							</tr>
 							<tr>
 								<th>
-									<button class="btn btn-icon sub sub-008" id="vsub-08" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[뒤집개]</p>">
+									<button class="btn btn-icon sub sub-046" id="vsub-46" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EC%97%B0%EC%8A%B5%EC%9A%A9_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</th>
+								<td>
+									<button class="btn btn-icon item-045 hh-01 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-048 hh-02 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-049 hh-03 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-050 hh-04 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-051 hh-05 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-052 hh-06 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%88%98%EC%9D%80.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-053 hh-07 hv-46 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-054 hh-46 hv-46 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EB%8F%84%EC%A0%81%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-055 hh-08 hv-46 btn-rside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon" src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<button class="btn btn-icon sub sub-008" id="vsub-08" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%92%A4%EC%A7%91%EA%B0%9C.png">
 									</button>
 								</th>
 								<td>
-									<button class="btn btn-icon item-038 hh-01 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[요우무의 유령검]</p><p>공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+									<button class="btn btn-icon item-038 hh-01 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-039 hh-02 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[몰락한 왕의 검]</p><p>공격속도40%</p><p class='color-yellow'>: 검사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+									<button class="btn btn-icon item-039 hh-02 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%AA%B0%EB%9D%BD%ED%95%9C_%EC%99%95%EC%9D%98_%EA%B2%80.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-040 hh-03 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유미]</p><p>스킬피해량40%</p><p class='color-yellow'>: 마법사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+									<button class="btn btn-icon item-040 hh-03 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%9C%A0%EB%AF%B8.jpg">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-041 hh-04 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[다르킨]</p><p>마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+									<button class="btn btn-icon item-041 hh-04 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%8B%A4%EB%A5%B4%ED%82%A8.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-042 hh-05 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[기사의 맹세]</p><p>방어력40</p><p class='color-yellow'>: 기사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+									<button class="btn btn-icon item-042 hh-05 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EA%B8%B0%EC%82%AC%EC%9D%98_%EB%A7%B9%EC%84%B8.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-037 hh-06 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루난의 허리케인]</p><p>마법저항력40</p><p>: 착용자의 공격을 따라하는 아군 영혼 소환(75% 피해)</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+									<button class="btn btn-icon item-037 hh-06 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EB%A3%A8%EB%82%9C%EC%9D%98_%ED%97%88%EB%A6%AC%EC%BC%80%EC%9D%B8.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-043 hh-07 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+									<button class="btn btn-icon item-043 hh-07 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon dim" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png">
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-icon item-044 hh-08 hv-08 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대자연의 힘]</p><p class='color-magenta'>: 인구수+1</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
+									<button class="btn btn-icon item-055 hh-46 hv-08 btn-lside btn-primary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+										<img class="icon dim" src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png">
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-icon item-044 hh-08 hv-08 btn-mside btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 										<img class="icon" src="../resources/img/item/%EB%8C%80%EC%9E%90%EC%97%B0%EC%9D%98_%ED%9E%98.png">
 									</button>
 								</td>
@@ -3647,112 +4516,139 @@
 				</p>
 				<p>조합 아이템(나열)</p>
 				<p class="items">
-					<button class="btn btn-icon item-009 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[피바라기]</p><p>공격력20, 마법저항력20</p><p>: 평타 40% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-009 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%ED%94%BC%EB%B0%94%EB%9D%BC%EA%B8%B0.png">
 					</button>
-					<button class="btn btn-icon item-010 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[저주받은 칼날]</p><p>공격속도20%, 마법저항력20</p><p>: 적 1성 강등(20%확률)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-010 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%A0%80%EC%A3%BC%EB%B0%9B%EC%9D%80_%EC%B9%BC%EB%82%A0.png">
 					</button>
-					<button class="btn btn-icon item-011 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 심장]</p><p>방어력20, 마나20</p><p>: 인접 적 공속 25% 감소</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-011 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EC%8B%AC%EC%9E%A5.png">
 					</button>
-					<button class="btn btn-icon item-012 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[수호 천사]</p><p>공격력20, 방어력20</p><p>: 부활(500체력)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+					<button class="btn btn-icon item-012 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%88%98%ED%98%B8_%EC%B2%9C%EC%82%AC.png">
 					</button>
-					<button class="btn btn-icon item-013 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구인수의 격노검]</p><p>스킬피해량20%, 공격속도20%</p><p>: 공격마다 공속 5% 증가</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+					<button class="btn btn-icon item-013 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B5%AC%EC%9D%B8%EC%88%98%EC%9D%98_%EA%B2%A9%EB%85%B8%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-014 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[마법공학 총검]</p><p>공격력20, 스킬피해량20%</p><p>: 모든 피해 25% 피흡</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+					<button class="btn btn-icon item-014 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%A7%88%EB%B2%95%EA%B3%B5%ED%95%99_%EC%B4%9D%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-015 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[무한의 대검]</p><p>공격력40</p><p>: 치명타 공격 시 +200% 피해</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
-						<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
+					<button class="btn btn-icon item-015 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EA%B5%B0%EC%A3%BC%EC%9D%98_%EB%8C%80%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-016 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[이온 충격기]</p><p>스킬피해량20%, 마법저항력20</p><p>: 스킬 사용하는 적 125 고정피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-016 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9D%B4%EC%98%A8_%EC%B6%A9%EA%B2%A9%EA%B8%B0.png">
 					</button>
-					<button class="btn btn-icon item-017 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[강철의 솔라리 펜던트]</p><p>스킬피해량20%, 방어력20</p><p>: 전투시작 6초간 자신과 좌우 아군 250 보호막</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+					<button class="btn btn-icon item-017 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B0%95%EC%B2%A0%EC%9D%98_%EC%86%94%EB%9D%BC%EB%A6%AC_%ED%8E%9C%EB%8D%98%ED%8A%B8.png">
 					</button>
-					<button class="btn btn-icon item-018 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루덴의 메아리]</p><p>스킬피해량20%, 마나20</p><p>: 스킬 적중시 180 광역 피해</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-018 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%8D%B4%EC%9D%98_%EB%A9%94%EC%95%84%EB%A6%AC.png">
 					</button>
-					<button class="btn btn-icon item-019 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[모렐로노미콘]</p><p>스킬피해량20%, 체력200</p><p>: 스킬에 초당 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-019 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%AA%A8%EB%A0%90%EB%A1%9C%EB%85%B8%EB%AF%B8%EC%BD%98.png">
 					</button>
-					<button class="btn btn-icon item-020 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유령 무희]</p><p>공격속도20%, 방어력20</p><p>: 모든 치명타 회피</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+					<button class="btn btn-icon item-020 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%A0%B9_%EB%AC%B4%ED%9D%AC.png">
 					</button>
-					<button class="btn btn-icon item-021 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[라바돈의 죽음모자]</p><p>스킬피해량90%<p><img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+					<button class="btn btn-icon item-021 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%9D%BC%EB%B0%94%EB%8F%88%EC%9D%98_%EC%A3%BD%EC%9D%8C%EB%AA%A8%EC%9E%90.png">
 					</button>
-					<button class="btn btn-icon item-022 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[고속 연사포]</p><p>공격속도40%</p><p>: 사거리 2배, 적이 회피 불가</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+					<button class="btn btn-icon item-022 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B3%A0%EC%86%8D_%EC%97%B0%EC%82%AC%ED%8F%AC.png">
 					</button>
-					<button class="btn btn-icon item-023 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[구원]</p><p>마나20, 체력200</p><p>: 체력이 25%면 인접 아군 1200 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-023 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B5%AC%EC%9B%90.png">
 					</button>
-					<button class="btn btn-icon item-024 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대천사의 포옹]</p><p>마나40</p><p>: 스킬 사용시 마나 20 회복</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-024 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%8C%80%EC%B2%9C%EC%82%AC%EC%9D%98_%ED%8F%AC%EC%98%B9.png">
 					</button>
-					<button class="btn btn-icon item-025 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[쇼진의 창]</p><p>공격력20, 마나20</p><p>: 스킬 사용후 공격마다 최대 마나 15% 마나 회복</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-025 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%87%BC%EC%A7%84%EC%9D%98_%EC%B0%BD.png">
 					</button>
-					<button class="btn btn-icon item-026 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[스태틱의 단검]</p><p>공격속도20%, 마나20</p><p>: 3번째 공격마다 100 광역 마법 피해(적 3명)</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-026 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%8A%A4%ED%83%9C%ED%8B%B1%EC%9D%98_%EB%8B%A8%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-027 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[파쇄검]</p><p>방어력20, 마법저항력20</p><p>: 적 무장해제(5초 평타봉인, 25%확률)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-027 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%ED%8C%8C%EC%87%84%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[신성의 검]</p><p>공격력20, 공격속도20%</p><p>: 매초마다 7% 확률로 치명타율 100% 버프 기회(지속시간 무제한)</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
-						<img class="icon" src="../resources/img/item/%EC%8B%A0%EC%84%B1%EC%9D%98_%EA%B2%80.png">
+					<button class="btn btn-icon item-028 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%B5%9C%ED%9B%84%EC%9D%98_%EC%86%8D%EC%82%AD%EC%9E%84.png">
 					</button>
-					<button class="btn btn-icon item-029 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[가시 갑옷]</p><p>방어력40</p><p>: 감소한 물리피해량만큼 마법피해로 반사</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+					<button class="btn btn-icon item-029 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B0%80%EC%8B%9C_%EA%B0%91%EC%98%B7.png">
 					</button>
-					<button class="btn btn-icon item-030 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[거대한 히드라]</p><p>공격속도20%, 체력200</p><p>: 장착자 최대 체력 10%만큼 전방 반월형 피해</p><p><img class='icon' src='../resources/img/item/곡궁.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-030 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B1%B0%EB%8C%80%ED%95%9C_%ED%9E%88%EB%93%9C%EB%9D%BC.png">
 					</button>
-					<button class="btn btn-icon item-031 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[워모그의 갑옷]</p><p>체력400</p><p>: 매 초 잃은 체력의 6% 회복(최대 400상한)</p><p><img class='icon' src='../resources/img/item/거인의_허리띠.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-031 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9B%8C%EB%AA%A8%EA%B7%B8%EC%9D%98_%EA%B0%91%EC%98%B7.png">
 					</button>
-					<button class="btn btn-icon item-032 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[침묵]</p><p>마나20, 마법저항력20</p><p>: 적 침묵(4초간 스킬봉인, 33%확률)</p><p><img class='icon' src='../resources/img/item/여신의_눈물.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-032 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%B9%A8%EB%AC%B5.png">
 					</button>
-					<button class="btn btn-icon item-033 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[지크의 전령]</p><p>공격력20, 체력200</p><p>: 좌우 아군 공속 15% 증가</p><p><img class='icon' src='../resources/img/item/BF_대검.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-033 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%A7%80%ED%81%AC%EC%9D%98_%EC%A0%84%EB%A0%B9.png">
 					</button>
-					<button class="btn btn-icon item-034 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[서풍]</p><p>마법저항력20, 체력200</p><p>: 적 하나 5초간 추방</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-034 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%84%9C%ED%92%8D.png">
 					</button>
-					<button class="btn btn-icon item-035 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[붉은 덩굴정령]</p><p>방어력20, 체력200</p><p>: 적 최대체력2% 화염 피해(10초)</p><p><img class='icon' src='../resources/img/item/쇠사슬_조끼.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-035 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%B6%89%EC%9D%80_%EB%8D%A9%EA%B5%B4%EC%A0%95%EB%A0%B9.png">
 					</button>
-					<button class="btn btn-icon item-036 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[용의 발톱]</p><p>마법저항력40</p><p>: 마법저항력 83% 증가</p><p><img class='icon' src='../resources/img/item/음전자_망토.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
+					<button class="btn btn-icon item-036 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9A%A9%EC%9D%98_%EB%B0%9C%ED%86%B1.png">
 					</button>
-					<button class="btn btn-icon item-037 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[루난의 허리케인]</p><p>마법저항력40</p><p>: 착용자의 공격을 따라하는 아군 영혼 소환(75% 피해)</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/음전자_망토.png'></p>">
-						<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%82%9C%EC%9D%98_%ED%97%88%EB%A6%AC%EC%BC%80%EC%9D%B8.png">
+					<button class="btn btn-icon item-045 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EB%AC%B4%ED%95%9C%EC%9D%98_%EB%8C%80%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-038 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[요우무의 유령검]</p><p>공격력40</p><p class='color-yellow'>: 암살자 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/BF_대검.png'></p>">
+					<button class="btn btn-icon item-048 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%97%B0%EB%B0%9C_%EC%84%9D%EA%B6%81.png">
+					</button>
+					<button class="btn btn-icon item-049 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%8B%A0%EB%B9%84%EB%A1%9C%EC%9A%B4_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+					</button>
+					<button class="btn btn-icon item-050 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%A0%95%EC%9D%98%EC%9D%98_%EC%86%90%EA%B8%B8.png">
+					</button>
+					<button class="btn btn-icon item-051 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EA%B1%B4%ED%8B%80%EB%A6%BF.png">
+					</button>
+					<button class="btn btn-icon item-052 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%88%98%EC%9D%80.png">
+					</button>
+					<button class="btn btn-icon item-053 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EC%97%AD%EA%B3%B5%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+					</button>
+					<button class="btn btn-icon item-054 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EB%8F%84%EC%A0%81%EC%9D%98_%EC%9E%A5%EA%B0%91.png">
+					</button>
+					<button class="btn btn-icon item-038 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9A%94%EC%9A%B0%EB%AC%B4%EC%9D%98_%EC%9C%A0%EB%A0%B9%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-039 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[몰락한 왕의 검]</p><p>공격속도40%</p><p class='color-yellow'>: 검사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/곡궁.png'></p>">
+					<button class="btn btn-icon item-039 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%AA%B0%EB%9D%BD%ED%95%9C_%EC%99%95%EC%9D%98_%EA%B2%80.png">
 					</button>
-					<button class="btn btn-icon item-040 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[유미]</p><p>스킬피해량40%</p><p class='color-yellow'>: 마법사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쓸데없이_큰_지팡이.png'></p>">
+					<button class="btn btn-icon item-040 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%9C%A0%EB%AF%B8.jpg">
 					</button>
-					<button class="btn btn-icon item-041 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[다르킨]</p><p>마나40</p><p class='color-cyan'>: 악마 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/여신의_눈물.png'></p>">
+					<button class="btn btn-icon item-041 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%8B%A4%EB%A5%B4%ED%82%A8.png">
 					</button>
-					<button class="btn btn-icon item-042 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[기사의 맹세]</p><p>방어력40</p><p class='color-yellow'>: 기사 직업 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/쇠사슬_조끼.png'></p>">
+					<button class="btn btn-icon item-042 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EA%B8%B0%EC%82%AC%EC%9D%98_%EB%A7%B9%EC%84%B8.png">
 					</button>
-					<button class="btn btn-icon item-043 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[얼어붙은 망치]</p><p>체력400</p><p class='color-cyan'>: 빙하 계열 추가</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/거인의_허리띠.png'></p>">
+					<button class="btn btn-icon item-037 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EB%A3%A8%EB%82%9C%EC%9D%98_%ED%97%88%EB%A6%AC%EC%BC%80%EC%9D%B8.png">
+					</button>
+					<button class="btn btn-icon item-043 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EC%96%BC%EC%96%B4%EB%B6%99%EC%9D%80_%EB%A7%9D%EC%B9%98.png">
 					</button>
-					<button class="btn btn-icon item-044 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" title="<p>[대자연의 힘]</p><p class='color-magenta'>: 인구수+1</p><p><img class='icon' src='../resources/img/item/뒤집개.png'>+<img class='icon' src='../resources/img/item/뒤집개.png'></p>">
+					<button class="btn btn-icon item-055 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
+						<img class="icon" src="../resources/img/item/%EB%B2%99%EC%96%B4%EB%A6%AC_%EC%9E%A5%EA%B0%91.png">
+					</button>
+					<button class="btn btn-icon item-044 btn-secondary" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true">
 						<img class="icon" src="../resources/img/item/%EB%8C%80%EC%9E%90%EC%97%B0%EC%9D%98_%ED%9E%98.png">
 					</button>
 				</p>
