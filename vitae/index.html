@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>about 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="./resources/icon/Blackdeer.ico">
+	<link rel="icon" href="./resources/icon/Blackdeer.ico">
+	<meta property="og:title" content="about 현록">
+	<meta property="og:description" content="about 현록">
+	<!-- <meta property="og:image" content="https://blackdeery.github.io/LOL_TFT/resources/icon/thumbnail.png"> -->
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/vitae/resources/icon/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="./resources/icon/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_spacelab.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+		}
+		#div-top {
+			position: fixed;
+			z-index: 10;
+			width: 100%;
+			top: 0;
+			left: 0;
+			margin: 0px;
+			padding: 1rem;
+		}
+		.img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+		.font-bold {
+			font-weight: bold !important;
+		}
+		.font-1rem {
+			font-size: 1rem !important;
+		}
+		.font-1.5rem {
+			font-size: 1.5rem !important;
+		}
+		.font-2rem {
+			font-size: 2rem !important;
+		}
+		.font-2.5rem {
+			font-size: 2.5rem !important;
+		}
+		.font-3rem {
+			font-size: 3rem !important;
+		}
+		.tooltip-inner {
+    		max-width: 100% !important;
+			font-size: 1rem;
+		}
+		.jumbotron {
+			padding: 1rem !important;
+			margin: 0px !important;
+		}
+		.card {
+			margin-bottom: 1rem;
+		}
+		.card-header {
+			font-weight: bold;
+			padding-left: 1rem;
+		}
+		.arrow {
+			margin-left: 0.5rem;
+		}
+		.card-body > p {
+			margin: 0px;
+		}
+    </style>
+	<script>
+		var cssTheme = 'light';
+		$(document).ready(function() {
+			setBtns();
+			setActions();
+			setHide();
+			setSize();
+			window.addEventListener('resize', function() {
+				setSize();
+			});
+			$('#div-top').css('backgroundColor','#FFFFFF');
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		function changeTheme() {
+			var head  = document.getElementsByTagName('head')[0];
+			var link  = document.createElement('link');
+			link.id = 'themeCSS';
+			link.rel  = 'stylesheet';
+			link.type = 'text/css';
+			if (cssTheme == 'light') {
+				link.href = '../common/resources/css/bootstrap_slate.min.css';
+				cssTheme = 'dark';
+				$('#btn-changeTheme').text('다크모드 해제');
+				$('#btn-changeTheme').removeClass('btn-primary');
+				$('#btn-changeTheme').addClass('btn-secondary');
+				$('#div-top').css('backgroundColor','#272B30');
+			} else {
+				link.href = '../common/resources/css/bootstrap_spacelab.min.css';
+				cssTheme = 'light';
+				$('#btn-changeTheme').text('다크모드 보기');
+				$('#btn-changeTheme').removeClass('btn-secondary');
+				$('#btn-changeTheme').addClass('btn-primary');
+				$('#div-top').css('backgroundColor','#FFFFFF');
+			};
+			link.media = 'all';
+			$('#themeCSS').remove();
+			head.appendChild(link);
+			console.log($('body').css('background-color'));
+			
+		};
+		function setBtns() {
+			$('#btn-changeTheme').on('click',function(){
+				changeTheme();
+				$(this).blur();
+			});
+		};
+		function setActions() {
+			$('.card').on('click',function(){
+				$(this).find('.card-body').slideToggle();
+				var arrow = $(this).find('.arrow');
+				if (arrow.text() == '▲') {
+					arrow.text('▼');
+				} else {
+					arrow.text('▲');
+				}
+			});
+			
+		};
+		function setHide() {
+			var target = $('.card:eq(0)');
+			target.find('.card-body').slideUp();
+			target.find('.arrow').text('▼');
+			target.hide();
+		};
+		function setSize() {
+			$('#space-01').css('height',$('#div-top').height());
+		};
+	</script>
+</head>
+<body style="font-size: 1rem;">
+	<div class="container-fluid">
+		<div id="div-top">
+			<div>
+				<p>
+					<button type="button" class="btn btn-primary btn-sm font-bold font-1rem" id="btn-changeTheme">다크모드 보기</button>
+					<span class="font-bold" style="float: right;" data-toggle="tooltip" data-placement="bottom" title="이 페이지는 jQuery 3.4.1, Bootstrap 4.3.1 with Bootswatch를 이용하여 만들어졌습니다.">
+						이 페이지는??
+					</span>
+				</p>
+			</div>
+			<div class="jumbotron">
+				<p>
+					<img class="size-50 img-round img-border" src="./resources/icon/BlackDeer.png">
+					<span class="font-bold font-2rem" style="vertical-align: middle;">현록</span>
+				</p>
+				<p style="margin: 0px;">
+					블로그(티스토리): <a href="https://ydeer.tistory.com/" target="_blank">https://ydeer.tistory.com/</a>
+				</p>
+				<p style="margin: 0px;">
+					E-mail: kgyds@naver.com
+				</p>
+			</div>
+		</div>
+		<div id="space-01" style="height: 0px; margin: 1rem;"></div>
+		<div>
+			<div class="card">
+				<p class="card-header">Timeline<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						2004 - 2008 히어로소프트 운영진 활동 (since. 로스트사가-제로)
+					</p>
+					<p>
+						2009.03 부산대학교 화학공학과 입학
+					</p>
+					<p>
+						2010.04 대한민국 육군 현역 입대
+					</p>
+					<p>
+						2012.01 대한민국 육군 병장 만기 제대
+					</p>
+					<p>
+						2015.08 부산대학교 화학공학과 학사 졸업
+					</p>
+					<p>
+						2017.07 롯데정밀화학(롯데 84기 공채) 입사 (그린소재운영담당 화공 엔지니어)
+					</p>
+					<p>
+						2018.05 롯데정밀화학 퇴사 후 프로그래머 전향
+					</p>
+					<p>
+						2019.09 - 2019.11 POCU Academy COMP3200(C++ 프로그래밍) 조교 활동
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Languages<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Test
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Program 01 - Test<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Test
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Program 02 - Test<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Test
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Program 03 - Test<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Test
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
