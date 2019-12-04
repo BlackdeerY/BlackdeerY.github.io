@@ -94,6 +94,8 @@
     </style>
 	<script>
 		var cssTheme = 'light';
+		var startDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: Dark)').matches	
+		
 		$(document).ready(function() {
 			setBtns();
 			setActions();
@@ -104,6 +106,11 @@
 			});
 			$('#div-top').css('backgroundColor','#FFFFFF');
 			$('[data-toggle="tooltip"]').tooltip();
+			
+			// 진입시 외부환경이 다크모드일 경우 바로 다크모드로 적용
+			if (startDark === true) {
+				changeTheme();
+			};
 		});
 		function changeTheme() {
 			var head  = document.getElementsByTagName('head')[0];
@@ -220,7 +227,65 @@
 				<p class="card-header">Languages<span class="arrow">▲</span></p>
 				<div class="card-body">
 					<p>
-						Test
+						Java
+					</p>
+					<p>
+						C++
+					</p>
+					<p>
+						C
+					</p>
+					<p>
+						Javascript
+					</p>
+					<p>
+						jQuery
+					</p>
+					<p>
+						Autohotkey
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Database Skills<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Oracle DB
+					</p>
+					<p>
+						MariaDB(Mysql)
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<p class="card-header">Technologies<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<p>
+						Spring
+					</p>
+					<p>
+						Linux Server(CentOS)
+					</p>
+					<p>
+						Microsoft Windows Server 2008 R2
+					</p>
+					<p>
+						Cisco - CCNA, CCNP
+					</p>
+					<p>
+						Cheat Engine - Assembly Language, Memory Debug(Reverse Engineering)
+					</p>
+					<p>
+						MATLAB
+					</p>
+					<p>
+						Aspen HYSYS
+					</p>
+					<p>
+						Microsoft Exel, PowerPoint, Word, 워드프로세서(한컴오피스)
+					</p>
+					<p>
+						Adobe Photoshop, Premiere Pro
 					</p>
 				</div>
 			</div>
