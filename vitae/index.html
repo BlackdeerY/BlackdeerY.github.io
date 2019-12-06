@@ -195,10 +195,12 @@
 			$('#btn-changeTheme').on('click',function(){
 				changeTheme();
 				$(this).blur();
+				$(this).focusout;
 			});
 			$('#btn-helpPrint').on('click',function(){
 				changeHelpPrint();
 				$(this).blur();
+				$(this).focusout;
 			});
 		};
 		function setActions() {
