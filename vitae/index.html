@@ -208,10 +208,8 @@
 				$('#div-top').css('backgroundColor','#FFFFFF');
 			};
 			link.media = 'all';
-			$('#themeCSS').remove();
-			head.appendChild(link);
-			console.log($('body').css('background-color'));
-			
+			var old = $('#themeCSS');
+			old.replaceWith(link);
 		};
 		function changeHelpPrint() {
 			if (helpPrint === false) {
