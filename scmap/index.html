@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Windows 강제 키 치환 reg 생성기</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../common/header/favicon.ico">
+	<link rel="icon" href="../common/header/favicon.ico">
+	<meta property="og:title" content="Windows 강제 키 치환 reg 생성기">
+	<meta property="og:description" content="현록_Blackdeer">
+	<meta property="og:image" content="https://blackdeery.github.io/scmap/header/512con.png">
+	<meta property="msapplication-TileColor" content="#ffffff">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/scmap/header/144con.png">
+	<link rel="apple-touch-icon-precomposed" href="./header/512con.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
+
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+		}
+		p {
+			margin: 0px;
+		}
+		.consolas { 
+			font-family: Consolas,monaco,monospace; 
+		}
+		.font-size-2 {
+			font-size: 1.5rem;
+		}
+		.font-size-3 {
+			font-size: 2rem;
+		}
+		.font-bold {
+			font-weight: bold;
+		}
+		.jumbotron {
+			padding: 32px;
+			min-width: 810px;
+		}
+		div.keylayout {
+			padding: 20px;
+			margin: 0px;
+			min-width: 1230px;
+			position: fixed;
+			display: none;
+			z-index: 20;
+		}
+		div.keylayout > p {
+			margin-bottom: 4px;
+		}
+		div.keylayout > p.margin-bottom {
+			margin-bottom: 16px;
+		}
+		div.keylayout > p.margin-bottom2 {
+			margin-bottom: 30px;
+		}
+		div.keylayout > span.layer-fixed {
+			position: absolute;
+			left: 1156px;
+		}
+		button {
+			padding: 0px;
+		}
+		div.keylayout > .keys > button {
+			width: 50px;
+			height: 50px;
+			padding: 0px;
+		}
+		div.keylayout > .keys > button.size2 {
+			width: 70px;
+		}
+		div.keylayout > .keys > button.size3 {
+			width: 80px;
+		}
+		div.keylayout > .keys > button.size4 {
+			width: 90px;
+		}
+		div.keylayout > .keys > button.size5 {
+			width: 95px;
+		}
+		div.keylayout > .keys > button.size-double {
+			width: 105px;
+		}
+		div.keylayout > .keys > button.size-long {
+			height: 105px;
+		}
+		div.keylayout > .keys > button.size6 {
+			width: 115px;
+		}
+		div.keylayout > .keys > button.size7 {
+			width: 148px;
+		}
+		div.keylayout > .keys > button.margin-right {
+			margin-right: 16px;
+		}
+		div.keylayout > .keys > button.margin-right2 {
+			margin-right: 70px;
+		}
+		div.keylayout > .keys > button.margin-right3 {
+			margin-right: 194px;
+		}
+		div.keylayout > .keys > button.margin-right4 {
+			margin-right: 275px;
+		}
+    </style>
+	<script>
+		var keysOn = false;
+		var nowChoice;
+		var newRule;
+		var countRule = 0;
+		$(document).ready(function() {
+			setActions();
+			newRule = $('.rule').detach();
+			setAutoSize();
+		});
+		function setAutoSize() {
+			$('.keylayout').css('left',$(window).width() / 2 - $('.keylayout').width() / 2);
+			$('.keylayout').css('top',$(window).height() / 2 - $('.keylayout').height() / 2);
+			window.addEventListener('resize', function() {
+				$('.keylayout').css('left',$(window).width() / 2 - $('.keylayout').width() / 2);
+				$('.keylayout').css('top',$(window).height() / 2 - $('.keylayout').height() / 2);
+			});
+		};
+		function checkRules() {
+			if ($('.rule').length > 0) {
+				var rulesArray = $('.rule');
+				for (var i = 0; i < rulesArray.length; ++i) {
+					var nowRule = $(rulesArray[i]);
+					if (nowRule.find('.select-src').attr('selval') == 'none') {
+						nowRule.removeClass('alert-primary');
+						nowRule.removeClass('alert-secondary');
+						nowRule.removeClass('alert-danger');
+						nowRule.addClass('alert-primary');
+					} else if (nowRule.find('.select-dest').attr('selval') == 'none') {
+						nowRule.removeClass('alert-primary');
+						nowRule.removeClass('alert-secondary');
+						nowRule.removeClass('alert-danger');
+						nowRule.addClass('alert-primary');
+					} else if (nowRule.find('.select-src').attr('selval').substring(4) === nowRule.find('.select-dest').attr('selval').substring(5)) {
+						nowRule.removeClass('alert-primary');
+						nowRule.removeClass('alert-secondary');
+						nowRule.removeClass('alert-danger');
+						nowRule.addClass('alert-danger');
+					} else {
+						nowRule.removeClass('alert-primary');
+						nowRule.removeClass('alert-secondary');
+						nowRule.removeClass('alert-danger');
+						nowRule.addClass('alert-secondary');
+					};
+				};
+			};
+		}
+		function keyToHex(key) {
+			switch(key) {
+				case 'esc': return '01,00,';
+				case 'f1': return '3B,00,';
+				case 'f2': return '3C,00,';
+				case 'f3': return '3D,00,';
+				case 'f4': return '3E,00,';
+				case 'f5': return '3F,00,';
+				case 'f6': return '40,00,';
+				case 'f7': return '41,00,';
+				case 'f8': return '42,00,';
+				case 'f9': return '43,00,';
+				case 'f10': return '44,00,';
+				case 'f11': return '57,00,';
+				case 'f12': return '58,00,';
+				case '`': return '29,00,';
+				case '1': return '02,00,';
+				case '2': return '03,00,';
+				case '3': return '04,00,';
+				case '4': return '05,00,';
+				case '5': return '06,00,';
+				case '6': return '07,00,';
+				case '7': return '08,00,';
+				case '8': return '09,00,';
+				case '9': return '0A,00,';
+				case '0': return '0B,00,';
+				case 'sub': return '0C,00,';
+				case 'equal': return '0D,00,';
+				case 'backspace': return '0E,00,';
+				case 'tab': return '0F,00,';
+				case 'q': return '10,00,';
+				case 'w': return '11,00,';
+				case 'e': return '12,00,';
+				case 'r': return '13,00,';
+				case 't': return '14,00,';
+				case 'y': return '15,00,';
+				case 'u': return '16,00,';
+				case 'i': return '17,00,';
+				case 'o': return '18,00,';
+				case 'p': return '19,00,';
+				case 'braopen': return '1A,00,';
+				case 'braclose': return '1B,00,';
+				case 'revslash': return '2B,00,';
+				case 'capslock': return '3A,00,';
+				case 'a': return '1E,00,';
+				case 's': return '1F,00,';
+				case 'd': return '20,00,';
+				case 'f': return '21,00,';
+				case 'g': return '22,00,';
+				case 'h': return '23,00,';
+				case 'j': return '24,00,';
+				case 'k': return '25,00,';
+				case 'l': return '26,00,';
+				case 'semicolon': return '27,00,';
+				case 'quote': return '28,00,';
+				case 'enter': return '1C,00,';
+				case 'lshift': return '2A,00,';
+				case 'z': return '2C,00,';
+				case 'x': return '2D,00,';
+				case 'c': return '2E,00,';
+				case 'v': return '2F,00,';
+				case 'b': return '30,00,';
+				case 'n': return '31,00,';
+				case 'm': return '32,00,';
+				case 'comma': return '33,00,';
+				case 'dot': return '34,00,';
+				case 'div': return '35,00,';
+				case 'rshift': return '36,00,';
+				case 'lctrl': return '1D,00,';
+				case 'lwin': return '5B,E0,';
+				case 'lalt': return '38,00,';
+				case 'hanja': return 'F1,E0,';
+				case 'space': return '39,00,';
+				case 'haneng': return 'F2,E0,';
+				case 'ralt': return '38,E0,';
+				case 'rwin': return '5C,E0,';
+				case 'apps': return '5D,E0,';
+				case 'rctrl': return '1D,E0,';
+				case 'insert': return '52,E0,';
+				case 'home': return '47,E0,';
+				case 'pageup': return '49,E0,';
+				case 'delete': return '53,E0,';
+				case 'end': return '4F,E0,';
+				case 'pagedown': return '51,E0,';
+				case 'numlock': return '45,E0,';
+				case 'numdiv': return '35,E0,';
+				case 'nummult': return '37,00,';
+				case 'numsub': return '4A,00,';
+				case 'numadd': return '4E,00,';
+				case 'num0': return '52,00,';
+				case 'num1': return '4F,00,';
+				case 'num2': return '50,00,';
+				case 'num3': return '51,00,';
+				case 'num4': return '4B,00,';
+				case 'num5': return '4C,00,';
+				case 'num6': return '4D,00,';
+				case 'num7': return '47,00,';
+				case 'num8': return '48,00,';
+				case 'num9': return '49,00,';
+				case 'numdot': return '53,00,';
+				case 'numenter': return '1C,E0,';
+				case 'printscreen': return '37,E0,';
+				case 'scrolllock': return '46,00,';
+				case 'pausebreak': return '45,00,';
+				default: return 'error!';
+			}
+		};
+		function setActions() {
+			$('#btn-add').on('click',function(){
+				if (countRule < 104) {
+					$('#rules').append(newRule.clone(true));
+					++countRule;
+					$('#div-result').hide();
+					$('#div-help').hide();
+				}
+			});
+			$('.btn-remove').on('click',function(){
+				$(this).parent().parent().remove();
+				--countRule;
+				$('#div-result').hide();
+				$('#div-help').hide();
+				if (keysOn === true) {
+					$('.keylayout').fadeOut(0);
+					keysOn = false;
+				}
+			});
+			$('#btn-create').on('click',function(){
+				if ($('.rule').length > 0) {
+					var rulesArray = $('.rule');
+					for (var i = 0; i < rulesArray.length; ++i) {
+						var nowRule = $(rulesArray[i]);
+						if (nowRule.find('.select-src').attr('selval') == 'none') {
+							$('#regResult').html('아직 원키가 지정되지 않은 규칙이 있습니다!');
+							$('#div-result').show();
+							$('#div-help').hide();
+							return;
+						} else if (nowRule.find('.select-dest').attr('selval') == 'none') {
+							$('#regResult').html('아직 변환키가 지정되지 않은 규칙이 있습니다!');
+							$('#div-result').show();
+							$('#div-help').hide();
+							return;
+						} else if (nowRule.find('.select-src').attr('selval').substring(4) === nowRule.find('.select-dest').attr('selval').substring(5)) {
+							nowRule.remove();
+							--countRule;
+						};
+					};
+					var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
+					if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
+						result = result.concat('[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>');
+					} else {
+						result = result.concat('[HKEY_CURRENT_USER\Keyboard Layout]<br>');
+					}
+					result = result.concat('"Scancode Map"=hex:00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					++countRule;
+					if (countRule < 16) {
+						result = result.concat('0');
+					}
+					result = result.concat(countRule.toString(16),',00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					--countRule;
+					rulesArray = $('.rule');
+					for (var i = 0; i < rulesArray.length; ++i) {
+						var nowRule = $(rulesArray[i]);
+						result = result.concat(keyToHex(nowRule.find('.select-dest').attr('selval').substring(5)),keyToHex(nowRule.find('.select-src').attr('selval').substring(4)),'\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					};
+					result = result.concat('00,00,00,00</font><br><br><br>위 코드를 복사하여 사용합니다.');
+					$('#regResult').html(result);
+					$('#div-result').show();
+					$('#div-help').show();
+				} else {
+					$('#regResult').html('아직 아무 규칙도 설정하지 않습니다.');
+					$('#div-result').show();
+					$('#div-help').hide();
+				};
+			});
+			$('#btn-create-del').on('click',function(){
+				var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
+				if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
+					result = result.concat('[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>');
+				} else {
+					result = result.concat('[HKEY_CURRENT_USER\Keyboard Layout]<br>');
+				}
+				result = result.concat('"Scancode Map"=-</font><br><br><br>위 코드를 복사하여 사용합니다.');
+				$('#regResult').html(result);
+				$('#div-result').show();
+				$('#div-help').show();
+			});
+			$('.close').on('click',function(){
+				$(this).parent().parent().fadeOut(200);
+				keysOn = false;
+			});
+			$('.btn-cancel').on('click',function(){
+				if (nowChoice.hasClass('select-src')) {
+					$('#'+nowChoice.attr('selval')).removeClass('disabled');
+					$('#'+nowChoice.attr('selval')).addClass('btn-secondary');
+					$('#'+nowChoice.attr('selval')).removeClass('btn-danger');
+				}
+				nowChoice.text('선택');
+				nowChoice.attr('selval', 'none');
+				$(this).parent().parent().fadeOut(200);
+				keysOn = false;
+				checkRules();
+			});
+			$('.select-src').on('click',function(){
+				if (keysOn === false) {
+					nowChoice = $(this);
+					$('#keylayout-src').fadeIn(200);
+					keysOn = true;
+				}
+			});
+			$('.select-dest').on('click',function(){
+				if (keysOn === false) {
+					nowChoice = $(this);
+					$('#keylayout-dest').fadeIn(200);
+					keysOn = true;
+				}
+			});
+			$('.key-src').on('click',function(){
+				if (keysOn === true) {
+					if ($(this).hasClass('disabled') === false) {
+						if (nowChoice.attr('selval') != 'none') {
+							$('#'+nowChoice.attr('selval')).removeClass('disabled');
+							$('#'+nowChoice.attr('selval')).addClass('btn-secondary');
+							$('#'+nowChoice.attr('selval')).removeClass('btn-danger');
+						}
+						$(this).addClass('disabled');
+						$(this).addClass('btn-danger');
+						if ($(this).attr('id').length > 7 && $(this).attr('id').substring(4,7) === 'num' && $(this).attr('id') != 'src-numlock') {
+							nowChoice.text('Numpad '+$(this).text());
+						} else {
+							nowChoice.text($(this).text());
+						}
+						nowChoice.attr('selval', $(this).attr('id'));
+						$('#keylayout-src').fadeOut(200);
+						keysOn = false;
+						checkRules();
+					}
+				}
+			});
+			$('.key-dest').on('click',function(){
+				if (keysOn === true) {
+					if ($(this).attr('id').length > 7 && $(this).attr('id').substring(4,7) === 'num' && $(this).attr('id') != 'src-numlock') {
+						nowChoice.text('Numpad '+$(this).text());
+					} else {
+						nowChoice.text($(this).text());
+					}
+					nowChoice.attr('selval', $(this).attr('id'));
+					$('#keylayout-dest').fadeOut(200);
+					keysOn = false;
+					checkRules();
+				}
+			});
+			
+		};
+	</script>
+</head>
+<body>
+	<div id="keylayout-src" class="alert alert-dismissible alert-primary keylayout">
+		<p class="margin-bottom2 text-right">
+			<button type="button" id="src-cancel" class="btn-cancel btn btn-warning btn-sm" style="margin-right: 40px;">선택취소</button>
+			<button type="button" class="close">&times;</button>
+		</p>
+		<p class="keys margin-bottom">
+			<button type="button" id="src-esc" class="key-src btn btn-secondary btn-sm margin-right">Esc</button>
+			<button type="button" id="src-f1" class="key-src btn btn-secondary btn-sm">F1</button>
+			<button type="button" id="src-f2" class="key-src btn btn-secondary btn-sm">F2</button>
+			<button type="button" id="src-f3" class="key-src btn btn-secondary btn-sm">F3</button>
+			<button type="button" id="src-f4" class="key-src btn btn-secondary btn-sm margin-right">F4</button>
+			<button type="button" id="src-f5" class="key-src btn btn-secondary btn-sm">F5</button>
+			<button type="button" id="src-f6" class="key-src btn btn-secondary btn-sm">F6</button>
+			<button type="button" id="src-f7" class="key-src btn btn-secondary btn-sm">F7</button>
+			<button type="button" id="src-f8" class="key-src btn btn-secondary btn-sm margin-right">F8</button>
+			<button type="button" id="src-f9" class="key-src btn btn-secondary btn-sm">F9</button>
+			<button type="button" id="src-f10" class="key-src btn btn-secondary btn-sm">F10</button>
+			<button type="button" id="src-f11" class="key-src btn btn-secondary btn-sm">F11</button>
+			<button type="button" id="src-f12" class="key-src btn btn-secondary btn-sm margin-right4">F12</button>
+			<button type="button" id="src-printscreen" class="key-src btn btn-secondary btn-sm">Print<br>Screen</button>
+			<button type="button" id="src-scrolllock" class="key-src btn btn-secondary btn-sm">Scroll<br>Lock</button>
+			<button type="button" id="src-pausebreak standard-long" class="key-src btn btn-secondary btn-sm">Pause<br>Break</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="src-`" class="key-src btn btn-secondary btn-sm">`</button>
+			<button type="button" id="src-1" class="key-src btn btn-secondary btn-sm">1</button>
+			<button type="button" id="src-2" class="key-src btn btn-secondary btn-sm">2</button>
+			<button type="button" id="src-3" class="key-src btn btn-secondary btn-sm">3</button>
+			<button type="button" id="src-4" class="key-src btn btn-secondary btn-sm">4</button>
+			<button type="button" id="src-5" class="key-src btn btn-secondary btn-sm">5</button>
+			<button type="button" id="src-6" class="key-src btn btn-secondary btn-sm">6</button>
+			<button type="button" id="src-7" class="key-src btn btn-secondary btn-sm">7</button>
+			<button type="button" id="src-8" class="key-src btn btn-secondary btn-sm">8</button>
+			<button type="button" id="src-9" class="key-src btn btn-secondary btn-sm">9</button>
+			<button type="button" id="src-0" class="key-src btn btn-secondary btn-sm">0</button>
+			<button type="button" id="src-sub" class="key-src btn btn-secondary btn-sm">-</button>
+			<button type="button" id="src-equal" class="key-src btn btn-secondary btn-sm">=</button>
+			<button type="button" id="src-backspace" class="key-src btn btn-secondary btn-sm size2 margin-right">BackSpace</button>
+			<button type="button" id="src-insert" class="key-src btn btn-secondary btn-sm">Insert</button>
+			<button type="button" id="src-home" class="key-src btn btn-secondary btn-sm">Home</button>
+			<button type="button" id="src-pageup" class="key-src btn btn-secondary btn-sm margin-right">Page<br>Up</button>
+			<button type="button" id="src-numlock" class="key-src btn btn-secondary btn-sm">Num<br>Lock</button>
+			<button type="button" id="src-numdiv" class="key-src btn btn-secondary btn-sm">/</button>
+			<button type="button" id="src-nummult" class="key-src btn btn-secondary btn-sm">*</button>
+			<button type="button" id="src-numsub" class="key-src btn btn-secondary btn-sm">-</button>
+		</p>
+		<span class="keys layer-fixed">
+			<button type="button" id="src-numadd" class="key-src btn btn-secondary btn-sm size-long">+</button>
+		</span>
+		<p class="keys">
+			<button type="button" id="src-tab" class="key-src btn btn-secondary btn-sm size2">Tab</button>
+			<button type="button" id="src-q" class="key-src btn btn-secondary btn-sm">Q</button>
+			<button type="button" id="src-w" class="key-src btn btn-secondary btn-sm">W</button>
+			<button type="button" id="src-e" class="key-src btn btn-secondary btn-sm">E</button>
+			<button type="button" id="src-r" class="key-src btn btn-secondary btn-sm">R</button>
+			<button type="button" id="src-t" class="key-src btn btn-secondary btn-sm">T</button>
+			<button type="button" id="src-y" class="key-src btn btn-secondary btn-sm">Y</button>
+			<button type="button" id="src-u" class="key-src btn btn-secondary btn-sm">U</button>
+			<button type="button" id="src-i" class="key-src btn btn-secondary btn-sm">I</button>
+			<button type="button" id="src-o" class="key-src btn btn-secondary btn-sm">O</button>
+			<button type="button" id="src-p" class="key-src btn btn-secondary btn-sm">P</button>
+			<button type="button" id="src-braopen" class="key-src btn btn-secondary btn-sm">[</button>
+			<button type="button" id="src-braclose" class="key-src btn btn-secondary btn-sm">]</button>
+			<button type="button" id="src-revslash" class="key-src btn btn-secondary btn-sm margin-right">\</button>
+			<button type="button" id="src-delete" class="key-src btn btn-secondary btn-sm">Delete</button>
+			<button type="button" id="src-end" class="key-src btn btn-secondary btn-sm">End</button>
+			<button type="button" id="src-pagedown" class="key-src btn btn-secondary btn-sm margin-right">Page<br>Down</button>
+			<button type="button" id="src-num7" class="key-src btn btn-secondary btn-sm">7</button>
+			<button type="button" id="src-num8" class="key-src btn btn-secondary btn-sm">8</button>
+			<button type="button" id="src-num9" class="key-src btn btn-secondary btn-sm">9</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="src-capslock" class="key-src btn btn-secondary btn-sm size3">CapsLock</button>
+			<button type="button" id="src-a" class="key-src btn btn-secondary btn-sm">A</button>
+			<button type="button" id="src-s" class="key-src btn btn-secondary btn-sm">S</button>
+			<button type="button" id="src-d" class="key-src btn btn-secondary btn-sm">D</button>
+			<button type="button" id="src-f" class="key-src btn btn-secondary btn-sm">F</button>
+			<button type="button" id="src-g" class="key-src btn btn-secondary btn-sm">G</button>
+			<button type="button" id="src-h" class="key-src btn btn-secondary btn-sm">H</button>
+			<button type="button" id="src-j" class="key-src btn btn-secondary btn-sm">J</button>
+			<button type="button" id="src-k" class="key-src btn btn-secondary btn-sm">K</button>
+			<button type="button" id="src-l" class="key-src btn btn-secondary btn-sm">L</button>
+			<button type="button" id="src-semicolon" class="key-src btn btn-secondary btn-sm">;</button>
+			<button type="button" id="src-quote" class="key-src btn btn-secondary btn-sm">'</button>
+			<button type="button" id="src-enter" class="key-src btn btn-secondary btn-sm size5 margin-right3">Enter</button>
+			<button type="button" id="src-num4" class="key-src btn btn-secondary btn-sm">4</button>
+			<button type="button" id="src-num5" class="key-src btn btn-secondary btn-sm">5</button>
+			<button type="button" id="src-num6" class="key-src btn btn-secondary btn-sm">6</button>
+		</p>
+		<span class="keys layer-fixed">
+			<button type="button" id="src-numenter" class="key-src btn btn-secondary btn-sm size-long">Enter</button>
+		</span>
+		<p class="keys">
+			<button type="button" id="src-lshift" class="key-src btn btn-secondary btn-sm size6">LShift</button>
+			<button type="button" id="src-z" class="key-src btn btn-secondary btn-sm">Z</button>
+			<button type="button" id="src-x" class="key-src btn btn-secondary btn-sm">X</button>
+			<button type="button" id="src-c" class="key-src btn btn-secondary btn-sm">C</button>
+			<button type="button" id="src-v" class="key-src btn btn-secondary btn-sm">V</button>
+			<button type="button" id="src-b" class="key-src btn btn-secondary btn-sm">B</button>
+			<button type="button" id="src-n" class="key-src btn btn-secondary btn-sm">N</button>
+			<button type="button" id="src-m" class="key-src btn btn-secondary btn-sm">M</button>
+			<button type="button" id="src-comma" class="key-src btn btn-secondary btn-sm">,</button>
+			<button type="button" id="src-dot" class="key-src btn btn-secondary btn-sm">.</button>
+			<button type="button" id="src-div" class="key-src btn btn-secondary btn-sm">/</button>
+			<button type="button" id="src-rshift" class="key-src btn btn-secondary btn-sm size6 margin-right2">RShift</button>
+			<button type="button" id="src-up" class="key-src btn btn-secondary btn-sm margin-right2">▲</button>
+			<button type="button" id="src-num1" class="key-src btn btn-secondary btn-sm">1</button>
+			<button type="button" id="src-num2" class="key-src btn btn-secondary btn-sm">2</button>
+			<button type="button" id="src-num3" class="key-src btn btn-secondary btn-sm">3</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="src-lctrl" class="key-src btn btn-secondary btn-sm size2">LCtrl</button>
+			<button type="button" id="src-lwin" class="key-src btn btn-secondary btn-sm size2">LWin</button>
+			<button type="button" id="src-lalt" class="key-src btn btn-secondary btn-sm size2">LAlt</button>
+			<button type="button" id="src-hanja" class="btn btn-secondary btn-sm disabled">한자</button>
+			<button type="button" id="src-space" class="key-src btn btn-secondary btn-sm size7">Space</button>
+			<button type="button" id="src-haneng" class="btn btn-secondary btn-sm disabled">한/영</button>
+			<button type="button" id="src-ralt" class="key-src btn btn-secondary btn-sm size2">RAlt</button>
+			<button type="button" id="src-rwin" class="key-src btn btn-secondary btn-sm size2">RWin</button>
+			<button type="button" id="src-apps" class="key-src btn btn-secondary btn-sm size2">Apps</button>
+			<button type="button" id="src-rctrl" class="key-src btn btn-secondary btn-sm size2 margin-right">RCtrl</button>
+			<button type="button" id="src-left" class="key-src btn btn-secondary btn-sm">◀</button>
+			<button type="button" id="src-down" class="key-src btn btn-secondary btn-sm">▼</button>
+			<button type="button" id="src-right" class="key-src btn btn-secondary btn-sm margin-right">▶</button>
+			<button type="button" id="src-num0" class="key-src btn btn-secondary btn-sm size-double">0</button>
+			<button type="button" id="src-numdot" class="key-src btn btn-secondary btn-sm">.</button>
+		</p>
+	</div>
+	<div id="keylayout-dest" class="alert alert-dismissible alert-primary keylayout">
+		<p class="margin-bottom2 text-right">
+			<button type="button" id="dest-cancel" class="btn-cancel btn btn-warning btn-sm" style="margin-right: 40px;">선택취소</button>
+			<button type="button" class="close">&times;</button>
+		</p>
+		<p class="keys margin-bottom">
+			<button type="button" id="dest-esc" class="key-dest btn btn-secondary btn-sm margin-right">Esc</button>
+			<button type="button" id="dest-f1" class="key-dest btn btn-secondary btn-sm">F1</button>
+			<button type="button" id="dest-f2" class="key-dest btn btn-secondary btn-sm">F2</button>
+			<button type="button" id="dest-f3" class="key-dest btn btn-secondary btn-sm">F3</button>
+			<button type="button" id="dest-f4" class="key-dest btn btn-secondary btn-sm margin-right">F4</button>
+			<button type="button" id="dest-f5" class="key-dest btn btn-secondary btn-sm">F5</button>
+			<button type="button" id="dest-f6" class="key-dest btn btn-secondary btn-sm">F6</button>
+			<button type="button" id="dest-f7" class="key-dest btn btn-secondary btn-sm">F7</button>
+			<button type="button" id="dest-f8" class="key-dest btn btn-secondary btn-sm margin-right">F8</button>
+			<button type="button" id="dest-f9" class="key-dest btn btn-secondary btn-sm">F9</button>
+			<button type="button" id="dest-f10" class="key-dest btn btn-secondary btn-sm">F10</button>
+			<button type="button" id="dest-f11" class="key-dest btn btn-secondary btn-sm">F11</button>
+			<button type="button" id="dest-f12" class="key-dest btn btn-secondary btn-sm margin-right4">F12</button>
+			<button type="button" id="dest-printscreen" class="key-dest btn btn-secondary btn-sm">Print<br>Screen</button>
+			<button type="button" id="dest-scrolllock" class="key-dest btn btn-secondary btn-sm">Scroll<br>Lock</button>
+			<button type="button" id="dest-pausebreak standard-long" class="key-dest btn btn-secondary btn-sm">Pause<br>Break</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="dest-`" class="key-dest btn btn-secondary btn-sm">`</button>
+			<button type="button" id="dest-1" class="key-dest btn btn-secondary btn-sm">1</button>
+			<button type="button" id="dest-2" class="key-dest btn btn-secondary btn-sm">2</button>
+			<button type="button" id="dest-3" class="key-dest btn btn-secondary btn-sm">3</button>
+			<button type="button" id="dest-4" class="key-dest btn btn-secondary btn-sm">4</button>
+			<button type="button" id="dest-5" class="key-dest btn btn-secondary btn-sm">5</button>
+			<button type="button" id="dest-6" class="key-dest btn btn-secondary btn-sm">6</button>
+			<button type="button" id="dest-7" class="key-dest btn btn-secondary btn-sm">7</button>
+			<button type="button" id="dest-8" class="key-dest btn btn-secondary btn-sm">8</button>
+			<button type="button" id="dest-9" class="key-dest btn btn-secondary btn-sm">9</button>
+			<button type="button" id="dest-0" class="key-dest btn btn-secondary btn-sm">0</button>
+			<button type="button" id="dest-sub" class="key-dest btn btn-secondary btn-sm">-</button>
+			<button type="button" id="dest-equal" class="key-dest btn btn-secondary btn-sm">=</button>
+			<button type="button" id="dest-backspace" class="key-dest btn btn-secondary btn-sm size2 margin-right">BackSpace</button>
+			<button type="button" id="dest-insert" class="key-dest btn btn-secondary btn-sm">Insert</button>
+			<button type="button" id="dest-home" class="key-dest btn btn-secondary btn-sm">Home</button>
+			<button type="button" id="dest-pageup" class="key-dest btn btn-secondary btn-sm margin-right">Page<br>Up</button>
+			<button type="button" id="dest-numlock" class="key-dest btn btn-secondary btn-sm">Num<br>Lock</button>
+			<button type="button" id="dest-numdiv" class="key-dest btn btn-secondary btn-sm">/</button>
+			<button type="button" id="dest-nummult" class="key-dest btn btn-secondary btn-sm">*</button>
+			<button type="button" id="dest-numsub" class="key-dest btn btn-secondary btn-sm">-</button>
+		</p>
+		<span class="keys layer-fixed">
+			<button type="button" id="dest-numadd" class="key-dest btn btn-secondary btn-sm size-long">+</button>
+		</span>
+		<p class="keys">
+			<button type="button" id="dest-tab" class="key-dest btn btn-secondary btn-sm size2">Tab</button>
+			<button type="button" id="dest-q" class="key-dest btn btn-secondary btn-sm">Q</button>
+			<button type="button" id="dest-w" class="key-dest btn btn-secondary btn-sm">W</button>
+			<button type="button" id="dest-e" class="key-dest btn btn-secondary btn-sm">E</button>
+			<button type="button" id="dest-r" class="key-dest btn btn-secondary btn-sm">R</button>
+			<button type="button" id="dest-t" class="key-dest btn btn-secondary btn-sm">T</button>
+			<button type="button" id="dest-y" class="key-dest btn btn-secondary btn-sm">Y</button>
+			<button type="button" id="dest-u" class="key-dest btn btn-secondary btn-sm">U</button>
+			<button type="button" id="dest-i" class="key-dest btn btn-secondary btn-sm">I</button>
+			<button type="button" id="dest-o" class="key-dest btn btn-secondary btn-sm">O</button>
+			<button type="button" id="dest-p" class="key-dest btn btn-secondary btn-sm">P</button>
+			<button type="button" id="dest-braopen" class="key-dest btn btn-secondary btn-sm">[</button>
+			<button type="button" id="dest-braclose" class="key-dest btn btn-secondary btn-sm">]</button>
+			<button type="button" id="dest-revslash" class="key-dest btn btn-secondary btn-sm margin-right">\</button>
+			<button type="button" id="dest-delete" class="key-dest btn btn-secondary btn-sm">Delete</button>
+			<button type="button" id="dest-end" class="key-dest btn btn-secondary btn-sm">End</button>
+			<button type="button" id="dest-pagedown" class="key-dest btn btn-secondary btn-sm margin-right">Page<br>Down</button>
+			<button type="button" id="dest-num7" class="key-dest btn btn-secondary btn-sm">7</button>
+			<button type="button" id="dest-num8" class="key-dest btn btn-secondary btn-sm">8</button>
+			<button type="button" id="dest-num9" class="key-dest btn btn-secondary btn-sm">9</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="dest-capslock" class="key-dest btn btn-secondary btn-sm size3">CapsLock</button>
+			<button type="button" id="dest-a" class="key-dest btn btn-secondary btn-sm">A</button>
+			<button type="button" id="dest-s" class="key-dest btn btn-secondary btn-sm">S</button>
+			<button type="button" id="dest-d" class="key-dest btn btn-secondary btn-sm">D</button>
+			<button type="button" id="dest-f" class="key-dest btn btn-secondary btn-sm">F</button>
+			<button type="button" id="dest-g" class="key-dest btn btn-secondary btn-sm">G</button>
+			<button type="button" id="dest-h" class="key-dest btn btn-secondary btn-sm">H</button>
+			<button type="button" id="dest-j" class="key-dest btn btn-secondary btn-sm">J</button>
+			<button type="button" id="dest-k" class="key-dest btn btn-secondary btn-sm">K</button>
+			<button type="button" id="dest-l" class="key-dest btn btn-secondary btn-sm">L</button>
+			<button type="button" id="dest-semicolon" class="key-dest btn btn-secondary btn-sm">;</button>
+			<button type="button" id="dest-quote" class="key-dest btn btn-secondary btn-sm">'</button>
+			<button type="button" id="dest-enter" class="key-dest btn btn-secondary btn-sm size5 margin-right3">Enter</button>
+			<button type="button" id="dest-num4" class="key-dest btn btn-secondary btn-sm">4</button>
+			<button type="button" id="dest-num5" class="key-dest btn btn-secondary btn-sm">5</button>
+			<button type="button" id="dest-num6" class="key-dest btn btn-secondary btn-sm">6</button>
+		</p>
+		<span class="keys layer-fixed">
+			<button type="button" id="dest-numenter" class="key-dest btn btn-secondary btn-sm size-long">Enter</button>
+		</span>
+		<p class="keys">
+			<button type="button" id="dest-lshift" class="key-dest btn btn-secondary btn-sm size6">LShift</button>
+			<button type="button" id="dest-z" class="key-dest btn btn-secondary btn-sm">Z</button>
+			<button type="button" id="dest-x" class="key-dest btn btn-secondary btn-sm">X</button>
+			<button type="button" id="dest-c" class="key-dest btn btn-secondary btn-sm">C</button>
+			<button type="button" id="dest-v" class="key-dest btn btn-secondary btn-sm">V</button>
+			<button type="button" id="dest-b" class="key-dest btn btn-secondary btn-sm">B</button>
+			<button type="button" id="dest-n" class="key-dest btn btn-secondary btn-sm">N</button>
+			<button type="button" id="dest-m" class="key-dest btn btn-secondary btn-sm">M</button>
+			<button type="button" id="dest-comma" class="key-dest btn btn-secondary btn-sm">,</button>
+			<button type="button" id="dest-dot" class="key-dest btn btn-secondary btn-sm">.</button>
+			<button type="button" id="dest-div" class="key-dest btn btn-secondary btn-sm">/</button>
+			<button type="button" id="dest-rshift" class="key-dest btn btn-secondary btn-sm size6 margin-right2">RShift</button>
+			<button type="button" id="dest-up" class="key-dest btn btn-secondary btn-sm margin-right2">▲</button>
+			<button type="button" id="dest-num1" class="key-dest btn btn-secondary btn-sm">1</button>
+			<button type="button" id="dest-num2" class="key-dest btn btn-secondary btn-sm">2</button>
+			<button type="button" id="dest-num3" class="key-dest btn btn-secondary btn-sm">3</button>
+		</p>
+		<p class="keys">
+			<button type="button" id="dest-lctrl" class="key-dest btn btn-secondary btn-sm size2">LCtrl</button>
+			<button type="button" id="dest-lwin" class="key-dest btn btn-secondary btn-sm size2">LWin</button>
+			<button type="button" id="dest-lalt" class="key-dest btn btn-secondary btn-sm size2">LAlt</button>
+			<button type="button" id="dest-hanja" class="key-dest btn btn-secondary btn-sm">한자</button>
+			<button type="button" id="dest-space" class="key-dest btn btn-secondary btn-sm size7">Space</button>
+			<button type="button" id="dest-haneng" class="key-dest btn btn-secondary btn-sm">한/영</button>
+			<button type="button" id="dest-ralt" class="key-dest btn btn-secondary btn-sm size2">RAlt</button>
+			<button type="button" id="dest-rwin" class="key-dest btn btn-secondary btn-sm size2">RWin</button>
+			<button type="button" id="dest-apps" class="key-dest btn btn-secondary btn-sm size2">Apps</button>
+			<button type="button" id="dest-rctrl" class="key-dest btn btn-secondary btn-sm size2 margin-right">RCtrl</button>
+			<button type="button" id="dest-left" class="key-dest btn btn-secondary btn-sm">◀</button>
+			<button type="button" id="dest-down" class="key-dest btn btn-secondary btn-sm">▼</button>
+			<button type="button" id="dest-right" class="key-dest btn btn-secondary btn-sm margin-right">▶</button>
+			<button type="button" id="dest-num0" class="key-dest btn btn-secondary btn-sm size-double">0</button>
+			<button type="button" id="dest-numdot" class="key-dest btn btn-secondary btn-sm">.</button>
+		</p>
+	</div>
+	<div class="container-fluid">
+		<div class="jumbotron text-center">
+			<p class="font-size-3 font-bold">
+				Windows 강제 키 치환 레지스트리 코드 생성기
+			</p>
+			<p class="font-size-2">
+				<a href="https://ydeer.tistory.com/173" target="_blank">
+					by. 현록玄鹿_Blackdeer
+				</a>
+			</p>
+		</div>
+		<div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<div style="margin-bottom: 20px;">
+				<p class="text-right">
+					<button type="button" id="btn-add" class="btn btn-success">새 규칙 추가</button>
+				</p>
+			</div>
+			<div id="rules">
+				<div class="rule alert alert-dismissible alert-primary font-size-2" style="padding: 20px; min-width: 750px;">
+					<p style="margin: 0px;">
+						실제 키보드의 <button type="button" class="btn btn-secondary select-src" selval="none">선택</button> 키를, → <button type="button" class="btn btn-secondary select-dest" selval="none">선택</button> 키로 사용하고 싶습니다.
+						<button type="button" class="btn-remove btn btn-danger btn-sm" style="margin-left: 20px;">삭제</button>
+					</p>
+				</div>
+			</div>
+			<div style="margin-top: 20px;">
+				<p>
+					<button type="button" id="btn-create" class="btn btn-info">이 규칙대로 reg 코드 생성</button>
+					&nbsp;&nbsp;&nbsp;
+					대상:
+					&nbsp;
+					<input type="radio" id="target-machine" name="regTarget" value="machine" checked="checked"><label for="target-machine">컴퓨터 전체</label>
+					&nbsp;
+					<input type="radio" id="target-user"  name="regTarget" value="user"><label for="target-user">현재 로그온한 유저</label>
+					&nbsp;&nbsp;&nbsp;
+					<button type="button" id="btn-create-del" class="btn btn-danger">설정 삭제 reg 코드 생성</button>
+				</p>
+				<p>
+					원키와 변환키가 같은 규칙은 <b>자동으로 제거</b>합니다. (빨갛게 표시됨)
+				</p>
+				<p>
+					새로고침(F5)를 누르면, 설정한 모든 규칙이 삭제되고 초기화됩니다.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div id="div-result" class="jumbotron" style="display: none">
+			<p id="regResult" class="consolas">
+			</p>
+		</div>
+		<div id="div-help" class="jumbotron" style="display: none">
+			<p class="font-size-2">
+				사용법
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				<img src="./img/save01.png">
+			</p>
+			<p>
+				[Win]+[R]로 실행을 열어, notepad를 입력하여 메모장을 엽니다.
+			</p>
+			<p>
+				(직접 열어도 됩니다. 아무 텍스트에디터나 가능합니다.)
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				<img src="./img/save02.png">
+			</p>
+			<p>
+				복사한 코드를 붙여넣고, <font color="#ffff00">.reg</font> 파일로 저장합니다.
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				<img src="./img/save03.png">
+			</p>
+			<p>
+				저장된 파일을 실행합니다.
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				재부팅이나 로그오프/로그온 하여 확인합니다.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
