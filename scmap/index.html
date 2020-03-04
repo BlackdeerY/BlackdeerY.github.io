@@ -276,6 +276,11 @@
 				}
 			});
 			$('.btn-remove').on('click',function(){
+				if ($(this).parent().find('.select-src').attr('selval') != 'none') {
+					$('#'+$(this).parent().find('.select-src').attr('selval')).removeClass('disabled');
+					$('#'+$(this).parent().find('.select-src').attr('selval')).addClass('btn-secondary');
+					$('#'+$(this).parent().find('.select-src').attr('selval')).removeClass('btn-danger');
+				}
 				$(this).parent().parent().remove();
 				--countRule;
 				$('#div-result').hide();
@@ -301,10 +306,15 @@
 							$('#div-help').hide();
 							return;
 						} else if (nowRule.find('.select-src').attr('selval').substring(4) === nowRule.find('.select-dest').attr('selval').substring(5)) {
+							$('#'+nowRule.find('.select-src').attr('selval')).removeClass('disabled');
+							$('#'+nowRule.find('.select-src').attr('selval')).addClass('btn-secondary');
+							$('#'+nowRule.find('.select-src').attr('selval')).removeClass('btn-danger');
 							nowRule.remove();
 							--countRule;
 						};
 					};
+				};
+				if ($('.rule').length > 0) {
 					var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
 					if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
 						result = result.concat('[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>');
@@ -318,7 +328,7 @@
 					}
 					result = result.concat(countRule.toString(16),',00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					--countRule;
-					rulesArray = $('.rule');
+					var rulesArray = $('.rule');
 					for (var i = 0; i < rulesArray.length; ++i) {
 						var nowRule = $(rulesArray[i]);
 						result = result.concat(keyToHex(nowRule.find('.select-dest').attr('selval').substring(5)),keyToHex(nowRule.find('.select-src').attr('selval').substring(4)),'\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
