@@ -317,9 +317,9 @@
 				if ($('.rule').length > 0) {
 					var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
 					if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
-						result = result.concat('[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>');
+						result = result.concat('[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>');
 					} else {
-						result = result.concat('[HKEY_CURRENT_USER\Keyboard Layout]<br>');
+						result = result.concat('[HKEY_CURRENT_USER\\Keyboard Layout]<br>');
 					}
 					result = result.concat('"Scancode Map"=hex:00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					++countRule;
@@ -346,9 +346,9 @@
 			$('#btn-create-del').on('click',function(){
 				var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
 				if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
-					result = result.concat('[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]<br>');
+					result = result.concat('[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>');
 				} else {
-					result = result.concat('[HKEY_CURRENT_USER\Keyboard Layout]<br>');
+					result = result.concat('[HKEY_CURRENT_USER\\Keyboard Layout]<br>');
 				}
 				result = result.concat('"Scancode Map"=-</font><br><br><br>위 코드를 복사하여 사용합니다.');
 				$('#regResult').html(result);
