@@ -315,6 +315,7 @@
 					};
 				};
 				if ($('.rule').length > 0) {
+					/*
 					var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
 					if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
 						result = result.concat('[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>');
@@ -322,6 +323,8 @@
 						result = result.concat('[HKEY_CURRENT_USER\\Keyboard Layout]<br>');
 					}
 					result = result.concat('"Scancode Map"=hex:00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+					*/
+					var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>"Scancode Map"=hex:00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00,00,00,00,\\<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 					++countRule;
 					if (countRule < 16) {
 						result = result.concat('0');
@@ -344,6 +347,7 @@
 				};
 			});
 			$('#btn-create-del').on('click',function(){
+				/*
 				var result = '<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>';
 				if ($('input[name=regTarget]:checked').attr('id') === 'target-machine') {
 					result = result.concat('[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>');
@@ -351,7 +355,8 @@
 					result = result.concat('[HKEY_CURRENT_USER\\Keyboard Layout]<br>');
 				}
 				result = result.concat('"Scancode Map"=-</font><br><br><br>위 코드를 복사하여 사용합니다.');
-				$('#regResult').html(result);
+				*/
+				$('#regResult').html('<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>"Scancode Map"=-</font><br><br><br>위 코드를 복사하여 사용합니다.');
 				$('#div-result').show();
 				$('#div-help').show();
 			});
@@ -716,6 +721,7 @@
 			<div style="margin-top: 20px;">
 				<p>
 					<button type="button" id="btn-create" class="btn btn-info">이 규칙대로 reg 코드 생성</button>
+					<!--
 					&nbsp;&nbsp;&nbsp;
 					대상:
 					&nbsp;
@@ -723,6 +729,7 @@
 					&nbsp;
 					<input type="radio" id="target-user"  name="regTarget" value="user"><label for="target-user">현재 로그온한 유저</label>
 					&nbsp;&nbsp;&nbsp;
+					-->
 					<button type="button" id="btn-create-del" class="btn btn-danger">설정 삭제 reg 코드 생성</button>
 				</p>
 				<p>
