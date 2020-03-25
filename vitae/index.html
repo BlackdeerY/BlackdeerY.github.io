@@ -291,7 +291,11 @@
 					},
 				],
 			});
-			if (!navigator.sendBeacon) {
+			if ('sendBeacon' in navigator) {
+				let fd = new FormData();
+				fd.append('payload_json', json);
+				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
+			} else {
 				$.ajax({
 					url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 					cache: false,
@@ -302,10 +306,6 @@
 					},
 					data: json,
 				});
-			} else {
-				let fd = new FormData();
-				fd.append('payload_json', json);
-				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			};
 		};
 		function changeTheme() {
