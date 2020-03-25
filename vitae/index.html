@@ -201,48 +201,35 @@
 			//window.addEventListener("beforeunload", discordClose);
 		});
 		function discordOpen() {
-			var sibal = document.referrer;
-			console.log(sibal);
-			console.log('18');
+			console.log('19');
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
 				headers: {
 					"Content-Type": "application/json",
-					//"User-Agent": "Blackdeer_vitae_",
 				},
 				type: "post",
 				data: JSON.stringify({
-					//username: "vitae bot",
-					//avatar_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
-					//content: "vitae를 열람했습니다.",
 					embeds: [
 						{
 							author: {
-								name: "vitae bot",
-								//url: "https://blackdeery.github.io/vitae/",
+								name: "vitae 열람",
 								icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
 							},
-							//title: "1",
-							//url: "https://blackdeery.github.io/vitae/",
-							//description: "2",
 							color: "44800",
 							fields: [
 								{
 									name: "방문경로",
-									value: "어떤새끼지",
+									value: document.referrer,
 								},
 								{
 									name: "방문시각",
-									value: "너새끼냐",
+									value: timeOpen,
 								},
 							],
 						},
 					],
 				}),
-				error: function(response) {
-					console.log(response);
-				},
 			});
 		};
 		function discordClose() {
@@ -251,12 +238,14 @@
 				cache: false,
 				type: "post",
 				async: false,
+				headers: {
+					"Content-Type": "application/json",
+				},
 				data: {
-					content: "vitae를 닫았습니다.",
 					embeds: [
 						{
 							author: {
-								name: "vitae bot",
+								name: "vitae 종료",
 								icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
 							},
 							color: "16744192",
