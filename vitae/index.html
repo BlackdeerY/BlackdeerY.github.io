@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('43');
+			console.log('44');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -246,7 +246,7 @@
 				//payload_json: 'embeds: {author: {name: "vitae 종료",icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",},color: "16744192",fields: [{name: "방문시각",value: timeOpen,},{name: "종료시각",value: Date.now(),},],}',
 			};
 			let fd = new FormData();
-			fd.append("embed": { "author": { "name": "vitae 종료", "icon_url": "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png" }, "color": "16744192", "fields": [{ "name": "방문경로", "value": timeOpen }, { "name": "종료시각", "value": Date.now() }] });
+			fd.append('payload_json', '"embeds": [{ "author": { "name": "vitae 종료", "icon_url": "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png" }, "color": "16744192", "fields": [{ "name": "방문경로", "value": timeOpen }, { "name": "종료시각", "value": Date.now() }] }]');
 			let headers = {
 				type: 'multipart/form-data',
 			};
