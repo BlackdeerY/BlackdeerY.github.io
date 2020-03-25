@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('49');
+			console.log('50');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -252,7 +252,7 @@
 			let headers = {
 				type: 'multipart/form-data',
 			};
-			let blob = new Blob(fd, headers);
+			let blob = new Blob([fd], headers);
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			/*
