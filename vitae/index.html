@@ -201,12 +201,13 @@
 			window.addEventListener("beforeunload", discordClose);
 		});
 		function discordOpen() {
+			var sibal = document.referrer;
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
 				type: "post",
 				data: {
-					content: "vitae를 열람했습니다.",
+					content: "vitae를 열람했습니다.1",
 					embeds: [
 						{
 							author: {
@@ -219,7 +220,7 @@
 							fields: [
 								{
 									name: "방문경로",
-									value: document.referrer,
+									value: sibal,
 								},
 								{
 									name: "방문시각",
