@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('00000000000000000000000000002');
+			console.log('00000000000000000000000000003');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -255,7 +255,27 @@
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			let fd = new FormData();
-			let v1 = encodeURIComponent('"content": "Hello, World!"');
+			let v1 = JSON.stringify({
+				embeds: [
+					{
+						author: {
+							name: "vitae 종료",
+							icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
+						},
+						color: "44800",
+						fields: [
+							{
+								name: "방문경로",
+								value: prev,
+							},
+							{
+								name: "방문시각",
+								value: timeOpen,
+							},
+						],
+					},
+				],
+			});
 			fd.append('payload_json', v1);
 			let result = navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			console.log(result);
