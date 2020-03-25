@@ -209,10 +209,10 @@
 				$(window).on('unload', discordClose);
 			};
 			*/
-			if (!document.onpagehide) {
+			if (!window.onpagehide) {
 				$(window).on('unload', discordClose);
 			} else {
-				$(document).on('pagehide', discordClose);
+				$(window).on('pagehide', discordClose);
 			};
 			
 			//window.onpagehide = discordClose;
