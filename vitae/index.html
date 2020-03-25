@@ -201,7 +201,8 @@
 			//window.addEventListener("beforeunload", discordClose);
 		});
 		function discordOpen() {
-			console.log('19');
+			var prev = document.referrer;
+			console.log('20');
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
@@ -220,7 +221,7 @@
 							fields: [
 								{
 									name: "방문경로",
-									value: document.referrer,
+									value: prev,
 								},
 								{
 									name: "방문시각",
