@@ -245,10 +245,12 @@
 				content: "hu...",
 				//payload_json: 'embeds: {author: {name: "vitae 종료",icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",},color: "16744192",fields: [{name: "방문시각",value: timeOpen,},{name: "종료시각",value: Date.now(),},],}',
 			};
+			let fd = new FormData();
+			fd.append("embed": { "author": { "name": "vitae 종료", "icon_url": "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png" }, "color": "16744192", "fields": [{ "name": "방문경로", "value": timeOpen }, { "name": "종료시각", "value": Date.now() }] });
 			let headers = {
 				type: 'multipart/form-data',
 			};
-			let blob = new Blob([JSON.stringify(data)], headers);
+			let blob = new Blob(fd, headers);
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			/*
