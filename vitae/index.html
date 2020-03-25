@@ -204,6 +204,7 @@
 			discordOpen();
 			//$(window).on('unload', discordClose);
 			window.onunload = discordClose;
+			window.onpagehide = discordClose;
 		});
 		function discordOpen() {
 			$.ajax({
