@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('32');
+			console.log('33');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -264,6 +264,7 @@
 			let headers = {
 				type: 'multipart/form-data',
 				"Content-Type": "application/json",
+				"User-Agent": "haha",
 			};
 			let blob = new Blob([data], headers);
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
