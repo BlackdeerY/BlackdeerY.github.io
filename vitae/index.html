@@ -202,11 +202,19 @@
 				changeTheme();
 			};
 			discordOpen();
+			/*
 			if ('onpagehide' in window) {
 				$(window).on('pagehide', discordClose);
 			} else {
 				$(window).on('unload', discordClose);
 			};
+			*/
+			if (!window.onpagehide) {
+				$(window).on('unload', discordClose);
+			} else {
+				$(window).on('pagehide', discordClose);
+			};
+			
 			//window.onpagehide = discordClose;
 			//window.onunload = discordClose;
 			//window.addEventListener('pagehide', discordClose, false);
@@ -291,11 +299,7 @@
 					},
 				],
 			});
-			if ('sendBeacon' in navigator) {
-				let fd = new FormData();
-				fd.append('payload_json', json);
-				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
-			} else {
+			if (!navigator.sendBeacon) {
 				$.ajax({
 					url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 					cache: false,
@@ -306,6 +310,10 @@
 					},
 					data: json,
 				});
+			} else {
+				let fd = new FormData();
+				fd.append('payload_json', json);
+				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			};
 		};
 		function changeTheme() {
