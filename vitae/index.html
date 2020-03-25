@@ -202,7 +202,8 @@
 				changeTheme();
 			};
 			discordOpen();
-			$(window).on('beforeunload', discordClose);
+			//$(window).on('beforeunload', discordClose);
+			window.onbeforeunload = discordClose;
 		});
 		function discordOpen() {
 			$.ajax({
