@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('00000000000000000000000000006');
+			console.log('00000000000000000000000000007');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -240,45 +240,35 @@
 			});
 		};
 		function discordClose() {
-			console.log('종료전~~1');
-			let data = {
-				content: "hu...",
-				payload_json: '"content": "Hello, World!"',
-				//payload_json: 'embeds: {author: {name: "vitae 종료",icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",},color: "16744192",fields: [{name: "방문시각",value: timeOpen,},{name: "종료시각",value: Date.now(),},],}',
-			};
-			//fd.append('payload_json', '"content": "Hello, World!", "tts": false, "embed": { "title": "Hello, Embed!", "description": "This is an embedded message." }');
-			//fd.append('payload_json', '"content": "haha", "embed": { "author": { "name": "vitae 종료", "icon_url": "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png" }, "color": "16744192", "fields": [{ "name": "방문경로", "value": timeOpen }, { "name": "종료시각", "value": Date.now() }] }');
-			let headers = {
-				type: 'multipart/form-data',
-			};
-			let blob = new Blob([JSON.stringify(data)], headers);
-			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
-			console.log('종료전~~2');
+			let ha = Date.now() - timeOpen;
 			let fd = new FormData();
-			let v1 = JSON.stringify({
+			let json = JSON.stringify({
 				embeds: [
 					{
 						author: {
 							name: "vitae 종료",
 							icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
 						},
-						color: "44800",
+						color: "16744192",
 						fields: [
-							{
-								name: "방문경로",
-								value: "으아아",
-							},
 							{
 								name: "방문시각",
 								value: timeOpen,
+							},
+							{
+								name: "종료시각",
+								value: Date.now(),
+							},
+							{
+								name: "머문시간",
+								value: ha,
 							},
 						],
 					},
 				],
 			});
-			fd.append('payload_json', v1);
+			fd.append('payload_json', json);
 			let result = navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
-			console.log(result);
 			/*
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
