@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('34');
+			console.log('40');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -265,8 +265,12 @@
 			let headers = {
 				type: 'multipart/form-data',
 			};
+			let headers2 = {
+				'Content-Type': 'application/json',
+			};
 			let blob = new Blob([JSON.stringify(data)], headers);
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
+			request.post('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', [JSON.stringify(data)], headers2);
 			console.log('종료전~~2');
 			/*
 			$.ajax({
