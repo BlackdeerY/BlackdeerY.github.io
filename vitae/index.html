@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('00000000000000000000000000005');
+			console.log('00000000000000000000000000006');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -255,7 +255,7 @@
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			let fd = new FormData();
-			let v1 = {
+			let v1 = JSON.stringify({
 				embeds: [
 					{
 						author: {
@@ -275,7 +275,7 @@
 						],
 					},
 				],
-			};
+			});
 			fd.append('payload_json', v1);
 			let result = navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			console.log(result);
