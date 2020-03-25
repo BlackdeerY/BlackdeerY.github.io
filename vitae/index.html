@@ -202,7 +202,7 @@
 				changeTheme();
 			};
 			discordOpen();
-			if(window.onpagehide || window.onpagehide === null) {
+			if ('onpagehide' in window) {
 				$(window).on('pagehide', discordClose);
 			} else {
 				$(window).on('unload', discordClose);
