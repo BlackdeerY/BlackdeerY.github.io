@@ -198,16 +198,16 @@
 				changeTheme();
 			};
 			discordOpen();
-			$(window).bind('beforeunload', discordClose);
+			//$(window).bind('beforeunload', discordClose);
 			//window.addEventListener("beforeunload", discordClose);
-			//$(window).on('unload', discordClose);
+			$(window).on('unload', discordClose);
 		});
 		function discordOpen() {
 			var prev = document.referrer;
 			if (prev === '') {
 				prev = '(직접 혹은 알 수 없음)';
 			};
-			console.log('26');
+			console.log('27');
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
@@ -261,8 +261,11 @@
 						},
 					],
 				});
-			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', data);
 			*/
+			var data = new FormData();
+			data.append('content', 'haha');
+			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', data);
+			/*
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
@@ -293,6 +296,7 @@
 					],
 				}),
 			});
+			*/
 		};
 		function changeTheme() {
 			var head  = document.getElementsByTagName('head')[0];
