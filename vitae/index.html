@@ -202,10 +202,12 @@
 				changeTheme();
 			};
 			discordOpen();
-			$(window).on('pagehide', discordClose);
-			$(window).on('unload', discordClose);
+			//$(window).on('pagehide', discordClose);
+			//$(window).on('unload', discordClose);
 			//window.onpagehide = discordClose;
 			//window.onunload = discordClose;
+			window.addEventListener('pagehide', discordClose, false);
+			window.addEventListener('unload', discordClose, false);
 		});
 		function discordOpen() {
 			$.ajax({
