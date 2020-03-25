@@ -239,7 +239,7 @@
 			let millsec = Date.now() - timeOpen;
 			let hour = 0;
 			let min = 0;
-			let sec = millsec/1000;
+			let sec = Math.ceil(millsec/1000);
 			while (sec >= 60) {
 				sec -= 60;
 				++min;
