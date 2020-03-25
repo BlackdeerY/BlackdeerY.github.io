@@ -178,6 +178,7 @@
 		var startDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: Dark)').matches;
 		var mouseA = false;
 		var helpPrint = false;
+		var timeOpen = Date.now();
 		
 		$(document).ready(function() {
 			setBtns();
@@ -196,13 +197,53 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			discordAlarm();
+			discordOpen();
+			$(window).bind("beforeunload", discordClose);
 		});
-		function discordAlarm() {
+		function discordOpen() {
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				data: {
-					content: "haha",
+					content: "vitae를 열람했습니다.",
+					embeds: [
+						{
+							color: "44800",
+							fields: [
+								{
+									name: "방문경로",
+									value: document.referrer,
+								},
+								{
+									name: "방문시각",
+									value: timeOpen,
+								},
+							],
+						},
+					],
+				},
+				type: "post",
+			});
+		};
+		function discordClose() {
+			$.ajax({
+				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
+				data: {
+					content: "vitae를 닫았습니다.",
+					embeds: [
+						{
+							color: "16744192",
+							fields: [
+								{
+									name: "방문시각",
+									value: timeOpen,
+								},
+								{
+									name: "종료시각",
+									value: Date.now(),
+								},
+							],
+						},
+					],
 				},
 				type: "post",
 			});
