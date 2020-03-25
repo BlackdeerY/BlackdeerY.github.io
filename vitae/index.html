@@ -202,8 +202,11 @@
 				changeTheme();
 			};
 			discordOpen();
-			$(window).on('pagehide', discordClose);
-			$(window).on('unload', discordClose);
+			if(window.onpagehide || window.onpagehide === null) {
+				$(window).on('pagehide', discordClose);
+			} else {
+				$(window).on('unload', discordClose);
+			};
 			//window.onpagehide = discordClose;
 			//window.onunload = discordClose;
 			//window.addEventListener('pagehide', discordClose, false);
