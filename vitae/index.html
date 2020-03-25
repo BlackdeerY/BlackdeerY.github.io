@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('00000000000000000000000000001');
+			console.log('00000000000000000000000000002');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -255,10 +255,8 @@
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			let fd = new FormData();
-			fd.append('payload_json', '"content": "Hello, World!"');
-			//navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
-			let blob2 = new Blob([fd], headers);
-			//let result = navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob2);
+			let v1 = encodeURIComponent('"content": "Hello, World!"');
+			fd.append('payload_json', v1);
 			let result = navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			console.log(result);
 			/*
