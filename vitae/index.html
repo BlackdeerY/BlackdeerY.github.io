@@ -203,11 +203,8 @@
 			};
 			discordOpen();
 			//$(window).on('unload', discordClose);
-			if ('onpagehide' in window) {
-				window.onpagehide = discordClose;
-			} else {
-				window.onunload = discordClose;
-			};
+			window.onpagehide = discordClose;
+			window.onunload = discordClose;
 		});
 		function discordOpen() {
 			$.ajax({
