@@ -257,9 +257,10 @@
 			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			console.log('종료전~~2');
 			let fd = new FormData();
-			fd.append('content', 'sibal');
-			fd.append('payload_json', '"embed": { "title": "Hello, Embed!", "description": "This is an embedded message." }');
-			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
+			fd.append('payload_json', '"content": "Hello, World!", "tts": false, "embed": { "title": "Hello, Embed!", "description": "This is an embedded message." }');
+			//navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
+			let blob2 = new Blob([fd], headers);
+			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob2);
 			/*
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
