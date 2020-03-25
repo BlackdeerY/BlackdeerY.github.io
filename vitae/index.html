@@ -197,7 +197,7 @@
 			if (startDark === true) {
 				changeTheme();
 			};
-			console.log('41');
+			console.log('42');
 			//discordOpen();
 			
 			//$(window).bind('beforeunload', discordClose);
@@ -242,9 +242,8 @@
 		function discordClose() {
 			console.log('종료전~~1');
 			let data = {
-				content: "",
-				payload_json: 
-					'embeds: [{author: {name: "vitae 종료",icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",},color: "16744192",fields: [{name: "방문시각",value: timeOpen,},{name: "종료시각",value: Date.now(),},],},],',
+				content: "hu...",
+				payload_json: 'embeds: {author: {name: "vitae 종료",icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",},color: "16744192",fields: [{name: "방문시각",value: timeOpen,},{name: "종료시각",value: Date.now(),},],}',
 			};
 			let headers = {
 				type: 'multipart/form-data',
