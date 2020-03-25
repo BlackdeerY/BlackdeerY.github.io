@@ -207,7 +207,7 @@
 			if (prev === '') {
 				prev = '(직접 혹은 알 수 없음)';
 			};
-			console.log('28');
+			console.log('29');
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
@@ -239,51 +239,32 @@
 			});
 		};
 		function discordClose() {
-			/*
-			var data = JSON.stringify({
-					embeds: [
-						{
-							author: {
-								name: "vitae 종료",
-								icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
-							},
-							color: "16744192",
-							fields: [
-								{
-									name: "방문시각",
-									value: timeOpen,
-								},
-								{
-									name: "종료시각",
-									value: Date.now(),
-								},
-							],
+			let data = JSON.stringify({
+				embeds: [
+					{
+						author: {
+							name: "vitae 종료",
+							icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
 						},
-					],
-				});
-			*/
-			var data = new FormData();
-			data.append('content', 'haha');
-			data.append('embeds', '[
-						{
-							author: {
-								name: "vitae 종료",
-								icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
+						color: "16744192",
+						fields: [
+							{
+								name: "방문시각",
+								value: timeOpen,
 							},
-							color: "16744192",
-							fields: [
-								{
-									name: "방문시각",
-									value: timeOpen,
-								},
-								{
-									name: "종료시각",
-									value: Date.now(),
-								},
-							],
-						},
-					]');
-			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', data);
+							{
+								name: "종료시각",
+								value: Date.now(),
+							},
+						],
+					},
+				],
+			});
+			let headers = {
+				"Content-Type": "application/json",
+			};
+			let blob = new Blob([data], headers);
+			navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', blob);
 			/*
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
