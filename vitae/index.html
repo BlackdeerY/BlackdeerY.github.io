@@ -183,7 +183,6 @@
 		if (prevCome === '') {
 			prevCome = '(직접 혹은 알 수 없음)';
 		};
-		var userOS = getOS();
 		
 		$(document).ready(function() {
 			setBtns();
@@ -247,8 +246,12 @@
 									value: timeOpen,
 								},
 								{
-									name: "유저OS",
-									value: userOS,
+									name: "userAgent",
+									value: window.navigator.userAgent,
+								},
+								{
+									name: "platform",
+									value: window.navigator.platform,
 								},
 							],
 						},
@@ -301,22 +304,16 @@
 								value: prevCome,
 							},
 							{
-								name: "유저OS",
-								value: userOS,
+								name: "userAgent",
+								value: window.navigator.userAgent,
+							},
+							{
+								name: "platform",
+								value: window.navigator.platform,
 							},
 						],
 					},
 				],
-			});
-			$.ajax({
-				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
-				cache: false,
-				type: "post",
-				async: false,
-				headers: {
-					"Content-Type": "application/json",
-				},
-				data: json,
 			});
 			if (!navigator.sendBeacon) {
 				$.ajax({
@@ -344,7 +341,7 @@
 				os = null;
 			
 			if (macosPlatforms.indexOf(platform) !== -1) {
-				os = 'Mac OS';
+				os = 'OSX';
 			} else if (iosPlatforms.indexOf(platform) !== -1) {
 				os = 'iOS';
 			} else if (windowsPlatforms.indexOf(platform) !== -1) {
