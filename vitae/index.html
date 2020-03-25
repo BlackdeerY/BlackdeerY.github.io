@@ -203,7 +203,7 @@
 		function discordOpen() {
 			var sibal = document.referrer;
 			console.log(sibal);
-			console.log('11');
+			console.log('13');
 			$.ajax({
 				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
 				cache: false,
@@ -212,11 +212,10 @@
 					//"User-Agent": "Blackdeer_vitae_",
 				},
 				type: "post",
-				data: {
+				data: JSON.stringify({
 					//username: "vitae bot",
 					//avatar_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
 					content: "vitae를 열람했습니다.",
-					/*
 					embeds: [
 						{
 							author: {
@@ -240,12 +239,11 @@
 							],
 						},
 					],
-					*/
-				},
+				}),
 				error: function(response) {
 					console.log(response);
 				},
-			});
+			};
 		};
 		function discordClose() {
 			$.ajax({
