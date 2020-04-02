@@ -332,6 +332,38 @@
 				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
 			};
 		};
+		function discordATag(link) {
+			$.ajax({
+				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
+				cache: false,
+				headers: {
+					"Content-Type": "application/json",
+				},
+				type: "post",
+				data: JSON.stringify({
+					embeds: [
+						{
+							author: {
+								name: "링크 클릭",
+								icon_url: "https://blackdeery.github.io/common/resources/img/Blackdeer_Discord.png",
+							},
+							color: "32767",
+							fields: [
+								{
+									name: "식별자",
+									value: timeOpen,
+								},
+								{
+									name: "방문링크",
+									value: link
+								},
+							],
+						},
+					],
+				}),
+			});
+		};
+		/*
 		function getOS() {
 			var userAgent = window.navigator.userAgent,
 				platform = window.navigator.platform,
@@ -354,6 +386,7 @@
 			
 			return os;
 		};
+		*/
 		function changeTheme() {
 			var head  = document.getElementsByTagName('head')[0];
 			var link  = document.createElement('link');
@@ -421,6 +454,10 @@
 						arrow.text('▲');
 					};
 				};
+			});
+			$('a').on('click',function(){
+				let link = $(this).attr('href');
+				discordATag(link);
 			});
 		};
 		function setHide() {
