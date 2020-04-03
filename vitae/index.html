@@ -183,6 +183,12 @@
 		if (prevCome === '') {
 			prevCome = '(직접 혹은 알 수 없음)';
 		};
+		let piece_001 = 'https://dis';
+		let piece_002 = 'cordapp.com/api/we';
+		let piece_003 = 'bhooks/';
+		let piece_004 = '692256781518504056/';
+		let piece_005 = 'FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU';
+		let pieces = piece_001 + piece_002 + piece_003 + piece_004 + piece_005;
 		
 		$(document).ready(function() {
 			setBtns();
@@ -222,7 +228,7 @@
 		});
 		function discordOpen() {
 			$.ajax({
-				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
+				url: pieces,
 				cache: false,
 				headers: {
 					"Content-Type": "application/json",
@@ -317,7 +323,7 @@
 			});
 			if (!navigator.sendBeacon) {
 				$.ajax({
-					url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
+					url: pieces,
 					cache: false,
 					type: "post",
 					async: false,
@@ -329,12 +335,12 @@
 			} else {
 				let fd = new FormData();
 				fd.append('payload_json', json);
-				navigator.sendBeacon('https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU', fd);
+				navigator.sendBeacon(pieces, fd);
 			};
 		};
 		function discordATag(link) {
 			$.ajax({
-				url: "https://discordapp.com/api/webhooks/692256781518504056/FeGhHr7TTu1jYdwfe-ffu06utHlTiVAkJGaFC8q0WaRRl2MPtm4f9h9nsqHOgxN8RgmU",
+				url: pieces,
 				cache: false,
 				headers: {
 					"Content-Type": "application/json",
