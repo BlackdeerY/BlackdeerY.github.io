@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Donate to 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="Donate to 현록">
+	<meta property="og:description" content="Donate to 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_spacelab.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+		}
+		#div-top {
+			min-width: 700px;
+			max-width: 1000px;
+		}
+		#div-content {
+			min-width: 700px;
+			max-width: 700px;
+		}
+		.img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+		.font-bold {
+			font-weight: bold !important;
+		}
+		.font-0.8rem {
+			font-size: 0.8rem !important;
+		}
+		.font-1rem {
+			font-size: 1rem !important;
+		}
+		.font-1.5rem {
+			font-size: 1.5rem !important;
+		}
+		.font-2rem {
+			font-size: 2rem !important;
+		}
+		.font-2.5rem {
+			font-size: 2.5rem !important;
+		}
+		.font-3rem {
+			font-size: 3rem !important;
+		}
+		.margin-0 {
+			margin: 0px !important;
+		}
+		.tooltip-inner {
+    		max-width: 100% !important;
+			font-size: 1rem;
+		}
+		.jumbotron {
+			padding: 1rem !important;
+			margin: 0px !important;
+		}
+		.jumbotron > div > p {
+			margin: 0px;
+		}
+		.card {
+			margin-bottom: 1rem;
+		}
+		.card-header {
+			font-weight: bold;
+			padding-left: 1rem;
+		}
+		.arrow {
+			margin-left: 0.5rem;
+		}
+		.card-body > p {
+			margin: 0px;
+		}
+		.timeline-dashed {
+			border-bottom: 1px dashed;
+		}
+		#timeline-table {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+		#timeline-table > tbody > tr > td:first-child {
+			width: 12rem !important;
+		}
+		#timeline-table > tbody > tr > td:last-child {
+			padding-left: 0.5rem;
+		}
+		td > p {
+			margin: 0px;
+		}
+		.td-long-p {
+			padding: 1rem !important;
+		}
+		.td-long-p > p {
+			margin-bottom: 1rem;
+		}
+		.td-long-p > p:last-child {
+			margin-bottom: 0px;
+		}
+		.td-long-p > div > p {
+			margin-bottom: 0px;
+		}
+		#div-top-helps {
+			margin-top: 1rem;
+		}
+		#div-top #div-top-helps {
+			margin-top: 0 !important;
+		}
+		.table-title-left {
+			min-width: 6rem;
+		}
+		ul {
+			margin: 0px;
+			padding-left: 20px;
+		}
+    </style>
+	<script>
+		var mouseA = false;
+		$(document).ready(function() {
+			setActions();
+			setHide();
+			$('#div-top').css('backgroundColor','#FFFFFF');
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		function setActions() {
+			$('a').on('mouseenter',function(){
+				mouseA = true;
+			});
+			$('a').on('mouseleave',function(){
+				mouseA = false;
+			});
+			$('.card-toggle').on('click',function(){
+				if (mouseA === false) {
+					$(this).find('.card-body').slideToggle();
+					var arrow = $(this).find('.arrow');
+					if (arrow.text() == '▲') {
+						arrow.text('▼');
+					} else {
+						arrow.text('▲');
+					};
+				};
+			});
+			$('a').on('click',function(){
+				let link = $(this).attr('href');
+				discordATag(link);
+			});
+		};
+		function setHide() {
+			var target = $('.card-toggle');
+			target.find('.card-body').slideUp();
+			target.find('.arrow').text('▼');
+		};
+	</script>
+</head>
+<body class="font-1rem">
+	<div id="div-top" class="container-fluid">
+		<div class="jumbotron">
+			<div>
+				<p>
+					<img class="size-50 img-round img-border" src="../common/resources/img/Blackdeer.png">
+					<span class="font-bold font-2rem" style="vertical-align: middle;"><a href="https://ydeer.tistory.com/" target="_blank">현록</a> 후원하기</span>
+				</p>
+			</div>
+			<div>
+				<p>&nbsp;</p>
+				<p>
+					다른 사람들도 함께 좋은 정보를 알았으면 좋겠다고 시작한 블로그입니다만,
+				</p>
+				<p>
+					저를 좀 더 응원해주고 싶으신 분들은 제 텅장으로 기운을 넣어주실 수 있습니다!
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="space-01" style="height: 0px; margin: 1rem;"></div>
+	<div id="div-content" class="container-fluid">
+		<div class="card card-toggle">
+			<p class="card-header" style="color: #3b1e1e; background-color: #ffcd00">카카오페이로 후원하기<span class="arrow">▲</span></p>
+			<div class="card-body">
+				<p class="text-center">
+					<img src="./qr/kakaopay.png">
+				</p>
+				<p>&nbsp;</p>
+				<p>
+					<b>후원 방법:</b>
+				</p>
+				<p>
+					카카오톡의 우측 하단에 "..."을 눌러,
+				</p>
+				<p>
+					위의 스캔 버튼을 누르고 위의 QR코드를 읽습니다.
+				</p>
+				<p>
+					(예금주: ㅇㄷㅅ)
+				</p>
+				<p>
+					원하는 금액만큼 송금해주시면 됩니다.
+				</p>
+				<p>
+					<img src="./howto/kakaopay.png">
+				</p>
+			</div>
+		</div>
+		<div class="card card-toggle">
+			<p class="card-header" style="color: #ffffff; background-color: #4c6ed5">토스로 후원하기<span class="arrow">▲</span></p>
+			<div class="card-body">
+				<p class="text-center">
+					<img src="./qr/toss.png">
+				</p>
+				<p>&nbsp;</p>
+				<p>
+					<b>후원 방법:</b>
+				</p>
+				<p>
+					토스 앱에서 송금하기를 누르고,
+				</p>
+				<p>
+					우측 상단의 카메라 버튼을 누르고 위의 QR코드를 읽습니다.
+				</p>
+				<p>
+					(예금주: ㅇㄷㅅ)
+				</p>
+				<p>
+					원하는 금액만큼 송금해주시면 됩니다.
+				</p>
+				<p>
+					<img src="./howto/toss/00.png">
+					<img src="./howto/toss/01.png">
+				</p>
+			</div>
+		</div>
+		<div class="card card-toggle">
+			<p class="card-header">계좌이체로 후원하기<span class="arrow">▲</span></p>
+			<div class="card-body">
+				<p>
+					<b>NH농협: 177399-51-005881 (예금주: ㅇㄷㅅ)</b>
+				</p>
+				<p>&nbsp;</p>
+				<p>
+					계좌이체로 원하는 금액만큼 송금해주시면 됩니다.
+				</p>
+			</div>
+		</div>
+		<div class="card card-toggle">
+			<p class="card-header">광고 시청으로 후원하기<span class="arrow">▲</span></p>
+			<div class="card-body">
+				<p>
+					블로그 위 아래의 광고를 시청해주시면 됩니다. (클릭해주시면 더 좋습니다)
+				</p>
+				<p>
+					(약 50원 정도의 수익이 발생합니다)
+				</p>
+				<p>&nbsp;</p>
+				<p>
+					AdBlock을 사용하신다면,
+				</p>
+				<p>
+					주소창 옆의 AdBlock을 눌러, "이 사이트에서 광고 허용" (블로그에서 항상 광고를 허용)
+				</p>
+				<p>
+					혹은 "이 사이트에서 일시 중지" (지금 이 탭을 닫기 전까지만 유효)를 눌러주시면
+				</p>
+				<p>
+					 광고를 보실 수 있습니다.
+				</p>
+				<p>
+					<img src="./howto/adblock.png">
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
