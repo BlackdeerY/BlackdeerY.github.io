@@ -14,7 +14,7 @@
 	<link rel="apple-touch-icon-precomposed" href="../common/resources/img/Blackdeer.png">
 	
 	<!-- Latest compiled and minified CSS -->
-	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_spacelab.min.css" media="all">
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
 	
 	<!-- Web Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
@@ -31,6 +31,7 @@
 		#div-top {
 			min-width: 800px;
 			max-width: 1200px;
+			margin-top: 0 !important;
 		}
 		img {
 			max-width: 100%;
@@ -74,10 +75,6 @@
 		.margin-0 {
 			margin: 0px !important;
 		}
-		.tooltip-inner {
-    		max-width: 100% !important;
-			font-size: 1rem;
-		}
 		.jumbotron {
 			padding: 1rem !important;
 			margin: 0px !important;
@@ -85,97 +82,13 @@
 		.jumbotron > div > p {
 			margin: 0px;
 		}
-		.card {
-			margin-bottom: 1rem;
-		}
-		.card-header {
-			font-weight: bold;
-			padding-left: 1rem;
-		}
-		.arrow {
-			margin-left: 0.5rem;
-		}
-		.card-body > p {
-			margin: 0px;
-		}
-		.timeline-dashed {
-			border-bottom: 1px dashed;
-		}
-		#timeline-table {
-			width: 100%;
-			margin-bottom: 1rem;
-		}
-		#timeline-table > tbody > tr > td:first-child {
-			width: 12rem !important;
-		}
-		#timeline-table > tbody > tr > td:last-child {
-			padding-left: 0.5rem;
-		}
-		td > p {
-			margin: 0px;
-		}
-		.td-long-p {
-			padding: 1rem !important;
-		}
-		.td-long-p > p {
-			margin-bottom: 1rem;
-		}
-		.td-long-p > p:last-child {
-			margin-bottom: 0px;
-		}
-		.td-long-p > div > p {
-			margin-bottom: 0px;
-		}
-		#div-top-helps {
-			margin-top: 1rem;
-		}
-		#div-top #div-top-helps {
-			margin-top: 0 !important;
-		}
-		.table-title-left {
-			min-width: 6rem;
-		}
-		ul {
-			margin: 0px;
-			padding-left: 20px;
+		a {
+			color: #66ccff !important;
 		}
     </style>
 	<script>
-		var mouseA = false;
 		$(document).ready(function() {
-			setActions();
-			setHide();
-			$('#div-top').css('backgroundColor','#FFFFFF');
-			$('[data-toggle="tooltip"]').tooltip();
 		});
-		function setActions() {
-			$('a').on('mouseenter',function(){
-				mouseA = true;
-			});
-			$('a').on('mouseleave',function(){
-				mouseA = false;
-			});
-			$('.card-toggle').on('click',function(){
-				if (mouseA === false) {
-					$(this).find('.card-body').slideToggle();
-					var arrow = $(this).find('.arrow');
-					if (arrow.text() == '▲') {
-						arrow.text('▼');
-					} else {
-						arrow.text('▲');
-					};
-				};
-			});
-			$('a').on('click',function(){
-				let link = $(this).attr('href');
-				discordATag(link);
-			});
-		};
-		function setHide() {
-			var target = $('.card-toggle');
-			target.find('.card-body').slideUp();
-			target.find('.arrow').text('▼');
-		};
 	</script>
 </head>
 <body class="font-1rem">
@@ -203,12 +116,15 @@
 				<p>
 					1. <a href="https://parsecgaming.com/" target="_blank">여기를 클릭하여, Parsec 사이트로 이동합니다.</a>
 				</p>
+				<p>
+					　 (아래의 녹색 링크가 유효하다면, 그냥 링크들을 클릭하는게 더 직관적일 수 있습니다.)
+				</p>
 				<p>&nbsp;</p>
 				<p>
-					2. 우측 상단의 <a href="https://parsecgaming.com/login/" target="_blank">Log In 버튼</a>을 눌러 <a href="https://parsecgaming.com/signup/" target="_blank">회원가입</a>을 진행합니다.
+					2. 우측 상단의 <a href="https://parsecgaming.com/login/" target="_blank">Log In 버튼</a>을 눌러 <a href="https://parsecgaming.com/signup/" target="_blank" style="color: #99FF99 !important;"><b>회원가입</b></a>을 진행합니다.
 				</p>
 				<p>
-					　 <a href="https://parsecgaming.com/downloads/" target="_blank">Download</a>에서는 프로그램 설치파일을 받아 설치합니다.
+					　 <a href="https://parsecgaming.com/downloads/" target="_blank" style="color: #99FF99 !important;"><b>Download</b></a>에서는 프로그램 설치파일을 받아 설치합니다.
 				</p>
 				<p>
 					　 (이 도움말 글에서 적용된 링크를 클릭해도, 바로 간편하게 회원가입이나 다운로드 페이지로 이동됩니다.)
@@ -227,10 +143,10 @@
 					3. 프로그램도 설치하고 나면,
 				</p>
 				<p>
-					　 <a href="download/RemoteUtil_Host.zip" target="_blank">여기를 클릭하여, 도우미 파일을 받습니다.</a>
+					　 <a href="download/RemoteUtil_Host.zip" target="_blank" style="color: #99FF99 !important;">여기를 클릭하여, 도우미 파일을 받습니다.</a>
 				</p>
 				<p>
-					　 압축을 풀고, <b>ParsecHelper.exe</b>를 실행합니다.(원형 아이콘. 흰색 배경에 검은 사슴)
+					　 압축을 풀고, <span style="color: #FFFFFF;"><b>ParsecHelper.exe</b></span>를 실행합니다.(원형 아이콘. 흰색 배경에 검은 사슴)
 				</p>
 				<p>
 					　 (Parsec의 Host 설정을 미리 설정해 둔 파일로 덮어쓰게 됩니다.)
@@ -248,7 +164,7 @@
 				<p><img src="img/03.png"></p>
 				<p>&nbsp;</p>
 				<p>
-					5. Host 설정으로 가서, Hosting Enabled를 Enabled로 설정합니다.
+					5. Host 설정으로 가서, Hosting Enabled를 <span style="color: #FFFFFF;"><b>Enabled</b></span>로 설정합니다.
 				</p>
 				<p>
 					　 (아래의 속도나 해상도 등의 설정은 위에서 도우미로 미리 설정된 값으로 설정되었을겁니다.)
@@ -256,7 +172,7 @@
 				<p><img src="img/04.png"></p>
 				<p>&nbsp;</p>
 				<p>
-					6. 다시 처음의 Computers로 가서, This Computer를 Share합니다.
+					6. 다시 처음의 Computers로 가서, This Computer를 <span style="color: #FFFFFF;"><b>Share</b></span>합니다.
 				</p>
 				<p>
 					　 (This Computer가 보이지 않으면, 우측 상단에 Reload를 눌러줍니다.)
