@@ -75,7 +75,7 @@
 		};
 		function SetEvent() {
 			$('.btn-close').on('click', function() {
-				window.open('', '_self', '');
+				self.opener = self;
 				window.close();
 			});
 		};
