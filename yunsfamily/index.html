@@ -69,14 +69,12 @@
 				SetSize();
 			});
 			SetEvent();
-			$('[data-toggle="tooltip"]').tooltip();
 		});
 		function SetSize() {
-			//$('#space-01').css('height',$('#div-top').height());
 			$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
-			$('#div-main').css('margin-top',$('#div-top').height());
-			$('#div-main').css('padding-top',$('#div-bottom').height() * 0.5);
-			$('#div-main').css('padding-bottom',$('#div-bottom').height() * 1.5);
+			$('.div-mains').css('margin-top',$('#div-top').height());
+			$('.div-mains').css('padding-top',$('#div-bottom').height() * 0.5);
+			$('.div-mains').css('padding-bottom',$('#div-bottom').height() * 1.5);
 		};
 		function SetEvent() {
 			$('.btn-close').on('click', function() {
@@ -99,7 +97,7 @@
 				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
 			</p>
 		</div>
-		<div id="div-main">
+		<div id="div-main" class="div-mains">
 			<p class="text-center">
 				볼 설명서를 눌러주세요.
 			</p>

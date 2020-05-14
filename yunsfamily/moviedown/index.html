@@ -63,6 +63,7 @@
 		}
     </style>
 	<script>
+		$('#div-main').hide();
 		$(document).ready(function() {
 			SetSize();
 			window.addEventListener('resize', function() {
@@ -72,15 +73,34 @@
 		});
 		function SetSize() {
 			$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
-			$('#div-main').css('margin-top',$('#div-top').height());
-			$('#div-main').css('padding-top',$('#div-bottom').height() * 0.5);
-			$('#div-main').css('padding-bottom',$('#div-bottom').height() * 1.5);
+			$('.div-mains').css('margin-top',$('#div-top').height());
+			$('.div-mains').css('padding-top',$('#div-bottom').height() * 0.5);
+			$('.div-mains').css('padding-bottom',$('#div-bottom').height() * 1.5);
 		};
 		function SetEvent() {
 			$('.btn-close').on('click', function() {
 				window.open('', '_self', '');
 				window.close();
 			});
+		};
+		var timerId = null;
+		timerId = setInterval(CheckImageLoad, 500);
+		function CheckImageLoad() {
+			var allDone = true;
+			$('img').each(function() {
+				if (allDone != true) {
+					return;
+				};
+				allDone = this.complete;
+			});
+			if (allDone === true) {
+				clearInterval(timerId);
+				$('#div-help').hide();
+				$('#div-main').show();
+			} else {
+				$('#div-help').show();
+				$('#div-main').hide();
+			};
 		};
 	</script>
 </head>
@@ -91,7 +111,15 @@
 				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
 			</p>
 		</div>
-		<div id="div-main">
+		<div id="div-help" class="div-mains text-center">
+			<p>
+				(화면을 불러오는 중..
+			</p>
+			<p>
+				잠시만 기다려주세요.)
+			</p>
+		</div>
+		<div id="div-main" class="div-mains">
 			<p>
 				1. 아들2에게 보고 싶은
 			</p>
