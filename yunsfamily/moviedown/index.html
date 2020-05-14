@@ -32,6 +32,9 @@
 		.btn {
 			font-size: 5rem;
 		}
+		#loadingBar {
+			font-size: 5rem;
+		}
 		#div-main {
 			color: #FFFFFF;
 		}
@@ -98,7 +101,9 @@
 				$('#div-help').hide();
 				$('#div-main').show();
 			} else {
-				$('#loadingBar').css('width',(countNow/countAll*100)+'%');
+				var nowPercent = (countNow/countAll*100)+'%';
+				$('#loadingBar').text(nowPercent);
+				$('#loadingBar').css('width',nowPercent);
 				$('#div-help').show();
 				$('#div-main').hide();
 			};
