@@ -50,7 +50,7 @@
 		timerId = setInterval(CheckImageLoad, 500);
 		function CheckImageLoad() {
 			var dots = $('#dots').text();
-			if (dots == '......') {
+			if (dots.length > 5) {
 				$('#dots').text('.');
 			} else {
 				$('#dots').text(dots + '.');
@@ -113,7 +113,7 @@
 				USB를 끼운다.
 			</p>
 			<p style="padding-left: 6rem;">
-				(반짝반짝 빛나는 인터넷 선 옆)
+				(반짝반짝 빛나는 선 옆)
 			</p>
 			<p style="padding-left: 6rem;">
 				(구멍에 위/아래가 있으니,
@@ -140,7 +140,7 @@
 				USB를 뺐다가 다시 꽂는다.)
 			</p>
 			<p style="padding-left: 6rem; color: #FFFF00;">
-				리모컨의 확인을 누른다.
+				리모컨의 <span class="charBorder">확인</span>을 누른다.
 			</p>
 			<p><hr></p>
 			<p>
@@ -164,7 +164,7 @@
 				비디오인 상태 그대로
 			</p>
 			<p style="padding-left: 6rem; color: #FFFF00;">
-				리모컨의 확인을 누른다.
+				리모컨의 <span class="charBorder">확인</span>을 누른다.
 			</p>
 			<p><hr></p>
 			<p>
@@ -176,13 +176,13 @@
 				7. 영화 목록이 뜨면,
 			</p>
 			<p style="padding-left: 6rem; color: #FFFF00;">
-				리모컨의 위아래 버튼으로
+				리모컨의 <span class="charBorder">▲</span>/<span class="charBorder">▼</span>으로
 			</p>
 			<p style="padding-left: 6rem;">
 				원하는 영화 위로 가서
 			</p>
 			<p style="padding-left: 6rem; color: #FFFF00;">
-				리모컨의 확인을 눌러서
+				리모컨의 <span class="charBorder">확인</span>을 눌러서
 			</p>
 			<p style="padding-left: 6rem;">
 				영화를 체크해준다.
@@ -200,13 +200,13 @@
 				<img src="./img/remote01.gif">
 			</p>
 			<p>
-				8. <span style="color: #FFFF00;">리모컨의 오른쪽 버튼을 눌러서,</span>
+				8. <span style="color: #FFFF00;">리모컨의 <span class="charBorder"><span class="charMargin">▶</span><span class="charMargin">▶</span>|</span>을 눌러서,</span>
 			</p>
 			<p style="padding-left: 6rem;">
 				오른쪽의 재생에 불이 들어오면,
 			</p>
 			<p style="padding-left: 6rem; color: #FFFF00;">
-				리모컨의 확인을 누른다.
+				리모컨의 <span class="charBorder">확인</span>을 누른다.
 			</p>
 			<p><hr></p>
 			<p>
@@ -225,6 +225,19 @@
 				USB를 뺐다 꽂으면 된다.)
 			</p>
 			<p><hr></p>
+			<p class="text-center">
+				(USB는 전원이 꺼져있거나,
+			</p>
+			<p class="text-center">
+				영화목록이 아닌
+			</p>
+			<p class="text-center">
+				일반 TV 상태에서
+			</p>
+			<p class="text-center">
+				뽑는 것이 좋다.)
+			</p>
+			<p><hr></p>
 			<p>
 				아래는 리모컨의 조작법이다.
 			</p>
@@ -233,14 +246,14 @@
 				<img src="./img/remote04.gif">
 			</p>
 			<p>
-				재생/일시정지는 위의 버튼이다.
+				재생/일시정지는 위의 <span class="charBorder"><span class="charMargin">▶</span>||</span>이다.
 			</p>
 			<p>&nbsp;</p>
 			<p>
 				<img src="./img/remote05.gif">
 			</p>
 			<p>
-				앞/뒤로 건너뛰기는 위의 버튼들이다.
+				앞/뒤로 건너뛰기는 위의 <span class="charBorder"><span class="charMargin">|</span><span class="charMargin">◀</span>◀</span>/<span class="charBorder"><span class="charMargin">▶</span><span class="charMargin">▶</span>|</span>이다.
 			</p>
 		</div>
 		<!--

@@ -50,7 +50,7 @@
 		timerId = setInterval(CheckImageLoad, 500);
 		function CheckImageLoad() {
 			var dots = $('#dots').text();
-			if (dots == '......') {
+			if (dots.length > 5) {
 				$('#dots').text('.');
 			} else {
 				$('#dots').text(dots + '.');

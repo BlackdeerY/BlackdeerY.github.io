@@ -42,3 +42,9 @@ hr {
 .font-bold {
 	font-weight: bold !important;
 }
+.charBorder {
+	border: 2px dotted;
+}
+.charMargin {
+	margin-right: -1.5rem;
+}
