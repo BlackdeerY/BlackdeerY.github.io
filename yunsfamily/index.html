@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>우리 가족 도우미</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="./ico/ico.ico">
+	<link rel="icon" href="./ico/ico.ico">
+	<meta property="og:title" content="우리 가족 도우미">
+	<meta property="og:description" content="우리 가족 도우미">
+	<meta property="og:image" content="https://blackdeery.github.io/yunsfamily/ico/desc.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/yunsfamily/ico/ico_512.png">
+	<link rel="apple-touch-icon-precomposed" href="./ico/ico_512.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+			font-size: 3rem;
+		}
+		.btn {
+			font-size: 3rem;
+		}
+		#div-main .btn {
+			width: 100%;
+		}
+		.div-topbottom {
+			background-color: red;
+			position: fixed;
+			z-index: 10;
+			width: 100%;
+			left: 0;
+			margin: 0px;
+			padding: 0px;
+		}
+		.div-topbottom > p {
+			margin: 0px;
+		}
+		#div-top {
+			top: 0;
+		}
+		#div-bottom {
+			top: 0;
+		}
+		.font-bold {
+			font-weight: bold !important;
+		}
+    </style>
+	<script>
+		$(document).ready(function() {
+			setSize();
+			window.addEventListener('resize', function() {
+				setSize();
+			});
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		function setSize() {
+			//$('#space-01').css('height',$('#div-top').height());
+			$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
+			$('#div-main').css('margin-top',$('#div-top').height());
+			$('#div-main').css('padding-top',$('#div-bottom').height() * 0.5);
+			$('#div-main').css('padding-bottom',$('#div-bottom').height() * 1.5);
+		};
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="div-top" class="div-topbottom">
+			<p class="text-right">
+				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
+			</p>
+		</div>
+		<div id="div-main">
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+			<p class="text-center">
+				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-changeTheme">영화 받기 / 영화 보기</button>
+			</p>
+		</div>
+		<div id="div-bottom" class="div-topbottom">
+			<p class="text-left">
+				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
