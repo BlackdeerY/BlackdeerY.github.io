@@ -76,11 +76,10 @@
 			$('#div-main').css('padding-bottom',$('#div-bottom').height() * 1.5);
 		};
 		function SetEvent() {
-			$('.btn-close').on('click', CloseWindow());
-		};
-		function CloseWindow() {
-			self.opener = self;
-			window.close();
+			$('.btn-close').on('click', function() {
+				window.open('', '_self', '');
+				window.close();
+			});
 		};
 	</script>
 </head>
