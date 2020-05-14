@@ -38,6 +38,7 @@
 		#loadingBar {
 			font-size: 5rem;
 			height: 5rem;
+			text-align: center !important;
 		}
 		#div-main {
 			color: #FFFFFF;
@@ -105,7 +106,7 @@
 				$('#div-help').hide();
 				$('#div-main').show();
 			} else {
-				var nowPercent = (countNow/countAll*100)+'%';
+				var nowPercent = Math.round(countNow/countAll*100)+'%';
 				$('#loadingBar').text(nowPercent);
 				$('#loadingBar').css('width',nowPercent);
 				$('#div-help').show();
@@ -129,7 +130,7 @@
 				잠시만 기다려주세요.)
 			</p>
 			<div class="progress">
-				<div id="loadingBar" class="progress-bar bg-success text-center" role="progressbar" style="width: 0%"></div>
+				<div id="loadingBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
 			</div>
 		</div>
 		<div id="div-main" class="div-mains">
