@@ -86,18 +86,19 @@
 		var timerId = null;
 		timerId = setInterval(CheckImageLoad, 500);
 		function CheckImageLoad() {
-			var allDone = true;
+			var countAll = $('img').length;
+			var countNow = 0;
 			$('img').each(function() {
-				if (allDone != true) {
-					return;
-				};
-				allDone = this.complete;
+				if (this.complete) {
+					++countNow;
+				}
 			});
-			if (allDone === true) {
+			if (countNow == countAll) {
 				clearInterval(timerId);
 				$('#div-help').hide();
 				$('#div-main').show();
 			} else {
+				$('#loadingBar').css('width',(countNow/countAll*100)+'%');
 				$('#div-help').show();
 				$('#div-main').hide();
 			};
@@ -118,6 +119,9 @@
 			<p>
 				잠시만 기다려주세요.)
 			</p>
+			<div class="progress">
+				<div id="loadingBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+			</div>
 		</div>
 		<div id="div-main" class="div-mains">
 			<p>
