@@ -37,8 +37,8 @@
 		function SetSize() {
 			//$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
 			$('.div-mains').css('margin-top',$('#div-top').height());
-			//$('.div-mains').css('padding-top',$('#div-bottom').height() * 0.5);
-			//$('.div-mains').css('padding-bottom',$('#div-bottom').height() * 1.5);
+			$('.div-mains').css('padding-top',$('#div-top').height() * 0.5);
+			$('.div-mains').css('padding-bottom',$('#div-top').height() * 1.5);
 		};
 		function SetEvent() {
 			$('.btn-close').on('click', function() {
