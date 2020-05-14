@@ -35,10 +35,10 @@
 			SetEvent();
 		});
 		function SetSize() {
-			$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
+			//$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
 			$('.div-mains').css('margin-top',$('#div-top').height());
-			$('.div-mains').css('padding-top',$('#div-bottom').height() * 0.5);
-			$('.div-mains').css('padding-bottom',$('#div-bottom').height() * 1.5);
+			//$('.div-mains').css('padding-top',$('#div-bottom').height() * 0.5);
+			//$('.div-mains').css('padding-bottom',$('#div-bottom').height() * 1.5);
 		};
 		function SetEvent() {
 			$('.btn-close').on('click', function() {
@@ -236,11 +236,13 @@
 				앞/뒤로 건너뛰기는 위의 버튼들이다.
 			</p>
 		</div>
+		<!--
 		<div id="div-bottom" class="div-topbottom">
 			<p class="text-left">
 				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
 			</p>
 		</div>
+		-->
 	</div>
 </body>
 </html>
