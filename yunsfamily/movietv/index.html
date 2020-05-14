@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>우리 가족 도우미 - 영화보기</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../ico/ico.ico">
+	<link rel="icon" href="../ico/ico.ico">
+	<meta property="og:title" content="우리 가족 도우미 - 영화보기">
+	<meta property="og:description" content="우리 가족 도우미 - 영화보기">
+	<meta property="og:image" content="https://blackdeery.github.io/yunsfamily/ico/desc.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/yunsfamily/ico/ico_512.png">
+	<link rel="apple-touch-icon-precomposed" href="../ico/ico_512.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../common/resources/js/popper.min.js"></script>
+	<script src="../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+			font-size: 5rem;
+		}
+		.btn {
+			font-size: 5rem;
+		}
+		#div-main {
+			color: #FFFFFF;
+		}
+		#div-main .btn {
+			width: 100%;
+		}
+		.div-topbottom {
+			position: fixed;
+			z-index: 10;
+			width: 100%;
+			left: 0;
+			margin: 0px;
+			padding: 0px;
+		}
+		.div-topbottom > p {
+			margin: 0px;
+		}
+		#div-top {
+			top: 0;
+		}
+		#div-bottom {
+			top: 0;
+		}
+		hr {
+			border-top: 1px dashed white;
+		}
+		.font-bold {
+			font-weight: bold !important;
+		}
+    </style>
+	<script>
+		$(document).ready(function() {
+			SetSize();
+			window.addEventListener('resize', function() {
+				SetSize();
+			});
+			SetEvent();
+		});
+		function SetSize() {
+			$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
+			$('#div-main').css('margin-top',$('#div-top').height());
+			$('#div-main').css('padding-top',$('#div-bottom').height() * 0.5);
+			$('#div-main').css('padding-bottom',$('#div-bottom').height() * 1.5);
+		};
+		function SetEvent() {
+			$('.btn-close').on('click', function() {
+				window.open('', '_self', '');
+				window.close();
+			});
+		};
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="div-top" class="div-topbottom">
+			<p class="text-right">
+				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
+			</p>
+		</div>
+		<div id="div-main">
+			<p>
+				1. TV를 끈 상태로 둔다.
+			</p>
+			<p><hr></p>
+			<p>
+				<img src="./img/tv01.gif">
+			</p>
+			<p>
+				2. TV셋톱박스 뒷면에
+			</p>
+			<p style="padding-left: 6rem;">
+				USB구멍을 찾아,
+			</p>
+			<p style="padding-left: 6rem;">
+				USB를 끼운다.
+			</p>
+			<p style="padding-left: 6rem;">
+				(반짝반짝 빛나는 인터넷 선 옆)
+			</p>
+			<p style="padding-left: 6rem;">
+				(구멍에 위/아래 구분이 있으니,
+			</p>
+			<p style="padding-left: 6rem;">
+				안 끼워지면 뒤집어 끼운다.)
+			</p>
+			<p><hr></p>
+			<p>
+				3. TV를 켠다.
+			</p>
+			<p><hr></p>
+			<p>
+				<img src="./img/tv02.png">
+				<img src="./img/remote01.gif">
+			</p>
+			<p>
+				4. TV를 켜면 위의 화면이다.
+			</p>
+			<p style="padding-left: 6rem;">
+				(위의 화면이 아니라면,
+			</p>
+			<p style="padding-left: 6rem;">
+				USB를 뺐다가 다시 꽂는다.)
+			</p>
+			<p style="padding-left: 6rem; color: #FFFF00;">
+				리모컨의 확인을 누른다.
+			</p>
+			<p><hr></p>
+			<p>
+				5. 아래의 다음 화면이
+			</p>
+			<p style="padding-left: 6rem;">
+				될 때까지 기다린다.
+			</p>
+			<p style="padding-left: 6rem;">
+				(이동 중이라고 뜬다)
+			</p>
+			<p><hr></p>
+			<p>
+				<img src="./img/tv03.png">
+				<img src="./img/remote01.gif">
+			</p>
+			<p>
+				6. 위의 화면이 되면,
+			</p>
+			<p style="padding-left: 6rem;">
+				비디오인 상태 그대로
+			</p>
+			<p style="padding-left: 6rem; color: #FFFF00;">
+				리모컨의 확인을 누른다.
+			</p>
+			<p><hr></p>
+			<p>
+				<img src="./img/tv04.gif">
+				<img src="./img/remote02.gif">
+				<img src="./img/remote01.gif">
+			</p>
+			<p>
+				7. 영화 목록이 뜨면,
+			</p>
+			<p style="padding-left: 6rem; color: #FFFF00;">
+				리모컨의 위아래 버튼으로
+			</p>
+			<p style="padding-left: 6rem;">
+				원하는 영화 위로 가서
+			</p>
+			<p style="padding-left: 6rem; color: #FFFF00;">
+				리모컨의 확인을 눌러서
+			</p>
+			<p style="padding-left: 6rem;">
+				영화를 체크해준다.
+			</p>
+			<p style="padding-left: 6rem;">
+				(제목 앞에 체크표시가 되고,
+			</p>
+			<p style="padding-left: 6rem;">
+				오른쪽에는 선택 개수가 표시됨)
+			</p>
+			<p><hr></p>
+			<p>
+				<img src="./img/tv05.png">
+				<img src="./img/remote03.gif">
+				<img src="./img/remote01.gif">
+			</p>
+			<p>
+				8. <span style="color: #FFFF00;">리모컨의 오른쪽 버튼을 눌러서,</span>
+			</p>
+			<p style="padding-left: 6rem;">
+				오른쪽의 재생에 불이 들어오면,
+			</p>
+			<p style="padding-left: 6rem; color: #FFFF00;">
+				리모컨의 확인을 누른다.
+			</p>
+			<p><hr></p>
+			<p>
+				9. 영화를 다 보면,
+			</p>
+			<p style="padding-left: 6rem;">
+				그냥 TV를 다 꺼버리면
+			</p>
+			<p style="padding-left: 6rem;">
+				다음에 틀 때는 일반 TV이다.
+			</p>
+			<p style="padding-left: 6rem;">
+				(다시 영화를 보려면,
+			</p>
+			<p style="padding-left: 6rem;">
+				USB를 뺐다 꽂으면 된다.)
+			</p>
+			<p><hr></p>
+			<p>
+				아래는 리모컨의 조작법이다.
+			</p>
+			<p>
+				<img src="./img/remote04.gif">
+			</p>
+			<p>
+				재생/일시정지는 위의 버튼이다.
+			</p>
+			<p>
+				<img src="./img/remote05.gif">
+			</p>
+			<p>
+				앞/뒤로 건너뛰기는 위의 버튼들이다.
+			</p>
+		</div>
+		<div id="div-bottom" class="div-topbottom">
+			<p class="text-left">
+				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
