@@ -26,7 +26,6 @@
 	
     <link id="commonCSS" rel="stylesheet" href="./common/common.css" media="all">
 	<script>
-		var blurTimer = null;
 		$(document).ready(function() {
 			SetSize();
 			window.addEventListener('resize', function() {
@@ -40,12 +39,7 @@
 			$('.div-mains').css('padding-top',$('#div-top').height() * 0.5);
 			$('.div-mains').css('padding-bottom',$('#div-top').height() * 1.5);
 		};
-		function BlurFunc() {
-			$('.btn').blur();
-		};
 		function SetEvent() {
-			//$(window).focus(BlurFunc);
-			blurTimer = setInterval(BlurFunc, 500);
 			$('.btn-close').on('click', function() {
 				window.open('', '_self', '');
 				window.close();
