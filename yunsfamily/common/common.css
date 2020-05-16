@@ -5,6 +5,10 @@ body {
 .btn {
 	font-size: 5rem;
 }
+.btn:focus {
+	outline: none;
+	box-shadow: none;
+}
 .progress {
 	height: 5rem;
 }
