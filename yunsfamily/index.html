@@ -50,9 +50,15 @@
 				window.close();
 			});
 			$('#btn-01').on('click', function() {
+				$('.btn').blur();
+				$('.btn').focusout();
+				$('.btn').mouseout();
 				window.open('./moviedown/');
 			});
 			$('#btn-02').on('click', function() {
+				$('.btn').blur();
+				$('.btn').focusout();
+				$('.btn').mouseout();
 				window.open('./movietv/');
 			});
 		};
