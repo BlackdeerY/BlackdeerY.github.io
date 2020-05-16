@@ -45,9 +45,11 @@
 				window.close();
 			});
 			$('#btn-01').on('click', function() {
+				$(this).blur();
 				window.open('./moviedown/');
 			});
 			$('#btn-02').on('click', function() {
+				$(this).blur();
 				window.open('./movietv/');
 			});
 		};
@@ -57,7 +59,7 @@
 	<div class="container-fluid">
 		<div id="div-top" class="div-topbottom">
 			<p class="text-right">
-				<button type="button" class="btn btn-warning btn-sm font-bold btn-close">닫기</button>
+				<button type="button" class="btn btn-warning font-bold btn-close">닫기</button>
 			</p>
 		</div>
 		<div id="div-main" class="div-mains">
@@ -65,10 +67,10 @@
 				볼 설명서를 눌러주세요.
 			</p>
 			<p class="text-center">
-				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-01">영화 받기</button>
+				<button type="button" class="btn btn-secondary font-bold" id="btn-01">영화 받기</button>
 			</p>
 			<p class="text-center">
-				<button type="button" class="btn btn-secondary btn-sm font-bold" id="btn-02">영화 보기</button>
+				<button type="button" class="btn btn-secondary font-bold" id="btn-02">영화 보기</button>
 			</p>
 		</div>
 		<!--
