@@ -42,9 +42,9 @@
 		}
 		#div-content {
 			width: 100%;
+			padding: 0;
 		}
 		#prizeText {
-			margin-top: -1rem;
 			color: #000000;
 			font-size: 2rem;
 			font-weight: bold;
@@ -185,7 +185,7 @@
 			theWheel.segments[theWheel.getIndicatedSegmentNumber()].fillStyle = '#FFFF66';
 			theWheel.draw();
 			//alert(winningSegment.text);
-			$('#prizeText').text(winningSegment.text);
+			$('#wheelTitle').text(winningSegment.text);
 		}
 		function playSound()
 		{
@@ -198,7 +198,7 @@
 				theWheel.segments[x].fillStyle = '#FFFFFF';
 			}
 			theWheel.draw();
-			$('#prizeText').text('');
+			$('#wheelTitle').text('몬스터 헌터: 월드 - 수렵 대상 룰렛');
 			theWheel.stopAnimation(false);
 
 			// Reset the rotation angle to less than or equal to 360 so spinning again works as expected.
@@ -210,9 +210,12 @@
 		};
 		function setAutoSize() {
 			var willSize = window.innerHeight - 160;
+			//console.log('1: ' + willSize);
 			if (willSize < 300) {
 				willSize = 300;
 			}
+			//console.log('2: ' + willSize);
+			//console.log('iW: ' + window.innerWidth);
 			if (willSize > window.innerWidth) {
 				willSize = window.innerWidth;
 			};
@@ -220,7 +223,8 @@
 			//console.log('iW = ' + window.innerWidth);
 			
 			$('#myCanvas').css('width', willSize);
-			$('#myCanvas').css('height', willSize);
+			$('#myCanvas').attr('height', $('#myCanvas').attr('width'));
+			
 			$('#div-arrow').css('width', willSize);
 			
 		};
@@ -231,7 +235,7 @@
 		<div class="jumbotron">
 			<div class="text-center">
 				<h1>
-					<b>몬스터 헌터: 월드 - 수렵 대상 룰렛</b>
+					<b id="wheelTitle">몬스터 헌터: 월드 - 수렵 대상 룰렛</b>
 				</h1>
 			</div>
 		</div>
@@ -246,8 +250,6 @@
 				onClick="startSpin();">>
 			Canvas not supported, use another browser.
 		</canvas>
-	</div>
-	<div id="prizeText" class="text-center">
 	</div>
 </body>
 </html>
