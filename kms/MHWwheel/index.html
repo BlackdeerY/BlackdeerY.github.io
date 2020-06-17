@@ -75,7 +75,7 @@
     </style>
 	<script>
 		var theWheel = null;
-		let tickSound = new Audio('tick.mp3');
+		let tickSound = new Audio('./tick.mp3');
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 			setAutoSize();
@@ -96,7 +96,7 @@
 					'duration': 3,
 					'spins': 5,
 					'callbackFinished' : 'alertPrize()',
-					'callbackSound' : playSound,
+					'callbackSound' : 'playSound()',
 				},
 				'fillStyle': '#FFFFFF',
 				'segments':
