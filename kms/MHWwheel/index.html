@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>룰렛 - 몬스터 헌터: 월드 토벌 대상</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="MHW 룰렛">
+	<meta property="og:description" content="룰렛 - 몬스터 헌터: 월드 토벌 대상">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../common/resources/css/bootstrap_spacelab.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../common/resources/js/popper.min.js"></script>
+	<script src="../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	<script src="./Winwheel.min.js"></script>
+	<script src="./TweenMax.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+		}
+		#div-top {
+			width: 100%;
+			min-width: 41rem;
+		}
+		#div-arrow {
+			width: 100%;
+			margin-top: -1.4rem;
+			margin-bottom: -1.2rem;
+			color: #000000;
+		}
+		#div-content {
+			width: 100%;
+		}
+		.img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+		.font-1rem {
+			font-size: 1rem !important;
+		}
+		.font-3rem {
+			font-size: 3rem !important;
+		}
+		.tooltip-inner {
+    		max-width: 100% !important;
+			font-size: 1rem;
+		}
+		.jumbotron {
+			padding: 1rem !important;
+			margin: 0px !important;
+		}
+    </style>
+	<script>
+		var theWheel = null;
+		let tickSound = new Audio('tick.mp3');
+		$(document).ready(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+			setAutoSize();
+			window.addEventListener('resize', function() {
+				setAutoSize();
+			});
+			theWheel = new Winwheel({
+				'canvasId': 'myCanvas',
+				'innerRadius': 220,
+				'numSegments': 63,
+				'textAlignment': 'outer',
+				'textMargin': 10,
+				'textFontSize': 20,
+				'responsive': true,
+				'animation':
+				{
+					'type': 'spinToStop',
+					'duration': 3,
+					'spins': 5,
+					'callbackFinished' : 'alertPrize()',
+					'callbackSound' : playSound,
+				},
+				'fillStyle': '#FFFFFF',
+				'segments':
+				[
+					{'fillStyle': '#FFFFFF', 'text': '알바트리온'},
+					{'fillStyle': '#FFFFFF', 'text': '사납게 터지는 브라키디오스'},
+					{'fillStyle': '#FFFFFF', 'text': '격앙 라잔'},
+					{'fillStyle': '#FFFFFF', 'text': '무페토-지바'},
+					{'fillStyle': '#FFFFFF', 'text': '진오우거 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '라잔'},
+					{'fillStyle': '#FFFFFF', 'text': '티가렉스 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '상처 입은 얀가루루가'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레우스 희소종'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레이아 희소종'},
+					{'fillStyle': '#FFFFFF', 'text': '얀가루루가'},
+					{'fillStyle': '#FFFFFF', 'text': '진오우거'},
+					{'fillStyle': '#FFFFFF', 'text': '안-이슈왈다'},
+					{'fillStyle': '#FFFFFF', 'text': '모두를 멸하는 네르기간테'},
+					{'fillStyle': '#FFFFFF', 'text': '미친이블조'},
+					{'fillStyle': '#FFFFFF', 'text': '네로미에르'},
+					{'fillStyle': '#FFFFFF', 'text': '죽음을 두른 발하자크'},
+					{'fillStyle': '#FFFFFF', 'text': '홍련의 솟구치는 바젤기우스'},
+					{'fillStyle': '#FFFFFF', 'text': '이베르카나'},
+					{'fillStyle': '#FFFFFF', 'text': '오도가론 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '디노발드 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '안쟈나프 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '얼려 찌르는 레이기에나'},
+					{'fillStyle': '#FFFFFF', 'text': '브라키디오스'},
+					{'fillStyle': '#FFFFFF', 'text': '티가렉스'},
+					{'fillStyle': '#FFFFFF', 'text': '디노발드'},
+					{'fillStyle': '#FFFFFF', 'text': '나르가쿠르가'},
+					{'fillStyle': '#FFFFFF', 'text': '벨리오로스'},
+					{'fillStyle': '#FFFFFF', 'text': '푸케푸케 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '파오우르무 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '토비카가치 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '버프바로'},
+					{'fillStyle': '#FFFFFF', 'text': '브란토도스'},
+					{'fillStyle': '#FFFFFF', 'text': '나나-테스카토리'},
+					{'fillStyle': '#FFFFFF', 'text': '맘-타로트'},
+					{'fillStyle': '#FFFFFF', 'text': '이블조'},
+					{'fillStyle': '#FFFFFF', 'text': '제노-지바'},
+					{'fillStyle': '#FFFFFF', 'text': '발하자크'},
+					{'fillStyle': '#FFFFFF', 'text': '크샬다오라'},
+					{'fillStyle': '#FFFFFF', 'text': '테오-테스카토르'},
+					{'fillStyle': '#FFFFFF', 'text': '디아블로스 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레우스 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '우라간킨'},
+					{'fillStyle': '#FFFFFF', 'text': '볼가노스'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레이아 아종'},
+					{'fillStyle': '#FFFFFF', 'text': '도도가마루'},
+					{'fillStyle': '#FFFFFF', 'text': '키린'},
+					{'fillStyle': '#FFFFFF', 'text': '디아블로스'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레우스'},
+					{'fillStyle': '#FFFFFF', 'text': '오도가론'},
+					{'fillStyle': '#FFFFFF', 'text': '레이기에나'},
+					{'fillStyle': '#FFFFFF', 'text': '라도발킨'},
+					{'fillStyle': '#FFFFFF', 'text': '도스기르오스'},
+					{'fillStyle': '#FFFFFF', 'text': '파오우르무'},
+					{'fillStyle': '#FFFFFF', 'text': '치치야크'},
+					{'fillStyle': '#FFFFFF', 'text': '리오레이아'},
+					{'fillStyle': '#FFFFFF', 'text': '안쟈나프'},
+					{'fillStyle': '#FFFFFF', 'text': '토비카가치'},
+					{'fillStyle': '#FFFFFF', 'text': '쥬라토도스'},
+					{'fillStyle': '#FFFFFF', 'text': '볼보로스'},
+					{'fillStyle': '#FFFFFF', 'text': '푸케푸케'},
+					{'fillStyle': '#FFFFFF', 'text': '쿠루루야크'},
+					{'fillStyle': '#FFFFFF', 'text': '도스쟈그라스'}
+				],
+				'lineWidth': 1
+			});
+		});
+		function alertPrize()
+		{
+			let winningSegment = theWheel.getIndicatedSegment();
+			for (let x = 1; x < theWheel.segments.length; ++x) {
+				theWheel.segments[x].fillStyle = '#EEEEEE';
+			}
+			theWheel.segments[theWheel.getIndicatedSegmentNumber()].fillStyle = '#FFFF66';
+			theWheel.draw();
+			//alert(winningSegment.text);
+		}
+		function playSound()
+		{
+			tickSound.pause();
+			tickSound.currentTime = 0;
+			tickSound.play();
+		}
+		function startSpin() {
+			for (let x = 1; x < theWheel.segments.length; ++x) {
+				theWheel.segments[x].fillStyle = '#FFFFFF';
+			}
+			theWheel.draw();
+			theWheel.stopAnimation(false);
+
+			// Reset the rotation angle to less than or equal to 360 so spinning again works as expected.
+			// Setting to modulus (%) 360 keeps the current position.
+			theWheel.rotationAngle = theWheel.rotationAngle % 360;
+
+			// Start animation.
+			theWheel.startAnimation();
+		};
+		function setAutoSize() {
+			var willSize = window.innerHeight - 160;
+			if (willSize < 300) {
+				willSize = 300;
+			}
+			if (willSize > window.innerWidth) {
+				willSize = window.innerWidth;
+			};
+			//console.log('will = ' + willSize);
+			//console.log('iW = ' + window.innerWidth);
+			
+			$('#myCanvas').css('width', willSize);
+			//$('#myCanvas').css('height', willSize);
+			$('#div-arrow').css('width', willSize);
+			
+		};
+	</script>
+</head>
+<body class="font-1rem">
+	<div id="div-top" class="container-fluid">
+		<div class="jumbotron">
+			<div class="text-center">
+				<h1>
+					<b>몬스터 헌터: 월드 - 토벌 대상 룰렛</b>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div id="div-arrow" class="container-fluid text-center font-3rem">
+		▼
+	</div>
+	<div id="div-content" class="text-center">
+		<canvas id="myCanvas"
+				width="1000"
+				height="1000"
+				onClick="startSpin();">>
+			Canvas not supported, use another browser.
+		</canvas>
+	</div>
+</body>
+</html>
