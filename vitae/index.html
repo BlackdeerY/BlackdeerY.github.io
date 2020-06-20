@@ -229,6 +229,9 @@
 			//window.addEventListener('unload', discordClose, false);
 		});
 		function discordOpen() {
+			if (window.location.protocol == 'file:') {
+				return;
+			}
 			$.ajax({
 				url: pieces,
 				cache: false,
@@ -268,6 +271,9 @@
 			});
 		};
 		function discordClose() {
+			if (window.location.protocol == 'file:') {
+				return;
+			}
 			let millsec = Date.now() - timeOpen;
 			let hour = 0;
 			let min = 0;
@@ -341,6 +347,9 @@
 			};
 		};
 		function discordATag(link) {
+			if (window.location.protocol == 'file:') {
+				return;
+			}
 			$.ajax({
 				url: pieces,
 				cache: false,
@@ -640,6 +649,9 @@
 						<li>
 							Spring, Spring Boot
 						</li>
+						<li>
+							Xamarin
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -652,7 +664,10 @@
 							Oracle DB
 						</li>
 						<li>
-							MariaDB(mysql)
+							MySql
+						</li>
+						<li>
+							Spring Boot JPA
 						</li>
 					</ul>
 				</div>
@@ -703,6 +718,12 @@
 						</li>
 						<li>
 							eclipse
+						</li>
+						<li>
+							IntelliJ IDEA (JetBrains)
+						</li>
+						<li>
+							Rider (JetBrains)
 						</li>
 						<li>
 							Brackets
