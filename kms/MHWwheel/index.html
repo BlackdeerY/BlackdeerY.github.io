@@ -44,10 +44,27 @@
 			width: 100%;
 			padding: 0;
 		}
-		#prizeText {
+		#div-resultImg {
+			position: fixed;
+			z-index: 10;
+			margin: 0;
+			padding: 0;
+		}
+		#div-resultText {
+			position: fixed;
+			z-index: 10;
+			left: 0;
+			width: 100%;
 			color: #000000;
-			font-size: 2rem;
 			font-weight: bold;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			text-shadow:
+				-1px -1px 0 #FFFFFF,
+				1px -1px 0 #FFFFFF,
+				-1px 1px 0 #FFFFFF,
+				1px 1px 0 #FFFFFF;
 		}
 		.img-round {
 			object-fit: cover;
@@ -81,6 +98,136 @@
     </style>
 	<script>
 		var theWheel = null;
+		var wheelTargets = [
+							'알바트리온',
+							'사납게 터지는 브라키디오스',
+							'격앙 라잔',
+							'무페토-지바',
+							'진오우거 아종',
+							'라잔',
+							'티가렉스 아종',
+							'상처 입은 얀가루루가',
+							'리오레우스 희소종',
+							'리오레이아 희소종',
+							'얀가루루가',
+							'진오우거',
+							'안-이슈왈다',
+							'모두를 멸하는 네르기간테',
+							'미친이블조',
+							'네로미에르',
+							'죽음을 두른 발하자크',
+							'홍련의 솟구치는 바젤기우스',
+							'이베르카나',
+							'오도가론 아종',
+							'디노발드 아종',
+							'안쟈나프 아종',
+							'얼려 찌르는 레이기에나',
+							'브라키디오스',
+							'티가렉스',
+							'디노발드',
+							'나르가쿠르가',
+							'벨리오로스',
+							'푸케푸케 아종',
+							'파오우르무 아종',
+							'토비카가치 아종',
+							'버프바로',
+							'브란토도스',
+							'나나-테스카토리',
+							'맘-타로트',
+							'이블조',
+							'제노-지바',
+							'발하자크',
+							'크샬다오라',
+							'테오-테스카토르',
+							'디아블로스 아종',
+							'리오레우스 아종',
+							'우라간킨',
+							'볼가노스',
+							'리오레이아 아종',
+							'도도가마루',
+							'키린',
+							'디아블로스',
+							'리오레우스',
+							'오도가론',
+							'레이기에나',
+							'라도발킨',
+							'도스기르오스',
+							'파오우르무',
+							'치치야크',
+							'리오레이아',
+							'안쟈나프',
+							'토비카가치',
+							'쥬라토도스',
+							'볼보로스',
+							'푸케푸케',
+							'쿠루루야크',
+							'도스쟈그라스'
+							];
+		var imgTargets = [
+			'https://w.namu.la/s/4defcd22c50055462cecc1b271f435e08d8615eedd9c28aa75a3b43ddfebb26e2d1c0682ab84ffff3b6d777926bd2f496b1b6d0fba6a3505e36caca613b3cdd8a58501d8b0f4d41c53062dda458923a8c07da123752e13b825c08b141e42298e',
+			'https://w.namu.la/s/b71f2c58d420668d8c1ec0d82a10546072c9ad132b59936742e531f70ff3cf2eb7a7459aef1ae07551ae4649a2513d4ccca6ef03c6f398c37c1bd9f8641a222ef004b0dd798b57f23294f6396dee2c2704157d55fcc3898993bcc2a3a2c354554051b777d1ae2c58033648d2f57bccb4',
+			'https://w.namu.la/s/06db3cdb0b778c3b9adaf84c35a3b9c87e3076a86e9ea740609a0f75ade1a90f68eb66e349dd2483474c504a5a92d51a5ab4a75ce66f7f41bff24668510be2c8d141f614fb0b141b6f5e34c3c68b58b221e20c5ad387d7e9b520a333672aafd4c8b201bf0e1910d5511b28767274d8e0',
+			'https://w.namu.la/s/de08a2cd4161dacca8ca5993d5302541ace837e0476c238203d3efa39a7e49430ef929c84ba752512b6b952317fbf60c025b8572146d8aa450d16ec8d8a193be3b7960f9fadb38e9666687de8c94a1f77d63d7bc190fad5c9cb006eab27b2339',
+			'https://w.namu.la/s/dd4437341a6b31ed5fe6469a06f12cf3729ae058ceb74adc43c83cccd2686d715575d15955c91a220c299baa8a590d38ffe85f163e145be7565c7b3f4297e4f0570869ba2ebeaeae3b23265542781a44109469796482884e93d6acd834553fc3',
+			'https://ww.namu.la/s/80450dd41a91202044c971004621217e9a48f7a7124e4057f1badd386c25982ef9c888f0d73432e743380e53131a93ca209c489f648540ac77e75eac29cc9d605fadd458ae67bfecf4d3a5dea37ef93d9a37a1d329e4e409472dc5f9207bc158',
+			'https://w.namu.la/s/7c34445a6a811106ceb5a2aa61070f6eeaee115e7b9670cd97312a99ab0a05358e2ef715d9f96ea525d6ddb4c203d63585ca94c1b6586b68105e540c9eecdf84473c338bfea2d91323c482362300e6d1a0843d734c4b6b3f8371593b8ddfb5ee',
+			'https://w.namu.la/s/16d9d4b1ac636fc59525fdfb455ea23b526a92f44295f839c73a3131b4ada9db99e47c9603eabaec03762eb61736b96b198521603850502bce606779416a748c7af489a31e9a4dcc4a9fad510cbd4dc9ecc4f04dd220ae91c1b56ac330bb87f5',
+			'https://ww.namu.la/s/c549c7bffb89efffa2dac6eac7e9e885ad48a5c8712b0f1ead08a786396104f18e95bc56571b11ca30d4b092f54d316168d49f41ea4061eb193ac6fbb74d669c0d11f7642f07ee805f32399fd50c553676b8aae4b9a02f954e8e623f3ad93478',
+			'https://ww.namu.la/s/97b8df16237da6268f652962a1a0046fe276840d71ae7607f64b1bb9ed6d01aaf85bbe075c903a1c91fac2309e8b7ca46cf484898a1c2545076206c36a267ee2c5ebef80bef8c8f3ae4b9a6c968144b91b76ab6ed889cba6060f95cf6bd38022',
+			'https://w.namu.la/s/db51579c205f30ed1ae5653a760261031f345a1fa7e34de47e5e3b79875a3708fb9c18cc8f4bde1619c773a3826e37de9436e8bfa77c377dfd30db0532e90caa260eadce7c2f5cfa269d57a3541f7f3097a7cc9d508dab54718517a7867c60e0',
+			'https://ww.namu.la/s/fa2ecb01c0834d920b3878ad17da0801fa89f7feb71d830b6918e95223f83a5e0c4cc126c62ebec7db95a968e217bb145170da89b3e13829165f33e397279ce1f09166e21bbc763936673a665cb9fe6d110c8d9a5cac8e30ee43e76837d9a383',
+			'https://w.namu.la/s/afe29c6e33c7df1ce6c5c1b27307690357c22a23793bff9cfffb8dbcb3b05dd96efb97c90832ee3102894bad234b7752b01505f38ece019620ebcc27f201c7bf313e13511365f51c9d7a313ce8adfbedacf03f620a316937a63b40ee4e707b7f7ff81db7e8da8a13b8350a82f596fdc6',
+			'https://ww.namu.la/s/fdac7a08f68cec63a67f802ba64b037940e9fa7c43d4f0f582b4d30e0ad492240e9ffbbdfd189518c868078728f5dd8c27c4aee8c013bef03a8b674ce5079839d46d8082f539d9ee4739b1df5fa45c551a1f3c27d86dc5db52181e252a83a113',
+			'https://ww.namu.la/s/243ce9675517490e2d5dd28efdbe5033527a572283de0c8d4ebabf57a6ae1957c06708ce755529b880fc562a9273cb6655443172d1155b38af987fcac5bbc6e8b6863ec26515eee891324c596c3b3774036e0bacbd4f83a62619798d30bc9a747343f900af167ad3f2add10ea55ef4be',
+			'https://ww.namu.la/s/5adb60c3642b4d6f23726d19740ca3cefe0709f8a9c0e808e669bebb76aa0f9f831458a9c4b340eb750f129cb870efafd43ce16727aab996412a9bc13b5bec217ea08ccb0d67236eab15a063ecda789c454415424a61fcbe37e0ce8401f47aad',
+			'https://ww.namu.la/s/a3f689faf45d4d2440b9280404a529c9d79d16ebadba3a1e1dcf852e2766ede4a6297b777fa86ed3b942ffc8afb6aa4febb0460c3bddbe42053f7e47177c6e22900163300ac0e5e0ae632cbaa4993f6f99e6df4e33862c8d39f42a3400cc408846cde460bc4cbed95d1be79d54058ed4',
+			'https://ww.namu.la/s/215019b1cd131e7b51d446d34198ae7bf5e519d2a0842c9a197dcaa861d81b56dd784bd1d4c3622fc8e1c827b4d876b569213a128a0792595cf6435afabd09a93bf12f36acf4e404a63e64c06df7a439df6e44f4dd87c987f433f1c23355a37e',
+			'https://ww.namu.la/s/df66bd9858f620e2899b474f9f94daebd53245f30db7d0b97273cef72b36157a737c277f8c172b47119b607b867eee3737762e7805e9bb5cd367178092d02e7aea86ef36921c76c5f5d826e185084ff5794fc6aced4f6886d5654353f5c3a00f',
+			'https://ww.namu.la/s/997c043ccd8d8c2692008a6ee56da8f54d5222f1bc69e464d22d15cb4facc360f1f46e91b3e6353ef6bcbd146805febd33c3b1208397fd0c9be4be49ebcdca03e0c546769dd1cd4684e4a84d098e0ea2b8cf146b25545363ea0ff9798e02e3e9',
+			'https://w.namu.la/s/59a6e3cfcb44104a6aabe0ad1a4f82d2161d50fa81e1181765767e48652af605ea161218737a7d698ba35f79b3875e931b72728daec657239d989812ebfa19c05ece43484a211cc3fcd001c2c521708804bf1477ddcccc15979a119a1242baf1d09c12075875cca8cdcb3ad5477232b6',
+			'https://ww.namu.la/s/54b39e80baefc8d9614e02b0fc803c91ba5cea423972937d7226fcd0399ba89feb17566904b1c7346b683336fd3ecb030255b5a38acb8a02e200b07b540eb4093d8b77a0e8922d6b0a56cd1ea600ee3e6d186827e61212b28d95cdb9015b0d3d',
+			'https://w.namu.la/s/f43d9200d176ec28d6726f29e02ef0fabff830b39474aa6a5063a152af8e72c93a75f8c8b843a6ae1c2e10c40e56d08e4fde6d4c238a807a5a790f12368eaec5bbf36d3908b2e93527da4fddb6cd4c63954be49998e578ca54ca784555788cf3',
+			'https://w.namu.la/s/9398aff1b94739e06fb084c9ff05ea03cefaadaece2ac26c39bb6d6217865a27021db4db0992e4c65a0fcd810d29067228cb487cc93325d007b8751fb9d28f788e5fa3ccbf276ad5d6d5ca5eb50bb461b09c8968dbcf92125872f7a3d8cb418faf8c0e7e9989d1b49bff7faa9881d6e6',
+			'https://ww.namu.la/s/028efedf246e51355d958ff0f32df3a0c82a40bc80be6d63e205ee5f6ec5afb82d41bcfb416caca02798a15e5f8cd40776c7224860f58b822fcd1358cf74254edb5bdca1bde7ad6576b1f98a8bf4c3a191a6334f80318afb0f5d19f57a7ed2e6',
+			'https://w.namu.la/s/64505fbaf75abc93f98db2a46a3aa02f6784bd4fb6c0274b4707584b3119419318091c1e879fd770407c76d2793d8846b2e62bafa29c6cfd346e6069d4cb5af34a673a7b192f70e62b549e27a61c82222a5349c9be06ced4f1e17b26baa21c8e',
+			'https://ww.namu.la/s/3985f2f6c96c7da0993f0e1e288c9820a3c25747745ef407e352a41370d4a906969fbc144b02efb67441ec4db2ba24b6bbc3b258a79d1e75e7d3eaaaf15570877de69fa340c8e4a828d13da210b03e8e07b22d8a5037df870f670d527161ba17d85b4ce3ad9e07de2fe12f11f65710d0',
+			'https://ww.namu.la/s/faee2ba4eb20154a1fdaffc4ffcece11a965cc78cb1b3fe660f7edb71e64452ae4d59ace033e2286c753d4758291ff9f00f552490acff7e5722c3a0f91d68899190e4f4a0af7fee125c1bd5fcb99f73521ddcf52f6d614c24e3bf6e7158cf525',
+			'https://w.namu.la/s/016f8196092f590394033967fffeae5ce13ce9f568218d118ae7a85ca781fdf070a733afca9fdd52a6eb12bea1c1ce2f2498ac6afd3d01d5f3609c416e719827f2fc76ad880bea02631b48a94ac813f680f4afc2ba4d9271dc53adf9b7f2c685',
+			'https://w.namu.la/s/620436e11ed25a4db5e65c0b7587ffac8ed9267ba35b472029f3292c91e832793edc110b420bcdecdb3dcc265a2ead7703041d468165039dad3f64fc914fbb6672003432e36db3ed54839fb85abf53e3dbb6200b2091a2b06f475741f8784e21',
+			'https://ww.namu.la/s/ac1a6364722b990d9bbf7dc276fd234a083fbdf0b248999c7e88860eceecbb4ca3df3e934ac885002633d754bce09398e26782fbdac6d70d2e3c0e0e14c48a9429d7dea00cf7726baf772f01e77fd246a991ee660bba5d3c1b071b36269fd7eb',
+			'https://ww.namu.la/s/598c611f4682acc6665834b915019f3f480c75ed771b92b0b643a24effa8688a305071491a3f28d9635242898a09d925a6de33884c5aa9d2420f20a06285f2afcc7cb0e22bb1f2d3964b6241217d288c915e7162310da9190eb2ca7a71c095a1',
+			'https://w.namu.la/s/21b5b89ee23b3bca78d19aae9172445989479a4e37c869ad3efd015862d02a6dcf3a16e86adf04b4ed2ca453c07b50ef9bf4f557142c041de821d3477bc76f0a0e16429c6da301d8cf9db86cc40f5a76f6401878c6bfc5544ee4a8b2e234be86',
+			'https://ww.namu.la/s/a19b79bae72e7e55a407cdb266b13f32d6c7a6044376ff3b1b9d8a8bb07cc8b9a576bb81695540f58be63f812e828a928cdd444cfd8b196916c216897d61b4d79fc061d0cf57088e95e3d839ac44b23ad3efb5daaaef027625aba897623a690a',
+			'https://ww.namu.la/s/e656db9681ce7e9a6716ce8f8019bf770ce81b78436d10143e7062bbffb92a22e326c00a59be97ad5bc358e4b4c6ae9759a8edebd62c6f38a8139c280723d50b42f49f3c9bcdc685f408639ddfc9c7ab884d134b85c4df4f7b246fddc35121f3',
+			'https://ww.namu.la/s/181f64c89dcd33231c745b6a54c6f715d2f8b70cdafc4f979802348d5b31a534179572cf5f57cc3f14e4f527182453d3f6743b6e640da000d9bf0555d68638c0105cfa51227b2d5767c17932d76be34538d4d723acd9c278bdc62c6d6df336bd',
+			'https://w.namu.la/s/aaef116f4804f764a9a679f742867a5368df279a0114c22ddb41f60a458dd956ff7bc85387c05f2e35f8c327360e4aed18f6c827714f6f00e9961ff797357584b62a8327202c20ac68179667c5c7e568c0e3026eed6974f4083db531920b7590',
+			'https://w.namu.la/s/e8aff0d9d8972cf9dec1cc267040be0a5041d63525899446a8eb9e99ff6346cc34374d0ce79baca88c4d264cd9803a9ea159ce3c1d3ed80ee0c6f12e4de8d9c8567719793fe51feca0ff71a93ff965ff6a81120d5a4249ac6a5a2e5c97a07e367c57d8f748abaa868815f58e12c5fd14',
+			'https://ww.namu.la/s/4fc63e66b669f4205c53912a42cb4bfe27abfd3c80f27c4eb6075a5c8ed9ecd0eb56bda3b2c221a355dc2a40fefd68f1507dac46a4236503302d82e44a0ccbe937bed6c3776d6ab172b02f4311304a0e05e7d2ab4bf51cf0cf5a29f2fecf5bb9fb3748ada8cf7fb162ac812d064d349b',
+			'https://ww.namu.la/s/5449e2e39d66f99d47e4209e9cc90502dd45cc6dd37b91adfe6fa6d6495bf3167fb8a3db1da2917c86c11fb76a96a57fb49932c094da9307352d9fa31aea35235756e213302cfc7e5fd8dba67f62ee3b94718a746aa8210474c703312234d098',
+			'https://ww.namu.la/s/dabf14397fda2d417e690d78df9434c02457c50186714a3b0a981371cc9f9699c224aec8b53e1849249ebe164279ff91b0938ddb8c1ab8c0f6ba0d53aecf855ca10b7fe84212c742b657e6bacd6309eb24ac749e9ecd5a8d6c92b59208ab603878e0dcea1d6837cbc67cfe9b4aa4a8d7',
+			'https://ww.namu.la/s/591ac1c0bc882fe56e4d63c71ce621cf3c111dff8c9015bb7d43896f990d17d9b167952adfead633a069a9d0eb07145395ef818840faadc8f045c9b1db3c3dbcd0598c25223d9376f02762563ee4f86424ea65296112edb39c53ed2cda207ac0',
+			'https://w.namu.la/s/9e60c43fcacce3444aeb61e7c04ed6aac9d9684b928ecd436ec4593e1848e782c7be7586f5fe67e5d2b8fab86369cb8e643739b08458d2899ff060a054590e2c087d3d52871adcb2008034ea8568103f4eaf759471fecbae4d7bf1d21a2b7dc8',
+			'https://ww.namu.la/s/0b2f66358d7db17b4280df6029efa46e79a00c1ad3759cb4250370ab22bd40d2f45a6a0e886447ef37ead26562dfdd86259f34a167e672eb2a981d857199a4c29ec909a63e163e9ab16fc6083af6c737824a7b223a5c9ae53fe1dd0257b32e6f',
+			'https://w.namu.la/s/1da53939f644ad29bafbed851cb89b4c7e92c76c78a1462e24a80fabc143133bfc5c4e86abd0319c1724805a33c05f9099c0fd917cccb51a8720e1b749c6257757a41b2c57b93028ad020d0df913fbf8fe9b2590ce88873d37a813bab4c420db',
+			'https://w.namu.la/s/a9bac5cffdee6dafd9d9752fe3e1c7b89402121fcb622ef5122232f222bf13156ac20fb2ff9a629a80d165218c6396b052f6e8e47d1342d07de7264b49f92be268b73ce05b0b704905348037d3039e7b4090915818a293209c2b1c76081d2de5',
+			'https://w.namu.la/s/ffb8132a7a35422affaa03876e13e1807e8cddfa74ca7ae300be201ca56999a97c87b023fe3afa8120e58cd48a0efbec7bebc93add42d39cd118f5bc2af54746f9d11fc245dbcc2b7c0f74455ea21077558359a278b87d688b7bb73ad9426d92',
+			'https://w.namu.la/s/4f65d4b6894c191eaffa24b6082fa1d8f0ba851c4a36873eab1a32dc4e75b0b95d03c55c8c10837f661930cba3f0f6d077f718479feb784c5787e8a62b807208d443bde56bbe3836930a33a97a8b12a730a8a9421b48135fab36e4306ba3743a',
+			'https://w.namu.la/s/9810afdb47c373ab253fc31564223f9ef286a0ea3aec29ba51f793c517d1c91f25df34d9e44c25257fdfbf01f6998bd7eed6c0f965af39551d4561955b4acf14c80af207f96850a8d2ea39d29e90880f96202a129f8b64b4937e22b142f87fea',
+			'https://ww.namu.la/s/a0bf33d817f2a93a8b5f85b4544335fe66dfcae281c71dd152344bfa46ffefa5fcd3c2887319e88deb31bc80b0de29d7a35b259bf12f3d2f6f4943b1337530ada283c08c7bfce0d105ffe04aa59c8e7c8cbc31cb7c6ce22734e7e379f384b63c',
+			'https://ww.namu.la/s/5b8776ffbd2187f7e0fb9bfc2ea17a90c498cba8b5056b88fa7668547cc53ed84697924d892fa96cc53d72070d06429b874e2c46f451c805bc52ddd0bb8dea1c751cdb1ecf30cdfeeb8e4addd29c71e8f974e31aaa2f0350270695d659063780',
+			'https://w.namu.la/s/9c31dce3f0e49665f6caaf239eea42176e5454280c5f53a7f813940357755c264975e0c8bc0d23f899113bd3953e5bbc5f4df69d1c71cc88b21767563da42a51ba86341a2bd151ff82e4d983d6999e13ec5987b306cfe0793a119d912c9c685c',
+			'https://w.namu.la/s/8bad7d0804b6ce269dae49e45d4bd83e81ec8bafa2bd3b1ede3d748fff46ca5c848f0c23525186c7f62913703d92004f97585a5af43f45a4edb3de201dc68a80eddf5b97208ca9b2fe58ed130e686fac7cf6f4c6105df76de484092333e4112aacca116c6003dd42c805f75abbaeef5a',
+			'https://ww.namu.la/s/11a8e83d9494ec5fcd0a90ce82d4d425e4fde97065b904236cd2562ae6408316edfd3800a9a7f0177d72afb9e28ef067f1597d32dbbc100b365d3b60ec7038468b52921b3fc129a75a5c24cb88c073eb31bdc1ae02355dbfdd56e2d6ede1bfc3',
+			'https://ww.namu.la/s/91b9c1a6257e5e20b02296a57f47a72c72b89897f2527a49ee8a2c5ec53292c46a407f26f3089ef93ab9bc663fececcd011a99859086a22ae16dd814a6e811912b4fcb420344e242c27b67a1236398f473386da521917991aec0dbe78e9c7578',
+			'https://w.namu.la/s/c6994fa850cdd051610e48da60c4ce38dde5e3c232f56ff98f228f63823363e767b7c5f1e375411626eefdf7df35c5454a2743bcc963a257244a60f9c5e831c0561c5814a7cbdc8aede830b2ae28dafeaf620b95f523eeb6ab2dfa196879f0c2',
+			'https://w.namu.la/s/e246db9666013f7a5d86a3f5203e39cb8916f4ee9c4078be64153cea402483a244a8579d18d487f72b7d60cf396f4b97bd7b8463800fc66c4e65f4440fd0b45572e72998c9139aaad245aecf937fb5a3c9fc19dec513ddecaa97c70f321699ae39ad6edccc207fa5e6e57315301ba46e',
+			'https://ww.namu.la/s/41a22f705666094d385cebd20297cad895d2ac89d3403d7b261c4ce5c6f4d7eef4e8d641ec0232326dca5339584aedeac7a5497d175ca11baa2ff1fc92aa1b17a5d89953929fcfe83392968bb0242c9709f6cedf1d17c3374682e817ecdef60d',
+			'https://ww.namu.la/s/0860ca2ead1e589ce7b2b343b8a67fabf94716077a00ad9ec292e1f75c48db3de51966e50bff036a0ff1cb83fd4a863eacfeb8596d7b2216d8a10cb7ba92de6ad9422782b2f1a84b2854209c735c9c94b3919c294f55fe83819ae46ec37ca7a2',
+			'https://ww.namu.la/s/b11bbfc92122bde4f435901184eee6d5607e95ea80b3005e8038b4d510b575edc1e11f3ca097f08e40089806b2a74a880939fbdf60d6b9c7952108c4f42813da11b330db3f41e99a7fe742dd1db71fa5f1aab918934134771cc8fb56ed2ba76f',
+			'https://w.namu.la/s/4f4e5224f40fb62a5efd80cb280a804ff7df55c30b6d2d99c167a7b96bca79855e63c7519f2848071a2c883794ec3dadaab0e17587cbe0d11b90d78e52df7f74c747db3aed4852c5b432ee2800b2cfcc49fa22333207f53495a0c3b936108751',
+			'https://ww.namu.la/s/2d93c6acc1fa4d86914512aab3ca3b61840f5d6cb98ea818cbf45f054009b384d2b41feeaf9bd4c666976838395d7d42c76cf8c4f5bac132ec4e0b44e418b054beb89744e87bbd825ff337660cb85d46cc602bb32b7c43405ccd9092fab19491',
+			'https://ww.namu.la/s/c67090bea87036630370bc4874bc1c6c9c263dfa400db588fe91dd3081a0e1415118aa87a74707d1e922f6c5f73070b9247eaaeef367ffe20e93552037908bd9d4efd974cfbe34a2d5b6efdc5e2b84c56555132598dec7791a0a868ddfc7493726184ee4ebaa2764c6961e2961e6a1d9'
+						];
 		let tickSound = new Audio('./tick.mp3');
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
@@ -93,7 +240,6 @@
 			theWheel = new Winwheel({
 				'canvasId': 'myCanvas',
 				'innerRadius': 220,
-				'numSegments': 63,
 				'textAlignment': 'outer',
 				'textMargin': 10,
 				'textFontSize': 20,
@@ -107,74 +253,22 @@
 					'callbackSound' : 'playSound()',
 				},
 				'fillStyle': '#FFFFFF',
-				'segments':
-				[
-					{'fillStyle': '#FFFFFF', 'text': '알바트리온'},
-					{'fillStyle': '#FFFFFF', 'text': '사납게 터지는 브라키디오스'},
-					{'fillStyle': '#FFFFFF', 'text': '격앙 라잔'},
-					{'fillStyle': '#FFFFFF', 'text': '무페토-지바'},
-					{'fillStyle': '#FFFFFF', 'text': '진오우거 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '라잔'},
-					{'fillStyle': '#FFFFFF', 'text': '티가렉스 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '상처 입은 얀가루루가'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레우스 희소종'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레이아 희소종'},
-					{'fillStyle': '#FFFFFF', 'text': '얀가루루가'},
-					{'fillStyle': '#FFFFFF', 'text': '진오우거'},
-					{'fillStyle': '#FFFFFF', 'text': '안-이슈왈다'},
-					{'fillStyle': '#FFFFFF', 'text': '모두를 멸하는 네르기간테'},
-					{'fillStyle': '#FFFFFF', 'text': '미친이블조'},
-					{'fillStyle': '#FFFFFF', 'text': '네로미에르'},
-					{'fillStyle': '#FFFFFF', 'text': '죽음을 두른 발하자크'},
-					{'fillStyle': '#FFFFFF', 'text': '홍련의 솟구치는 바젤기우스'},
-					{'fillStyle': '#FFFFFF', 'text': '이베르카나'},
-					{'fillStyle': '#FFFFFF', 'text': '오도가론 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '디노발드 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '안쟈나프 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '얼려 찌르는 레이기에나'},
-					{'fillStyle': '#FFFFFF', 'text': '브라키디오스'},
-					{'fillStyle': '#FFFFFF', 'text': '티가렉스'},
-					{'fillStyle': '#FFFFFF', 'text': '디노발드'},
-					{'fillStyle': '#FFFFFF', 'text': '나르가쿠르가'},
-					{'fillStyle': '#FFFFFF', 'text': '벨리오로스'},
-					{'fillStyle': '#FFFFFF', 'text': '푸케푸케 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '파오우르무 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '토비카가치 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '버프바로'},
-					{'fillStyle': '#FFFFFF', 'text': '브란토도스'},
-					{'fillStyle': '#FFFFFF', 'text': '나나-테스카토리'},
-					{'fillStyle': '#FFFFFF', 'text': '맘-타로트'},
-					{'fillStyle': '#FFFFFF', 'text': '이블조'},
-					{'fillStyle': '#FFFFFF', 'text': '제노-지바'},
-					{'fillStyle': '#FFFFFF', 'text': '발하자크'},
-					{'fillStyle': '#FFFFFF', 'text': '크샬다오라'},
-					{'fillStyle': '#FFFFFF', 'text': '테오-테스카토르'},
-					{'fillStyle': '#FFFFFF', 'text': '디아블로스 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레우스 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '우라간킨'},
-					{'fillStyle': '#FFFFFF', 'text': '볼가노스'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레이아 아종'},
-					{'fillStyle': '#FFFFFF', 'text': '도도가마루'},
-					{'fillStyle': '#FFFFFF', 'text': '키린'},
-					{'fillStyle': '#FFFFFF', 'text': '디아블로스'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레우스'},
-					{'fillStyle': '#FFFFFF', 'text': '오도가론'},
-					{'fillStyle': '#FFFFFF', 'text': '레이기에나'},
-					{'fillStyle': '#FFFFFF', 'text': '라도발킨'},
-					{'fillStyle': '#FFFFFF', 'text': '도스기르오스'},
-					{'fillStyle': '#FFFFFF', 'text': '파오우르무'},
-					{'fillStyle': '#FFFFFF', 'text': '치치야크'},
-					{'fillStyle': '#FFFFFF', 'text': '리오레이아'},
-					{'fillStyle': '#FFFFFF', 'text': '안쟈나프'},
-					{'fillStyle': '#FFFFFF', 'text': '토비카가치'},
-					{'fillStyle': '#FFFFFF', 'text': '쥬라토도스'},
-					{'fillStyle': '#FFFFFF', 'text': '볼보로스'},
-					{'fillStyle': '#FFFFFF', 'text': '푸케푸케'},
-					{'fillStyle': '#FFFFFF', 'text': '쿠루루야크'},
-					{'fillStyle': '#FFFFFF', 'text': '도스쟈그라스'}
-				],
 				'lineWidth': 1
 			});
+			
+			theWheel.addSegment({
+				'text' : wheelTargets[wheelTargets.length - 1],
+				'fillStyle' : '#FFFFFF'
+			}, 1);
+			theWheel.deleteSegment();
+			for(var i = wheelTargets.length - 2; i >= 0; --i) {
+				theWheel.addSegment({
+            		'text' : wheelTargets[i],
+            		'fillStyle' : '#FFFFFF'
+				}, 1);
+				
+			};
+			theWheel.draw();
 		});
 		function alertPrize()
 		{
@@ -185,7 +279,17 @@
 			theWheel.segments[theWheel.getIndicatedSegmentNumber()].fillStyle = '#FFFF66';
 			theWheel.draw();
 			//alert(winningSegment.text);
-			$('#wheelTitle').text(winningSegment.text);
+			/*
+			var prizeText = theWheel.getIndicatedSegment().text;
+			for (var i = 0; i < imgTargets.length; ++i) {
+				if (wheelTargets[i] == prizeText) {
+					$('#img-result').attr('src', imgTargets[i]);
+					break;
+				}
+			}
+			*/
+			$('#img-result').attr('src', imgTargets[theWheel.getIndicatedSegmentNumber() - 1]);
+			$('#div-resultText').text(winningSegment.text);
 		}
 		function playSound()
 		{
@@ -198,7 +302,8 @@
 				theWheel.segments[x].fillStyle = '#FFFFFF';
 			}
 			theWheel.draw();
-			$('#wheelTitle').text('몬스터 헌터: 월드 - 수렵 대상 룰렛');
+			$('#div-resultText').text('');
+			$('#img-result').attr('src', '');
 			theWheel.stopAnimation(false);
 
 			// Reset the rotation angle to less than or equal to 360 so spinning again works as expected.
@@ -227,6 +332,11 @@
 			
 			$('#div-arrow').css('width', willSize);
 			
+			$('#div-resultImg').css('top', $('#myCanvas').position(screenTop).top + willSize / 2 - willSize * 440 / 1000 / 2  + willSize * 440 / 1000 / 6);
+			$('#div-resultImg').css('left', $('#myCanvas').position(screenLeft).left + willSize / 2 - willSize * 440 / 1000 / 2 + (willSize * 440 / 1000 / 2 - willSize * 440 / 1000 * 4 / 7 / 2));
+			$('#img-result').css('width', willSize * 440 / 1000 * 4 / 7);
+			$('#div-resultText').css('top', $('#div-resultImg').position(screenTop).top + willSize * 440 / 1000 * 4 / 7);
+			$('#div-resultText').css('font-size', willSize * 440 / 1000 / 12);
 		};
 	</script>
 </head>
@@ -250,6 +360,11 @@
 				onClick="startSpin();">>
 			Canvas not supported, use another browser.
 		</canvas>
+	</div>
+	<div id="div-resultImg" class="div-result">
+		<img id="img-result" src="">
+	</div>
+	<div id="div-resultText" class="div-result">
 	</div>
 </body>
 </html>
