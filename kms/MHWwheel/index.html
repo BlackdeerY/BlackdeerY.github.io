@@ -47,6 +47,8 @@
 		#div-resultImg {
 			position: absolute;
 			z-index: 10;
+			width: 100%;
+			text-align: center;
 			margin: 0;
 			padding: 0;
 		}
@@ -335,7 +337,7 @@
 			$('#div-arrow').css('width', willSize);
 			
 			$('#div-resultImg').css('top', $('#myCanvas').position(screenTop).top + willSize / 2 - willSize * 440 / 1000 / 2  + willSize * 440 / 1000 / 6);
-			$('#div-resultImg').css('left', $('#myCanvas').position(screenLeft).left + willSize / 2 - willSize * 440 / 1000 / 2 + (willSize * 440 / 1000 / 2 - willSize * 440 / 1000 * 4 / 7 / 2));
+			//$('#div-resultImg').css('left', $('#myCanvas').position(screenLeft).left + willSize / 2 - willSize * 440 / 1000 / 2 + (willSize * 440 / 1000 / 2 - willSize * 440 / 1000 * 4 / 7 / 2));
 			$('#img-result').css('width', willSize * 440 / 1000 * 4 / 7);
 			$('#div-resultText').css('top', $('#div-resultImg').position(screenTop).top + willSize * 440 / 1000 * 4 / 7);
 			$('#div-resultText').css('font-size', willSize * 440 / 1000 / 12);
