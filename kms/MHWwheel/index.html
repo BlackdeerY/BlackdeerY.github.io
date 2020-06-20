@@ -289,6 +289,7 @@
 			}
 			*/
 			$('#img-result').attr('src', imgTargets[theWheel.getIndicatedSegmentNumber() - 1]);
+			$('#img-result').show();
 			$('#div-resultText').text(winningSegment.text);
 		}
 		function playSound()
@@ -303,6 +304,7 @@
 			}
 			theWheel.draw();
 			$('#div-resultText').text('');
+			$('#img-result').hide();
 			$('#img-result').attr('src', '');
 			theWheel.stopAnimation(false);
 
