@@ -230,7 +230,10 @@
 			'https://ww.namu.la/s/2d93c6acc1fa4d86914512aab3ca3b61840f5d6cb98ea818cbf45f054009b384d2b41feeaf9bd4c666976838395d7d42c76cf8c4f5bac132ec4e0b44e418b054beb89744e87bbd825ff337660cb85d46cc602bb32b7c43405ccd9092fab19491',
 			'https://ww.namu.la/s/c67090bea87036630370bc4874bc1c6c9c263dfa400db588fe91dd3081a0e1415118aa87a74707d1e922f6c5f73070b9247eaaeef367ffe20e93552037908bd9d4efd974cfbe34a2d5b6efdc5e2b84c56555132598dec7791a0a868ddfc7493726184ee4ebaa2764c6961e2961e6a1d9'
 						];
-		let tickSound = new Audio('./tick.mp3');
+		let tickSound = new Audio();
+		tickSound.pause();
+		tickSound.src = './tick.mp3';
+		tickSound.pause();
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 			setAutoSize();
