@@ -339,7 +339,7 @@
 						var nowRule = $(rulesArray[i]);
 						result = result.concat(keyToHex(nowRule.find('.select-dest').attr('selval').substring(5)),keyToHex(nowRule.find('.select-src').attr('selval').substring(4)));
 					};
-					result = result.concat('00,00,00,00<br>&nbsp;<br></font><br>위 코드(노란 부분)를 복사하여 사용합니다.');
+					result = result.concat('00,00,00,00<br>&nbsp;</font><br><br>위 코드(노란 부분)를 복사하여 사용합니다.');
 					$('#regResult').html(result);
 					$('#div-result').show();
 					$('#div-help').show();
@@ -359,7 +359,7 @@
 				}
 				result = result.concat('"Scancode Map"=-</font><br><br><br>위 코드를 복사하여 사용합니다.');
 				*/
-				$('#regResult').html('<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>"Scancode Map"=-</font><br><br><br>위 코드(노란 부분)를 복사하여 사용합니다.');
+				$('#regResult').html('<font color="#ffff00">Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Keyboard Layout]<br>"Scancode Map"=-<br>&nbsp;</font><br><br>위 코드(노란 부분)를 복사하여 사용합니다.');
 				$('#div-result').show();
 				$('#div-help').show();
 			});
