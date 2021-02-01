@@ -54,7 +54,7 @@
 		});
 		function setActions() {
             $('.price').change(function(){
-                if (Number.isNaN($(this).val()) == true) {
+                if (Number.isNaN(Number.parseInt($(this).val())) == true) {
                     $(this).val(0);
                 }
                 if ($(this).val() < 0) {
@@ -74,7 +74,7 @@
                 makeOne();
             });
             $('.volume').change(function(){
-                if (Number.isNaN($(this).val()) == true) {
+                if (Number.isNaN(Number.parseInt($(this).val())) == true) {
                     $(this).val(1);
                 }
                 if ($(this).val() < 1) {
