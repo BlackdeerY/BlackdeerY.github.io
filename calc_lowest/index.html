@@ -54,7 +54,7 @@
 		});
 		function setActions() {
             $('.price').change(function(){
-                if (Number.isNaN($(this).val()) = true) {
+                if (Number.isNaN($(this).val()) == true) {
                     $(this).val(0);
                 }
                 let price = $(this).val();
@@ -71,7 +71,7 @@
                 makeOne();
             });
             $('.volume').change(function(){
-                if (Number.isNaN($(this).val()) = true) {
+                if (Number.isNaN($(this).val()) == true) {
                     $(this).val(1);
                 }
                 let price = $(this).parent().parent().find('.td-price').find('.price').val();
