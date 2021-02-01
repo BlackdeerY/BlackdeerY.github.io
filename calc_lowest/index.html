@@ -57,6 +57,9 @@
                 if (Number.isNaN($(this).val()) == true) {
                     $(this).val(0);
                 }
+                if ($(this).val() < 0) {
+                    $(this).val(0);
+                }
                 let price = $(this).val();
                 let volume = $(this).parent().parent().find('.td-volume').find('.volume').val();
                 if (price == 0) {
@@ -72,6 +75,9 @@
             });
             $('.volume').change(function(){
                 if (Number.isNaN($(this).val()) == true) {
+                    $(this).val(1);
+                }
+                if ($(this).val() < 1) {
                     $(this).val(1);
                 }
                 let price = $(this).parent().parent().find('.td-price').find('.price').val();
