@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>용량별 최저가 계산</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="용량별 최저가 계산">
+	<meta property="og:description" content="용량별 최저가 계산">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+            font-weight: 700;
+		}
+        .btn {
+            font-weight: 1000;
+        }
+        td {
+            padding-right: 1rem;
+        }
+		.container-fluid {
+			min-width: 500px;
+		}
+		.img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+		.font-bold {
+			font-weight: bold !important;
+		}
+		.font-0.8rem {
+			font-size: 0.8rem !important;
+		}
+		.font-1rem {
+			font-size: 1rem !important;
+		}
+		.font-1_5rem {
+			font-size: 1.5rem !important;
+		}
+		.font-2rem {
+			font-size: 2rem !important;
+		}
+    </style>
+	<script>
+		let template = null;
+		$(document).ready(function() {
+			setActions();
+            template = $('.alert').detach();
+			$('#div-top').css('backgroundColor','#FFFFFF');
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		function setActions() {
+            $('.price').change(function(){
+                let price = $(this).val();
+                let volume = $(this).parent().parent().find('.td-volume').find('.volume').val();
+                if (volume == 0) {
+                    volume = 1;
+                }
+                if (price == 0) {
+                    $(this).parent().parent().find('.ppv').html('0');
+                } else {
+                    let calc = price / volume;
+                    if (Number.isInteger(calc) == false) {
+                        calc = calc.toFixed(4);
+                    }
+                    $(this).parent().parent().find('.ppv').html(calc);
+                }
+                makeOne();
+            });
+            $('.volume').change(function(){
+                let price = $(this).parent().parent().find('.td-price').find('.price').val();
+                let volume = $(this).val();
+                if (volume == 0) {
+                    volume = 1;
+                }
+                if (price == 0) {
+                    $(this).parent().parent().find('.ppv').html('0');
+                } else {
+                    let calc = price / volume;
+                    if (Number.isInteger(calc) == false) {
+                        calc = calc.toFixed(4);
+                    }
+                    $(this).parent().parent().find('.ppv').html(calc);
+                }
+                makeOne();
+            });
+            $('.btn-success').on('click',function(){
+                $('#div-content').append(template.clone(true));
+            });
+            $('.btn-danger').on('click',function(){
+                $(this).parent().parent().parent().parent().parent().remove();
+                makeOne();
+            });
+            $('.btn-warning').on('click',function(){
+                $('.alert').remove();
+            });
+		};
+        function makeOne() {
+            $('.alert-warning').removeClass('alert-warning');
+            let lowest = -1;
+            $('.alert').each(function(index, item){
+                if (lowest == -1) {
+                    let thisValue = Number.parseFloat($(item).find('table').find('.tr-calc').find('.ppv').text());
+                    if (thisValue > 0) {
+                        lowest = thisValue;
+                    }
+                } else {
+                    let thisValue = Number.parseFloat($(item).find('table').find('.tr-calc').find('.ppv').text());
+                    if (thisValue > 0 && thisValue < lowest) {
+                        lowest = thisValue;
+                    }
+                }
+            });
+            if (lowest != -1) {
+                $('.alert').each(function(index, item){
+                    let thisValue = Number.parseFloat($(item).find('table').find('.tr-calc').find('.ppv').text());
+                    if (thisValue == lowest) {
+                        $(item).addClass('alert-warning');
+                    }
+                });
+            }
+        }
+	</script>
+</head>
+<body class="font-1_5rem">
+	<div id="div-content" class="container-fluid">
+		<div class="alert alert-primary">
+            <table>
+                <tr>
+                    <td width="10%" rowspan="2">
+                        <button type="button" class="btn btn-danger">-</button>
+                    </td>
+                    <td width="30%" class="text-center">가격</td>
+                    <td width="30%" class="text-center">용량</td>
+                    <td width="30%" class="text-center">1당 가격</td>
+                </tr>
+                <tr class="tr-calc">
+                    <td class="td-price">
+                        <input type="number" min="0" class="form-control price" value="0">
+                    </td>
+                    <td class="td-volume">
+                        <input type="number" min="0" class="form-control volume" value="0">
+                    </td>
+                    <td class="ppv text-right">
+                        0
+                    </td>
+                </tr>
+            </table>
+        </div>
+	</div>
+    <div class="container-fluid text-center">
+        <button type="button" class="btn btn-success">+</button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <button type="button" class="btn btn-warning">X</button>
+    </div>
+</body>
+</html>
