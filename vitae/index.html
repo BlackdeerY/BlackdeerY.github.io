@@ -431,12 +431,12 @@
 		};
 		function changeHelpPrint() {
 			if (helpPrint === false) {
-				$('#btn-helpPrint').text('웹 버전으로');
+				$('#btn-helpPrint').text('상단 고정');
 				$('#div-top').removeClass('div-top');
 				$('#space-01').css('height',0);
 				helpPrint = true;
 			} else {
-				$('#btn-helpPrint').text('인쇄 버전으로');
+				$('#btn-helpPrint').text('상단 고정 해제');
 				$('#div-top').addClass('div-top');
 				setSize();
 				helpPrint = false;
@@ -493,7 +493,7 @@
 			<div id="div-top-helps">
 				<p>
 					<button type="button" class="btn btn-primary btn-sm font-bold font-1rem" id="btn-changeTheme">다크모드 보기</button>
-					<button type="button" class="btn btn-primary btn-sm font-bold font-1rem" id="btn-helpPrint" data-toggle="tooltip" data-placement="bottom" title="화면 상단의 고정된 부분을 해제/복구합니다.">인쇄 버전으로</button>
+					<button type="button" class="btn btn-primary btn-sm font-bold font-1rem" id="btn-helpPrint" data-toggle="tooltip" data-placement="bottom" title="화면 상단의 고정된 부분을 해제/복구합니다.">상단 고정 해제</button>
 					<span>
 						　https://blackdeery.github.io/vitae
 					</span>
@@ -852,6 +852,83 @@
 								</td>
 								<td>
 									2016.01.02
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+            <div class="card card-toggle">
+				<p class="card-header">Work (Alone Part) - AI 스피커 연동 (각 플랫폼 API 연결)<span class="arrow">▲</span></p>
+				<div class="card-body">
+					<table class="table table-sm table-bordered">
+						<tbody>
+                            <tr>
+								<td class="table-active table-title-left">
+									참여인원
+								</td>
+								<td>
+									1명
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active table-title-left">
+									OAuth 2.0
+								</td>
+								<td>
+                                    <a href="https://aws.amazon.com/ko/cognito/" target="_blank">Amazon Cognito</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active table-title-left">
+									연동된 AI 스피커 (계속 추가 중)
+								</td>
+								<td>
+									<p>
+										- Google Home
+									</p>
+                                    <p>
+										- Samsung Bixby (SmartThings)
+									</p>
+                                    <p>
+										- NAVER Clova (Home Extension)
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active table-title-left">
+									개발환경
+								</td>
+								<td>
+									Java 1.8, Spring Boot 2.2.2, Maven
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active table-title-left">
+									사용도구
+								</td>
+								<td>
+									IntelliJ IDEA
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active table-title-left">
+									구동환경
+								</td>
+								<td>
+									Rest API Controller
+								</td>
+							</tr>
+							<tr>
+								<td class="table-active text-center" colspan="2">
+									동영상
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p>
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/MnxpEPb3P_s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</p>
 								</td>
 							</tr>
 						</tbody>
