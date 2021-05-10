@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>우리 가족 도우미 - 마트휴일</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../ico/ico.ico">
+	<link rel="icon" href="../ico/ico.ico">
+	<meta property="og:title" content="우리 가족 도우미 - 마트휴일">
+	<meta property="og:description" content="우리 가족 도우미 - 마트휴일">
+	<meta property="og:image" content="https://blackdeery.github.io/yunsfamily/ico/desc.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/yunsfamily/ico/ico_512.png">
+	<link rel="apple-touch-icon-precomposed" href="../ico/ico_512.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../common/resources/js/popper.min.js"></script>
+	<script src="../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <link id="commonCSS" rel="stylesheet" href="../common/common.css" media="all">
+	<script>
+		$('#div-main').hide();
+		$(document).ready(function() {
+			SetSize();
+			window.addEventListener('resize', function() {
+				SetSize();
+			});
+			SetEvent();
+            AjaxLoad();
+		});
+        function AjaxLoad() {
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/LotteDepartment",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-lottedepartment').text(response);
+                },
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/HyundaiDepartment",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-hyundaidepartment').text(response);
+                },
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/Homeplus",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-homeplus').text(response);
+                },
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/LotteMart",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-lottemart').text(response);
+                },
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/Emart",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-emart').text(response);
+                },
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://blackdeer.duckdns.org:58081/martholiday/NoBrand",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Basic ",
+                    "Content-Type": "application/json",
+                },
+                dataType: "json",
+                success: function (response) {
+                    $('#place-nobrand').text(response);
+                },
+            });
+        };
+		function SetSize() {
+			//$('#div-bottom').css('top',window.innerHeight - $('#div-bottom').height());
+			$('.div-mains').css('margin-top',$('#div-top').height());
+			$('.div-mains').css('padding-top',$('#div-top').height() * 0.5);
+			$('.div-mains').css('padding-bottom',$('#div-top').height() * 1.5);
+		};
+		function SetEvent() {
+			$('.btn-close').on('click', function() {
+				window.open('', '_self', '');
+				window.close();
+			});
+		};
+		var timerId = null;
+		timerId = setInterval(CheckImageLoad, 500);
+		function CheckImageLoad() {
+			var dots = $('#dots').text();
+			if (dots.length > 5) {
+				$('#dots').text('.');
+			} else {
+				$('#dots').text(dots + '.');
+			}
+			var countAll = $('img').length;
+			var countNow = 0;
+			$('img').each(function() {
+				if (this.complete) {
+					++countNow;
+				}
+			});
+			if (countNow == countAll) {
+				clearInterval(timerId);
+				$('#div-help').hide();
+				$('#div-main').show();
+			} else {
+				var nowPercent = Math.round(countNow/countAll*100) + '%';
+				$('#loadingBar').text(nowPercent);
+				$('#loadingBar').css('width',nowPercent);
+				$('#div-help').show();
+				$('#div-main').hide();
+			};
+		};
+	</script>
+    <style>
+        .container-fluid {
+            width: 100%;
+        }
+        #div-help {
+            width: 100%;
+        }
+        #div-main {
+            width: 100%;
+            min-width: 1600px;
+        }
+        p {
+            width: 100%;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .imgp {
+            padding-left: 0px;
+            text-indent: 0px;
+        }
+        hr {
+            width: 100%;
+        }
+        td {
+            vertical-align: top;
+        }
+        #detail {
+            width: 99%;            
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        #detail td {
+            width: 50%;
+            border: 2px white dashed;
+            padding: 2rem;
+        }
+        #detail img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="div-top" class="div-topbottom">
+			<p class="text-right">
+				<button type="button" class="btn btn-warning font-bold btn-close">닫기</button>
+			</p>
+		</div>
+		<div id="div-help" class="div-mains text-center">
+			<p>
+				(화면을 불러오는 중...
+			</p>
+			<p>
+				잠시만 기다려주세요.)
+			</p>
+			<p id="dots">......</p>
+			<div class="progress">
+				<div id="loadingBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+			</div>
+		</div>
+		<div id="div-main" class="div-mains">
+            <table style="margin-left: 4rem; min-width: 1400px;">
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <img src="https://w.namu.la/s/36e350a48bfc8e50c3a36eabbc7a864d6be0904c2e2225cf12e0761bd9f4da40d3cbfb32353d368b34f360960c66bcbbf57ab4ad13be090a29760c536e2f36d53a52740d2d763ecb61d6f074c72e99d5d5324ccc7f44ae33a6ca406922991be3" style="width: 30rem;">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-lottedepartment">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <img src="https://w.namu.la/s/ab6dfcfa686673e8e69c6b44b8b240485c2693a8af7fa910b91f0fcf8021e8213b060597867f8af462fd5244c7cb261666db2d3b94cd93b008da6827b37791ed153fa097b59d15b182713816c0b4c88d4c5ce24891891def2089447674bfa082" style="width: 30rem; background-color: #FFFFFF;">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-hyundaidepartment">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <img src="https://w.namu.la/s/4cd594def63e55afaa9b91164232e3586c3a270a708a6b77d76e03fedd9c55eb26c11adabc5959e93a0aa143807f8ddceda2e986f85b9496ff056b9e977cec608d539dcc50c6d71d3a2f210e115594ed21d8f1ae062416b958220107d97380bb" style="width: 30rem; background-color: #FFFFFF;">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-homeplus">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <img src="https://w.namu.la/s/8c9a39a0b0ed5a68f6dc245c59a6f73548c6484e1f2496f99cfef71c8759d59611e1df7f45f20f98dc67f3c487c09114849bac2b3b437661d0775b09f910dce81a9066881fd29cf25c56c31bb7bf0ee4c66b371f8e8ab119e23ad2568b54b3df" style="width: 30rem; background-color: #FFFFFF;">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-lottemart">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <img src="https://w.namu.la/s/70916172c8400e0a626a2cf36d48e0d423e17f6aa35aa0d37ffe638694c7b94f52c31d23b6b59619d8da4662386e8d8774ddf50900aea2db2f8e3b60013867e986edaf4314bafa88b6ad4167383828f9d87073301c8941b2373699dd29a6e9fc" style="width: 30rem; background-color: #FFFFFF;">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-emart">
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td class="text-center" style="background-color: #FFFFFF;">
+                        <span style="background-color: #f9bb00; color: #000000; font-size: 7rem; margin: 0;">No Brand</span>
+                    </td>
+                </tr>
+                <tr style="border: 2px gray dotted;">
+                    <td id="place-nobrand">
+                    </td>
+                </tr>
+            </table>
+		</div>
+		<!--
+		<div id="div-bottom" class="div-topbottom">
+			<p class="text-left">
+				<button type="button" class="btn btn-warning font-bold btn-close">닫기</button>
+			</p>
+		</div>
+		-->
+	</div>
+</body>
+</html>
