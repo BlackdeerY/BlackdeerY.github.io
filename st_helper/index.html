@@ -85,16 +85,15 @@
             });
         };
         function drawDevices(json) {
-            console.log(json);
             var items = json.items;
             var tag = "";
             for(var i = 0; i < items.length; ++i) {
                 var deviceId = items[i].deviceId;
                 var label = items[i].label;
-                tag = tag + '<p>장치명: ' + label + '</p><p>deviceId: <span style="color: #FFFF00;">' + deviceId + '</span></p><p style="margin-bottom: 0;">장치 요소:</p>'
+                var name = items[i].name;
+                tag = tag + '<p>장치명: ' + label + ' (' + name + ')' + '</p><p>deviceId: <span style="color: #FFFF00;">' + deviceId + '</span></p><p style="margin-bottom: 0;">장치 요소:</p>'
                 var components = items[i].components;
                 for (var j = 0; j < components.length; ++j) {
-                    console.log(components[j]);
                     var component = components[j].id;
                     var capabilities = components[j].capabilities;
                     for (var k = 0; k < capabilities.length; ++k) {
