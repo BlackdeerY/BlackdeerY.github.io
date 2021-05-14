@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Smartthings 도우미 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="Smartthings 도우미 - 현록">
+	<meta property="og:description" content="Smartthings 도우미 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+            font-size: 2rem;
+		}
+        input {
+            font-size: 2rem !important;
+        }
+        .btn {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+    </style>
+	<script>
+		let template = null;
+		$(document).ready(function() {
+			setActions();
+			$('#div-top').css('backgroundColor','#FFFFFF');
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		function setActions() {
+            $('#btn-devices').on('click',function(){
+				getDevices();
+			});
+		};
+        function getDevices() {
+            var token = $('#input-token').val();
+            $.ajax({
+                type: "GET",
+                url: "https://api.smartthings.com/v1/devices",
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                dataType: "json",
+                success: function (response) {
+                    drawDevices(response);
+                },
+                error: function() {
+                    $('#list').html('토큰이 유효하지 않거나, 토큰에 모든 디바이스 표시(l:devices) 권한이 없습니다!');
+                },
+            });
+        };
+        function drawDevices(json) {
+            console.log(json);
+            var items = json.items;
+            var tag = "";
+            for(var i = 0; i < items.length; ++i) {
+                var deviceId = items[i].deviceId;
+                var label = items[i].label;
+                tag = tag + '<p>장치명: ' + label + '</p><p>deviceId: <span style="color: #FFFF00;">' + deviceId + '</span></p><p style="margin-bottom: 0;">장치 요소:</p>'
+                var components = items[i].components;
+                for (var j = 0; j < components.length; ++j) {
+                    console.log(components[j]);
+                    var component = components[j].id;
+                    var capabilities = components[j].capabilities;
+                    for (var k = 0; k < capabilities.length; ++k) {
+                        var id = capabilities[k].id;
+                        var version = capabilities[k].version;
+                        tag = tag + '<p style="margin-left: 2rem; margin-bottom: 0;">' + component + ' - ' + id + ' (version: ' + version + ')</p>';
+                    }
+                }
+                tag = tag + '<p>&nbsp;</p><hr style="border: solid 1px gray;">';
+            }
+            $('#list').html(tag);
+        };
+	</script>
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <div>
+            <p style="margin-top: 2rem;">
+                <img class="size-50 img-round img-border" src="../common/resources/img/Blackdeer.png">
+                <a href="https://ydeer.tistory.com/269" target="_blank">Smartthings 도우미 - 현록</a>
+            </p>
+            <p>
+                &nbsp;
+            </p>
+            <p>
+                Smartthings 토큰
+            </p>
+            <p>
+                <input type="text" class="form-control" id="input-token" placeholder="********-****-****-****-************">
+            </p>
+            <p>
+                <button type="button" class="btn btn-warning" id="btn-devices">장치 조회</button>
+            </p>
+            <hr style="border: solid 1px gray;">
+        </div>
+        <div id="list">
+        </div>
+	</div>
+</body>
+</html>
