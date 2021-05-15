@@ -51,6 +51,9 @@
 			width: 100px;
 			height: 100px;
 		}
+        .capability:hover {
+            text-decoration: underline;
+        }
     </style>
 	<script>
 		let template = null;
@@ -85,13 +88,14 @@
             });
         };
         function drawDevices(json) {
+            $('.capability').off();
             var items = json.items;
             var tag = "";
             for(var i = 0; i < items.length; ++i) {
                 var deviceId = items[i].deviceId;
                 var label = items[i].label;
                 var name = items[i].name;
-                tag = tag + '<p>장치명: ' + label + ' (' + name + ')' + '</p><p>deviceId: <span style="color: #FFFF00;">' + deviceId + '</span></p><p style="margin-bottom: 0;">장치 요소:</p>'
+                tag = tag + '<p>장치명: <span style="color: #FFFFFF;">' + label + '</span> (' + name + ')' + '</p><p>deviceId: <span style="color: #FFFF00;">' + deviceId + '</span></p><p style="margin-bottom: 0;">장치 요소(클릭하면 가능한 명령 열람 가능):</p>'
                 var components = items[i].components;
                 for (var j = 0; j < components.length; ++j) {
                     var component = components[j].id;
@@ -99,13 +103,111 @@
                     for (var k = 0; k < capabilities.length; ++k) {
                         var id = capabilities[k].id;
                         var version = capabilities[k].version;
-                        tag = tag + '<p style="margin-left: 2rem; margin-bottom: 0;">' + component + ' - ' + id + ' (version: ' + version + ')</p>';
+                        tag = tag + '<p style="margin-left: 2rem; margin-bottom: 0;"><span class="capability" value="https://api.smartthings.com/v1/capabilities/' + id + '/' + version + '" data-toggle="modal" data-target="#modal-capability">' + component + ' - ' + id + ' (version: ' + version + ')</a></p>';
                     }
                 }
                 tag = tag + '<p>&nbsp;</p><hr style="border: solid 1px gray;">';
             }
             $('#list').html(tag);
+            $('.capability').on('click',function(){
+                getCapability($(this));
+			});
         };
+        function getCapability(object) {
+            $('#modal-title').html(object.text());
+            var token = $('#input-token').val();
+            var link = object.attr('value');
+            $.ajax({
+                type: "GET",
+                url: link,
+                cache: false,
+                async: false,
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                dataType: "json",
+                success: function(response) {
+                    var tag = "";
+                    var commands = response.commands;
+                    var keys = Object.getOwnPropertyNames(commands);
+                    for (var i = 0; i < keys.length; ++i) {
+                        var command = keys[i];
+                        tag = tag + '<p style="margin-bottom: 0; white-space: nowrap;">command: ' + command + '</p>'
+                        var arguments = commands[command].arguments;
+                        if (arguments.length > 0) {
+                            tag = tag + '<p style="margin-bottom: 0; white-space: nowrap;">└ arguments:</p>'
+                        }
+                        for (var j = 0; j < arguments.length; ++j) {
+                            var name = arguments[j].name;
+                            var optional = arguments[j].optional;
+                            var required = '필수O';
+                            if (optional == true) {
+                                required = '필수X';
+                            }
+                            var schema = arguments[j].schema;
+                            var type = schema.type;
+                            var typeString;
+                            switch (type) {
+                                case 'number':
+                                    typeString = '실수';
+                                    break;
+                                case 'integer':
+                                    typeString = '정수';
+                                    break;
+                                case 'string':
+                                    typeString = '문자';
+                                    break;
+                                case 'boolean':
+                                    typeString = '참/거짓';
+                                    break;
+                                default:
+                                    typeString = type;
+                                    break;
+                            }
+                            var minimum = schema.minimum;
+                            var maximum = schema.maximum;
+                            tag = tag + '<p style="margin-left: 4rem; margin-bottom: 0; white-space: nowrap;">· ' + name + '(' + required + ', ' + typeString + ')'
+                            if (type == 'boolean') {
+                                tag = tag + ' - true, false.';
+                            } else if (type == 'string') {
+                                var enumData = schema.enum;
+                                if (enumData != undefined) {
+                                    tag = tag + ' - ';
+                                    for (var k = 0; k < enumData.length; ++k) {
+                                        tag = tag + enumData[k];
+                                        if (k == enumData.length - 1) {
+                                            tag = tag + '.';
+                                        } else {
+                                            tag = tag + ', ';
+                                        }
+                                    }
+                                }
+                                
+                            } else {
+                                if (minimum != undefined || maximum != undefined) {
+                                    tag = tag + ': ';
+                                    if (minimum != undefined) {
+                                        tag = tag + minimum;
+                                    }
+                                    tag = tag + ' ~ ';
+                                    if (maximum != undefined) {
+                                        tag = tag + maximum;
+                                    }
+                                    tag = tag + '.';
+                                }
+                            }
+                            tag = tag + '</p>'
+                        }
+                        tag = tag + '<p>&nbsp;</p>'
+                    }
+                    $('#modal-body').html(tag);
+                },
+                error: function() {
+                    $('#modal-body').html('토큰이 유효하지 않습니다!');
+                }
+            });
+        }
 	</script>
 </head>
 <body>
@@ -128,6 +230,17 @@
                 <button type="button" class="btn btn-warning" id="btn-devices">장치 조회</button>
             </p>
             <hr style="border: solid 1px gray;">
+        </div>
+        <div class="modal fade" id="modal-capability" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="modal-title" style="white-space: nowrap;"></h1>
+                    </div>
+                    <div class="modal-body" id="modal-body" style="white-space: nowrap;">
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="list">
         </div>
