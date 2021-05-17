@@ -134,74 +134,69 @@
 <body>
 	<div id="div-content" class="container-fluid">
         <div>
-            <p style="margin-top: 2rem; font-size: 2rem;">
+            <p style="margin-top: 2rem; margin-bottom: 2rem; font-size: 2rem;">
                 <img class="size-50 img-round img-border" src="../common/resources/img/Blackdeer.png">
                 <a href="https://ydeer.tistory.com/" target="_blank">Tistory Replace - 현록</a>
             </p>
-            <p>
-                &nbsp;
-            </p>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-00" checked>
-                <label class="form-check-label" for="check-00"><span style="color: #FF9999;">&lt;br /&gt;</span> <span style="color: #FFFF00;">→</span> <span style="color: #99FFFF;">&lt;/p&gt;&lt;p&gt;</span></label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-01" checked>
-                <label class="form-check-label" for="check-01">&lt;a href="~"&gt; <span style="color: #FFFF00;">→</span> &lt;a href="~" <span style="color: #FFFFFF;">target="_blank"</span>&gt;</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-02" checked>
-                <label class="form-check-label" for="check-02">class="c++ <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-cpp cpp</span> c++</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-03" checked>
-                <label class="form-check-label" for="check-03">class="java <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-java</span> java</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-04" checked>
-                <label class="form-check-label" for="check-04">&lt;p class="~"&gt;y1공백&lt;/p&gt; <span style="color: #FFFF00;">→</span> &lt;p class="~ <span style="color: #FFFFFF;">customm customm1</span>"&gt;&lt;/p&gt;</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="check-06" checked>
-                <label class="form-check-label" for="check-06">&lt;td&gt;<span style="color: #FF9999;">&lt;span&gt;&lt;/span&gt;</span>&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
-            </div>
-            <hr style="border: solid 1px gray;">
-            <div>
-                <table style="width: 100%">
-                    <tbody>
-                        <tr>
-                            <td style="border-right: solid 2px gray;">
-                                <p class="text-center" style="margin: 0; font-size: 1.5rem;">
-                                    html 원문
-                                </p>
-                            </td>
-                            <td>
-                                <p class="text-center" style="margin: 0; font-size: 1.5rem;">
-                                    변환된 html
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding-right: 0.5rem; border-right: solid 2px gray;">
-                                <textarea class="form-control" id="origin" rows="20" style="background-color: #000000; color: #999999; border: #000000;"></textarea>
-                            </td>
-                            <td style="padding-left: 0.5rem;">
-                                <textarea class="form-control" id="result" rows="20" style="background-color: #000000; color: #DDDDDD; border: #000000;"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding-right: 0.5rem;">
-                                <button type="button" class="btn btn-sm btn-warning" style="width: 100%" id="btn-replace">변환 →</button>
-                            </td>
-                            <td style="padding-left: 0.5rem;">
-                                <button type="button" class="btn btn-sm btn-success" style="width: 100%" id="btn-copy" data-clipboard-action="copy" data-clipboard-target="#result">복사</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
-        <div id="list">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-00" checked>
+            <label class="form-check-label" for="check-00"><span style="color: #FF9999;">&lt;br /&gt;</span> <span style="color: #FFFF00;">→</span> <span style="color: #99FFFF;">&lt;/p&gt;&lt;p&gt;</span></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-01" checked>
+            <label class="form-check-label" for="check-01">&lt;a href="~"&gt; <span style="color: #FFFF00;">→</span> &lt;a href="~" <span style="color: #FFFFFF;">target="_blank"</span>&gt;</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-02" checked>
+            <label class="form-check-label" for="check-02">class="c++ <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-cpp cpp</span> c++</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-03" checked>
+            <label class="form-check-label" for="check-03">class="java <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-java</span> java</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-04" checked>
+            <label class="form-check-label" for="check-04">&lt;p class="~"&gt;y1공백&lt;/p&gt; <span style="color: #FFFF00;">→</span> &lt;p class="~ <span style="color: #FFFFFF;">customm customm1</span>"&gt;&lt;/p&gt;</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-06" checked>
+            <label class="form-check-label" for="check-06">&lt;td&gt;<span style="color: #FF9999;">&lt;span&gt;&lt;/span&gt;</span>&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
+        </div>
+        <hr style="border: solid 1px gray;">
+        <div>
+            <table style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td style="border-right: solid 2px gray;">
+                            <p class="text-center" style="margin: 0; font-size: 1.5rem;">
+                                html 원문
+                            </p>
+                        </td>
+                        <td>
+                            <p class="text-center" style="margin: 0; font-size: 1.5rem;">
+                                변환된 html
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 0.5rem; border-right: solid 2px gray;">
+                            <textarea class="form-control" id="origin" rows="20" style="background-color: #000000; color: #999999; border: #000000;"></textarea>
+                        </td>
+                        <td style="padding-left: 0.5rem;">
+                            <textarea class="form-control" id="result" rows="20" style="background-color: #000000; color: #DDDDDD; border: #000000;"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 0.5rem;">
+                            <button type="button" class="btn btn-sm btn-warning" style="width: 100%" id="btn-replace">변환 →</button>
+                        </td>
+                        <td style="padding-left: 0.5rem;">
+                            <button type="button" class="btn btn-sm btn-success" style="width: 100%" id="btn-copy" data-clipboard-action="copy" data-clipboard-target="#result">복사</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 	</div>
 </body>
