@@ -28,6 +28,7 @@
     <style>
 		body {
 			font-family: 'Nanum Gothic' !important;
+            max-width: 1000px;
 		}
         .img-round {
 			object-fit: cover;
@@ -49,6 +50,7 @@
         }
         .btn {
             font-size: 1.5rem;
+            font-weight: 1000;
         }
         textarea {
             resize: none;
@@ -180,18 +182,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <textarea class="form-control" id="origin" placeholder="html 원문" rows="20"></textarea>
+                            <td style="padding-right: 0.5rem; border-right: solid 2px gray;">
+                                <textarea class="form-control" id="origin" rows="20" style="background-color: #000000; color: #999999; border: #000000;"></textarea>
                             </td>
-                            <td>
-                                <textarea class="form-control" id="result" rows="20" readonly style="background-color: white;"></textarea>
+                            <td style="padding-left: 0.5rem;">
+                                <textarea class="form-control" id="result" rows="20" style="background-color: #000000; color: #DDDDDD; border: #000000;"></textarea>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td style="padding-right: 0.5rem;">
                                 <button type="button" class="btn btn-sm btn-warning" style="width: 100%" id="btn-replace">변환 →</button>
                             </td>
-                            <td>
+                            <td style="padding-left: 0.5rem;">
                                 <button type="button" class="btn btn-sm btn-success" style="width: 100%" id="btn-copy" data-clipboard-action="copy" data-clipboard-target="#result">복사</button>
                             </td>
                         </tr>
