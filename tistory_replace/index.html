@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Tistory Replace - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="Tistory Replace - 현록">
+	<meta property="og:description" content="Tistory Replace - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../common/resources/js/popper.min.js"></script>
+	<script src="../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    <script src="../common/resources/js/clipboard.min.js"></script>
+	
+    <style>
+		body {
+			font-family: 'Nanum Gothic' !important;
+		}
+        .img-round {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		.img-border {
+			border: 0.5px solid black;
+		}
+		.size-50 {
+			width: 50px;
+			height: 50px;
+		}
+		.size-100 {
+			width: 100px;
+			height: 100px;
+		}
+        .capability:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            font-size: 1.5rem;
+        }
+        textarea {
+            resize: none;
+            padding: 0.5rem !important;
+        }
+    </style>
+	<script>
+        const regex_00 = /\<br *\/\>/g;
+        const regex_01 = /\<a href\=\"(.*)\"\>/g;
+        const regex_02 = /class\=\"c\+\+/g;
+        const regex_03 = /class\=\"java/g;
+        const regex_04 = /p class\=\"([^"]*)\"([^>])*\>y(\d)공백/g;
+        const regex_05 = /p([^>]*)\>y(\d)공백/g;
+//        const regex_06 = /\<td([^>]*)\>(.*)/gs;
+        const regex_07 = /\<span\>/g;
+        const regex_08 = /\<\/span\>\<br *\/\>/g;
+        const regex_09 = /\<\/span\>\<\/td\>/g;
+        const regex_10 = /\<ytd/g;
+        const regex_11 = /\<\/ytd\>/g;
+        const replace_00 = '</p><p>';
+        const replace_01 = '<a href="$1" target="_blank">';
+        const replace_02 = 'class="prettyprint lang-cpp cpp c++';
+        const replace_03 = 'class="prettyprint lang-java java';
+        const replace_07 = '<p>';
+        const replace_08 = '</p>';
+        const replace_09 = '</p></td>';
+        const replace_10 = '<td';
+        const replace_11 = '</td>';
+		$(document).ready(function() {
+			setActions();
+		});
+		function setActions() {
+            $('#btn-replace').on('click',function(){
+                var text = $('#origin').val();
+                if ($('#check-06').is(':checked')) {
+                    while (true) {
+                        var indexStart = text.indexOf('<td');
+                        if (indexStart == -1) {
+                            break;
+                        }
+                        var target = text.substring(indexStart);
+                        var indexEnd = target.indexOf('</td>');
+                        if (indexEnd == -1) {
+                            break;
+                        }
+                        target = target.substring(0, indexEnd + 5);
+                        var replace = target.replace(regex_07, replace_07);
+                        replace = replace.replace(regex_08, replace_08);
+                        replace = replace.replace(regex_09, replace_09);
+                        replace = replace.replace('<td', '<ytd');
+                        replace = replace.replace('</td', '</ytd');
+                        text = text.replace(target, replace);
+                    }
+                    text = text.replace(regex_10, replace_10);
+                    text = text.replace(regex_11, replace_11);
+                }
+                if ($('#check-00').is(':checked')) {
+                    text = text.replace(regex_00, replace_00);
+                }
+                if ($('#check-01').is(':checked')) {
+                    text = text.replace(regex_01, replace_01);
+                }
+                if ($('#check-02').is(':checked')) {
+                    text = text.replace(regex_02, replace_02);
+                }
+                if ($('#check-03').is(':checked')) {
+                    text = text.replace(regex_03, replace_03);
+                }
+                if ($('#check-04').is(':checked')) {
+                    text = text.replace(regex_04, 'p class="$1 customm customm$3"$2>');
+                }
+                if ($('#check-04').is(':checked')) {
+                    text = text.replace(regex_05, 'p$1 class="customm customm$2">');
+                }
+				$('#result').val(text);
+			});
+            new ClipboardJS('#btn-copy');
+		};
+	</script>
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <div>
+            <p style="margin-top: 2rem; font-size: 2rem;">
+                <img class="size-50 img-round img-border" src="../common/resources/img/Blackdeer.png">
+                <a href="https://ydeer.tistory.com/" target="_blank">Tistory Replace - 현록</a>
+            </p>
+            <p>
+                &nbsp;
+            </p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-00" checked>
+                <label class="form-check-label" for="check-00"><span style="color: #FF9999;">&lt;br /&gt;</span> <span style="color: #FFFF00;">→</span> <span style="color: #99FFFF;">&lt;/p&gt;&lt;p&gt;</span></label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-01" checked>
+                <label class="form-check-label" for="check-01">&lt;a href="~"&gt; <span style="color: #FFFF00;">→</span> &lt;a href="~" <span style="color: #FFFFFF;">target="_blank"</span>&gt;</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-02" checked>
+                <label class="form-check-label" for="check-02">class="c++ <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-cpp cpp</span> c++</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-03" checked>
+                <label class="form-check-label" for="check-03">class="java <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-java</span> java</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-04" checked>
+                <label class="form-check-label" for="check-04">&lt;p class="~"&gt;y1공백&lt;/p&gt; <span style="color: #FFFF00;">→</span> &lt;p class="~ <span style="color: #FFFFFF;">customm customm1</span>"&gt;&lt;/p&gt;</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check-06" checked>
+                <label class="form-check-label" for="check-06">&lt;td&gt;<span style="color: #FF9999;">&lt;span&gt;&lt;/span&gt;</span>&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
+            </div>
+            <hr style="border: solid 1px gray;">
+            <div>
+                <table style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="text-center" style="margin: 0; font-size: 1.5rem;">
+                                    html 원문
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-center" style="margin: 0; font-size: 1.5rem;">
+                                    변환된 html
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea class="form-control" id="origin" placeholder="html 원문" rows="20"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" id="result" rows="20" readonly style="background-color: white;"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-warning" style="width: 100%" id="btn-replace">변환 →</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-success" style="width: 100%" id="btn-copy" data-clipboard-action="copy" data-clipboard-target="#result">복사</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="list">
+        </div>
+	</div>
+</body>
+</html>
