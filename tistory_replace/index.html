@@ -69,6 +69,7 @@
             padding: 0.5rem !important;
             background-color: #000000 !important;
             border: #000000 !important;
+            border-radius: 4px;
         }
         #inspect > p {
             color: #666666;
@@ -129,7 +130,13 @@
         const replace_i_01 = '<font color="#FFFF00">$1</font>$2';
         
 		$(document).ready(function() {
-            $('#inspect').css('height', $('#origin').css('height'));
+            var height1 = $('#origin').css('height');
+            height1 = height1.substring(0, height1.length - 2);
+            height1 = Number.parseInt(height1);
+            var height2 = $('#btn-replace').css('height');
+            height2 = height2.substring(0, height2.length - 2);
+            height2 = Number.parseInt(height2);
+            $('#inspect').css('height', height1 + height2 + 6);
 //            $('#inspect').css('width', $('#origin').css('width'));
 			setActions();
 		});
@@ -288,8 +295,8 @@
                         <td style="padding-left: 0.5rem; padding-right: 0.5rem; border-right: solid 2px gray;">
                             <textarea class="form-control" id="result" rows="20" spellcheck="false"></textarea>
                         </td>
-                        <td style="padding-left: 0.5rem;">
-                            <div class="form-control" id="inspect">
+                        <td style="padding-left: 0.5rem;" rowspan="2">
+                            <div id="inspect">
                             </div>
                         </td>
                     </tr>
