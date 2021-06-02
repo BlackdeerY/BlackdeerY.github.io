@@ -78,7 +78,7 @@
     </style>
 	<script>
         const regex_00 = /\<br *\/\>/g;
-        const regex_01 = /\<a href\=\"(.*)\"\>/g;
+        const regex_01 = /\<a href\=\"([^"]*)\"\>/g;
         const regex_02 = /class\=\"c\+\+/g;
         const regex_03 = /class\=\"java/g;
         const regex_04 = /\<p(.*)class\=\"([^"]*)\"([^>]*)\>y(\d)공백\<\/p\>/g;
@@ -116,7 +116,7 @@
         const replace_inspect_99 = '<p>&nbsp;</p>';
         
         const regex_i_00 = /(\&lt\;br *\/\&gt\;)/g;
-        const regex_i_01 = /(\&lt\;a href\=\&quot\;.*\&quot\;\&gt\;)/g;
+        const regex_i_01 = /(\&lt\;a href\=\&quot\;[^&]*\&quot\;\&gt\;)/g;
         const regex_i_02 = /(class\=\&quot\;c\+\+)/g;
         const regex_i_03 = /(class\=\&quot\;java)/g;
         const regex_i_05 = /(\&lt\;p.*\&gt\;y\d공백&lt\;\/p&gt\;)/g;
