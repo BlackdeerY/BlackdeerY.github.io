@@ -89,7 +89,7 @@
         const regex_09 = /\<\/span\>\<\/td\>/g;
         const regex_10 = /\<ytd/g;
         const regex_11 = /\<\/ytd\>/g;
-        const regex_12 = /class\=\"csharp/g;
+        const regex_12 = /class\=\"cs/g;
         const replace_00 = '</p><p>';
         const replace_01 = '<a href="$1" target="_blank">';
         const replace_02 = 'class="prettyprint lang-cpp cpp c++';
@@ -101,7 +101,7 @@
         const replace_09 = '</p></td>';
         const replace_10 = '<td';
         const replace_11 = '</td>';
-        const replace_12 = 'class="prettyprint lang-csharp csharp';
+        const replace_12 = 'class="prettyprint lang-csharp cs';
         
         const regex_inspect_00 = /\&/g;
         const regex_inspect_01 = /</g;
@@ -127,7 +127,7 @@
         const regex_i_09 = /(\&lt\;\/span\&gt\;)(\&lt\;\/td\&gt\;)/g;
         const regex_i_10 = /\&lt\;ytd/g;
         const regex_i_11 = /\&lt\;\/ytd\&gt\;/g;
-        const regex_i_12 = /(class\=\&quot\;csharp)/g;
+        const regex_i_12 = /(class\=\&quot\;cs)/g;
         
         const replace_i_00 = '<font color="#FFFF00">$1</font>';
         const replace_i_01 = '<font color="#FFFF00">$1</font>$2';
@@ -270,7 +270,7 @@
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check-07" checked>
-            <label class="form-check-label" for="check-07">class="csharp <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-csharp</span> csharp</label>
+            <label class="form-check-label" for="check-07">class="cs <span style="color: #FFFF00;">→</span> class="<span style="color: #FFFFFF;">prettyprint lang-csharp</span> cs</label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check-04" checked>
