@@ -274,6 +274,27 @@
                 if ($('#check-00').is(':checked')) {
                     text = text.replace(regex_00, replace_00);
                 }
+                if ($('#check-23').is(':checked')) {
+                    while (true) {
+                        var thisResult = /\<\/p\>\<p\>\<\/p\>\<p\>/g.exec(text);
+                        if (thisResult == null) {
+                            break;
+                        }
+                        text = text.replace(/\<\/p\>\<p\>\<\/p\>\<p\>/g, '</p><p>');
+                    }
+                    
+                    while (true) {
+                        var thisResult1 = /\<\/p\>\<p\>\<\/p\>\<p\>/g.exec(text2);
+                        var thisResult2 = /\<\/yp\>\<yp\>\<\/p\>\<p\>/g.exec(text2);
+                        if (thisResult1 != null) {
+                            text2 = text2.replace(/\<\/p\>\<p\>\<\/p\>\<p\>/g, '</yp><yp></yp><yp>');
+                        } else if (thisResult2 != null) {
+                            text2 = text2.replace(/\<\/yp\>\<yp\>\<\/p\>\<p\>/g, '</yp><yp></yp><yp>');
+                        } else {
+                            break;
+                        }
+                    }
+                }
                 if ($('#check-01').is(':checked')) {
                     text = text.replace(regex_01, replace_01);
                 }
@@ -312,6 +333,9 @@
                 if ($('#check-00').is(':checked')) {
                     text2 = text2.replace(regex_i_00, replace_i_00);
                 }
+                if ($('#check-23').is(':checked')) {
+                    text2 = text2.replace(/\&lt\;(\/)*yp\&gt\;/g, '<font color="#FFFF00;">&lt;$1p&gt;</font>')
+                }
                 if ($('#check-01').is(':checked')) {
                     text2 = text2.replace(regex_i_01, replace_i_00);
                 }
@@ -345,6 +369,10 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check-00" checked>
             <label class="form-check-label" for="check-00"><span style="color: #FF9999;">&lt;br /&gt;</span> <span style="color: #FFFF00;">→</span> <span style="color: #99FFFF;">&lt;/p&gt;&lt;p&gt;</span></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-23" checked>
+            <label class="form-check-label" for="check-23"><span style="color: #FF9999;">&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;</span> <span style="color: #FFFF00;">→</span> <span style="color: #99FFFF;">&lt;/p&gt;&lt;p&gt;</span></label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check-01" checked>
