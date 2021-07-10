@@ -145,8 +145,11 @@
 		});
 		function setActions() {
             $('#btn-replace').on('click',function(){
+                $('#result').val('');
+                $('#inspect').html('');
                 var text = $('#origin').val();
                 var text2 = text;
+                /*
                 if ($('#check-06').is(':checked')) {
                     while (true) {
                         var indexStart = text.indexOf('<td');
@@ -168,6 +171,40 @@
                     }
                     text = text.replace(regex_10, replace_10);
                     text = text.replace(regex_11, replace_11);
+                }
+                */
+                if ($('#check-22').is(':checked')) {
+                    var stringBuild = '';
+                    var thisText = text;
+                    while (true) {
+                        var thisResult = /(\<td[^\>]*\>)(.*)\<\/td\>/.exec(thisText);
+                        if (thisResult == null) {
+                            stringBuild += thisText;
+                            break;
+                        }
+                        if (thisResult[2].startsWith('<span>') == false && thisResult[2].startsWith('<p') == false) {
+                            console.log(thisResult[2]);
+                            var result = thisText.substr(0, thisResult.index);
+                            result = result + thisResult[1] + '<p>' + thisResult[2] + '</p></td>';
+                            stringBuild += result;
+                        } else {
+                            stringBuild += thisText.substring(0, thisResult.index + thisResult[0].length);
+                        }
+                        thisText = thisText.substring(thisResult.index + thisResult[0].length, thisText.length);
+                    }
+                    text = stringBuild;
+                }
+                if ($('#check-21').is(':checked')) {
+                    while (true) {
+                        var thisResult = /(\<td[^\>]*\>)\<span\>(.*)\<\/span\>\<\/td\>/.exec(text);
+                        if (thisResult == null) {
+                            break;
+                        }
+                        var result = text.substr(0, thisResult.index);
+                        result = result + thisResult[1] + '<p>' + thisResult[2] + '</p></td>';
+                        result = result + text.substring(thisResult.index + thisResult[0].length, text.length);
+                        text = result;
+                    }
                 }
                 if ($('#check-00').is(':checked')) {
                     text = text.replace(regex_00, replace_00);
@@ -197,6 +234,7 @@
                 text2 = text2.replace(regex_inspect_98, replace_inspect_98);
                 text2 = text2.replace(regex_inspect_99, replace_inspect_99);
                 
+                /*
                 if ($('#check-06').is(':checked')) {
                     while (true) {
                         var indexStart = text2.indexOf('&lt;td');
@@ -218,6 +256,40 @@
                     }
                     text2 = text2.replace(regex_i_10, '\&lt\;td');
                     text2 = text2.replace(regex_i_11, '\&lt\;\/td\&gt\;');
+                }
+                */
+                if ($('#check-22').is(':checked')) {
+                    var stringBuild = '';
+                    var thisText = text2;
+                    while (true) {
+                        var thisResult = /(\&lt\;td[^\&]*\&gt\;)(.*)\&lt\;\/td\&gt\;/.exec(thisText);
+                        if (thisResult == null) {
+                            stringBuild += thisText;
+                            break;
+                        }
+                        if (thisResult[2].startsWith('&lt;span&gt;') == false && thisResult[2].startsWith('&lt;p') == false) {
+                            console.log(thisResult[2]);
+                            var result = thisText.substr(0, thisResult.index);
+                            result = result + '<font color="#FFFF00">' + thisResult[1] + '</font>' + thisResult[2] + '<font color="#FFFF00">&lt;/td&gt;</font>';
+                            stringBuild += result;
+                        } else {
+                            stringBuild += thisText.substring(0, thisResult.index + thisResult[0].length);
+                        }
+                        thisText = thisText.substring(thisResult.index + thisResult[0].length, thisText.length);
+                    }
+                    text2 = stringBuild;
+                }
+                if ($('#check-21').is(':checked')) {
+                    while (true) {
+                        var thisResult = /(\&lt\;td[^\&]*\&gt\;)\&lt\;span\&gt\;(.*)\&lt\;\/span\&gt\;\&lt\;\/td\&gt\;/g.exec(text2);
+                        if (thisResult == null) {
+                            break;
+                        }
+                        var result = text2.substr(0, thisResult.index);
+                        result = result + thisResult[1] + '<font color="#FFFF00">&lt;span&gt;</font>' + thisResult[2] + '<font color="#FFFF00">&lt;/span&gt;</font>&lt;/td&gt;';
+                        result = result + text2.substring(thisResult.index + thisResult[0].length, text2.length);
+                        text2 = result;
+                    }
                 }
                 if ($('#check-00').is(':checked')) {
                     text2 = text2.replace(regex_i_00, replace_i_00);
@@ -276,9 +348,19 @@
             <input class="form-check-input" type="checkbox" value="" id="check-04" checked>
             <label class="form-check-label" for="check-04">&lt;p class="~"&gt;y1공백&lt;/p&gt; <span style="color: #FFFF00;">→</span> &lt;p class="~ <span style="color: #FFFFFF;">customm customm1</span>"&gt;&lt;/p&gt;</label>
         </div>
+        <!--
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check-06" checked>
             <label class="form-check-label" for="check-06">&lt;td&gt;<span style="color: #FF9999;">&lt;span&gt;&lt;/span&gt;</span>&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
+        </div>
+        -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-21" checked>
+            <label class="form-check-label" for="check-21">&lt;td&gt;<span style="color: #FF9999;">&lt;span&gt;&lt;/span&gt;</span>&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check-22" checked>
+            <label class="form-check-label" for="check-22">&lt;td&gt;&lt;/td&gt; <span style="color: #FFFF00;">→</span> &lt;td&gt;<span style="color: #99FFFF;">&lt;p&gt;&lt;/p&gt;</span>&lt;/td&gt;</label>
         </div>
         <hr style="border: solid 1px gray;">
         <div>
