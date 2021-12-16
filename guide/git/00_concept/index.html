@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            먼저 기본 개념에 대해 짚고 넘어간다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <img src="00_01.gif">
+        </p>
+        <p>
+            <span class="color-yellow"><b>원격저장소(Remote Repository)</b></span>가 있고,
+        </p>
+        <p>
+            이를 복제한 <span class="color-yellow"><b>로컬저장소(Local Repository)</b></span>가 있다.
+        </p>
+        <p>
+            로컬에서 원격으로 상태를 반영시키는 <span class="color-yellow"><b>push</b></span>(업로드 같은)가 있고,
+        </p>
+        <p>
+            원격에서 로컬로 상태를 가져오는 <span class="color-yellow"><b>fetch</b></span>(다운로드 같은)가 있다.
+        </p>
+        <p class="hang1 color-gray">
+            (가져와서 로컬에 적용까지 시키는 pull(fetch+merge)도 있지만,
+        </p>
+        <p class="hang1 color-gray">
+            자세한건 사용할 때 보도록 한다.)
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <img src="00_02.png">
+        </p>
+        <p>
+            <span class="color-yellow"><b>브랜치(Branch. 줄기 혹은 가지)</b></span>가 존재한다.
+        </p>
+        <p>
+            코드를 추가하거나 제거하는 작업 내용을 <span class="color-yellow"><b>커밋(Commit)</b></span>이라고 한다.
+        </p>
+        <p>
+            커밋은 이전 상태(커밋)보다 뭐가 추가되고 뭐가 제거되었는지 <span class="color-yellow">증감을 기록</span>한 것이지만,
+        </p>
+        <p>
+            가볍게는 저장소의 상태라고 봐도 좋고,
+        </p>
+        <p class="hang1 color-gray">
+            (커밋으로 상태를 돌리면,
+        </p>
+        <p class="hang1 color-gray">
+            시초부터 해당 커밋까지 특정 브랜치의 흐름에 따라 증감하다가
+        </p>
+        <p class="hang1 color-gray">
+            결국 그 브랜치에서 커밋을 만들었던 그 상태로 복원될 수 있다.)
+        </p>
+        <p>
+            실제로는 커밋은 작업 내용들을 기록한 것이다.
+        </p>
+        <p class="hang1 color-gray">
+            (그것도 딱 이전보다 뭐가 바뀌었는지만)
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            마지막으로 약간 모호한 개념의 설명일 수 있는데...
+        </p>
+        <p>
+            모든 커밋은 하나 이상의 브랜치에서 만들어져 왔기에
+        </p>
+        <p>
+            커밋이 브랜치에 종속된다고 생각할 수도 있는데,
+        </p>
+        <p>
+            <img src="00_03.gif">　<img src="00_04.gif">
+        </p>
+        <p>
+            실제로는 커밋들은 그저 존재할 뿐이고, 브랜치가 커밋들을 자신만의 흐름대로 잇고 있을 뿐이다.
+        </p>
+        <p>
+            그래서 어떤 커밋들은 여러 브랜치가 공유하고 있다.
+        </p>
+        <p>
+            맨 처음 시초의 커밋은 브랜치마다 공유하고 있을 것이다.
+        </p>
+        <p>
+            위의 그림에서도 A1 커밋은 세 브랜치 모두에서 사용하고 있다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            커밋과 브랜치들을 알록달록 표현하는 것에도 한계가 있으니,
+        </p>
+        <p>
+            표현이 좀 생략되어 있어도 잘 이해해야 한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>

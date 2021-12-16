@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            [stash]
+        </p>
+        <p>
+            <img src="05_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            커밋하기 전의 작업 상태를 보존해두었다가 사용할 수 있다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            커밋하거나 작업 내용을 버리기 전까진 마음대로 다른 상태로 checkout할 수 없다.
+        </p>
+        <p>
+            다른 상태로 checkout한다는 건 그 상태로 덮어씌운다는건데, 작업물들이 그냥 날라갈 것이니...
+        </p>
+        <p class="hang1 color-gray">
+            (아예 checkout 되지 않도록 에러로 거부한다.)
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; checkout &nbsp; <span class="dotted">main</span>
+            </p>
+            <hr>
+            <p class="response">
+                error: Your local changes to the following files would be overwritten by checkout:
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;001.txt<span class="comment">&lt;---- 체크아웃시 작업하던 내용을 덮어쓸 수 있어서, 해당 파일을 알려줌.</span>
+            </p>
+            <p class="response">
+                Please commit your changes or stash them before you switch branches.<span class="comment">&lt;---- 커밋하거나 스태시로 저장하라고 힌트를 줌.</span>
+            </p>
+            <p class="response">
+                Aborting<span class="comment">&lt;---- (중단됨)</span>
+            </p>
+        </div>
+        <p>
+            버려도(<span class="cmd">git checkout -- 파일경로...</span>) 상관없다면 모를까, 잠깐 <span class="color-yellow">옮겨놨다가 복구</span>하고 싶을 수 있다.
+        </p>
+        <p>
+            아니면 현 작업물을 다른 브랜치 상태에 적용시켜서 이어가고 싶을 수도 있고.
+        </p>
+        <p>
+            이런 임시 저장소를 <span class="cmd">stash</span>라고 한다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; [push]
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash
+            </p>
+            <hr>
+            <p class="response">
+                Saved working directory and index state WIP on a01: 22daa3a my comment 01
+            </p>
+        </div>
+        <p>
+            stash를 <span class="color-yellow">생성</span>한다. 현재 브랜치에서 Track 중인 파일의 모든 변화를 저장하고 브랜치의 원래 상태로 돌아간다.
+        </p>
+        <p>&nbsp;</p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">list</span>
+            </p>
+            <hr>
+            <p class="response">
+                stash@{0}: WIP on a01: 22daa3a my comment 01
+            </p>
+            <p class="response">
+                stash@{1}: WIP on a01: 22daa3a my comment 01
+            </p>
+            <p class="response">
+                <span class="comment">└── 스태시 번호(높을 수록 최근), 생성된 곳의 브랜치, 생성된 기준 커밋, 기준 커밋의 코멘트 등...</span>
+            </p>
+        </div>
+        <p>
+            stash의 <span class="color-yellow">목록</span>을 보여준다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">show</span> &nbsp; [옵션] &nbsp; [스태시명]
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; show &nbsp; <span class="dotted">stash@{0}</span>
+            </p>
+            <hr>
+            <p class="response">
+                 001.txt | 1 +
+            </p>
+            <p class="response">
+                 1 file changed, 1 insertion(+)
+            </p>
+        </div>
+        <p>
+            스태시를 지정하지 않으면, 가장 최근(가장 번호가 높은)을 보며,
+        </p>
+        <p>
+            스태시의 작업이 어떤 것인지 간략하게 <span class="color-yellow">보여준다.</span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; show &nbsp; <span class="dotted color-yellow">-p</span>
+            </p>
+            <hr>
+            <p class="response">
+                diff --git a/001.txt b/001.txt
+            </p>
+            <p class="response">
+                index e69de29..58c9bdf 100644
+            </p>
+            <p class="response">
+                --- a/001.txt
+            </p>
+            <p class="response">
+                +++ b/001.txt<span class="comment">&lt;---- 001.txt 파일에 내용이 추가되어 있음</span>
+            </p>
+            <p class="response color-my-ok">
+                @@ -0,0 +1 @@
+            </p>
+            <p class="response color-my-green">
+                +111<span class="comment">&lt;---- 파일 내부에 111이라는 내용이 추가되어 있음</span>
+            </p>
+        </div>
+        <p>
+            <span class="cmd">-p</span>옵션으로 스태시의 작업 내용을 좀 더 자세하게 볼 수 있다.(<span class="cmd">git diff</span>처럼)
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            이제 저장해 둔 stash를 <span class="color-yellow">사용</span>해보자.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">apply</span> &nbsp; [--index] &nbsp; [스태시명]
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; apply
+            </p>
+            <hr>
+            <p class="response">
+                On branch a01
+            </p>
+            <p class="response">
+                Your branch is up to date with 'origin/a01'.
+            </p>
+            <p>&nbsp;</p>
+            <p class="response">
+                Changes not staged for commit:
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;(use "git add &lt;file&gt;..." to update what will be committed)
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+            </p>
+            <p>&nbsp;</p>
+            <p class="response color-my-red">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modified:&nbsp;&nbsp;&nbsp;001.txt
+            </p>
+            <p>&nbsp;</p>
+            <p class="response">
+                no changes added to commit (use "git add" and/or "git commit -a")
+            </p>
+        </div>
+        <p>
+            일반적인 <span class="cmd">git status</span>같은 응답을 받으며 작업 내용을 가져온다.
+        </p>
+        <p>
+            <span class="cmd">--index</span>옵션으로 스태시를 형성할 당시의 <span class="color-yellow">Stage 여부까지</span> 그대로 복원시킬 수도 있다.
+        </p>
+        <p class="hang1 color-gray">
+            (이 옵션 없이 기본 명령어로는 Stage 여부까지는 복원하지 않는다.)
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            에러 응답이 나올 수도 있는데, 그 중 하나는 아래처럼 될 수 있다.
+        </p>
+        <div class="cmd">
+            <hr>
+            <p class="response">
+                CONFLICT (modify/delete): 001.txt deleted in Updated upstream and modified in Stashed 
+            </p>
+            <p class="response">
+                changes. Version Stashed changes of 001.txt left in tree.
+            </p>
+        </div>
+        <p>
+            stash를 만들었던 상황과 지금의 상황이
+        </p>
+        <p>
+            stash를 적용하기에 충돌(conflict)이 일어날 수 있는 경우도 있다.
+        </p>
+        <p>
+            충돌(conflict)은 자동으로 병합되거나 수동으로 병합해야 하는데,
+        </p>
+        <p>
+            이건 fetch에서 좀 더 보기로 한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">git apply</span>를 한다고 스태시가 지워지는건 아니고, 원한다면 몇 번이든 사용할 수 있다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            스태시가 이제 필요없다면 <span class="color-yellow">지울 수 있다.</span>
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">drop</span> &nbsp; [스태시명]
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; stash &nbsp; drop
+            </p>
+            <hr>
+            <p class="response">
+                Dropped refs/stash@{1} (bfeb5e2fed5511a5380b676daef517e68d4d2a88)
+            </p>
+        </div>
+        <p>
+            역시 스태시를 지정하지 않으면, 가장 최근(가장 번호가 높은)것을 지운다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            만약 스태시를 적용과 동시에 삭제까지 바로 하고 싶다면(apply+drop)
+        </p>
+        <p>
+            <span class="cmd">git &nbsp; stash &nbsp; <span class="color-yellow">pop</span> &nbsp; [--index] &nbsp; [스태시명]</span>을 사용하면 된다.
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>

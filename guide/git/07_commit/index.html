@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            [commit]
+        </p>
+        <p>
+            <img src="07_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">git add</span>(Stage)시킨 내용들을 하나의 커밋으로 만든다.
+        </p>
+        <p>
+            commit은 로컬에서 일어나며, 딱히 복잡한 부분이 아니다.
+        </p>
+        <p>
+            Enter키에 가까운 정도이다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; commit
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; commit &nbsp; <span class="dotted">-m &nbsp; "my comment 01"</span>
+            </p>
+            <hr>
+            <p class="response">
+                [a01 22daa3a] my comment 01
+            </p>
+            <p class="response">
+                &nbsp;1 file changed, 0 insertions(+), 0 deletions(-)
+            </p>
+            <p class="response">
+                &nbsp;create mode 100644 001.txt
+            </p>
+        </div>
+        <p>
+            커밋을 작성한다.
+        </p>
+        <p>
+            <span class="cmd">git commit</span>을 하자마자 코멘트 입력을 위한 텍스트에디터가 실행되고, 여러 줄 입력이 가능하다.
+        </p>
+        <p>
+            간단하게 명령어와 동시에 하려면 <span class="cmd">-m "코멘트"</span>로 옵션을 주면 된다.
+        </p>
+        <p>&nbsp;</p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; log
+            </p>
+            <hr>
+            <p class="response">
+                <span class="color-my-gold">commit 22daa3ae2489e5eca7dd2e5d6a38b0edbe16aff3 (<span class="color-my-blue">HEAD</span> -> <span class="color-my-green">a01</span>)</span><span class="comment">&lt;--- 커밋ID. 현재 작업 중인 브랜치여서 <span class="color-my-blue">로컬HEAD</span>가 가리키고 있음.</span>
+            </p>
+            <p class="response">
+                Author: USER &lt;email@address.com&gt;<span class="comment">&lt;--- 커밋 작성자</span>
+            </p>
+            <p class="response">
+                Date:   EEE MMM dd HH:mm:ss yyyy +0900<span class="comment">&lt;--- 커밋 시점</span>
+            </p>
+            <p>&nbsp;</p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;my comment 01<span class="comment">&lt;--- 커밋 당시 작성한 코멘트</span>
+            </p>
+            <p>&nbsp;</p>
+            <p class="response">
+                <span class="color-my-gold">commit a6c5bb93c17623e34a605896922b77cad9db07ef (<span class="color-my-red">origin/main</span>, <span class="color-my-red">origin/HEAD</span>, <span class="color-my-green">main</span>)</span>
+            </p>
+            <p class="response">
+                Author: USERNAME &lt;USER&gt;
+            </p>
+            <p class="response">
+                Date:   EEE MMM dd HH:mm:ss yyyy +0900
+            </p>
+            <p>&nbsp;</p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;Initial commit
+            </p>
+        </div>
+        <p>
+            <span class="cmd">git log</span>로 현재 로컬브랜치 기준으로 최신(↑)부터 오래된 순(↓)으로 커밋 흐름을 볼 수 있다.
+        </p>
+        <p class="hang1 color-gray">
+            (기본적으론 다른 브랜치의 기록은 조회되지 않는다.)
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            커밋은 <span class="color-yellow">로컬</span>에서 일어나는 작업이다.
+        </p>
+        <p>
+            로컬은 <span class="color-yellow">아직 리모트에 반영되지 않은</span>, 나만의 상태이자 계획이고,
+        </p>
+        <p>
+            리모트는 다른 곳의 모두가 알고 있는 실제적인 상태이다.
+        </p>
+        <p>
+            즉, 리모트에는 아직 어떤 변화도 주지 않은 것.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            로컬의 커밋들을 리모트로 반영시키려면 push를 해야 한다.
+        </p>
+        <p>
+            <a href="../08_push/" target="_blank">[push] 알아보기</a>
+        </p>
+        <p>
+            <img src="../08_push/08_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>

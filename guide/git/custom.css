@@ -1,0 +1,130 @@
+body {
+    font-family: 'Nanum Gothic' !important;
+    font-size: 2rem;
+}
+p {
+    color: #DDDDDD;
+    margin: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+li {
+    color: #DDDDDD;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+hr {
+    border-top: dashed;
+}
+.color-yellow {
+    color: #FFFF00;
+}
+.color-white {
+    color: #FFFFFF;
+}
+.color-gray {
+    color: #999999;
+}
+.color-my-gold {
+    color: #CCCC33 !important;
+}
+.color-my-red {
+    color: #FF6666 !important;
+}
+.color-my-green {
+    color: #66FF66 !important;
+}
+.color-my-blue {
+    color: #66FFFF !important;
+}
+.color-my-ok {
+    color: #66CCCC !important;
+}
+.hang1 {
+    padding-left: 3em;
+}
+.hang2 {
+    padding-left: 5em;
+}
+.caret {
+    animation-duration: 1s;
+    animation-name: aniCmdCursor;
+    animation-iteration-count: infinite;
+}
+@keyframes aniCmdCursor {
+	0% {
+		color: #FFFFFF;
+	}
+	50% {
+		color: #FFFFFF;
+	}
+	100% {
+		color: #000000;
+	}
+}
+.dotted {
+    border: 1px dotted #666666;
+    padding: 0.1em;
+}
+.consolas {
+    font-family: Menlo,Consolas,Monaco,monospace;
+}
+a {
+    background-color: #000033;
+}
+.hide-btn {
+    background-color: #330000;
+}
+.cmd {
+    color: #ffffff;
+    background-color: #000000;
+    border: 0;
+    font-family: Menlo,Consolas,Monaco,monospace;
+    word-break: keep-all !important;
+    word-wrap: normal !important;
+    padding: 0.2em;
+    margin: 0.2em;
+}
+span.cmd {
+    font-size: 0.6em;
+    border-radius: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+.cmd > p {
+    font-size: 0.6em;
+    text-align: left;
+    color: #ffffff;
+}
+.cmd > p.response {
+    color: #BBBBBB;
+}
+.cmd .comment {
+    background-color: #101010;
+    font-style: italic;
+    margin-left: 2em;
+    color: forestgreen;
+    border: 1px dotted #202020;
+}
+.cmd > hr {
+    border-top: 1px dashed #666666;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+}
+.img-round {
+    object-fit: cover;
+    border-radius: 50%;
+}
+.img-border {
+    border: 0.5px solid black;
+}
+.size-50 {
+    width: 50px;
+    height: 50px;
+}
+.table-list td {
+    vertical-align: middle;
+    text-align: center;
+}

@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+    
+    <script>
+		$(document).ready(function() {
+			SetEvent();
+		});
+		function SetEvent() {
+            $('#hide01_show').on('click', function() {
+				$('#hide01').show();
+                $('#hide01_show').hide();
+			});
+            $('.hide01_hide').on('click', function() {
+                $('#hide01_show').show();
+				$('#hide01').hide();
+			});
+            $('#hide01').hide();
+		};
+	</script>
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            [push]
+        </p>
+        <p>
+            <img src="08_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            로컬의 브랜치와 커밋을 리모트 저장소로 업로드한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            로컬의 커밋들은 아직 리모트에 반영되지 않은, 자신만의 것들도 있다.
+        </p>
+        <p>
+            이런 커밋들을 리모트에 일치시키도록 올려보내는 것이 push 과정이다.
+        </p>
+        <p>
+            push는 <span class="color-yellow">브랜치 단위</span>로 이루어진다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; checkout
+            </p>
+            <hr>
+            <p class="response">
+                Your branch is up to date with 'origin/a01'.<span class="comment">&lt;---- 리모트브랜치와 연동되어 있을 때만 응답이 있음</span>
+            </p>
+        </div>
+        <p>
+            <span class="cmd">git checkout</span>을 통해 로컬브랜치가 연동된 리모트브랜치를 알 수 있다.
+        </p>
+        <p>
+            <span class="color-yellow">만약 아무 반응도 없다면,</span> 아직 연동되지 않은 상태이고, push할 수 없다.
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; push
+            </p>
+            <hr>
+            <p class="response">
+                fatal: The current branch z01 has no upstream branch.<span class="comment">&lt;---- 아직 upstream branch가 설정되어 있지 않음</span>
+            </p>
+            <p class="response">
+                ...
+            </p>
+        </div>
+        <p>&nbsp;</p>
+        <p>
+            두 가지 방법이 가능한데,
+        </p>
+        <p>
+            1. 새로운 리모트브랜치를 만들어 연동시키는 것
+        </p>
+        <p>
+            2. 기존의 리모트브랜치에 연동시키는 것
+        </p>
+        <p>
+            이 있겠다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <span class="hide-btn" id="hide01_show">(방법2가 좀 덜 쓰는 방법인데, 먼저 잠깐 생각을 하고 가자. 여기를 눌러 펼쳐보기...)</span>
+        </p>
+        <div id="hide01">
+            <p>
+                <span class="hide-btn hide01_hide">(여기를 눌러 접기)</span>
+            </p>
+            <p>
+                [방법2를 보기 전에 잠깐 생각]
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                작업 컴퓨터를 옮기는 과정에서 원래 사용하던 브랜치를 사용하려는 것이 아니라면,
+            </p>
+            <p>
+                여러 사용자가 한 리모트브랜치에서 작업하는 상황이 될 수 있다.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                다른 누군가 push 이력이 있을 경우,
+            </p>
+            <p>
+                내가 최신(up to date)이 아니게 되고
+            </p>
+            <p>
+                pull(fetch+merge) 작업을 한 후 push를 할텐데,
+            </p>
+            <p>
+                이걸 한 리모트브랜치를 같이 사용하는 모두가 매번 push할 때마다 해줘야하는 불편한 상황이 발생할 수 있다.
+            </p>
+            <p>
+                <img src="../03_branch/03_02.gif">&nbsp;<img src="../03_branch/03_03.gif">
+            </p>
+            <p>
+                위 같은 처리를 매번 해줘야할 수도 있다...
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                <img src="08_02.gif">
+            </p>
+            <p>
+                로컬에서 커밋을 만들 때마다 미리 pull(fetch+merge)를 하고 작성한대도 상황은 별반 다르지 않다.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                <img src="../03_branch/03_06.gif">
+            </p>
+            <p>
+                브랜치는 적극 활용하자.
+            </p>
+            <p>
+                브랜치의 전략은 <a href="../03_branch/" target="_blank">[branch]</a>의 브랜치 사용 전략 접은글을 참고.
+            </p>
+            <p>&nbsp;</p>
+            <p>
+                <span class="hide-btn hide01_hide">(여기를 눌러 접기)</span>
+            </p>
+        </div>
+        <p>&nbsp;</p>
+        <hr style="border-top: 1px dotted;">
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted">-u &nbsp; 리모트브랜치 &nbsp; 로컬브랜치</span>
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted">-u &nbsp; origin/a01 &nbsp; &nbsp;a01</span>
+            </p>
+            <hr>
+            <p class="response">
+                Branch 'a01' set up to track remote branch 'a01' from 'origin'.
+            </p>
+        </div>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted">--set-upstream-to=리모트브랜치 &nbsp; 로컬브랜치</span>
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted">--set-upstream-to=origin/a01 &nbsp; &nbsp; a01</span>
+            </p>
+            <hr>
+            <p class="response">
+                Branch 'a01' set up to track remote branch 'a01' from 'origin'.
+            </p>
+        </div>
+        <p>
+            위의 펼쳐보기에서 생각을 해보고, 기존 리모트브랜치가 필요한 상황이 맞다면 사용한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">git branch</span>만으로 로컬브랜치들을 조회할 수 있다.
+        </p>
+        <p>
+            <span class="cmd">git branch <span class="color-yellow">-r</span></span>로는 리모트브랜치를 볼 수 있고, 
+        </p>
+        <p>
+            <span class="cmd">git branch <span class="color-yellow">-a</span></span>로 전체 브랜치를 볼 수 있다. 
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted">-a</span>
+            </p>
+            <hr>
+            <p class="response">
+                * <span class="color-my-green">a01</span><span class="comment">&lt;---- 현재 작업 중인 로컬브랜치 표시</span>
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;main
+            </p>
+            <p class="response color-my-red">
+                &nbsp;&nbsp;remotes/origin/HEAD<span class="color-gray"> -&gt; origin/main</span><span class="comment">&lt;---- origin 원격저장소가 현재 origin/main 브랜치를 가리키고 있음</span>
+            </p>
+            <p class="response color-my-red">
+                &nbsp;&nbsp;remotes/origin/a01
+            </p>
+            <p class="response color-my-red">
+                &nbsp;&nbsp;remotes/origin/main
+            </p>
+            <p class="response">
+                <span class="comment">└─── 리모트브랜치는 저장소별명(origin)이 붙음</span>
+            </p>
+        </div>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            방법1은 새로운 리모트브랜치로 연동시키는 것이다.
+        </p>
+        <p>
+            로컬브랜치에서 특정 리모트브랜치의 구조를 따르고 있었어도 상관없다.
+        </p>
+        <p>
+            새로운 리모트를 만들 때, 공통되는 커밋들을 경유한 경로로 잘 만들어준다.
+        </p>
+        <p class="hang1 color-gray">
+            (잘 모르겠다면 <a href="../00_concept/" target="_blank">[개념]</a>의 커밋과 브랜치의 비종속 관계를 보자)
+        </p>
+        <p>&nbsp;</p>
+        <p style="margin-bottom: -14px;">
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; push &nbsp; <span class="dotted">--set-upstream &nbsp; 저장소명 &nbsp; 새_리모트브랜치</span>
+            </span>
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; push &nbsp; <span class="dotted">-u &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 저장소명 &nbsp; 새_리모트브랜치</span>
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; push &nbsp; <span class="dotted">-u &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; origin &nbsp; &nbsp; a01</span>
+            </p>
+            <hr>
+            <p class="response">
+                Enumerating objects: 4, done.
+            </p>
+            <p class="response">
+                Counting objects: 100% (4/4), done.
+            </p>
+            <p class="response">
+                Delta compression using up to 8 threads
+            </p>
+            <p class="response">
+                Compressing objects: 100% (2/2), done.
+            </p>
+            <p class="response">
+                Writing objects: 100% (3/3), 272 bytes | 272.00 KiB/s, done.
+            </p>
+            <p class="response">
+                Total 3 (delta 0), reused 0 (delta 0)
+            </p>
+            <p class="response">
+                remote:
+            </p>
+            <p class="response">
+                remote: Create a pull request for 'a01' on GitHub by visiting:
+            </p>
+            <p class="response">
+                remote:      https://github.com/BlackdeerY/example/pull/new/a01
+            </p>
+            <p class="response">
+                remote:
+            </p>
+            <p class="response">
+                To https://github.com/BlackdeerY/example.git
+            </p>
+            <p class="response">
+                &nbsp;*&nbsp;[new branch]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a01 -&gt; a01
+            </p>
+            <p class="response">
+                Branch 'a01' set up to track remote branch 'a01' from 'origin'.
+            </p>
+        </div>
+        <p>&nbsp;</p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; checkout
+            </p>
+            <hr>
+            <p class="response">
+                Your branch is up to date with 'origin/a01'.<span class="comment">&lt;---- 리모트브랜치와 연동되어 있을 때만 응답이 있음</span>
+            </p>
+        </div>
+        <p>
+            이제는 <span class="cmd">git checkout</span>을 하면 응답이 있을 것이다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <img src="08_01.gif">
+        </p>
+        <p>
+            리모트로 <span class="color-yellow">반영시키는 push</span>를 봤으니,
+        </p>
+        <p>
+            이제는 리모트의 <span class="color-yellow">최신 상황을 가져오는</span> <a href="../09_fetch_pull/" target="_blank">[fetch 및 pull(fetch+merge)]</a>를 보자.
+        </p>
+        <p>
+            <img src="../09_fetch_pull/09_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            [checkout]
+        </p>
+        <p>
+            <img src="04_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            작업하기 위해 Branch나 특정 커밋으로 이동한다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; checkout &nbsp; 로컬브랜치명
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; checkout &nbsp; <span class="dotted">a01</span>
+            </p>
+            <hr>
+            <p class="response">
+                Switched to branch 'a01'<span class="comment">&lt;---- 선택한 로컬브랜치로 전환이 되었다는 뜻</span>
+            </p>
+            <p class="response">
+                Your branch is up to date with 'origin/a01'.<span class="comment">&lt;---- 만약 리모트브랜치와 연동되어 있다면, 리모트브랜치와의 차이를 알려준다.</span>
+            </p>
+        </div>
+        <p>
+            만약 새로운 로컬 브랜치를 만들고 한번도 push하지 않았다면,
+        </p>
+        <p>
+            리모트브랜치 관련문은 뜨지 않는데,
+        </p>
+        <p>
+            상관없이 commit을 만들다가
+        </p>
+        <p>
+            push를 할 때 리모트브랜치를 만들거나 선택해서 진행하면 된다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            브랜치가 아니라, 특정 커밋으로 이동할 수도 있다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; checkout &nbsp; 커밋ID
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; checkout &nbsp; <span class="dotted">ae2bd39</span>
+            </p>
+            <hr>
+            <p class="response">
+                ...
+            </p>
+            <p class="response">
+                You are in 'detached HEAD' state. ...
+            </p>
+            <p class="response">
+                ...
+            </p>
+            <p class="response">
+                HEAD is now at ae2bd39 커밋_당시_코멘트
+            </p>
+        </div>
+        <p>
+            <span class="color-yellow">detached HEAD 상태</span>인 것에 주목한다.
+        </p>
+        <p>
+            어느 브랜치에서 진행하는 것이 아니라서 commit을 할 순 없다.
+        </p>
+        <p>
+            그저 이 커밋 당시로 파일들의 상태를 복원해보는 용도로 쓰거나,
+        </p>
+        <p>
+            여기에서 <span class="cmd">branch</span>명령어로 새로운 브랜치를 파생시키면 commit할 수 있다.
+        </p>
+        <p class="hang1 color-gray">
+            (<span class="cmd">git checkout <span class="dotted"><span class="color-yellow">-b</span> 새_로컬브랜치명</span></span>으로 생성과 전환을 동시에 할 수 있다.)
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            커밋ID 외에도 브랜치 이름 뒤에 <span class="color-yellow">^</span>를 붙이면(<span class="cmd">a01<span class="color-yellow">^^^</span></span>),
+        </p>
+        <p>
+            ^ 수만큼 브랜치의 최신지점에서 <span class="color-yellow">한 칸씩 이전으로</span> 진행한 곳을 의미하고,
+        </p>
+        <p>
+            <span class="cmd">브랜치명<span class="color-yellow">~n</span></span>은 브랜치에서 <span class="color-yellow">n칸 앞</span>을 의미한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            또는 리모트브랜치(예:<span class="cmd">origin/a01</span>)로 입력하면,
+        </p>
+        <p>
+            해당 리모트브랜치가 가리키는 커밋으로 detached HEAD 상태로 전환된다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            이제 전환된 브랜치에서 작업을 시작하려면
+        </p>
+        <p>
+            커밋의 실질적인 작성 부분인 add로 작업을 반영시킨다.
+        </p>
+        <p>
+            <a href="../06_add/" target="_blank">[add/reset] 알아보기</a>
+        </p>
+        <p>
+            <img src="../06_add/06_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            checkout으로 브랜치를 전환하려는데<span class="color-gray">(전환하면 작업내용은 유실)</span>
+        </p>
+        <p>
+            이미 작업 중인 상황이라, 이 작업을 보존하고 싶다면
+        </p>
+        <p>
+            <a href="../05_stash/" target="_blank">[stash] 알아보기</a>
+        </p>
+        <p>
+            <img src="../05_stash/05_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>
