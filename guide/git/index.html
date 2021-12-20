@@ -26,6 +26,19 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="custom.css">
+    
+    <script>
+		var mouseA = false;
+		$(document).ready(function() {
+			setAutoSize();
+		});
+		function setAutoSize() {
+            $('.jumbotron').css('width',$('.table-list').width());
+            window.addEventListener('resize', function() {
+				$('.jumbotron').css('width',$('.table-list').width());
+			});
+		};
+	</script>
 </head>
 <body>
     <div id="div-top" class="container-fluid">
@@ -58,7 +71,7 @@
                             <p>
                                 개념
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (커밋∉브랜치)
                             </p>
                         </a>
@@ -81,7 +94,7 @@
                             <p>
                                 clone
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (복제, 시작)
                             </p>
                         </a>
@@ -104,7 +117,7 @@
                             <p>
                                 checkout
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (위치 변경)
                             </p>
                         </a>
@@ -117,8 +130,8 @@
                             <p>
                                 stash
                             </p>
-                            <p>
-                                (임시 저장)
+                            <p style="margin-top: -0.5em;">
+                                (작업 백업, 임시 저장)
                             </p>
                         </a>
                     </td>
@@ -132,7 +145,7 @@
                             <p>
                                 add
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (커밋 작성)
                             </p>
                         </a>
@@ -145,7 +158,7 @@
                             <p>
                                 commit
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (커밋 완결)
                             </p>
                         </a>
@@ -158,8 +171,8 @@
                             <p>
                                 push
                             </p>
-                            <p>
-                                (올리기)
+                            <p style="margin-top: -0.5em;">
+                                (올리기, 반영)
                             </p>
                         </a>
                     </td>
@@ -171,8 +184,8 @@
                             <p>
                                 fetch,pull
                             </p>
-                            <p>
-                                (내려받기)
+                            <p style="margin-top: -0.5em;">
+                                (내려받기, 갱신)
                             </p>
                         </a>
                     </td>
@@ -184,7 +197,7 @@
                             <p>
                                 tag
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (표식)
                             </p>
                         </a>
@@ -199,47 +212,47 @@
                             <p>
                                 merge
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (병합)
                             </p>
                         </a>
                     </td>
                     <td>
-                        <a href="09_fetch_pull/" target="_blank">
+                        <a href="11_reset/" target="_blank">
                             <p>
-                                <img src="">
+                                <img src="11_reset/11_01.gif">
                             </p>
-                            <p>
-                                rebase
-                            </p>
-                            <p>
-                                (수정)
-                            </p>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="09_fetch_pull/" target="_blank">
-                            <p>
-                                <img src="">
-                            </p>
-                            <p>
+                            <p class="color-yellow">
                                 reset
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (과거로 되돌리기)
                             </p>
                         </a>
                     </td>
                     <td>
-                        <a href="09_fetch_pull/" target="_blank">
+                        <a href="12_revert/" target="_blank">
                             <p>
-                                <img src="">
+                                <img src="12_revert/12_01.gif">
                             </p>
                             <p>
                                 revert
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (예전 상태처럼)
+                            </p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="13_rebase/" target="_blank">
+                            <p>
+                                <img src="13_rebase/13_01.gif">
+                            </p>
+                            <p class="color-yellow">
+                                rebase
+                            </p>
+                            <p style="margin-top: -0.5em;">
+                                (수정, 합치기)
                             </p>
                         </a>
                     </td>
@@ -248,10 +261,10 @@
                             <p>
                                 <img src="">
                             </p>
-                            <p>
+                            <p class="color-yellow">
                                 cherry-pick
                             </p>
-                            <p>
+                            <p style="margin-top: -0.5em;">
                                 (특정 커밋 포함시키기)
                             </p>
                         </a>

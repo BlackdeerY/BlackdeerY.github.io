@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>이미지로 보는 Git 개념서 - 현록</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<link rel="icon" href="../../../common/resources/ico/Blackdeer.ico">
+	<meta property="og:title" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:description" content="이미지로 보는 Git 개념서 - 현록">
+	<meta property="og:image" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<meta property="msapplication-TileColor" content="#000000">
+	<meta property="msapplication-TileImage" content="https://blackdeery.github.io/common/resources/img/Blackdeer.png">
+	<link rel="apple-touch-icon-precomposed" href="../../../common/resources/img/Blackdeer.png">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link id="themeCSS" rel="stylesheet" href="../../../common/resources/css/bootstrap_slate.min.css" media="all">
+	
+	<!-- Web Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../../common/resources/js/jquery-3.4.1.min.js"></script>
+	<script src="../../../common/resources/js/popper.min.js"></script>
+	<script src="../../../common/resources/js/bootstrap-v.4.3.1.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../custom.css">
+</head>
+<body>
+	<div id="div-content" class="container-fluid">
+        <p>&nbsp;</p>
+        <p>
+            [reset]
+        </p>
+        <p>
+            <img src="11_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            브랜치의 포인터를 과거의 특정 커밋으로 이동시켜서, 과거 상태로 만든다.
+        </p>
+        <p class="hang1 color-gray">
+            (로컬 HEAD만 옮기는 checkout과는 다르다. 브랜치를 옮기는 것도 아니고,
+        </p>
+        <p class="hang1 color-gray">
+            작업 중인 브랜치가 적용 받으므로 로컬 HEAD도 함께 움직이긴 하지만
+        </p>
+        <p class="hang1 color-gray">
+            커밋 단위로 움직인다고 detached 상태가 되는 것이 아니라,
+        </p>
+        <p class="hang1 color-gray">
+            attached 그대로 브랜치 포인터와 함께 움직이는 것.)
+        </p>
+        <p class="hang1 color-gray">
+            <img src="../04_checkout/04_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <img src="11_01.gif">
+        </p>
+        <p>
+            먼저 생각해볼 것은, 정말 reset이 필요한가??이다.
+        </p>
+        <p>
+            해당 상태로 가는 것은 <span class="cmd">git checkout</span>만으로도 가능하다.
+        </p>
+        <p>
+            <img src="11_02.gif">
+        </p>
+        <p>
+            원하는 위치에서 새로운 브랜치를 따서 작업하면,
+        </p>
+        <p>
+            수정 없이도 원하는 경로의 작업 결과를 만들 수 있다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            reset은 결국 history를 거부하고 수정하며,
+        </p>
+        <p>
+            이미 push된 것들이라면 다른 이들에게도 수정된 결과를 다시 전파시킨다.
+        </p>
+        <p>
+            특히 이미 리모트에 반영된 무언가를 수정하여
+        </p>
+        <p>
+            모두가 영향을 받는 작업은 방법이 맞는지 생각해보자.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; reset &nbsp; 돌아갈_커밋
+            </span>
+        </p>
+        <p>
+            브랜치의 흐름 중에 돌아가고 싶은 커밋ID로 되돌릴 수 있다.
+        </p>
+        <p>
+            옵션에는 <span class="cmd">--soft</span>,<span class="cmd">--mixed</span>,<span class="cmd">--hard</span>가 있는데,
+        </p>
+        <p>
+            <span class="color-yellow">아무 옵션도 지정하지 않으면 기본적으로 mixed</span>로 동작한다.
+        </p>
+        <p>
+            soft→mixed→hard 순으로 정도가 강해지는데, 이 옵션들의 차이점을 보자.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            먼저 3가지 개념을 헷갈리지 않아야 한다.
+        </p>
+        <p>
+            ㆍHEAD: 최신점을 가리키는 포인터. <span class="cmd">--soft</span>
+        </p>
+        <p>
+            ㆍIndex: Stage상태. add되어 커밋 작성 중인 작업들. <span class="cmd">--soft</span>,<span class="cmd">--mixed</span>
+        </p>
+        <p>
+            ㆍWorking: 컴퓨터에 존재하고 있는 파일들. <span class="cmd">--soft</span>,<span class="cmd">--mixed</span>,<span class="cmd">--hard</span>
+        </p>
+        
+        <p>&nbsp;</p>
+        <p>
+            뭘해도 브랜치의 포인터는 옮겨진다.
+        </p>
+        <p class="hang1 color-gray">
+            (흐름에서 제외된 커밋들은 다른 브랜치에서 사용한다면 남지만, 어느 브랜치도 사용하지 않으면 제거된다.)
+        </p>
+        <p>
+            <span class="cmd">--soft</span>는 파일들(Working)도, 작성중(Index=Staging)도 유지한다. <span class="color-yellow">포인터만 옮길 뿐.</span>
+        </p>
+        <p class="hang1 color-gray">
+            (시점이 옮겨졌기 때문에, 미래의 작업물은 diff로 인지되고, 미래의 작업물들 그대로가 Stage되어 있다.)
+        </p>
+        <p>
+            <span class="cmd">--mixed</span>는 <span class="color-yellow">파일들(Working)은 유지</span>하지만, 작성중(Index=Staging)은 버린다. 포인터도 옮긴다.
+        </p>
+        <p class="hang1 color-gray">
+            (시점이 옮겨졌기 때문에, 미래의 작업물은 diff로 인지되나, Stage는 비워져있다.)
+        </p>
+        <p>
+            <span class="cmd">--hard</span>는 파일들(Working)도 작성중(Index=Staging)도 <span class="color-yellow">모두 버린다.</span> 포인터도 옮긴다.
+        </p>
+        <p class="hang1 color-gray">
+            (작업물들을 모두 버렸고, 시점과 파일들이 완벽히 일치하는 상태이다.)
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            아직 리모트에 반영되지 않은 로컬 내에서의 reset은 덜 복잡하나,
+        </p>
+        <p>
+            이미 리모트에 반영된 브랜치를 수정하는 것은 push까지 해야한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <img src="11_03.png">
+        </p>
+        <p>
+            원래 B4까지 진행된 B 브랜치를 B1까지로 reset시킨 상태이다.
+        </p>
+        <p>
+            이미지만 봐서는 다른 누군가 B를 B4까지 진행시킨거고,
+        </p>
+        <p>
+            내가 아직 적용하지 않은거라 <span class="cmd">git pull</span>을 해야하는 것처럼 볼 수도 있다.
+        </p>
+        <p>
+            그래서 Git은 <span class="cmd">git pull</span>을 하라고 말한다.
+        </p>
+        <p class="hang1 color-gray">
+            (기본적으로 더 안전한, 새로 만드는 방향으로 Hint를 준다.
+        </p>
+        <p class="hang1 color-gray">
+            새로 만드는 것보다는 지우는 것이 위험한 작업인 것도 맞고.)
+        </p>
+        <p>
+            새 커밋을 생성해봤자, 분기된(diveged) 것으로 보고, <span class="cmd">git pull</span>로 병합(merge)하도록 안내한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            새 커밋이 있든 그냥 여기까지를 바로 적용하든 <span class="cmd">git push <span class="color-yellow">--force</span></span>로 강제로 push해야 받아준다.
+        </p>
+        <p>
+            <img src="11_04.gif">
+        </p>
+        <p>
+            그러니, 다른 모두에게 수정사항을 전파시키는 상황이 맞는지 다시 생각해봐야 한다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            reset처럼 커밋들을 배제시키는 것이 아니라,
+        </p>
+        <p>
+            특정 커밋들의 반전(＋→－, －→＋) 커밋을 생성하여,
+        </p>
+        <p>
+            ±제로섬(zero-sum)으로 과거와 같은 상황이지만 새로운 커밋으로 작업할 수 있다.
+        </p>
+        <p class="hang1 color-gray">
+            (수정 없이 추가만 될 뿐)
+        </p>
+        <p>
+            <a href="../12_revert/" target="_blank">[revert 알아보기]</a>
+        </p>
+        <p>
+            <img src="../12_revert/12_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	</div>
+</body>
+</html>

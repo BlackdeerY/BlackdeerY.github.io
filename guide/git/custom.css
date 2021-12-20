@@ -17,13 +17,13 @@ hr {
     border-top: dashed;
 }
 .color-yellow {
-    color: #FFFF00;
+    color: #FFFF00 !important;
 }
 .color-white {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 .color-gray {
-    color: #999999;
+    color: #999999 !important;
 }
 .color-my-gold {
     color: #CCCC33 !important;
