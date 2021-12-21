@@ -83,6 +83,81 @@
             <span class="cmd">-n(--no-commit)</span>옵션으로 Stage 상태까지에서 멈출 수 있다.
         </p>
         <p>&nbsp;</p>
+        <p>
+            <span class="cmd">--no-edit</span>옵션을 주면, 아래처럼 코멘트를 자동으로 작성해준다.
+        </p>
+        <div class="cmd">
+            <hr>
+            <p class="response">
+                <span class="color-my-gold">commit 79c06dbeb467d589395fec8254738ba90d7efa32 (<span class="color-my-blue">HEAD -&gt;</span> <span class="color-my-green">a01</span>)</span>
+            </p>
+            <p class="response">
+                Author: USER &lt;email@address.com&gt;
+            </p>
+            <p class="response">
+                Date:   EEE MMM dd HH:mm:ss yyyy +0900
+            </p>
+            <p class="response">
+                &nbsp;
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;Revert "fire test"<span class="comment">&lt;---- 자동으로 생성된 코멘트</span>
+            </p>
+            <p class="response">
+                &nbsp;
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;This reverts commit 817ae3685fb17d677dc93ad040a620c5da2227b2.<span class="comment">&lt;---- 자동으로 생성된 코멘트</span>
+            </p>
+            <p class="response">
+                ...
+            </p>
+        </div>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            merge 커밋을 지정하여 revert하려면 추가적인 옵션이 필요하다.
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; log
+            </p>
+            <hr>
+            <p class="response">
+                <span class="color-my-gold">commit 7651d26b91fac3fa0a13cbaca5fd2d249585f91a (<span class="color-my-blue">HEAD -&gt;</span> <span class="color-my-green">a01</span>, <span class="color-my-red">origin/a01</span>)</span>
+            </p>
+            <p class="response">
+                Merge: 54cd13d aa4b9a1<span class="comment">&lt;---- 순서 확인</span>
+            </p>
+            <p class="response">
+                Author: USER &lt;email@address.com&gt;
+            </p>
+            <p class="response">
+                Date:   EEE MMM dd HH:mm:ss yyyy +0900
+            </p>
+            <p class="response">
+                &nbsp;
+            </p>
+            <p class="response">
+                &nbsp;&nbsp;&nbsp;&nbsp;Merge remote-tracking branch 'refs/remotes/origin/a01' into a01
+            </p>
+            <p class="response">
+                ...
+            </p>
+        </div>
+        <p>
+            log를 통해 Merge: 부분의 순서를 확인한다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; revert &nbsp; <span class="dotted color-yellow">-m &nbsp; 순서(1부터)</span> &nbsp; 반전할_병합커밋
+            </span>
+        </p>
+        <p>
+            순서에 맞는 방향으로 돌아간 것처럼 revert된다.
+        </p>
+        <p>&nbsp;</p>
         <hr>
         <p>&nbsp;</p>
         <p>

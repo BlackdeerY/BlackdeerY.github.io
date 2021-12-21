@@ -26,23 +26,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../custom.css">
-    
-    <script>
-		$(document).ready(function() {
-			SetEvent();
-		});
-		function SetEvent() {
-            $('#hide01_show').on('click', function() {
-				$('#hide01').show();
-                $('#hide01_show').hide();
-			});
-            $('.hide01_hide').on('click', function() {
-                $('#hide01_show').show();
-				$('#hide01').hide();
-			});
-            $('#hide01').hide();
-		};
-	</script>
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
@@ -52,6 +35,235 @@
         </p>
         <p>
             <img src="13_01.gif">
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            커밋과 브랜치들을 수정하는 여러 방법을 본다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            번외로, 현재 로컬 HEAD가 가리키는 현재의 커밋을 즉각 수정하려면,
+        </p>
+        <p>
+            <span class="cmd">git commit <span class="color-yellow">--amend</span></span>로, <span class="cmd">--amend</span> 옵션을 줘서 커밋을 실행하면
+        </p>
+        <p>
+            가장 최근의 커밋 내용을 유지하면서, 커밋을 교체한다.
+        </p>
+        <p class="hang1 color-gray">
+            (커밋ID가 완전히 달라지는, 삭제 후 재생성이다)
+        </p>
+        <p>
+            원하면 <span class="cmd">--author="작성자명 email@address.com"</span> 등의 옵션을 줘서 작성자 명을 수정하거나, 코멘트를 수정할 수 있고,
+        </p>
+        <p>
+            커밋 내용에 추가하고 싶은 사항이 있다면, <span class="cmd">git add 파일경로</span>로 Stage시킨 후, <span class="cmd">git commit --amend</span>를 하면
+        </p>
+        <p>
+            커밋 내용이 합쳐져서 재생성된다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            수정의 영역이라 <a href="../07_commit/" target="_blank">[commit]</a>보다는 여기에서 짤막하게 이야기한다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            옵션이 없는 <span class="cmd">git rebase</span>는, 특정 커밋 구간을 옮겨다 붙일 수 있는데,
+        </p>
+        <p>
+            <img src="13_01.gif">
+        </p>
+        <p>
+            우선 이 기능보다, <span class="cmd">git rebase -i(--interactive)</span>로 옵션을 준 작업부터 살펴보자.
+        </p>
+        <p class="hang1 color-gray">
+            (이 옵션을 붙인 작업이 상대적으로 더 흔하게 일어난다)
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; <span class="color-yellow">-i(--interactive)</span> &nbsp; 수정_직전_커밋
+            </span>
+        </p>
+        <p>
+            작업 중인 브랜치에서, 특정 커밋 다음부터의 커밋들이 시간 순으로 위에서 아래로 나열된다.
+        </p>
+        <p class="hang1 color-gray">
+            (맨 위가 가장 예전, 맨 아래가 가장 최신)
+        </p>
+        <p>
+            기본으로 <span class="dotted">pick 커밋</span>으로 되어있는 것을 수정하거나, 새 줄을 추가한다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>pick</b> 커밋</span>: 그대로 둔다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>reword</b> 커밋</span>: 코멘트만 수정<span class="color-gray">(그래도 커밋 재생성)</span>.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>edit</b> 커밋</span>: 커밋을 수정<span class="color-gray">(재생성)</span>.
+        </p>
+        <p class="hang1 color-gray">
+            (차례가 되면, 수정(<span class="cmd">git add</span>) 후 <span class="cmd">git commit --amend</span>로 수정 완료하고, <span class="cmd">git rebase --continue</span>로 다음으로 계속 한다.)
+        </p>
+        <p class="hang1 color-gray">
+            (수정된 내용이 이후 커밋에 충돌(conflict)을 일으키면,
+        </p>
+        <p class="hang1 color-gray">
+            해당 커밋이 pick이더라도 충돌 해결을 요구(<span class="cmd">git add</span>,<span class="cmd">git rebase --continue</span>)하고 재생성한다.)
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>squash</b> 커밋</span>: 직전 커밋에 병합된다. 작업 내용도, 코멘트도 합쳐진다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>fixup</b> 커밋</span>: squash와 같으나, 코멘트는 버린다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>exec 쉘커맨드</b></span>: exec 쉘커맨드 형식의 줄을 끼워넣으면, rebase의 해당 순서에 쉘커맨드가 실행된다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>break</b></span>: 여기서 잠시 멈춘다. <span class="cmd">git rebase --continue</span>로 다음으로 계속한다.
+        </p>
+        <p>
+            ㆍ<span class="dotted"><b>drop</b> 커밋</span>: 해당 커밋은 버린다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            이 명령어만으로 여러 방법으로 브랜치의 흐름에 해당하는 커밋을 <span class="color-yellow">재생성하여 교체</span>시킬 수 있다.
+        </p>
+        <p>
+            <a href="../00_concept/" target="_blank">[개념]</a>에서 봤듯이 커밋은 브랜치에 종속적이지 않으므로,
+        </p>
+        <p>
+            <img src="../00_concept/00_04.gif">
+        </p>
+        <p>
+            대상 커밋을 다른 브랜치에서도 사용하고 있다면,
+        </p>
+        <p class="hang1">
+            기존 커밋은 그 브랜치에서는 원래대로 사용되고 있을 것이며,
+        </p>
+        <p class="hang1 color-gray">
+            (새 커밋은 분기(diverged)처럼 위치함)
+        </p>
+        <p>
+            대상 커밋이 다른 브랜치에서는 사용되지 않으면,
+        </p>
+        <p class="hang1">
+            기존 커밋은 제거된다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            이 작업들은 브랜치의 커밋들을 재생성하여 교체시키므로,
+        </p>
+        <p>
+            이미 리모트에 push된 커밋들이라면 <span class="cmd">git push <span class="color-yellow">-f(--force)</span></span>로 덮어씌울 것이며,
+        </p>
+        <p>
+            다른 사람들에게 수정사항을 전파하면서까지 할 작업이 맞는지 충분히 고려한다.
+        </p>
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            이제 <span class="cmd">-i(--interactive)</span>옵션 없는 <span class="cmd">git rebase</span>를 살펴보자.
+        </p>
+        <p>
+            <img src="13_01.gif">
+        </p>
+        <p>
+            특정 커밋 구간을 떼어다 원하는 브랜치에 붙일 수 있다.<span class="color-gray">(커밋들을 재생성하여 붙인다)</span>
+        </p>
+        <p class="hang1 color-gray">
+            (당연히 일부를 다른 브랜치에서도 사용하고 있다면, 떼어지진 않고 복사된다.)
+        </p>
+        <p>
+            붙여지는 커밋들은 원본과 같은 내용으로 재생성되려 하지만,
+        </p>
+        <p>
+            붙여질 곳의 흐름과 충돌(conflict)이 존재한다면, 내용도 수정되어야 한다.
+        </p>
+        <p>
+            심지어 흐름 중에 중복된 내용이 이미 존재해서 필요 없어지면, 커밋이 사라지기도 한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; 붙여질_브랜치 &nbsp; [옮길_브랜치]
+            </span>
+        </p>
+        <p class="hang1 color-gray">
+            (옮길_브랜치를 지정하면 해당 브랜치로 checkout한 후 작업이 이뤄지고,
+        </p>
+        <p class="hang1 color-gray">
+            아니면 현재 작업 중인 브랜치에서 작업이 이뤄진다.)
+        </p>
+        <p>
+            충돌(conflict)이 있어 수정이 이뤄져야 하면,
+        </p>
+        <p>
+            <span class="cmd">git add</span>로 수정 후, <span class="cmd">git rebase --continue</span>로 완료하여 다음으로 진행한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            <img src="13_02.gif">
+        </p>
+        <p>
+            D 브랜치(갈색)을 B 브랜치(주황색)에 붙인다고 했을 때,
+        </p>
+        <p>
+            두 브랜치가 공통인 부분은 A1 커밋이라, A1 커밋 이후의 모든 커밋을 옮겨붙이게 된다.
+        </p>
+        <p class="hang1 color-gray">
+            (물론 커밋들은 모두 재생성되며, 다른 브랜치에서 사용 중인 커밋은 옮겨지진 않는다.)
+        </p>
+        <p>
+            즉, D 브랜치의 분기가 시작되었던 부분부터 옮기는 것이 아니라,
+        </p>
+        <p>
+            공통된 흐름 이후 부터의 모든 커밋을 옮기려고 한다.
+        </p>
+        <p>
+            만약 중간에 제외하고 싶은 구간이 있다면, 역시 지정해야 한다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; <span class="color-yellow">--onto</span> &nbsp; 붙여질_브랜치 &nbsp; <span class="color-yellow">제외될_브랜치</span> &nbsp; [옮길_브랜치]
+            </span>
+        </p>
+        <p>
+            지정된 <span class="color-yellow">제외될_브랜치</span> 스스로를 포함하여, 그 상단으로 모두 대상에서 제외시킨다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; <span class="color-yellow">--onto</span> &nbsp; 붙여질_브랜치 &nbsp; <span class="color-yellow">제외될_커밋</span> &nbsp; [옮길_브랜치]
+            </span>
+        </p>
+        <p>
+            처럼 <span class="color-yellow">제외될_커밋</span>으로 지정하여, 스스로를 포함하여 그 이전 모두를 대상에서 제외시킬 수도 있다.
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>
+            <img src="13_03.gif">
+        </p>
+        <p>
+            한 브랜치 내에서의 흐름도 조절할 수 있다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; <span class="color-yellow">--onto</span> &nbsp; 붙을_커밋(영향없음) &nbsp; <span class="color-yellow">제외될_커밋(자신도)</span> &nbsp; [작업할_브랜치]
+            </span>
+        </p>
+        <p>
+            위의 이미지를 예로 들면, <span class="cmd">git rebase <span class="color-yellow">--onto</span> branchA~5 <span class="color-yellow">branchA~3</span></span>이 될 것이다.
+        </p>
+        <p>
+            이 작업은 <span class="cmd">git rebase <span class="color-yellow">-i(--interactive)</span> branchA~5</span>에서, 삭제할 커밋을 drop시켜도 같은 결과를 얻을 수 있다.
         </p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>

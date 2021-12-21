@@ -312,6 +312,44 @@
             <img src="../04_checkout/04_01.gif">
         </p>
         <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p>
+            로컬 브랜치를 삭제하려면, 브랜치의 커밋들이 모두 push되어 있으며,
+        </p>
+        <p>
+            지금 로컬에서 사용 중이지 않은 상태로 둔다(checkout 으로 다른 브랜치를 향하거나, detach한다.).
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="dotted"><span class="color-yellow">-d(--delete)</span> &nbsp; 지울_브랜치</span>
+            </span>
+        </p>
+        <p>
+            위의 조건을 갖추지 않았다면, <span class="cmd">-d(--delete)</span> 대신 <span class="cmd color-yellow">-D(--delete --force)</span>옵션을 사용한다.
+        </p>
+        <p>&nbsp;</p>
+        <p>
+            아래의 명령어로 리모트 브랜치를 삭제할 수 있다.
+        </p>
+        <p>
+            <span class="cmd">
+                <span class="caret">&gt;</span> git &nbsp; push &nbsp; 저장소명 &nbsp; <span class="color-yellow">--delete</span> &nbsp; 리모트브랜치
+            </span>
+        </p>
+        <div class="cmd">
+            <p>
+                <span class="caret">&gt;</span> git &nbsp; push &nbsp;&nbsp; origin &nbsp; <span class="color-yellow">--delete</span> &nbsp; test1
+            </p>
+            <hr>
+            <p class="response">
+                To https://github.com/BlackdeerY/example.git
+            </p>
+            <p class="response">
+                &nbsp;-&nbsp;[deleted]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test1
+            </p>
+        </div>
+        <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 	</div>
