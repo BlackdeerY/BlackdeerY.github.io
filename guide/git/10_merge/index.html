@@ -368,31 +368,25 @@
         <hr>
         <p>&nbsp;</p>
         <p>
-            <span class="cmd">git merge</span>는 결국 <span class="color-yellow">새로운 병합 커밋을 생성</span>하는 작업이다.
+            <span class="cmd">git merge</span>는 <span class="color-yellow">공통 조상까지의 흐름 전체를 복제</span>하여 새로운 병합 커밋을 생성하는 작업이다.
         </p>
         <p>
-            새로 병합하지 않고 <span class="color-yellow">기존 브랜치의 흐름을 틀어서 특정 커밋을 통과하도록 경로를 수정</span>할 수도 있다. [cherry-pick]
+            <span class="cmd">git cherry-pick</span>으로 <span class="color-yellow">특정 커밋들만을 복제</span>하여 새로운 병합 커밋을 생성할 수도 있다.
         </p>
         <p>
-            이것 역시도 충돌(conflict)은 존재할 수 있다.
-        </p>
-        <p class="hang1 color-gray">
-            (기존 커밋들은 001.txt에 작업하고 있는데, 001.txt를 삭제하는 커밋을 그 전에 포함시킨다면??)
+            <a href="../14_cherry-pick/" target="_blank">[cherry-pick 알아보기]</a>
         </p>
         <p>
-            [cherry-pick]은 <span class="color-yellow">이미 적용된 커밋들을 대거 수정</span>하여 해결하게 된다.
+            <img src="../14_cherry-pick/14_01.gif">
         </p>
         <p>
-            작업을 수정하더라도, 새로운 커밋으로 이전 커밋 대비 ±제로섬(zero-sum)을 만드는 것과,
-        </p>
-        <p>
-            이미 적용된(모두가 바라보는) 리모트 커밋을 수정하여 <span class="color-yellow">다른 곳에 영향을 전파하는 것</span>은 아주 다른 일이다.
+            이것 역시도 충돌(conflict)은 존재할 수 있고, 조율해야 한다.
         </p>
         <p>&nbsp;</p>
         <hr>
         <p>&nbsp;</p>
         <p>
-            <span class="color-yellow">기존 커밋들을 수정할 수 있는</span> 작업들을 이제 천천히 알아보자.
+            이제는 <span class="color-yellow">기존 커밋들을 수정할 수 있는</span> 작업들을 이제 천천히 알아보자.
         </p>
         <p>&nbsp;</p>
         <p>
