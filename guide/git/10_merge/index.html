@@ -46,14 +46,14 @@
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             [merge]
         </p>
         <p>
             <img src="10_01.gif">
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             주체 커밋에서 다른 커밋들(1개 이상. 여러 개도 동시에 가능)을 <span class="color-yellow">병합하는 커밋을 만든다.</span>
         </p>
@@ -66,16 +66,16 @@
         <p>
             다른 브랜치의 커밋들을 병합할 때에는 <span class="color-yellow">충돌(conflict)</span>이 일어날 상황이 많을 수 있으며, 역시 해결해야한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             merge 명령어의 사용은 <a href="../09_fetch_pull/" target="_blank">[fetch,pull]</a>에서 일부 본 적이 있다.
         </p>
         <p>
             크게 복잡하지 않다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; merge &nbsp; 병합할_커밋...
@@ -97,7 +97,7 @@
         <p class="hang1 color-gray">
             (여러 개를 한 번에 merge하는 것을 문어발식(octopus merge)이라고 표현한다.)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             병합 중 <span class="color-yellow">충돌(conflict)</span>이 발생하면 수동으로 조절해야 하고, <span class="cmd">git add</span> 후에
         </p>
@@ -107,16 +107,16 @@
         <p>
             <a href="../09_fetch_pull/" target="_blank">[fetch,pull]</a>에서 봤었다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             merge는 브랜치와 커밋들의 현재 상황만 꿰고 있으면 무리 없이 진행할 수 있을 것이다.
         </p>
         <p>
             여기서는 merge의 개념 부분을 짚고 넘어간다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="hide-btn" id="hide01_show">(branch에서 봤던 병합과 브랜치 사용 전략에 대해서 다시 보려면 펼쳐보기...)</span>
         </p>
@@ -127,14 +127,14 @@
             <p>
                 [브랜치 사용 전략]
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p>
                 팀에서 사용하고자 하는 전략이 있을테니 성실히 따르도록 하고,
             </p>
             <p>
                 아직 브랜치에 대한 개념이 희미하다면 조금이나마 보태고자 적어본다.
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <hr style="border-top: 1px dotted;">
             <p>
                 <b>"여러 명이 한 리모트브랜치에서 작업하는 것은 좋지 않다."</b>
@@ -226,14 +226,14 @@
             <p>
                 브랜치가 많아질 수는 있어도, 도표로 보면 개념이 어렵지 않다.
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p>
                 <span class="hide-btn hide01_hide">(여기를 눌러 접기)</span>
             </p>
         </div>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             fast-forward 방식의 merge를 <a href="../09_fetch_pull/" target="_blank">[fetch,pull]</a>에서도 봤었다.
         </p>
@@ -243,7 +243,7 @@
         <p class="hang1 color-gray">
             (분기가 갈릴 로컬 커밋이 없어서, 그냥 HEAD를 앞으로 빨리감기(fast-forward)하면 되는 상황)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             브랜치끼리의 병합 상황에서도 <span class="color-yellow">fast-forward</span>가 가능한 상황이 있다.
         </p>
@@ -268,7 +268,7 @@
         <p>
             B1,B2,B3 커밋 역시 B 브랜치 뿐만 아니라 다른 브랜치도 사용할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             fast-forward가 가능한 경우, <span class="cmd">git merge</span>는 <span class="color-yellow">기본적으로 fast-forward 우선하도록 동작한다.</span>
         </p>
@@ -296,7 +296,7 @@
         <p class="hang1 color-gray">
             매번 알록달록하게 표현하긴 힘드니, 생략된 흐름도만 봐도 공통부분을 알 수 있어야 한다.)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             위의 그림에서 A2 커밋을 두지 않더라도(fast-forward 했더라도), 흐름만 제대로 파악할 수 있으면 된다.
         </p>
@@ -318,9 +318,9 @@
         <p>
             Git은 가능하게 할 뿐, 선택은 사용자의 몫이다. '반드시 이래야한다'는 없다고 생각한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             마지막으로, 정말 아무나 병합이 되나??이다.<span class="color-gray">(같은 저장소 내에서)</span>
         </p>
@@ -339,7 +339,7 @@
         <p>
             이걸 조절해서 완료시키면 된 것이고, 조절 안되면 할 수 없고...
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <img src="10_07.gif">
         </p>
@@ -364,9 +364,9 @@
         <p>
             결국 충돌(conflict)만 해결하면 누구든 가능하다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">git merge</span>는 <span class="color-yellow">공통 조상까지의 흐름 전체를 복제</span>하여 새로운 병합 커밋을 생성하는 작업이다.
         </p>
@@ -382,13 +382,13 @@
         <p>
             이것 역시도 충돌(conflict)은 존재할 수 있고, 조율해야 한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이제는 <span class="color-yellow">기존 커밋들을 수정할 수 있는</span> 작업들을 이제 천천히 알아보자.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             우선 브랜치를 <span class="color-yellow">과거로 되돌리는</span> 작업을 보자.
         </p>
@@ -398,9 +398,9 @@
         <p>
             <img src="../11_reset/11_01.gif">
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
 	</div>
 </body>
 </html>

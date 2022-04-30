@@ -29,20 +29,20 @@
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             [stash]
         </p>
         <p>
             <img src="05_01.gif">
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             커밋하기 전의 작업 상태를 보존해두었다가 사용할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             커밋하거나 작업 내용을 버리기 전까진 마음대로 다른 상태로 checkout할 수 없다.
         </p>
@@ -79,9 +79,9 @@
         <p>
             이런 임시 저장소를 <span class="cmd">stash</span>라고 한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; stash &nbsp; [push]
@@ -99,7 +99,7 @@
         <p>
             stash를 <span class="color-yellow">생성</span>한다. 현재 브랜치에서 Track 중인 파일의 모든 변화를 저장하고 브랜치의 원래 상태로 돌아간다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">list</span>
@@ -118,7 +118,7 @@
         <p>
             stash의 <span class="color-yellow">목록</span>을 보여준다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; stash &nbsp; <span class="color-yellow">show</span> &nbsp; [옵션] &nbsp; [스태시명]
@@ -169,9 +169,9 @@
         <p>
             <span class="cmd">-p</span>옵션으로 스태시의 작업 내용을 좀 더 자세하게 볼 수 있다.(<span class="cmd">git diff</span>처럼)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이제 저장해 둔 stash를 <span class="color-yellow">사용</span>해보자.
         </p>
@@ -191,7 +191,7 @@
             <p class="response">
                 Your branch is up to date with 'origin/a01'.
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 Changes not staged for commit:
             </p>
@@ -201,11 +201,11 @@
             <p class="response">
                 &nbsp;&nbsp;(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response color-my-red">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modified:&nbsp;&nbsp;&nbsp;001.txt
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 no changes added to commit (use "git add" and/or "git commit -a")
             </p>
@@ -219,7 +219,7 @@
         <p class="hang1 color-gray">
             (이 옵션 없이 기본 명령어로는 Stage 여부까지는 복원하지 않는다.)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             에러 응답이 나올 수도 있는데, 그 중 하나는 아래처럼 될 수 있다.
         </p>
@@ -244,13 +244,13 @@
         <p>
             이건 fetch에서 좀 더 보기로 한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">git apply</span>를 한다고 스태시가 지워지는건 아니고, 원한다면 몇 번이든 사용할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             스태시가 이제 필요없다면 <span class="color-yellow">지울 수 있다.</span>
         </p>
@@ -271,16 +271,16 @@
         <p>
             역시 스태시를 지정하지 않으면, 가장 최근(가장 번호가 높은)것을 지운다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             만약 스태시를 적용과 동시에 삭제까지 바로 하고 싶다면(apply+drop)
         </p>
         <p>
             <span class="cmd">git &nbsp; stash &nbsp; <span class="color-yellow">pop</span> &nbsp; [--index] &nbsp; [스태시명]</span>을 사용하면 된다.
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
 	</div>
 </body>
 </html>

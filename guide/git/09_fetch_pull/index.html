@@ -29,23 +29,23 @@
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             [fetch 및 pull(fetch+merge)]
         </p>
         <p>
             <img src="09_01.gif">
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             리모트의 최신 상태를 로컬로 가져오거나(fetch),
         </p>
         <p>
             가져와서 로컬의 상태에 적용까지 시킨다(pull=fetch+merge).
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; fetch
@@ -66,7 +66,7 @@
         <p>
             fetch는 정보만 받아올 뿐, 직접 파일에 반영시키는 것은 아니기 때문.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; push
@@ -112,7 +112,7 @@
         <p>
             <span class="cmd">git fetch</span>로 최신 정보를 받아온다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             push가 거부되었던 경우에는, fetch 후에 <span class="cmd">git checkout</span>을 해보면
         </p>
@@ -146,7 +146,7 @@
         <p>
             <span class="color-yellow">분기가 발생(diverged)</span>한 경우도 있고,
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; checkout
@@ -168,7 +168,7 @@
         <p>
             <span class="color-yellow">빨리감기(fast-forward)</span>로 HEAD만 옮기는 것으로 해결되는 경우도 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; branch &nbsp; <span class="color-yellow">-vv</span>
@@ -193,7 +193,7 @@
         <p>
             <span class="cmd">git branch <span class="color-yellow">-vv</span></span>로 전체 브랜치의 리모트 상황을 비교할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이제 fetch로 받아온 정보를 로컬의 상태에 적용시키면서, 리모트와 달라져버린 상태를 해결해보자.
         </p>
@@ -212,13 +212,13 @@
         <p class="hang1 color-gray">
             (이 작업에서의 의미적으론 pull이 더 맞다. 위의 checkout 응답에서도 계속해서 git pull로 얘기하고 있다.)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             어떤 상황이든 <span class="cmd">git merge</span>만으로 자동 병합을 시도하고, 자동으로 처리가 가능하면 수월하게 완료된다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; merge
@@ -252,13 +252,13 @@
         <p>
             fast-forward 경우는 병합할 것 없이, 그냥 리모트의 최신 상태를 가져와서 깔끔하게 적용된 것.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             그러면 <span class="color-yellow">분기가 발생된(diverged)</span> 상황을 보자.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; merge
@@ -346,13 +346,13 @@
                 ...
             </p>
         </div>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="color-yellow">충돌(conflict)</span>이 존재하여 자동으로 병합되지 않는 경우도 보자.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; merge
@@ -421,7 +421,7 @@
         <p class="hang1 color-gray">
             (자동 병합시 충돌이 없던 나머지 파일들은 이미 Stage되어있는 상태이다.)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; merge &nbsp; <span class="color-yellow">--continue</span>
@@ -497,9 +497,9 @@
                 ...
             </p>
         </div>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <img src="09_02.gif">
         </p>
@@ -521,9 +521,9 @@
         <p class="hang1">
             2-1. <span class="color-yellow">충돌(conflict) 있음</span>: <span class="cmd">git merge</span>(<span class="cmd">git pull</span>) 후, 일부 조율. <span class="cmd">git add</span> 후 <span class="cmd">git merge --continue</span>로 병합 커밋 완결. 필요하면 <span class="cmd">git push</span>.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             ㆍfetch: 최신 정보를 받아오기만 함
         </p>
@@ -536,7 +536,7 @@
         <p>
             fetch는 정보만을 갱신하고, pull은 직접적으로 처리를 시도한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">git merge</span>는 충돌(conflict) 상황 뿐만 아니라, 다른 브랜치를 합칠 때에도 사용한다.
         </p>
@@ -549,9 +549,9 @@
         <p>
             이제는 다른 브랜치의 병합 쪽을 보자. <a href="../10_merge/" target="_blank">[merge 더 알아보기]</a>
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
 	</div>
 </body>
 </html>

@@ -29,20 +29,20 @@
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             [rebase]
         </p>
         <p>
             <img src="13_01.gif">
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             커밋과 브랜치들을 수정하는 여러 방법을 본다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             번외로, 현재 로컬 HEAD가 가리키는 현재의 커밋을 즉각 수정하려면,
         </p>
@@ -64,13 +64,13 @@
         <p>
             커밋 내용이 합쳐져서 재생성된다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             수정의 영역이라 <a href="../07_commit/" target="_blank">[commit]</a>보다는 여기에서 짤막하게 이야기한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             옵션이 없는 <span class="cmd">git rebase</span>는, 특정 커밋 구간을 옮겨다 붙일 수 있는데,
         </p>
@@ -83,7 +83,7 @@
         <p class="hang1 color-gray">
             (이 옵션을 붙인 작업이 상대적으로 더 흔하게 일어난다)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; <span class="color-yellow">-i(--interactive)</span> &nbsp; 수정_직전_커밋
@@ -131,7 +131,7 @@
         <p>
             ㆍ<span class="dotted"><b>drop</b> 커밋</span>: 해당 커밋은 버린다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이 명령어만으로 여러 방법으로 브랜치의 흐름에 해당하는 커밋을 <span class="color-yellow">재생성하여 교체</span>시킬 수 있다.
         </p>
@@ -156,7 +156,7 @@
         <p class="hang1">
             기존 커밋은 제거된다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이 작업들은 브랜치의 커밋들을 재생성하여 교체시키므로,
         </p>
@@ -166,9 +166,9 @@
         <p>
             다른 사람들에게 수정사항을 전파하면서까지 할 작업이 맞는지 충분히 고려한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             이제 <span class="cmd">-i(--interactive)</span>옵션 없는 <span class="cmd">git rebase</span>를 살펴보자.
         </p>
@@ -190,7 +190,7 @@
         <p>
             심지어 흐름 중에 중복된 내용이 이미 존재해서 필요 없어지면, 커밋이 사라지기도 한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; rebase &nbsp; 붙여질_브랜치 &nbsp; [옮길_브랜치]
@@ -208,7 +208,7 @@
         <p>
             <span class="cmd">git add</span>로 수정 후, <span class="cmd">git rebase --continue</span>로 완료하여 다음으로 진행한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <img src="13_02.gif">
         </p>
@@ -246,8 +246,8 @@
         <p>
             처럼 <span class="color-yellow">제외될_커밋</span>으로 지정하여, 스스로를 포함하여 그 이전 모두를 대상에서 제외시킬 수도 있다.
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
         <p>
             <img src="13_03.gif">
         </p>
@@ -265,9 +265,9 @@
         <p>
             이 작업은 <span class="cmd">git rebase <span class="color-yellow">-i(--interactive)</span> branchA~5</span>에서, 삭제할 커밋을 drop시켜도 같은 결과를 얻을 수 있다.
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
 	</div>
 </body>
 </html>

@@ -29,27 +29,27 @@
 </head>
 <body>
 	<div id="div-content" class="container-fluid">
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             [tag]
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             특정 커밋에 별칭 및 추가 정보를 붙인다.
         </p>
         <p>
             버전 관리에 사용되기도 한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             태그 이름은 <span class="color-yellow">고유하도록</span> 정해야 한다. 같은 이름을 갖는 태그가 있을 수 없다.
         </p>
         <p>
             한 커밋에 여러 태그를 붙일 수는 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; tag
@@ -71,7 +71,7 @@
         <p>
             단순하게 현재 사용되고 있는 모든 tag를 조회 가능
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; tag &nbsp; <span class="dotted color-yellow">-l(--list) &nbsp; "v.1.*"</span>
@@ -90,7 +90,7 @@
         <p>
             <span class="cmd">-l(--list)</span>옵션으로 패턴과 일치하는 tag만 조회 가능
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; show-ref &nbsp; <span class="color-yellow">--tags &nbsp; --dereference</span>
@@ -124,7 +124,7 @@
         <p class="hang1 color-gray">
             (붙이지 않으면, annotated 태그는 태그 본체만 조회된다)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; log
@@ -139,7 +139,7 @@
             <p class="response">
                 Date:   EEE MMM dd HH:mm:ss yyyy +0900
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 &nbsp;&nbsp;&nbsp;&nbsp;add 002.txt
             </p>
@@ -153,7 +153,7 @@
         <p class="hang1 color-gray">
             (<span class="cmd">git revert v1.0.0</span>처럼)
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; ls-remote &nbsp; <span class="color-yellow">--tags</span>
@@ -175,16 +175,16 @@
         <p>
             리모트의 태그들도 조회할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             tag에는 <span class="color-yellow">별칭만</span> 붙이는 <span class="color-yellow">lightweight</span> 태그와,
         </p>
         <p>
             추가로 태그작성자, 태그메시지, GPG 서명 등도 기입할 수 있는 <span class="color-yellow">annotated</span> 태그가 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; tag &nbsp; 태그명 &nbsp; [붙여질_커밋]
@@ -202,7 +202,7 @@
         <p>
             <span class="cmd">붙여질_커밋</span>을 생략하면 현재 가리키는 커밋에 붙인다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; tag &nbsp; <span class="color-yellow">-a(--annotate)</span> &nbsp; 태그명 &nbsp; &nbsp; &nbsp; [붙여질_커밋]
@@ -220,7 +220,7 @@
         <p>
             커밋할 때처럼 태그 메시지를 정할 수 있고, 태그를 생성한 시각과 작성자가 기록된다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; show-ref &nbsp; --tags &nbsp; <span class="color-yellow">--dereference</span>
@@ -242,7 +242,7 @@
         <p>
             annotated 태그를 lightweight 태그처럼 쓰려면, <span class="cmd">태그명&#94;&#123;&#125;</span>처럼 뒤에 기호로 명시하여 커밋으로 사용한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <div class="cmd">
             <p>
                 <span class="caret">&gt;</span> git &nbsp; show &nbsp; v.1.0.0<span class="comment">&lt;---- lightweight 태그</span>
@@ -257,7 +257,7 @@
             <p class="response">
                 Date:   EEE MMM dd HH:mm:ss yyyy +0900<span class="comment">&lt;---- 커밋 작성시각</span>
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 &nbsp;&nbsp;&nbsp;&nbsp;add 002.txt<span class="comment">&lt;---- 커밋 메시지</span>
             </p>
@@ -303,7 +303,7 @@
             <p class="response">
                 Date:   EEE MMM dd HH:mm:ss yyyy +0900<span class="comment">&lt;---- 태그 작성시각</span>
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 my first release<span class="comment">&lt;---- 태그 메시지</span>
             </p>
@@ -319,7 +319,7 @@
             <p class="response">
                 Date:   EEE MMM dd HH:mm:ss yyyy +0900<span class="comment">&lt;---- 커밋 작성시각</span>
             </p>
-            <p>&nbsp;</p>
+            <p>　</p>
             <p class="response">
                 &nbsp;&nbsp;&nbsp;&nbsp;add 002.txt<span class="comment">&lt;---- 커밋 메시지</span>
             </p>
@@ -351,9 +351,9 @@
         <p>
             annotated 태그는 <span class="color-yellow">본체로 조회를 하면</span> 태그의 정보를 덧붙여 보여준다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; tag &nbsp; <span class="color-yellow">-d</span> &nbsp; 태그명
@@ -362,7 +362,7 @@
         <p>
             모든 태그는 <span class="cmd color-yellow">-d</span>옵션으로 삭제할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             한 커밋에 여러 개의 태그를 붙일 수 있으므로,
         </p>
@@ -393,9 +393,9 @@
         <p>
             기존 태그가 가리키던 커밋을 명시하여 새 태그를 붙이고, 기존 태그를 제거.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <hr>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; ls-remote &nbsp; <span class="color-yellow">--tags</span>
@@ -422,14 +422,14 @@
         <p>
             리모트의 태그들을 조회할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             커밋에 태그를 붙여도 <span class="cmd">git push</span>때 <span class="color-yellow">기본적으로 함께 push되진 않는다.</span>
         </p>
         <p>
             <span class="cmd">git push <span class="color-yellow">--follow-tags</span></span>로, <span class="cmd color-yellow">--follow-tags</span>옵션을 주면 태그도 함께 push할 수 있다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p>
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; push &nbsp; 저장소명 &nbsp; 태그명
@@ -488,7 +488,7 @@
         <p>
             태그만 전체적으로 push하려면 위의 명령어를 사용한다.
         </p>
-        <p>&nbsp;</p>
+        <p>　</p>
         <p style="margin-bottom: -14px;">
             <span class="cmd">
                 <span class="caret">&gt;</span> git &nbsp; push &nbsp; 저장소명 &nbsp; <span class="color-yellow">:refs/tags/</span>태그명
@@ -522,10 +522,10 @@
         <p class="hang1 color-gray">
             (세 형태 모두 사용 가능)
         </p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
+        <p>　</p>
 	</div>
 </body>
 </html>
