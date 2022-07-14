@@ -144,6 +144,10 @@
 			setActions();
 		});
 		function setActions() {
+            $('#origin').on('input',function(){
+                $('#result').val('');
+                $('#inspect').html('');
+            });
             $('#btn-replace').on('click',function(){
                 $('#result').val('');
                 $('#inspect').html('');
